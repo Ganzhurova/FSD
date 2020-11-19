@@ -1,10 +1,10 @@
-const { merge } = require("webpack-merge");
-const baseWebpackConfig = require("./webpack.base.config");
+const { merge } = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.config');
 
 const productionWebpackConfig = {
-  mode: "production",
+  mode: 'production',
 
-  plugins: []
+  plugins: [],
 };
 
 const config = merge(baseWebpackConfig, productionWebpackConfig);

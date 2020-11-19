@@ -1,16 +1,16 @@
-const { merge } = require("webpack-merge");
-const baseWebpackConfig = require("./webpack.base.config");
+const { merge } = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.config');
 
 const devWebpackConfig = {
-  mode: "development",
+  mode: 'development',
 
   devServer: {
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
     },
-    port: 8081
-  }
+    port: 8081,
+  },
 };
 
 const config = merge(baseWebpackConfig, devWebpackConfig);
