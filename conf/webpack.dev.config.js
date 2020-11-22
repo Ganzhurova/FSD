@@ -5,6 +5,7 @@ const devWebpackConfig = {
   mode: 'development',
 
   devServer: {
+    contentBase: baseWebpackConfig.externals.paths.dist,
     overlay: {
       warnings: true,
       errors: true,
