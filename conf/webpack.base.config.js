@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlPlugins = require('./utils/htmlPlugins');
 
 const PATHS = {
   source: path.resolve(__dirname, '../source'),
@@ -18,11 +19,7 @@ module.exports = {
     filename: '[name].js',
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: `${PATHS.source}/pages/UIkit/colors-&-tipe/colors-&-tipe.pug`,
-    }),
-  ],
+  plugins: [...htmlPlugins],
 
   module: {
     rules: [
