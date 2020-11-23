@@ -1,4 +1,6 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPlugins = require('./utils/htmlPlugins');
 
@@ -12,20 +14,63 @@ module.exports = {
     paths: PATHS,
   },
 
-  entry: `${PATHS.source}/index.js`,
+  entry: {
+    main: `${PATHS.source}/entry.js`,
+  },
 
   output: {
     path: PATHS.dist,
     filename: '[name].js',
   },
 
-  plugins: [...htmlPlugins],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+    ...htmlPlugins,
+    new CleanWebpackPlugin(),
+  ],
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: path.resolve(__dirname, './utils/postcss.config.js'),
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: path.resolve(__dirname, './utils/postcss.config.js'),
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.pug$/,
