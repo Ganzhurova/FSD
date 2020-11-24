@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.config');
 
 const devWebpackConfig = {
@@ -12,6 +13,12 @@ const devWebpackConfig = {
     },
     port: 8081,
   },
+
+  plugins: [
+    new ESLintPlugin({
+      context: baseWebpackConfig.externals.paths.source,
+    }),
+  ],
 };
 
 const config = merge(baseWebpackConfig, devWebpackConfig);
