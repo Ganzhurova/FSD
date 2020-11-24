@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.config');
 
 const devWebpackConfig = {
@@ -17,6 +18,10 @@ const devWebpackConfig = {
   plugins: [
     new ESLintPlugin({
       context: baseWebpackConfig.externals.paths.source,
+    }),
+    new StylelintPlugin({
+      context: baseWebpackConfig.externals.paths.source,
+      fix: true,
     }),
   ],
 };
