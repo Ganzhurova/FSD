@@ -4,17 +4,18 @@ const getFilePathArr = require('./getFilePathArr');
 
 const pagesDir = path.resolve(__dirname, '../../source/pages');
 
-let pugPages = [];
-let htmlPlugins = [];
+const pugPages = [];
+const htmlPlugins = [];
 
-let pugPaths = getFilePathArr(pagesDir, '.pug');
+const pugPaths = getFilePathArr(pagesDir, '.pug');
 
 pugPaths.map(item => {
-  let page = {
+  const page = {
     path: item,
     name: path.basename(item, path.extname(item)),
   };
   pugPages.push(page);
+  return pugPages;
 });
 
 pugPages.map(item => {
@@ -24,6 +25,7 @@ pugPages.map(item => {
       filename: `${item.name}.html`,
     })
   );
+  return htmlPlugins;
 });
 
 module.exports = htmlPlugins;
