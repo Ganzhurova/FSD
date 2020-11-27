@@ -1,16 +1,23 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const DelWebpackPlugin = require('del-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const htmlPlugins = require('./utils/htmlPlugins');
 
 const PATHS = {
   source: path.resolve(__dirname, '../source'),
   dist: path.resolve(__dirname, '../dist'),
+  assets: 'assets',
 };
 
 module.exports = {
   externals: {
     paths: PATHS,
+  },
+
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, '../source/components'),
+    },
   },
 
   entry: {
@@ -19,16 +26,9 @@ module.exports = {
 
   output: {
     path: PATHS.dist,
-    filename: '[name].js',
+    filename: `${PATHS.assets}/js/[name].js`,
+    publicPath: '/',
   },
-
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
-    ...htmlPlugins,
-    new CleanWebpackPlugin(),
-  ],
 
   module: {
     rules: [
@@ -36,6 +36,7 @@ module.exports = {
         test: /\.js$/,
         use: ['babel-loader'],
       },
+
       {
         test: /\.css$/,
         use: [
@@ -72,9 +73,24 @@ module.exports = {
         ],
       },
       {
+        test: /\.(gif|png|jpg|jpeg|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: `${PATHS.assets}/img/[name][ext]`,
+        },
+      },
+      {
         test: /\.pug$/,
         use: ['pug-loader'],
       },
     ],
   },
+
+  plugins: [
+    new DelWebpackPlugin({}),
+    new MiniCssExtractPlugin({
+      filename: `${PATHS.assets}/css/[name].css`,
+    }),
+    ...htmlPlugins,
+  ],
 };
