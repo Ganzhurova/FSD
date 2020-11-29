@@ -1,6 +1,8 @@
 const path = require('path');
-const DelWebpackPlugin = require('del-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const DelWebpackPlugin = require('del-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const htmlPlugins = require('./utils/htmlPlugins');
 
 const PATHS = {
@@ -73,24 +75,36 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpg|jpeg|svg)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: `${PATHS.assets}/img/[name][ext]`,
-        },
-      },
-      {
         test: /\.pug$/,
         use: ['pug-loader'],
+      },
+      {
+        test: /\.(gif|png|jpg|jpeg)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              extract: true,
+            },
+          },
+        ],
       },
     ],
   },
 
   plugins: [
-    new DelWebpackPlugin({}),
+    // new CleanWebpackPlugin(),
+    new DelWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}/css/[name].css`,
     }),
     ...htmlPlugins,
+    new SpriteLoaderPlugin({
+      plainSprite: true,
+    }),
   ],
 };
