@@ -1,7 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const DelWebpackPlugin = require('del-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const htmlPlugins = require('./utils/htmlPlugins');
 
@@ -97,8 +96,7 @@ module.exports = {
   },
 
   plugins: [
-    // new CleanWebpackPlugin(),
-    new DelWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}/css/[name].css`,
     }),
