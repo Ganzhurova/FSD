@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const glob = require('glob');
 const htmlPlugins = require('./utils/htmlPlugins');
 
 const PATHS = {
@@ -79,15 +80,42 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpg|jpeg)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: `${PATHS.assets}/img/`,
+              name: '[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
+        include: glob.sync(`${PATHS.source}/**/[^icon-]*.svg`).map(item => {
+          return path.resolve(item);
+        }),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: `${PATHS.assets}/img/`,
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        include: glob.sync(`${PATHS.source}/**/icon-*.svg`).map(item => {
+          return path.resolve(item);
+        }),
         use: [
           {
             loader: 'svg-sprite-loader',
             options: {
               extract: true,
+              outputPath: `${PATHS.assets}/sprite/`,
             },
           },
         ],
