@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.config');
 
@@ -7,7 +8,7 @@ const productionWebpackConfig = {
 
   optimization: {
     minimize: true,
-    minimizer: [new OptimizeCssAssetsPlugin()],
+    minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()],
   },
 
   plugins: [],
