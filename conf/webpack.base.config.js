@@ -22,6 +22,12 @@ module.exports = {
     },
   },
 
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+
   entry: {
     main: `${PATHS.source}/entry.js`,
   },
