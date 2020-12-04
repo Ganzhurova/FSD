@@ -82,7 +82,14 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        use: ['pug-loader'],
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(gif|png|jpg|jpeg)$/,
@@ -91,7 +98,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: `${PATHS.assets}/img/`,
-              name: '[name].[ext]',
+              name: '[name].[hash].[ext]',
+              esModule: false,
             },
           },
         ],
