@@ -98,7 +98,20 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: `${PATHS.assets}/img/`,
-              name: '[name].[hash].[ext]',
+              name: '[name].[ext]',
+              esModule: false,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: `${PATHS.assets}/fonts/`,
+              name: '[name].[ext]',
               esModule: false,
             },
           },
