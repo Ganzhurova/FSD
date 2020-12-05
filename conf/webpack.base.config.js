@@ -106,9 +106,7 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|eot|ttf|svg)$/,
-        include: glob.sync(`${PATHS.source}/fonts/`).map(item => {
-          return path.resolve(item);
-        }),
+        include: path.resolve(`${PATHS.source}/fonts/`),
         use: [
           {
             loader: 'file-loader',
@@ -122,10 +120,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: glob.sync(`${PATHS.source}/**/[^icon-]*.svg`).map(item => {
-          return path.resolve(item);
-        }),
-        exclude: glob.sync(`${PATHS.source}/fonts/`).map(item => {
+        include: glob.sync(`${PATHS.source}/**/img/[^icon-]*.svg`).map(item => {
           return path.resolve(item);
         }),
         use: [
@@ -140,7 +135,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: glob.sync(`${PATHS.source}/**/icon-*.svg`).map(item => {
+        include: glob.sync(`${PATHS.source}/**/img/icon-*.svg`).map(item => {
           return path.resolve(item);
         }),
         use: [
