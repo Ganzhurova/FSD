@@ -6,15 +6,11 @@ const glob = require('glob');
 const htmlPlugins = require('./utils/htmlPlugins');
 
 const PATHS = {
-  source: path.resolve(__dirname, '../source'),
-  dist: path.resolve(__dirname, '../dist'),
   assets: 'assets',
 };
 
 module.exports = {
-  externals: {
-    paths: PATHS,
-  },
+  context: path.resolve(__dirname, '../source'),
 
   resolve: {
     alias: {
@@ -29,11 +25,11 @@ module.exports = {
   },
 
   entry: {
-    main: `${PATHS.source}/entry.js`,
+    main: './entry.js',
   },
 
   output: {
-    path: PATHS.dist,
+    path: path.resolve(__dirname, '../dist'),
     filename: `${PATHS.assets}/js/[name].js`,
     publicPath: '/',
   },
@@ -106,7 +102,7 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|eot|ttf|svg)$/,
-        include: path.resolve(`${PATHS.source}/fonts/`),
+        include: path.resolve(__dirname, '../source/fonts/'),
         use: [
           {
             loader: 'file-loader',
@@ -120,7 +116,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: glob.sync(`${PATHS.source}/**/img/[^icon-]*.svg`).map(item => {
+        include: glob.sync('./**/img/[^icon-]*.svg').map(item => {
           return path.resolve(item);
         }),
         use: [
@@ -135,7 +131,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: glob.sync(`${PATHS.source}/**/img/icon-*.svg`).map(item => {
+        include: glob.sync('./**/img/icon-*.svg').map(item => {
           return path.resolve(item);
         }),
         use: [

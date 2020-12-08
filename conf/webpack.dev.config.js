@@ -1,3 +1,4 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -7,7 +8,7 @@ const devWebpackConfig = {
   mode: 'development',
 
   devServer: {
-    contentBase: baseWebpackConfig.externals.paths.dist,
+    contentBase: path.resolve(__dirname, '../dist'),
     overlay: {
       warnings: true,
       errors: true,
@@ -17,10 +18,10 @@ const devWebpackConfig = {
 
   plugins: [
     new ESLintPlugin({
-      context: baseWebpackConfig.externals.paths.source,
+      context: path.resolve(__dirname, '../source'),
     }),
     new StylelintPlugin({
-      context: baseWebpackConfig.externals.paths.source,
+      context: path.resolve(__dirname, '../source'),
       fix: true,
     }),
   ],
