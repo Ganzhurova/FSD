@@ -1,0 +1,27 @@
+.uikit-page {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 30px;
+    left: 2.1%;
+
+    width: 48px;
+    height: 48px;
+
+    background-image: url("./img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    content: "";
+
+    @media (min-width: $xl) {
+      left: calc(50% - 690px);
+    }
+  }
+}
+
+.uikit-page--theme-light {
+  background-color: $grey;
+}
