@@ -1,0 +1,16 @@
+.content {
+  min-width: 320px;
+
+  background-color: inherit;
+}
+
+.content__wrapper {
+  display: flex;
+  padding: 140px 0;
+}
+
+.content__list {
+  display: flex;
+
+  list-style: none;
+}
