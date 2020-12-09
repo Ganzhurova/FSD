@@ -7,11 +7,13 @@ $lg: 1199px;
 $xl: 1440px;
 
 //colors
+$white: #ffffff;
+$grey: #e5e5e5;
 $dark: #1f2041;
-$dark75: rgba(31, 32, 65, 0.75);
-$dark50: rgba(31, 32, 65, 0.5);
-$dark25: rgba(31, 32, 65, 0.25);
-$dark05: rgba(31, 32, 65, 0.05);
+$dark75: rgba($dark, 0.75);
+$dark50: rgba($dark, 0.5);
+$dark25: rgba($dark, 0.25);
+$dark05: rgba($dark, 0.05);
 $purple: #bc9cff;
 $green: #6fcf97;
 
