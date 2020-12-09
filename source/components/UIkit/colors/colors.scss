@@ -1,0 +1,70 @@
+.colors {
+  background-color: white;
+}
+
+.colors__list {
+  padding: 5px 10px;
+
+  list-style: none;
+}
+
+.colors__item {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.colors__pic {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+
+  border-radius: 6px;
+
+  &--dark {
+    background-color: $dark;
+  }
+
+  &--dark75 {
+    background-color: $dark75;
+  }
+
+  &--dark50 {
+    background-color: $dark50;
+  }
+
+  &--dark25 {
+    background-color: $dark25;
+  }
+
+  &--dark05 {
+    background-color: $dark05;
+  }
+
+  &--purple {
+    background-color: $purple;
+  }
+
+  &--green {
+    background-color: $green;
+  }
+}
+
+.colors__desc {
+  min-height: 70px;
+}
+
+.colors__title {
+  padding-top: 7px;
+
+  line-height: 27.36px;
+}
+
+.colors__code {
+  display: block;
+
+  font-size: 19px;
+  line-height: 28.5px;
+}

@@ -1,0 +1,12 @@
+mixin colorsItem(item)
+  li.colors__item
+    .colors__pic(class=item.colorClass)
+    .colors__desc
+      h2.colors__title= item.title
+      span.colors__code= item.code
+
+mixin colors(list)
+  .colors
+    ul.colors__list
+      for item in list
+        +colorsItem(item)
