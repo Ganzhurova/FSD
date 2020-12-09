@@ -44,6 +44,7 @@
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "sass-loader": "^10.1.0",
+    "sass-resources-loader": "^2.1.1",
     "style-loader": "^2.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-airbnb": "0.0.0",

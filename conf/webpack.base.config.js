@@ -15,6 +15,7 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, '../source/components'),
+      BaseDir: path.resolve(__dirname, '../source/pages/base'),
     },
   },
 
@@ -74,6 +75,15 @@ module.exports = {
             },
           },
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(
+                __dirname,
+                '../source/resources/resources.scss'
+              ),
+            },
+          },
         ],
       },
       {
