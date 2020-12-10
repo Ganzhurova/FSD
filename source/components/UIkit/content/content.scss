@@ -11,6 +11,19 @@
 
 .content__list {
   display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   list-style: none;
+}
+
+.content__item {
+  min-width: 280px;
+}
+
+@media (min-width: $xxs) and (max-width: $md) {
+  .content__item--center {
+    margin: 0 auto;
+  }
 }

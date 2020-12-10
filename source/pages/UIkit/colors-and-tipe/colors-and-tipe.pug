@@ -2,50 +2,19 @@ extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
 include ../../../components/UIkit/colors/colors
+include ../../../components/UIkit/type/type
 
 block variables
-    - var pageTitle = "Colors & Type"
-    //- - var uikitClass = "uikit-page--theme-light"
-    -
-      var colorsList = [
-        {
-          title: "Dark Shade 100%",
-          code: "#1F2041",
-          colorClass: "colors__pic--dark"
-        },
-        {
-          title: "Dark Shade 75%",
-          code: "#1F2041",
-          colorClass: "colors__pic--dark75"
-        },
-        {
-          title: "Dark Shade 50%",
-          code: "#1F2041",
-          colorClass: "colors__pic--dark50"
-        },
-        {
-          title: "Dark Shade 25%",
-          code: "#1F2041",
-          colorClass: "colors__pic--dark25"
-        },
-        {
-          title: "Dark Shade 5%",
-          code: "#1F2041",
-          colorClass: "colors__pic--dark05"
-        },
-        {
-          title: "Purple",
-          code: "#BC9CFF",
-          colorClass: "colors__pic--purple"
-        },
-        {
-          title: "Green",
-          code: "#6FCF97",
-          colorClass: "colors__pic--green"
-        },
-      ];
+  - var pageTitle = "Colors & Type"
+  - var contentClasses = "center"
+  include ./colors-data.pug
+  //- - var uikitClass = "uikit-page--theme-light"
 
 block content
+  h1.visually-hidden Colors and type
   +content()
-    +contentItem()
-      +colors(colorsList)
+    +contentList()
+      +contentItem(contentClasses)
+        +colors(colorsList)
+      +contentItem(contentClasses)
+        +type()

@@ -1,9 +1,16 @@
 mixin content()
   section.content
     .content__wrapper.container
-      ul.content__list
-        block
+      block
 
-mixin contentItem()
-  li.content__item
+mixin contentList()
+  ul.content__list
     block
+
+mixin contentItem(contentClasses)
+  if(contentClasses)
+    li.content__item(class=`content__item--${contentClasses}`)
+      block
+  else
+    li.content__item
+      block

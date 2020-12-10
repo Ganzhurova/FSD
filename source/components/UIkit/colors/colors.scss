@@ -1,5 +1,9 @@
 .colors {
-  background-color: white;
+  background-color: $white;
+
+  @media (min-width: $xxs) and (max-width: $md) {
+    margin-bottom: 80px;
+  }
 }
 
 .colors__list {
