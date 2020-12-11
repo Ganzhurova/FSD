@@ -9,7 +9,6 @@ const devWebpackConfig = {
 
   devServer: {
     contentBase: path.resolve(__dirname, '../dist'),
-    publicPath: '/assets/',
     overlay: {
       warnings: true,
       errors: true,

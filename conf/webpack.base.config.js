@@ -11,7 +11,6 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, '../source/components'),
-      BaseDir: path.resolve(__dirname, '../source/pages/base'),
     },
   },
 
@@ -26,9 +25,9 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist/assets'),
-    filename: 'js/[name].js',
-    publicPath: 'assets',
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'assets/js/[name].js',
+    // publicPath: '/',
   },
 
   module: {
@@ -100,6 +99,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: '../',
+              outputPath: 'assets',
               name: 'img/[name].[ext]',
               esModule: false,
             },
@@ -114,6 +114,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: '../',
+              outputPath: 'assets',
               name: 'fonts/[name].[ext]',
               esModule: false,
             },
@@ -130,6 +131,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               publicPath: '../',
+              outputPath: 'assets',
               name: 'img/[name].[ext]',
             },
           },
@@ -145,8 +147,8 @@ module.exports = {
             loader: 'svg-sprite-loader',
             options: {
               extract: true,
-              outputPath: 'sprite/',
-              publicPath: '../',
+              outputPath: 'assets/sprite/',
+              publicPath: '../sprite/',
             },
           },
         ],
@@ -157,7 +159,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'assets/css/[name].css',
     }),
     ...htmlPlugins,
     new SpriteLoaderPlugin({
