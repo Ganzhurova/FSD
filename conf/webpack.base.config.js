@@ -5,10 +5,6 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const glob = require('glob');
 const htmlPlugins = require('./utils/htmlPlugins');
 
-const PATHS = {
-  assets: 'assets',
-};
-
 module.exports = {
   context: path.resolve(__dirname, '../source'),
 
@@ -30,9 +26,9 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: `${PATHS.assets}/js/[name].js`,
-    publicPath: '/',
+    path: path.resolve(__dirname, '../dist/assets'),
+    filename: 'js/[name].js',
+    publicPath: 'assets',
   },
 
   module: {
@@ -103,8 +99,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: `${PATHS.assets}/img/`,
-              name: '[name].[ext]',
+              publicPath: '../',
+              name: 'img/[name].[ext]',
               esModule: false,
             },
           },
@@ -117,8 +113,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: `${PATHS.assets}/fonts/`,
-              name: '[name].[ext]',
+              publicPath: '../',
+              name: 'fonts/[name].[ext]',
               esModule: false,
             },
           },
@@ -133,8 +129,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: `${PATHS.assets}/img/`,
-              name: '[name].[ext]',
+              publicPath: '../',
+              name: 'img/[name].[ext]',
             },
           },
         ],
@@ -149,7 +145,8 @@ module.exports = {
             loader: 'svg-sprite-loader',
             options: {
               extract: true,
-              outputPath: `${PATHS.assets}/sprite/`,
+              outputPath: 'sprite/',
+              publicPath: '../',
             },
           },
         ],
@@ -160,7 +157,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name].css`,
+      filename: 'css/[name].css',
     }),
     ...htmlPlugins,
     new SpriteLoaderPlugin({

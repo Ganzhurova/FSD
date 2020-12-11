@@ -22,7 +22,7 @@ pugPages.map(item => {
   htmlPlugins.push(
     new HtmlWebpackPlugin({
       template: item.path,
-      filename: `${item.name}.html`,
+      filename: `../${item.name}.html`,
     })
   );
   return htmlPlugins;
