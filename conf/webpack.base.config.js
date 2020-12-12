@@ -26,7 +26,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'assets/js/[name].js',
+    filename: '[name].js',
   },
 
   module: {
@@ -92,29 +92,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpg|jpeg)$/,
+        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              publicPath: '../',
-              outputPath: 'assets',
-              name: 'img/[name].[ext]',
-              esModule: false,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|svg)$/,
-        include: path.resolve(__dirname, '../source/fonts/'),
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              publicPath: '../',
-              outputPath: 'assets',
-              name: 'fonts/[name].[ext]',
+              name: '[path][name].[ext]',
               esModule: false,
             },
           },
@@ -122,16 +105,14 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: glob.sync('./**/img/[^icon-]*.svg').map(item => {
+        include: glob.sync('./**/[^icon-]*.svg').map(item => {
           return path.resolve(item);
         }),
         use: [
           {
             loader: 'file-loader',
             options: {
-              publicPath: '../',
-              outputPath: 'assets',
-              name: 'img/[name].[ext]',
+              name: '[path][name].[ext]',
             },
           },
         ],
@@ -156,7 +137,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: '[name].css',
     }),
     ...htmlPlugins,
     new SpriteLoaderPlugin({}),
