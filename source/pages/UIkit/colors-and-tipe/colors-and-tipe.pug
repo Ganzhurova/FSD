@@ -6,11 +6,9 @@ include ../../../components/UIkit/type/type
 
 block variables
   - var pageTitle = "Colors & Type"
-  - var contentClasses = "center"
   include ../../../components/UIkit/colors/colors-data
 
 block content
-  h1.visually-hidden Colors and type
   +content()
     +colors(colorsList)
     +type()
