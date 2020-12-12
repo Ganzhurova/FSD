@@ -1,5 +1,9 @@
 .type {
   background-color: $white;
+
+  @media (min-width: $xxs) and (max-width: $md) {
+    margin: 0 auto;
+  }
 }
 
 .type__list {

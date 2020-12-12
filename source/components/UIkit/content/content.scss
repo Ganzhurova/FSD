@@ -6,6 +6,9 @@
 
 .content__wrapper {
   display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 140px 0;
 }
 
@@ -19,11 +22,5 @@
 }
 
 .content__item {
-  min-width: 280px;
-}
-
-@media (min-width: $xxs) and (max-width: $md) {
-  .content__item--center {
-    margin: 0 auto;
-  }
+  display: block;
 }
