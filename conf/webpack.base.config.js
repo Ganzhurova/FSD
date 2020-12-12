@@ -27,7 +27,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'assets/js/[name].js',
-    // publicPath: '/',
   },
 
   module: {
@@ -146,9 +145,7 @@ module.exports = {
           {
             loader: 'svg-sprite-loader',
             options: {
-              extract: true,
-              outputPath: 'assets/sprite/',
-              publicPath: '../sprite/',
+              runtimeCompat: true,
             },
           },
         ],
@@ -162,8 +159,6 @@ module.exports = {
       filename: 'assets/css/[name].css',
     }),
     ...htmlPlugins,
-    new SpriteLoaderPlugin({
-      plainSprite: true,
-    }),
+    new SpriteLoaderPlugin({}),
   ],
 };
