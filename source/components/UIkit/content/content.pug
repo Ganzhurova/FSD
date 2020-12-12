@@ -1,7 +1,9 @@
 mixin content()
-  section.content
-    .content__wrapper.container
-      block
+  main
+    h1.visually-hidden= pageTitle
+    section.content
+      .content__wrapper.container
+        block
 
 mixin contentList()
   ul.content__list

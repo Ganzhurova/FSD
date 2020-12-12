@@ -1,25 +1,47 @@
-.uikit-page {
-  position: relative;
+// .uikit-page {
+//   position: relative;
+//
+//   &::before {
+//     position: absolute;
+//     top: 30px;
+//     left: 2.1%;
+//
+//     width: 48px;
+//     height: 48px;
+//
+//     background-image: url("./img/logo-uikit.png");
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: 100%;
+//
+//     content: "";
+//
+//     @media (min-width: $xl) {
+//       left: calc(50% - 690px);
+//     }
+//   }
+// }
+.uikit-page__header {
+  min-width: 320px;
 
-  &::before {
-    position: absolute;
-    top: 30px;
-    left: 2.1%;
+  background-color: inherit;
+}
 
-    width: 48px;
-    height: 48px;
+.uikit-page__header-wrapper {
+  width: 95.8%;
+  min-width: 280px;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 30px 0 62px;
+}
 
-    background-image: url("./img/logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+.uikit-page__logo {
+  width: 48px;
+  height: 48px;
+}
 
-    content: "";
-
-    @media (min-width: $xl) {
-      left: calc(50% - 690px);
-    }
-  }
+.uikit-page__logo-pic {
+  display: block;
 }
 
 .uikit-page--theme-light {

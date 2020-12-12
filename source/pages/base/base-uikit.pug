@@ -1,5 +1,4 @@
 include ../../components/UIkit/uikit-page/uikit-page
-include ../../components/UIkit/header-uikit/header-uikit
 
 block variables
 
@@ -11,7 +10,7 @@ html(lang = "ru")
     meta(http-equiv = "X-UA-Compatible", content="ie=edge")
     title=pageTitle
   block body
-    +uikit-page(uikitClass)
+    +uikitPage(uikitClass)
       block header
-        +header-uikit()
+        +uikitHeader()
       block content
