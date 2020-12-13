@@ -1,20 +1,12 @@
 extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
-include ../../../components/UIkit/colors/colors
-include ../../../components/UIkit/type/type
+include ../../../components/modal/modal
 
 block variables
-  - var pageTitle = "Colors & Type"
-  - var contentClasses = "center"
-  include ../../../components/UIkit/colors/colors-data
-  //- - var uikitClass = "uikit-page--theme-light"
+  - var pageTitle = "Cards"
+  - var uikitClass = "uikit-page--theme-light"
 
 block content
-  h1.visually-hidden Colors and type
   +content()
-    +contentList()
-      +contentItem(contentClasses)
-        +colors(colorsList)
-      +contentItem(contentClasses)
-        +type()
+    +modalSignin()
