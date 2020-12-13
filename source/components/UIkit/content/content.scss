@@ -12,6 +12,16 @@
   padding-bottom: 140px;
 }
 
+.content__title {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 40px;
+
+  @media (max-width: $md) {
+    text-align: center;
+  }
+}
+
 .content__list {
   display: flex;
   flex-grow: 1;
