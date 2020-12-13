@@ -1,20 +1,16 @@
 extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
-include ../../../components/UIkit/colors/colors
-include ../../../components/UIkit/type/type
+include ../../../components/input/input
 
 block variables
-  - var pageTitle = "Form Elements"
+  - var pageTitle = "Form elements"
   - var contentClasses = ""
-  include ../../../components/UIkit/colors/colors-data
-  //- - var uikitClass = "uikit-page--theme-light"
 
 block content
-  h1.visually-hidden Form elements
   +content()
-    +contentList()
-      +contentItem(contentClasses)
-        +colors(colorsList)
-      +contentItem(contentClasses)
-        +type()
+    +input({
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      })
