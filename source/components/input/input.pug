@@ -1,0 +1,14 @@
+mixin input(options)
+  if !options
+    - options = {}
+
+  .input(class=options.classWrapper)
+    - if (options.type === "text" || options.type === "email" || options.type === "password")
+    input.input__element(
+      type=options.type
+      name=options.name
+      placeholder=options.placeholder
+      pattern=options.pattern
+      tabindex=options.tabindex
+      required=options.required
+      )
