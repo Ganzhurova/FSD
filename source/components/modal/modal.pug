@@ -1,0 +1,10 @@
+include ../signin/signin
+
+mixin modal(name)
+  section.modal(class=`modal__${name}`)
+    block
+
+
+mixin modalSignin()
+  +modal("signin")
+    +signin()
