@@ -1,0 +1,42 @@
+.pages-nav {
+  width: 50%;
+
+  background-color: inherit;
+
+  @media (max-width: $md) {
+    width: 100%;
+
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.pages-nav__title {
+  margin-bottom: 20px;
+  padding-left: 20px;
+
+  @media (max-width: $md) {
+    padding-left: 0;
+  }
+}
+
+.pages-nav__list {
+  list-style: none;
+}
+
+.pages-nav__item {
+  padding: 5px 10px 5px 40px;
+
+  @media (max-width: $md) {
+    padding: 5px;
+  }
+}
+
+.pages-nav__link {
+  display: block;
+
+  color: $text-color;
+}

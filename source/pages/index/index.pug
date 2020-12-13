@@ -1,1 +1,18 @@
 extends ../base/base-uikit.pug
+
+include ../../components/UIkit/content/content
+include ../../components/pages-nav/pages-nav
+
+block variables
+  - var pageTitle = "FSD"
+  - var h1 = "Обучающее задание на фронтенд разработчика"
+  - var uikitTitle = "UIkit pages"
+  - var webTitle = "Web pages"
+  include ../../components/pages-nav/pages-nav-data
+
+
+
+block content
+  +content()
+    +pagesNav(uikitTitle, uikitList)
+    +pagesNav(webTitle, webList)

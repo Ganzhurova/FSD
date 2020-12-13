@@ -1,0 +1,10 @@
+mixin pagesNavItem(item)
+  li.pages-nav__item
+    a.pages-nav__link(href=item.href)= item.title
+
+mixin pagesNav(pagesNavTitle, list)
+  .pages-nav
+    h2.pages-nav__title= pagesNavTitle
+    ul.pages-nav__list
+      for item in list
+        +pagesNavItem(item)
