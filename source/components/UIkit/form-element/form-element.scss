@@ -1,0 +1,25 @@
+.form-element {
+  margin-bottom: 17px;
+}
+
+.form-element__category {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: 18px;
+  margin-bottom: 5px;
+
+  text-transform: uppercase;
+}
+
+.form-element__title {
+  @include label-cta-text;
+}
+
+.form-element__state {
+  display: block;
+
+  color: $dark50;
+  font-size: 12px;
+  line-height: 14px;
+}
