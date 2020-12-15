@@ -6,7 +6,6 @@
 
 .content__wrapper {
   display: flex;
-  flex-grow: 1;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 140px;
@@ -20,17 +19,4 @@
   @media (max-width: $md) {
     text-align: center;
   }
-}
-
-.content__list {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  list-style: none;
-}
-
-.content__item {
-  display: block;
 }

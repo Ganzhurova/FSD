@@ -8,15 +8,13 @@ mixin content()
           h1.visually-hidden= pageTitle
         block
 
+mixin contentSection(options)
+  if !options
+    - options = {}
 
-mixin contentList()
-  ul.content__list
+  -
+    var classes = ''
+    classes += options.page ? "content__section--" + options.page : ''
+
+  .content__section(class= classes)
     block
-
-mixin contentItem(contentClasses)
-  if(contentClasses)
-    li.content__item(class=`content__item--${contentClasses}`)
-      block
-  else
-    li.content__item
-      block
