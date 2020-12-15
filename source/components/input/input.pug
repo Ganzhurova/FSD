@@ -2,7 +2,7 @@ mixin input(options)
   if !options
     - options = {}
 
-  .input(class=options.classWrapper)
+  .input()
     - if (options.type === "text" || options.type === "email" || options.type === "password")
     input.input__element(
       type=options.type
@@ -11,4 +11,6 @@ mixin input(options)
       pattern=options.pattern
       tabindex=options.tabindex
       required=options.required
+      value=options.value
+      autofocus=options.autofocus
       )
