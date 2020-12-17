@@ -1,0 +1,16 @@
+include ../input/input
+include ../button/button
+
+mixin fieldSubmit(mixClass)
+  .field-submit(class=mixClass)
+    +input({
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      borderNone: true,
+      })
+    +button({
+      type: "submit",
+      iconName: "arrow_forward",
+      gradientColor: true,
+      })

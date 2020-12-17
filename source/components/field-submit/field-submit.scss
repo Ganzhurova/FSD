@@ -1,0 +1,12 @@
+.field-submit {
+  display: flex;
+
+  border: 1px solid $dark25;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $dark50;
+    outline: none;
+  }
+}
