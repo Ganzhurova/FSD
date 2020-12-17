@@ -1,0 +1,20 @@
+mixin icon(name)
+  i.material-icons= name
+
+mixin button(options)
+  if !options
+    - options = {}
+
+  -
+    var classes = ""
+    classes += options.iconName ? " button--material-icons" : ""
+    classes += options.gradientColor ? " button--color-gradient" : ""
+    classes += options.mix ? " " + options.mix : ""
+
+  button.button(
+    class=classes
+    type=options.type
+    )
+    block
+    if(options.iconName)
+      +icon(options.iconName)
