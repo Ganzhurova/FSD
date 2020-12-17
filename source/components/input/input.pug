@@ -2,15 +2,20 @@ mixin input(options)
   if !options
     - options = {}
 
-  .input()
-    - if (options.type === "text" || options.type === "email" || options.type === "password")
-    input.input__element(
-      type=options.type
-      name=options.name
-      placeholder=options.placeholder
-      pattern=options.pattern
-      tabindex=options.tabindex
-      required=options.required
-      value=options.value
-      autofocus=options.autofocus
-      )
+  -
+    var classes = ""
+    classes += options.borderNone ? " input--border-none" : ""
+    classes += options.mix ? " " + options.mix : ""
+
+  - if (options.type === "text" || options.type === "email" || options.type === "password")
+  input.input(
+    class=classes
+    type=options.type
+    name=options.name
+    placeholder=options.placeholder
+    pattern=options.pattern
+    tabindex=options.tabindex
+    required=options.required
+    value=options.value
+    autofocus=options.autofocus
+    )
