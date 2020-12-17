@@ -1,7 +1,15 @@
-mixin formElement(title, state)
-  .form-element
-    .form-element__category
-      h2.form-element__title= title
-      span.form-element__state= state
+mixin formElement(options)
+  if !options
+    - options = {}
+
+  -
+    var classes = ""
+    classes += options.width ? " form-element--" + options.width : ""
+
+  .form-element(class=classes)
+    if (options.title)
+      .form-element__category
+        h2.form-element__title= options.title
+        span.form-element__state= options.state
     .form-element__content
       block
