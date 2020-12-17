@@ -1,5 +1,10 @@
 .form-element {
+  width: 320px;
   margin-bottom: 17px;
+
+  &--medium {
+    width: 266px;
+  }
 }
 
 .form-element__category {
