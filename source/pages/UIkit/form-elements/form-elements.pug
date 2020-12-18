@@ -35,9 +35,13 @@ block content
           placeholder: "Dropdown",
           })
       +formElement({title: "Masked text field"})
-        +input({dateMask: true})
+        +inputDateMask()
+        +inputDateMask({id: 154515})
       +formElement({
         title: "Subscription text field",
         width: "medium"
         })
-        +fieldSubmit()
+        +fieldSubmit({
+          type: "email",
+          placeholder: "Email"
+          })

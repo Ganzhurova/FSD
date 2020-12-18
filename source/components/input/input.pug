@@ -6,16 +6,12 @@ mixin input(options)
     var classes = ""
     classes += options.borderNone ? " input--border-none" : ""
     classes += options.mix ? " " + options.mix : ""
+    classes += options.maskName ? " js-input--" + options.maskName + "-mask" : ""
 
-
-  if (options.dateMask)
-    - options.type = "text"
-    - options.placeholder = "ДД.ММ.ГГГГ"
-    - options.pattern = "(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
-
-  - if (options.type === "text" || options.type === "email" || options.type === "password")
+  if (options.type === "text" || options.type === "email" || options.type === "password")
     input.input(
       class = classes
+      id = options.id
       type = options.type
       name = options.name
       placeholder = options.placeholder
@@ -25,3 +21,13 @@ mixin input(options)
       value = options.value
       autofocus = options.autofocus
       )
+
+mixin inputDateMask(options)
+  if !options
+    - options = {}
+
+  - options.maskName = "date"
+  - options.type = "text"
+  - options.placeholder = "ДД.ММ.ГГГГ"
+
+  +input(options)
