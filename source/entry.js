@@ -1,3 +1,4 @@
+import 'jquery';
 import 'normalize.css';
 import './theme/fonts.scss';
 import './theme/global.scss';
