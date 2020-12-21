@@ -37,3 +37,31 @@
   line-height: 24px;
   @include montserrat-regular;
 }
+
+@mixin input {
+  width: 100%;
+  padding: 13px 12px;
+
+  color: $dark75;
+  font-size: 14px;
+  line-height: 18px;
+
+  background-color: $white;
+
+  border: 1px solid $dark25;
+  border-radius: 4px;
+
+  @include montserrat-regular;
+
+  &::placeholder {
+    color: $dark25;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $dark50;
+    outline: none;
+  }
+}
