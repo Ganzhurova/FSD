@@ -1,3 +1,15 @@
+.text-field {
+  background-color: inherit;
+}
+
+.text-field__label {
+  display: block;
+  margin-bottom: 5px;
+
+  @include label-cta-text;
+}
+
 .text-field__input {
   @include input;
+  @include input-bordered;
 }
