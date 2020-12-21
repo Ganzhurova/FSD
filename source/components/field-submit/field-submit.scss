@@ -1,12 +1,18 @@
 .field-submit {
   display: flex;
+  @include input-bordered;
+}
 
-  border: 1px solid $dark25;
-  border-radius: 4px;
+.field-submit__input {
+  @include input;
+}
 
-  &:hover,
+.field-submit__button {
+  flex-shrink: 0;
+
+  @include gradient-color;
+
   &:focus {
-    border: 1px solid $dark50;
     outline: none;
   }
 }
