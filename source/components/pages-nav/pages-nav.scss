@@ -38,5 +38,5 @@
 .pages-nav__link {
   display: block;
 
-  color: $text-color;
+  @include title-element;
 }
