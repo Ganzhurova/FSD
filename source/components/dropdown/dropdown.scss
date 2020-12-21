@@ -1,0 +1,37 @@
+.dropdown {
+  background-color: inherit;
+}
+
+.dropdown__label {
+  display: block;
+  margin-bottom: 5px;
+
+  @include label-cta-text;
+}
+
+.dropdown__field {
+  display: flex;
+  @include input-bordered;
+}
+
+.dropdown__input {
+  @include input;
+
+  &::placeholder {
+    color: $dark75;
+  }
+}
+
+.dropdown__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 42px;
+
+  color: $dark50;
+
+  background-color: $white;
+  border-radius: 4px;
+}

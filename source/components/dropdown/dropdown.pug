@@ -1,0 +1,20 @@
+include ../input/input
+
+mixin dropdown(options)
+  if !options
+    - options = {}
+
+  - attributes.class = "dropdown__input"
+  - attributes.readonly = true
+
+  if options.guestsDropdown
+    - attributes.type = "text"
+    - attributes.placeholder = "Сколько гостей"
+
+  .dropdown
+    if options.label
+      label.dropdown__label(for=options.id)= options.label
+    .dropdown__field
+      +input(options)&attributes(attributes)
+      .dropdown__icon
+        i.material-icons= "expand_more"
