@@ -1,0 +1,11 @@
+include ../input/input
+
+mixin text-field(options)
+  if !options
+    - options = {}
+
+  .text-field
+    if options.label
+      label.text-field__label(for=options.id)= options.label
+    - attributes.class = "text-field__input"
+    +input(options)&attributes(attributes)
