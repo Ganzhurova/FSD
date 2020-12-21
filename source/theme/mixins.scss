@@ -1,13 +1,9 @@
 @mixin montserrat-regular {
-  font-weight: 400;
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-style: normal;
+  font-family: "montserratregular", "Arial", sans-serif;
 }
 
 @mixin montserrat-bold {
-  font-weight: 700;
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-style: normal;
+  font-family: "montserratbold", "Arial", sans-serif;
 }
 
 @mixin title-section {
@@ -24,40 +20,54 @@
   @include montserrat-bold;
 }
 
-@mixin label-cta-text {
+@mixin label-cta-text($line-height: 15px) {
   color: $title-color;
   font-size: 12px;
-  line-height: 14px;
+  line-height: $line-height;
+  text-transform: uppercase;
   @include montserrat-bold;
 }
 
-@mixin base-text {
+@mixin base-text($line-height: 24px) {
   color: $text-color;
   font-size: 14px;
-  line-height: 24px;
+  line-height: $line-height;
   @include montserrat-regular;
+}
+
+@mixin gradient-color {
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin input {
   width: 100%;
-  padding: 13px 12px;
-
-  color: $dark75;
-  font-size: 14px;
-  line-height: 18px;
+  padding: 12px;
 
   background-color: $white;
+  border: 0;
 
-  border: 1px solid $dark25;
   border-radius: 4px;
 
-  @include montserrat-regular;
+  @include base-text($line-height: 18px);
 
   &::placeholder {
     color: $dark25;
     font-size: 14px;
     line-height: 18px;
   }
+
+  &:hover,
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+}
+
+@mixin input-bordered {
+  border: 1px solid $dark25;
+  border-radius: 4px;
 
   &:hover,
   &:focus {
