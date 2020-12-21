@@ -3,6 +3,7 @@ extends ../../base/base-uikit.pug
 include ../../../components/UIkit/content/content
 include ../../../components/UIkit/form-element/form-element
 include ../../../components/input/input
+include ../../../components/text-field/text-field
 include ../../../components/field-submit/field-submit
 
 block variables
@@ -11,37 +12,46 @@ block variables
 block content
   +content()
     +contentSection({page: "form-elements"})
-      +formElement({
-        title: "Text Field",
-        state: "Default"
-        })
-        +input({
-          type: "email",
-          placeholder: "Email",
-          })
-      +formElement({
-        title: "Text Field",
-        state: "Hover / Focus"
-        })
-        +input({
-          type: "text",
-          placeholder: "Text",
-          value: "This is pretty awesome",
-          autofocus: "autofocus"
-          })
-      +formElement({title: "Dropdown"})
-        +input({
-          type: "email",
-          placeholder: "Dropdown",
-          })
-      +formElement({title: "Masked text field"})
-        +inputDateMask()
-        +inputDateMask({id: 154515})
-      +formElement({
-        title: "Subscription text field",
-        width: "medium"
-        })
-        +fieldSubmit({
-          type: "email",
-          placeholder: "Email"
-          })
+      +formElement({title: "Text Field", state: "Default"})
+        +text-field({
+          id: "email",
+          label: "Email"
+          })(
+          type = "email"
+          placeholder = "Email"
+          )
+        //- +input({
+        //-   dateMask: true
+        //-   })(
+        //-     type = "email"
+        //-     autofocus
+        //-     required
+        //-     placeholder = "fhgjf"
+        //-     class = "dfhdjfhjk"
+        //-     )
+      //- +formElement({
+      //-   title: "Text Field",
+      //-   state: "Hover / Focus"
+      //-   })
+      //-   +input({
+      //-     type: "text",
+      //-     placeholder: "Text",
+      //-     value: "This is pretty awesome",
+      //-     autofocus: "autofocus"
+      //-     })
+      //- +formElement({title: "Dropdown"})
+      //-   +input({
+      //-     type: "email",
+      //-     placeholder: "Dropdown",
+      //-     })
+      //- +formElement({title: "Masked text field"})
+      //-   +inputDateMask()
+      //-   +inputDateMask({id: 154515})
+      //- +formElement({
+      //-   title: "Subscription text field",
+      //-   width: "medium"
+      //-   })
+      //-   +fieldSubmit({
+      //-     type: "email",
+      //-     placeholder: "Email"
+      //-     })
