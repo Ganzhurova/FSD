@@ -5,6 +5,7 @@
 .text-field__label {
   display: block;
   margin-bottom: 5px;
+  padding-top: 1px;
 
   @include label-cta-text;
 }

@@ -20,10 +20,10 @@
   @include montserrat-bold;
 }
 
-@mixin label-cta-text($line-height: 15px) {
+@mixin label-cta-text {
   color: $title-color;
   font-size: 12px;
-  line-height: $line-height;
+  line-height: 14px;
   text-transform: uppercase;
   @include montserrat-bold;
 }
@@ -43,7 +43,7 @@
 
 @mixin input {
   width: 100%;
-  padding: 12px;
+  padding: 12px 14px;
 
   background-color: $white;
   border: 0;
