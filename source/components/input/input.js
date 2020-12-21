@@ -1,5 +1,3 @@
-import './input.scss';
-
 import Inputmask from 'inputmask';
 
 const dateMask = {
@@ -13,4 +11,4 @@ function addMask(selector, maskConfig) {
   im.mask(document.querySelectorAll(selector));
 }
 
-addMask('.js-input--date-mask', dateMask);
+addMask('.js-input-date-mask', dateMask);

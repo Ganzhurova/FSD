@@ -2,32 +2,14 @@ mixin input(options)
   if !options
     - options = {}
 
-  -
-    var classes = ""
-    classes += options.borderNone ? " input--border-none" : ""
-    classes += options.mix ? " " + options.mix : ""
-    classes += options.maskName ? " js-input--" + options.maskName + "-mask" : ""
+  - let classes = []
 
-  if (options.type === "text" || options.type === "email" || options.type === "password")
-    input.input(
-      class = classes
-      id = options.id
-      type = options.type
-      name = options.name
-      placeholder = options.placeholder
-      pattern = options.pattern
-      tabindex = options.tabindex
-      required = options.required
-      value = options.value
-      autofocus = options.autofocus
-      )
+  if options.dateMask
+    - classes.push("js-input-date-mask")
+    - attributes.type = "text"
+    - attributes.placeholder = "ДД.ММ.ГГГГ"
 
-mixin inputDateMask(options)
-  if !options
-    - options = {}
-
-  - options.maskName = "date"
-  - options.type = "text"
-  - options.placeholder = "ДД.ММ.ГГГГ"
-
-  +input(options)
+  input(
+    class = classes
+    id = options.id
+    )&attributes(attributes)
