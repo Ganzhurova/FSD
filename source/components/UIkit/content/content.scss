@@ -16,7 +16,15 @@
   margin: 0;
   margin-bottom: 40px;
 
+  color: $title-color;
+
+  @include montserrat-bold;
+
   @media (max-width: $md) {
     text-align: center;
   }
+}
+
+.content__section--form-elements {
+  padding-top: 3px;
 }
