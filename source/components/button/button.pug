@@ -1,15 +1,18 @@
-mixin icon(name)
+mixin buttonIcon(name)
   i.material-icons= name
 
 mixin button(options)
   if !options
     - options = {}
 
-  -
-    var classes = ""
-    classes += options.iconName ? " button--material-icons" : ""
-    classes += options.gradientColor ? " button--color-gradient" : ""
-    classes += options.mix ? " " + options.mix : ""
+  - let classes = []
+
+    if options.iconName
+      - classes.push("button--material-icons")
+
+    if options.mix
+      - classes.push(options.mix)
+
 
   button.button(
     class=classes
@@ -17,4 +20,4 @@ mixin button(options)
     )
     block
     if(options.iconName)
-      +icon(options.iconName)
+      +buttonIcon(options.iconName)
