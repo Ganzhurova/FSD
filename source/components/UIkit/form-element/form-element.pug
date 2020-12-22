@@ -5,6 +5,8 @@ mixin formElement(options)
   -
     var classes = ""
     classes += options.width ? " form-element--" + options.width : ""
+    classes += options.mb ? " form-element--" + options.mb : ""
+    classes += options.mix ? " form-element--" + options.mix : ""
 
   .form-element(class=classes)
     if (options.title)

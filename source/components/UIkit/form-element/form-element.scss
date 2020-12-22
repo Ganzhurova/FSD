@@ -1,9 +1,17 @@
 .form-element {
   width: 320px;
-  margin-bottom: 17px;
+  margin-bottom: 20px;
 
   &--medium {
     width: 266px;
+  }
+
+  &--margin-bottom-23 {
+    margin-bottom: 23px;
+  }
+
+  &--margin-bottom-40 {
+    margin-bottom: 40px;
   }
 }
 
@@ -11,8 +19,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  min-height: 18px;
   margin-bottom: 5px;
+  padding-top: 1px;
 
   text-transform: uppercase;
 }
@@ -27,4 +35,15 @@
   color: $dark50;
   font-size: 12px;
   line-height: 14px;
+}
+
+.form-element--date-dropdown {
+  .form-element__content {
+    display: flex;
+    justify-content: space-between;
+
+    & .dropdown {
+      width: 150px;
+    }
+  }
 }
