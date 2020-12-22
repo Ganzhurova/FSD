@@ -18,6 +18,10 @@
 .dropdown__input {
   @include input;
 
+  & {
+    padding-right: 0;
+  }
+
   &::placeholder {
     color: $dark75;
   }
