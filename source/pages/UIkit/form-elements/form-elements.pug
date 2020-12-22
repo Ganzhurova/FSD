@@ -24,20 +24,30 @@ block content
           value = "This is pretty awesome"
           autofocus
           )
-      +formElement()
+      +formElement({mb: "margin-bottom-23"})
         +dropdown({
           label: "Dropdown",
           guestsDropdown: true
           })
-      +formElement()
+      +formElement({mb: "margin-bottom-40"})
         +text-field({
           label: "Masked text field",
           dateMask: true
           })
-      +formElement({
-        title: "Subscription text field",
-        width: "medium"
-        })
+      +formElement({mb: "margin-bottom-40", mix: "date-dropdown"})
+        +dropdown({
+          label: "Date Dropdown",
+          dateMask: true
+          })
+        +dropdown({
+          label: "Date Dropdown",
+          dateMask: true
+          })(value = "19.08.2019")
+      +formElement({mb: "margin-bottom-40", width: "medium"})
+        +dropdown({
+          label: "Filter date dropdown",
+          })
+      +formElement({title: "Subscription text field", width: "medium"})
         +fieldSubmit()(
           type = "email"
           placeholder = "Email"
