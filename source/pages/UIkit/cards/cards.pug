@@ -1,6 +1,7 @@
 extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
+include ../../../components/datepicker/datepicker
 include ../../../components/modal/modal
 
 block variables
@@ -9,4 +10,9 @@ block variables
 
 block content
   +content()
-    +modalSignin()
+    +contentSection({page: "cards"})
+    +contentSection({page: "cards"})
+      +datepickerInput
+    +contentSection({page: "cards"})
+      +datepicker()
+    //- +modalSignin()
