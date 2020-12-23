@@ -16,7 +16,7 @@
 @mixin title-element {
   color: $title-color;
   font-size: 19px;
-  line-height: 22.8px;
+  line-height: 23px;
   @include montserrat-bold;
 }
 
