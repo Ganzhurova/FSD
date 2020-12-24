@@ -183,3 +183,26 @@
     color: $dark25;
   }
 }
+
+.datepicker--buttons {
+  justify-content: space-between;
+  padding: 0 20px 20px;
+
+  border: 0;
+}
+
+.datepicker--button {
+  flex-grow: 0;
+
+  height: auto;
+
+  color: $primary-color;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:last-child {
+    order: -1;
+  }
+}
