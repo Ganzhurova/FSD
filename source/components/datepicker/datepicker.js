@@ -10,4 +10,22 @@ $('.datepicker-here').datepicker({
   range: true,
   multipleDatesSeparator: ' - ',
   clearButton: true,
+  todayButton: true,
+});
+
+const uikitCalendar = $('.uikit-calendar')
+  .datepicker()
+  .data('datepicker');
+
+uikitCalendar.date = new Date(2019, 7, 8);
+
+uikitCalendar.update({
+  onRenderCell(date, cellType) {
+    if (cellType === 'day' && date.getDate() === 8) {
+      return {
+        classes: '-current-',
+      };
+    }
+    return false;
+  },
 });
