@@ -1,64 +1,136 @@
-.datepicker {
-  width: 318px;
+.datepickers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-  border-color: $dark25;
+@media print {
+  .datepickers-container {
+    display: none;
+  }
+}
+
+.datepicker {
+  position: absolute;
+  left: -100000px;
+  z-index: 100;
+
+  width: 320px;
+  padding: 20px;
+
+  background-color: $white;
+
+  border: 1px solid $dark25;
+  border-radius: 4px;
   box-shadow: 0px 10px 20px $dark05;
-  @include label-cta-text;
+  opacity: 0;
+
+  transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
+}
+
+.datepicker.-from-top- {
+  transform: translateY(-8px);
+}
+.datepicker.-from-right- {
+  transform: translateX(8px);
+}
+.datepicker.-from-bottom- {
+  transform: translateY(8px);
+}
+.datepicker.-from-left- {
+  transform: translateX(-8px);
+}
+.datepicker.active {
+  transform: translate(0);
+  opacity: 1;
+
+  transition: opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
 }
 
 .datepicker-inline .datepicker {
-  border-color: $dark25;
-  box-shadow: 0px 10px 20px $dark05;
-}
+  position: static;
+  right: auto;
+  left: auto;
 
-.datepicker--content {
-  padding: 20px;
+  transform: none;
+  opacity: 1;
 }
 
 .datepicker--pointer {
   display: none;
 }
 
-.datepicker--nav {
-  padding: 20px 20px 9px;
+.datepicker--content {
+  margin-bottom: 20px;
+}
 
-  border-bottom: 0;
+.datepicker--body {
+  display: none;
+}
+.datepicker--body.active {
+  display: block;
+}
+
+.datepicker--nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .datepicker--nav-action {
-  width: auto;
-
+  cursor: pointer;
   & i {
+    display: block;
+
     color: $primary-color;
   }
 }
 
 .datepicker--nav-title {
-  text-transform: none;
+  cursor: pointer;
   @include title-element;
 }
 
 .datepicker--days-names {
-  min-height: 40px;
-  margin: 0;
+  display: flex;
+
+  @include label-cta-text;
 }
 
 .datepicker--day-name {
+  display: flex;
+
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+
   color: $primary-color;
-  font-size: inherit;
   text-transform: none;
 }
 
+.datepicker--cells {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .datepicker--cell {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 40px;
 
   color: $dark50;
 
-  @include montserrat-regular;
-
-  &:hover {
-    border: 0;
-  }
+  cursor: pointer;
 
   &.-current- {
     color: $white;
@@ -110,6 +182,8 @@
   }
 
   &.-selected- {
+    color: $white;
+
     background: $primary-gradient;
     border-radius: 50%;
   }
@@ -178,25 +252,34 @@
   }
 }
 
+.datepicker--cell.-disabled- {
+  cursor: default;
+
+  &.-focus- {
+    color: $dark50;
+
+    background: $white;
+  }
+}
+
 .datepicker--cell-day {
+  width: 14.28571%;
+
   &.-other-month- {
     color: $dark25;
   }
 }
 
 .datepicker--buttons {
+  display: flex;
   justify-content: space-between;
-  padding: 0 20px 20px;
-
-  border: 0;
+  @include label-cta-text;
 }
 
 .datepicker--button {
-  flex-grow: 0;
-
-  height: auto;
-
   color: $primary-color;
+
+  cursor: pointer;
 
   &:hover {
     color: $green;
