@@ -2,7 +2,6 @@ import 'normalize.css';
 import './theme/fonts.scss';
 import './theme/global.scss';
 
-import 'air-datepicker/dist/css/datepicker.min.css';
 import 'air-datepicker';
 
 function requireAll(requireContext) {
