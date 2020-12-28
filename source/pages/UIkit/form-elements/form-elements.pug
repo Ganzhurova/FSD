@@ -27,27 +27,28 @@ block content
       +formElement({mb: "margin-bottom-23"})
         +dropdown({
           label: "Dropdown",
-          guestsDropdown: true
+          isDropdownGuests: true
           })
       +formElement({mb: "margin-bottom-40"})
         +text-field({
           label: "Masked text field",
-          dateMask: true
+          id: "mask",
+          isDateMask: true
           })
       +formElement({mb: "margin-bottom-40", mix: "date-dropdown"})
         +dropdown({
           label: "Date Dropdown",
-          dateMask: true
+          isDropdownDate: true,
           })
         +dropdown({
           label: "Date Dropdown",
-          dateMask: true
+          isDropdownDate: true,
           })(value = "19.08.2019")
-      +formElement({mb: "margin-bottom-40", width: "medium"})
+      +formElement({mb: "margin-bottom-40"})
         +dropdown({
           label: "Filter date dropdown",
           })
-      +formElement({title: "Subscription text field", width: "medium"})
+      +formElement({title: "Subscription text field"})
         +fieldSubmit()(
           type = "email"
           placeholder = "Email"
