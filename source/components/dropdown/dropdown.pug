@@ -4,21 +4,24 @@ mixin dropdown(options)
   if !options
     - options = {}
 
-  - attributes.class = "dropdown__input"
-
   - let classes = []
 
-  if options.isDropdownGuests
+  if options.isGuestsDropdown
     - attributes.type = "text"
     - attributes.placeholder = "Сколько гостей"
 
-  if options.isDropdownDate
+  if options.isDateDropdown
     - options.isDateMask = true
     - options.isDatepicker = true
     - classes.push("dropdown--date")
+
+  if options.isFilterDateDropdown
+    - options.isDatepickerFilter = true
+    - classes.push("dropdown--filter-date")
 
 
   .dropdown(class=classes)
     if options.label
       label.dropdown__label(for=options.id)= options.label
+    - attributes.class = "dropdown__input"
     +input(options)&attributes(attributes)
