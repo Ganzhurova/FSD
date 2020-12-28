@@ -2,8 +2,6 @@ import 'normalize.css';
 import './theme/fonts.scss';
 import './theme/global.scss';
 
-import 'air-datepicker';
-
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
