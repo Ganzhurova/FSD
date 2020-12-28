@@ -4,10 +4,14 @@ mixin input(options)
 
   - let classes = []
 
-  if options.dateMask
+  if options.isDateMask
     - classes.push("js-input-date-mask")
     - attributes.type = "text"
     - attributes.placeholder = "ДД.ММ.ГГГГ"
+
+  if options.isDatepicker
+    - classes.push("datepicker-here")
+    - attributes.type = "text"
 
   input(
     class = classes
