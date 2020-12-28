@@ -1,0 +1,18 @@
+include ../input/input
+include ../button/button
+
+mixin subscription()
+  form.subscription
+    .subscription__field
+      +input()(
+        class = "subscription__input"
+        type = "email"
+        placeholder = "Email"
+        required
+        )
+      +button({
+        type: "submit",
+        iconName: "arrow_forward",
+        iconDesc: "Подписаться",
+        mix: "subscription__button"
+        })

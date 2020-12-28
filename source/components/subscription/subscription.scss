@@ -1,0 +1,16 @@
+.subscription {
+  width: 267px;
+}
+
+.subscription__field {
+  display: flex;
+  @include input-bordered;
+}
+
+.subscription__input {
+  @include input;
+}
+
+.subscription__button {
+  @include gradient-color;
+}
