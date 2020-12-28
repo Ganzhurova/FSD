@@ -3,7 +3,7 @@ import Inputmask from 'inputmask';
 const dateMask = {
   alias: 'datetime',
   inputFormat: 'dd.mm.yyyy',
-  placeholder: '__.__.____',
+  placeholder: '_',
 };
 
 function addMask(selector, maskConfig) {
