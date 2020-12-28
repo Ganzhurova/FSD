@@ -13,7 +13,15 @@ mixin input(options)
     - classes.push("datepicker-here")
     - attributes.type = "text"
 
+  if options.isDatepickerFilter
+    - classes.push("datepicker-here")
+    - attributes.type = "text"
+    - options.dataRange = "true"
+    - options.dataDateFormat = "dd M"
+
   input(
     class = classes
     id = options.id
+    data-range = options.dataRange
+    data-date-format = options.dataDateFormat
     )&attributes(attributes)
