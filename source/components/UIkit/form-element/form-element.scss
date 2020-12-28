@@ -1,10 +1,5 @@
 .form-element {
-  width: 320px;
   margin-bottom: 20px;
-
-  &--medium {
-    width: 266px;
-  }
 
   &--margin-bottom-23 {
     margin-bottom: 23px;
@@ -41,9 +36,5 @@
   .form-element__content {
     display: flex;
     justify-content: space-between;
-
-    & .dropdown {
-      width: 150px;
-    }
   }
 }
