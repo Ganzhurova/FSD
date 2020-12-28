@@ -1,5 +1,11 @@
 .dropdown {
+  width: 320px;
+
   background-color: inherit;
+
+  &--date {
+    width: 150px;
+  }
 }
 
 .dropdown__label {
@@ -10,16 +16,15 @@
   @include label-cta-text;
 }
 
-.dropdown__field {
-  display: flex;
-  @include input-bordered;
-}
-
 .dropdown__input {
+  background-image: url("./img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: top 17px right 15px;
   @include input;
+  @include input-bordered;
 
   & {
-    padding-right: 0;
+    padding-right: 44px;
   }
 
   &::placeholder {

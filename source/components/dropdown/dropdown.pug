@@ -6,14 +6,19 @@ mixin dropdown(options)
 
   - attributes.class = "dropdown__input"
 
-  if options.guestsDropdown
+  - let classes = []
+
+  if options.isDropdownGuests
     - attributes.type = "text"
     - attributes.placeholder = "Сколько гостей"
 
-  .dropdown
+  if options.isDropdownDate
+    - options.isDateMask = true
+    - options.isDatepicker = true
+    - classes.push("dropdown--date")
+
+
+  .dropdown(class=classes)
     if options.label
       label.dropdown__label(for=options.id)= options.label
-    .dropdown__field
-      +input(options)&attributes(attributes)
-      .dropdown__icon
-        i.material-icons= "expand_more"
+    +input(options)&attributes(attributes)
