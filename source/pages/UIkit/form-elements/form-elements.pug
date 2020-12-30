@@ -22,7 +22,7 @@ block content
           type = "text"
           placeholder = "Text"
           value = "This is pretty awesome"
-          autofocus
+
           )
       +formElement({mb: "margin-bottom-23"})
         +dropdown({
@@ -49,5 +49,9 @@ block content
           label: "Filter date dropdown",
           isFilterDateDropdown: true,
           })
-      +formElement({title: "Subscription text field"})
+      +formElement({title: "Subscription text field", mb: "margin-bottom-101"})
         +subscription
+      +formElement({title: "Dropdown", state: "Default"})
+        +dropdown({
+          isRoomsDropdown: true,
+          })
