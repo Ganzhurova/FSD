@@ -1,4 +1,5 @@
 include ../input/input
+include ../button/button
 
 mixin dropdown(options)
   if !options
@@ -9,6 +10,11 @@ mixin dropdown(options)
   if options.isGuestsDropdown
     - attributes.type = "text"
     - attributes.placeholder = "Сколько гостей"
+
+  if options.isRoomsDropdown
+    - classes.push("dropdown--rooms")
+    - attributes.type = "text"
+    - options.isDropdownSelect = true
 
   if options.isDateDropdown
     - options.isDateMask = true
@@ -25,3 +31,42 @@ mixin dropdown(options)
       label.dropdown__label(for=options.id)= options.label
     - attributes.class = "dropdown__input"
     +input(options)&attributes(attributes)
+    if options.isDropdownSelect
+      +dropdownSelect()
+
+
+mixin dropdownSelect()
+  .dropdown__select
+    ul.dropdown__list
+      +dropdownItem()
+    .dropdown__nav
+      +button({
+        mix: "dropdown__nav-button",
+        type: "button",
+        desc: "Очистить"
+        })
+      +button({
+        mix: "dropdown__nav-button",
+        type: "button",
+        desc: "Применить"
+        })
+
+mixin dropdownItem()
+  li.dropdown__item
+    span.dropdown__category Спальни
+    .dropdown__number
+      +button({
+        mix: "dropdown__number-button dropdown__number-button--minus",
+        type: "button"
+        })
+      +input()(
+        class = "dropdown__number-input"
+        type = "number"
+        disabled = true
+        maxlength = 2
+        value = "2"
+        )
+      +button({
+        mix: "dropdown__number-button dropdown__number-button--plus",
+        type: "button"
+        })

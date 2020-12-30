@@ -7,7 +7,8 @@
     width: 150px;
   }
 
-  &--filter-date {
+  &--filter-date,
+  &--rooms {
     width: 266px;
   }
 }
@@ -36,16 +37,93 @@
   }
 }
 
-.dropdown__icon {
+.dropdown__select {
+  padding: 7px 7px 0 15px;
+
+  background-color: $white;
+  border: 1px solid $dark50;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown__list {
+  list-style: none;
+  background-color: inherit;
+}
+
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.dropdown__category {
+  display: block;
+  @include label-cta-text;
+}
+
+.dropdown__number {
+  display: flex;
+}
+
+.dropdown__number-button {
+  position: relative;
+
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 42px;
 
-  color: $dark50;
+  width: 30px;
+  height: 30px;
 
-  background-color: $white;
-  border-radius: 4px;
+  background-color: inherit;
+
+  border: 1px solid $dark25;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $dark50;
+    outline: none;
+  }
+
+  &::before {
+    position: absolute;
+
+    color: $dark50;
+
+    font-size: 18px;
+  }
+
+  &--minus::before {
+    content: "-";
+  }
+
+  &--plus::before {
+    content: "+";
+  }
+}
+
+.dropdown__number-input {
+  width: 32px;
+
+  text-align: center;
+
+  background-color: inherit;
+  border: 0;
+  @include label-cta-text;
+}
+
+.dropdown__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 13px;
+}
+
+.dropdown__nav-button {
+  @include label-cta-text;
+  & {
+    color: $primary-color;
+  }
 }
