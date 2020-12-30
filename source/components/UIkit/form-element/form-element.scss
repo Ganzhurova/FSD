@@ -8,11 +8,14 @@
   &--margin-bottom-40 {
     margin-bottom: 40px;
   }
+
+  &--margin-bottom-101 {
+    margin-bottom: 101px;
+  }
 }
 
 .form-element__category {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 5px;
   padding-top: 1px;
@@ -36,5 +39,6 @@
   .form-element__content {
     display: flex;
     justify-content: space-between;
+    width: 320px;
   }
 }
