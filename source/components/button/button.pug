@@ -1,6 +1,3 @@
-mixin buttonIcon(name)
-  i.material-icons= name
-
 mixin button(options)
   if !options
     - options = {}
@@ -8,19 +5,23 @@ mixin button(options)
   - let classes = []
 
     if options.iconName
-      - classes.push("button--material-icon")
+      - classes.push("button--icon")
+
+    if options.buttonMode
+      -classes.push(`button--${options.buttonMode}`)
 
     if options.mix
       - classes.push(options.mix)
 
+  if (options.link)
+    a.button(class = classes href = options.link)= options.desc
+      +buttonIcon(options.iconName, options.hiddenDesc)
+  else
+    button.button(class = classes type = options.type)= options.desc
+      +buttonIcon(options.iconName, options.hiddenDesc)
 
-  button.button(
-    class=classes
-    type=options.type
-    )
-    if(options.hiddenDesc)
-      span.visually-hidden= options.hiddenDesc
-    else
-     = options.desc
-    if(options.iconName)
-      +buttonIcon(options.iconName)
+
+mixin buttonIcon(name, desc)
+  if (name)
+    span.visually-hidden= desc
+    i.material-icons= name

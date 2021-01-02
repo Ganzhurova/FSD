@@ -1,18 +1,96 @@
 .button {
   display: block;
-
   padding: 0;
 
   background-color: transparent;
 
   border: 0;
+
   cursor: pointer;
+
+  @include label-cta-text;
 }
 
-.button--material-icons {
+.button--icon {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
 
-  color: $dark75;
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button--colored {
+  padding: 15px 20px;
+
+  color: $white;
+
+  background: $primary-gradient;
+  border-radius: 22px;
+
+  &:hover,
+  &:focus {
+    background: $primary-translucent-gradient;
+    outline: none;
+  }
+}
+
+.button--bordered {
+  padding: 13px 18px;
+
+  color: $primary-color;
+
+  background-image: linear-gradient($white, $white), $primary-gradient;
+
+  -webkit-background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 22px;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient($white, $white),
+      $primary-translucent-gradient;
+    outline: none;
+  }
+}
+
+.button--text {
+  color: $primary-color;
+
+  &:hover,
+  &:focus {
+    color: $dark50;
+
+    outline: none;
+  }
+}
+
+.button--with-arrow {
+  position: relative;
+
+  width: 320px;
+  padding: 15px 20px;
+
+  color: $white;
+
+  background: $primary-gradient;
+  border-radius: 22px;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    transform: translateY(-50%);
+
+    content: "arrow_forward";
+    @include material-icons;
+  }
+
+  &:hover,
+  &:focus {
+    background: $primary-translucent-gradient;
+    outline: none;
+  }
 }
