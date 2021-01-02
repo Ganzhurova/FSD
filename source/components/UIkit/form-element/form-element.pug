@@ -7,9 +7,13 @@ mixin formElement(options)
     classes += options.mb ? " form-element--" + options.mb : ""
     classes += options.mix ? " form-element--" + options.mix : ""
 
+  -
+    var categoryClasses = ""
+    categoryClasses += options.categoryMb ? " form-element__category--" + options.categoryMb : ""
+
   .form-element(class=classes)
     if (options.title)
-      .form-element__category
+      .form-element__category(class=categoryClasses)
         h2.form-element__title= options.title
         span.form-element__state= options.state
     .form-element__content

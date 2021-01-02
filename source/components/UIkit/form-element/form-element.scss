@@ -21,6 +21,10 @@
   padding-top: 1px;
 
   text-transform: uppercase;
+
+  &--margin-bottom-16 {
+    margin-bottom: 16px;
+  }
 }
 
 .form-element__title {
@@ -40,5 +44,13 @@
     display: flex;
     justify-content: space-between;
     width: 320px;
+  }
+}
+
+.form-element--buttons {
+  .form-element__content button {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
 }
