@@ -61,12 +61,6 @@
   @include montserrat-regular;
 }
 
-@mixin gradient-color {
-  background: $primary-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @mixin input {
   width: 100%;
   padding: 12px 14px;
