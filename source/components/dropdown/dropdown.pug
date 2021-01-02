@@ -55,10 +55,7 @@ mixin dropdownItem()
   li.dropdown__item
     span.dropdown__category Спальни
     .dropdown__number
-      +button({
-        mix: "dropdown__number-button dropdown__number-button--minus",
-        type: "button"
-        })
+      button.dropdown__number-button.dropdown__number-button--minus(type="button")
       +input()(
         class = "dropdown__number-input"
         type = "number"
@@ -66,7 +63,4 @@ mixin dropdownItem()
         maxlength = 2
         value = "2"
         )
-      +button({
-        mix: "dropdown__number-button dropdown__number-button--plus",
-        type: "button"
-        })
+      button.dropdown__number-button.dropdown__number-button--plus(type="button")
