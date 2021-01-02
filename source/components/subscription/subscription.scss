@@ -10,7 +10,3 @@
 .subscription__input {
   @include input;
 }
-
-.subscription__button {
-  @include gradient-color;
-}
