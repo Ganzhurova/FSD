@@ -20,6 +20,11 @@ $green: #6fcf97;
 
 $primary-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 $secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$primary-translucent-gradient: linear-gradient(
+  180deg,
+  rgba(188, 156, 255, 0.5) 0%,
+  rgba(139, 164, 249, 0.5) 100%
+);
 
 $primary-color: $purple;
 
