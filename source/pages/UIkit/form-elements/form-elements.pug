@@ -50,31 +50,31 @@ block content
           isFilterDateDropdown: true,
           })
       +formElement({title: "Subscription text field", mb: "margin-bottom-101"})
-        +subscription
+        +subscription()
       +formElement({title: "Dropdown", state: "Default"})
         +dropdown({
-          isRoomsDropdown: true,
+          isComfortDropdown: true,
           })
     +contentSection({page: "form-elements"})
     +contentSection({page: "form-elements"})
       +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})
         +button({
           type: "button",
-          buttonMode: "colored",
+          buttonMod: "colored",
           desc: "Click me"
           })
         +button({
           type: "button",
-          buttonMode: "bordered",
+          buttonMod: "bordered",
           desc: "Click me"
           })
         +button({
           type: "button",
-          buttonMode: "text",
+          buttonMod: "text",
           desc: "Click me"
           })
         +button({
           type: "button",
-          buttonMode: "with-arrow",
+          buttonMod: "with-arrow",
           desc: "Перейти к оплате"
           })
