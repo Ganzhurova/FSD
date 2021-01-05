@@ -1,7 +1,10 @@
 include ../input/input
 include ../button/button
 
+
 mixin dropdown(options)
+  include ./dropdown-data
+
   if !options
     - options = {}
 
@@ -11,10 +14,11 @@ mixin dropdown(options)
     - attributes.type = "text"
     - attributes.placeholder = "Сколько гостей"
 
-  if options.isRoomsDropdown
-    - classes.push("dropdown--rooms")
+  if options.isComfortDropdown
     - attributes.type = "text"
     - options.isDropdownSelect = true
+    - options.list = locals.comfortList
+    - classes.push("dropdown--comfort")
 
   if options.isDateDropdown
     - options.isDateMask = true
@@ -32,28 +36,29 @@ mixin dropdown(options)
     - attributes.class = "dropdown__input"
     +input(options)&attributes(attributes)
     if options.isDropdownSelect
-      +dropdownSelect()
+      +dropdownSelect(options.list)
 
 
-mixin dropdownSelect()
-  .dropdown__select
+mixin dropdownSelect(list)
+  .dropdown__select.js-select
     ul.dropdown__list
-      +dropdownItem()
+      for item in list
+        +dropdownItem(item)
     .dropdown__nav
       +button({
-        mix: "dropdown__nav-button",
+        buttonMod: "text",
         type: "button",
         desc: "Очистить"
         })
       +button({
-        mix: "dropdown__nav-button",
+        buttonMod: "text",
         type: "button",
         desc: "Применить"
         })
 
-mixin dropdownItem()
+mixin dropdownItem(item)
   li.dropdown__item
-    span.dropdown__category Спальни
+    span.dropdown__option= item.option
     .dropdown__number
       button.dropdown__number-button.dropdown__number-button--minus(type="button")
       +input()(
@@ -61,6 +66,6 @@ mixin dropdownItem()
         type = "number"
         disabled = true
         maxlength = 2
-        value = "2"
+        value = item.defaultVal
         )
       button.dropdown__number-button.dropdown__number-button--plus(type="button")

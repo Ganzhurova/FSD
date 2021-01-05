@@ -7,9 +7,16 @@
     width: 150px;
   }
 
-  &--filter-date,
-  &--rooms {
+  &--filter-date {
     width: 266px;
+  }
+}
+
+.dropdown--comfort {
+  width: 266px;
+
+  .dropdown__nav {
+    display: none;
   }
 }
 
@@ -25,6 +32,7 @@
   background-image: url("./img/arrow.svg");
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
+  cursor: pointer;
   @include input;
   @include input-bordered;
 
@@ -47,7 +55,6 @@
   padding: 7px 7px 7px 15px;
 
   list-style: none;
-  background-color: inherit;
 }
 
 .dropdown__item {
@@ -60,7 +67,7 @@
   }
 }
 
-.dropdown__category {
+.dropdown__option {
   display: block;
   @include label-cta-text;
 }
