@@ -93,10 +93,17 @@
   border-radius: 50%;
   cursor: pointer;
 
-  &:hover,
   &:focus {
-    border: 1px solid $dark50;
     outline: none;
+  }
+
+  &:disabled {
+    border-color: $dark05;
+    cursor: default;
+
+    &::before {
+      color: $dark05;
+    }
   }
 
   &::before {
@@ -117,7 +124,7 @@
   }
 }
 
-.dropdown__number-input {
+.dropdown__total {
   width: 32px;
 
   text-align: center;
