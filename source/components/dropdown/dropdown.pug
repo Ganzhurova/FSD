@@ -11,14 +11,17 @@ mixin dropdown(options)
   - let classes = []
 
   if options.isGuestsDropdown
-    - attributes.type = "text"
     - attributes.placeholder = "Сколько гостей"
 
   if options.isComfortDropdown
-    - attributes.type = "text"
     - options.isDropdownSelect = true
     - options.list = locals.comfortList
     - classes.push("dropdown--comfort")
+
+  if options.isDropdownSelect
+    - classes.push("js-dropdown dropdown--hidden")
+    - attributes.type = "text"
+    - attributes.readonly = true
 
   if options.isDateDropdown
     - options.isDateMask = true
@@ -27,6 +30,7 @@ mixin dropdown(options)
 
   if options.isFilterDateDropdown
     - options.isDatepickerFilter = true
+    - attributes.placeholder = "19 авг - 23 авг"
     - classes.push("dropdown--filter-date")
 
 
@@ -40,7 +44,7 @@ mixin dropdown(options)
 
 
 mixin dropdownSelect(list)
-  .dropdown__select.js-select
+  .dropdown__select.js-dropdown__select
     ul.dropdown__list
       for item in list
         +dropdownItem(item)
@@ -57,15 +61,16 @@ mixin dropdownSelect(list)
         })
 
 mixin dropdownItem(item)
-  li.dropdown__item
-    span.dropdown__option= item.option
-    .dropdown__number
-      button.dropdown__number-button.dropdown__number-button--minus(type="button")
+  li.dropdown__item.js-dropdown__item
+    span.dropdown__option(data-option=item.data)= item.option
+
+    .dropdown__number.js-dropdown__number
+      button.dropdown__number-button.dropdown__number-button--minus(type="button", data-action="minus")
       +input()(
-        class = "dropdown__number-input"
+        class = "dropdown__total js-dropdown__total"
         type = "number"
         disabled = true
         maxlength = 2
         value = item.defaultVal
         )
-      button.dropdown__number-button.dropdown__number-button--plus(type="button")
+      button.dropdown__number-button.dropdown__number-button--plus(type="button", data-action="plus")
