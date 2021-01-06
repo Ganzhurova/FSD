@@ -19,6 +19,9 @@ mixin input(options)
     - options.dataRange = "true"
     - options.dataDateFormat = "dd M"
 
+  if options.isDropdownSelect
+    - classes.push("js-dropdown__input")
+
   input(
     class = classes
     id = options.id
