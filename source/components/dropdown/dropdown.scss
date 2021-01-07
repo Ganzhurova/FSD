@@ -1,4 +1,6 @@
 .dropdown {
+  position: relative;
+
   width: 320px;
 
   background-color: inherit;
@@ -46,6 +48,13 @@
 }
 
 .dropdown__select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+
   background-color: $white;
   border: 1px solid $dark50;
   border-radius: 0 0 4px 4px;
@@ -144,5 +153,39 @@
   @include label-cta-text;
   & {
     color: $primary-color;
+  }
+}
+
+.dropdown--hidden {
+  .dropdown__select {
+    max-height: 0px;
+    overflow: hidden;
+
+    border-width: 0;
+
+    transition: all 0.2s linear;
+  }
+
+  .dropdown__item {
+    transform: translateY(-100%);
+
+    transition: all 0.2s linear;
+  }
+}
+
+.dropdown--show {
+  .dropdown__select {
+    max-height: 120px;
+    overflow: hidden;
+
+    border-width: 1px;
+
+    transition: all 0.2s linear;
+  }
+
+  .dropdown__item {
+    transform: translateY(0);
+
+    transition: all 0.2s linear;
   }
 }

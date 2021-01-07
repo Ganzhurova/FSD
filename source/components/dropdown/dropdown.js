@@ -10,6 +10,7 @@ class Dropdown {
       bed: ['кроватей', 'кровать', 'кровати'],
       bathroom: ['ванных комнат', 'ванная комната', 'ванные комнаты'],
     };
+    this.bodyHandler = this.bodyHandler.bind(this);
   }
 
   init(el) {
@@ -66,12 +67,36 @@ class Dropdown {
     this.options = [];
   }
 
+  show() {
+    this.field.addEventListener('focus', () => {
+      this.dropdown.classList.remove('dropdown--hidden');
+      this.dropdown.classList.add('dropdown--show');
+      document.body.addEventListener('click', this.bodyHandler);
+      document.body.addEventListener('focusin', this.bodyHandler);
+    });
+  }
+
+  hide(e) {
+    if (!e.target.closest('.js-dropdown')) {
+      this.dropdown.classList.remove('dropdown--show');
+      this.dropdown.classList.add('dropdown--hidden');
+      document.body.removeEventListener('click', this.bodyHandler);
+      document.body.removeEventListener('focusin', this.bodyHandler);
+    }
+  }
+
+  bodyHandler(e) {
+    this.hide(e);
+  }
+
   actions() {
     this.dropdown.addEventListener('click', e => {
       if (e.target.dataset.action) {
         this.writeField();
       }
     });
+
+    this.show();
   }
 }
 
