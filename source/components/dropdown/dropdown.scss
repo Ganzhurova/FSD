@@ -17,6 +17,14 @@
 .dropdown--comfort {
   width: 266px;
 
+  .dropdown__input {
+    padding-right: 90px;
+
+    text-overflow: ellipsis;
+
+    border-radius: 4px 4px 0 0;
+  }
+
   .dropdown__nav {
     display: none;
   }
@@ -57,11 +65,12 @@
 
   background-color: $white;
   border: 1px solid $dark50;
+  border-top: 0;
   border-radius: 0 0 4px 4px;
 }
 
 .dropdown__list {
-  padding: 7px 7px 7px 15px;
+  padding: 6px 7px 6px 15px;
 
   list-style: none;
 }
