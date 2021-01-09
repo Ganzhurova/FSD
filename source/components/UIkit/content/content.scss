@@ -25,11 +25,29 @@
   }
 }
 
-.content__section--form-elements {
+.content__section {
   display: flex;
   flex-direction: column;
+}
+
+.content__section--form-elements {
   align-items: flex-start;
+  width: 320px;
   padding-top: 3px;
+
+  //временно
+  &:nth-child(3) {
+    background-color: blue;
+  }
+
+  &:nth-child(6) {
+    flex-direction: row;
+    width: auto;
+
+    & .form-element:nth-child(1) {
+      margin-right: 72px;
+    }
+  }
 }
 
 .content__section--cards {
