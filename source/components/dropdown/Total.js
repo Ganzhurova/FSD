@@ -6,8 +6,15 @@ class Total {
     this.minusButton = el.querySelector('[data-action = minus]');
     this.plusButton = el.querySelector('[data-action = plus]');
 
+    this.setValue();
     this.checkValue();
     this.actions();
+  }
+
+  setValue() {
+    if (!this.input.value) {
+      this.input.value = 0;
+    }
   }
 
   checkValue() {
