@@ -14,6 +14,8 @@ mixin dropdown(options)
     - attributes.placeholder = "Сколько гостей"
     - options.isDropdownSelect = true
     - options.list = locals.guestsList
+    - options.addButtons = true
+    - options.dataPlaceholder = "true"
     - classes.push("dropdown--guests")
 
   if options.isComfortDropdown
@@ -37,35 +39,43 @@ mixin dropdown(options)
     - classes.push("dropdown--filter-date")
 
 
-  .dropdown(class=classes data-show=options.dataShow)
+  .dropdown(
+    class = classes,
+    data-show = options.dataShow,
+    data-placeholder = options.dataPlaceholder)
     if options.label
       label.dropdown__label(for=options.id)= options.label
     - attributes.class = "dropdown__input"
     +input(options)&attributes(attributes)
     if options.isDropdownSelect
-      +dropdownSelect(options.list)
+      +dropdownSelect(options.list, options.addButtons)
 
 
-mixin dropdownSelect(list)
+mixin dropdownSelect(list, addButtons)
   .dropdown__select.js-dropdown__select
     ul.dropdown__list
       for item in list
         +dropdownItem(item)
-    .dropdown__buttons
-      +button({
-        buttonMod: "text",
-        type: "button",
-        desc: "Очистить"
-        })
-      +button({
-        buttonMod: "text",
-        type: "button",
-        desc: "Применить"
-        })
+
+    if (addButtons)
+      .dropdown__buttons
+        +button({
+          buttonMod: "text",
+          type: "button",
+          desc: "Очистить"
+          })
+        +button({
+          buttonMod: "text",
+          type: "button",
+          desc: "Применить"
+          })
 
 mixin dropdownItem(item)
   li.dropdown__item.js-dropdown__item
-    span.dropdown__option(data-option=item.data)= item.option
+    span.dropdown__option(
+      data-option=item.dataOption,
+      data-hide-at-zero=item.dataHideAtZero
+      )= item.option
 
     .dropdown__number.js-dropdown__number
       button.dropdown__number-button(type="button", data-action="minus")

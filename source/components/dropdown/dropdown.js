@@ -5,6 +5,7 @@ import Total from './Total';
 class Dropdown {
   constructor() {
     this.options = [];
+    this.hiddenOptionsAtZero = {};
     this.txtForms = {
       bedroom: ['спален', 'спальня', 'спальни'],
       bed: ['кроватей', 'кровать', 'кровати'],
@@ -22,8 +23,11 @@ class Dropdown {
     this.totals = el.querySelectorAll('.js-dropdown__number');
 
     this.initTotals();
-    this.writeField();
-    this.dataActions();
+    this.getHiddenOptionsAtZero();
+    if (!this.dropdown.dataset.placeholder) {
+      this.writeField();
+    }
+    this.dataShow();
     this.actions();
   }
 
@@ -40,6 +44,17 @@ class Dropdown {
       option.name = item.querySelector('[data-option]').dataset.option;
       option.total = item.querySelector('.js-dropdown__total').value;
       this.options.push(option);
+    });
+  }
+
+  getHiddenOptionsAtZero() {
+    this.items.forEach(item => {
+      const hiddenOption = item.querySelector('[data-hide-at-zero]');
+      if (hiddenOption) {
+        const key = hiddenOption.dataset.option;
+        const value = hiddenOption.dataset.hideAtZero;
+        this.hiddenOptionsAtZero[key] = value;
+      }
     });
   }
 
@@ -73,10 +88,14 @@ class Dropdown {
 
     for (const key in value) {
       if ({}.hasOwnProperty.call(value, key)) {
+        const hiddenOption = this.hiddenOptionsAtZero[key];
         const txtArr = this.txtForms[key];
         const name = Dropdown.declension(value[key], txtArr);
-        const result = `${value[key]} ${name}`;
-        values.push(result);
+
+        if (!hiddenOption || (hiddenOption && value[key] > 0)) {
+          const result = `${value[key]} ${name}`;
+          values.push(result);
+        }
       }
     }
 
@@ -105,7 +124,7 @@ class Dropdown {
     this.close(e);
   }
 
-  dataActions() {
+  dataShow() {
     if (this.dropdown.dataset.show) {
       this.show();
     }
