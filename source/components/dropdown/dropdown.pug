@@ -12,6 +12,9 @@ mixin dropdown(options)
 
   if options.isGuestsDropdown
     - attributes.placeholder = "Сколько гостей"
+    - options.isDropdownSelect = true
+    - options.list = locals.guestsList
+    - classes.push("dropdown--guests")
 
   if options.isComfortDropdown
     - options.isDropdownSelect = true
@@ -34,7 +37,7 @@ mixin dropdown(options)
     - classes.push("dropdown--filter-date")
 
 
-  .dropdown(class=classes)
+  .dropdown(class=classes data-show=options.dataShow)
     if options.label
       label.dropdown__label(for=options.id)= options.label
     - attributes.class = "dropdown__input"
@@ -48,7 +51,7 @@ mixin dropdownSelect(list)
     ul.dropdown__list
       for item in list
         +dropdownItem(item)
-    .dropdown__nav
+    .dropdown__buttons
       +button({
         buttonMod: "text",
         type: "button",
@@ -65,7 +68,7 @@ mixin dropdownItem(item)
     span.dropdown__option(data-option=item.data)= item.option
 
     .dropdown__number.js-dropdown__number
-      button.dropdown__number-button.dropdown__number-button--minus(type="button", data-action="minus")
+      button.dropdown__number-button(type="button", data-action="minus")
       +input()(
         class = "dropdown__total js-dropdown__total"
         type = "number"
@@ -73,4 +76,4 @@ mixin dropdownItem(item)
         maxlength = 2
         value = item.defaultVal
         )
-      button.dropdown__number-button.dropdown__number-button--plus(type="button", data-action="plus")
+      button.dropdown__number-button(type="button", data-action="plus")

@@ -9,6 +9,8 @@ class Dropdown {
       bedroom: ['спален', 'спальня', 'спальни'],
       bed: ['кроватей', 'кровать', 'кровати'],
       bathroom: ['ванных комнат', 'ванная комната', 'ванные комнаты'],
+      guest: ['гостей', 'гость', 'гостя'],
+      baby: ['младенцев', 'младенец', 'младенца'],
     };
     this.bodyHandler = this.bodyHandler.bind(this);
   }
@@ -21,6 +23,7 @@ class Dropdown {
 
     this.initTotals();
     this.writeField();
+    this.dataActions();
     this.actions();
   }
 
@@ -53,14 +56,29 @@ class Dropdown {
 
   writeField() {
     this.getOptions();
+
+    const value = this.options.reduce((acc, option) => {
+      const tally = acc;
+      const total = Number(option.total);
+
+      if (!tally[option.name]) {
+        tally[option.name] = total;
+      } else {
+        tally[option.name] += total;
+      }
+      return tally;
+    }, {});
+
     const values = [];
 
-    this.options.forEach(option => {
-      const txtArr = this.txtForms[option.name];
-      const name = Dropdown.declension(option.total, txtArr);
-      const value = `${option.total} ${name}`;
-      values.push(value);
-    });
+    for (const key in value) {
+      if ({}.hasOwnProperty.call(value, key)) {
+        const txtArr = this.txtForms[key];
+        const name = Dropdown.declension(value[key], txtArr);
+        const result = `${value[key]} ${name}`;
+        values.push(result);
+      }
+    }
 
     const fieldValue = values.join(', ');
     this.field.value = fieldValue;
@@ -68,15 +86,13 @@ class Dropdown {
   }
 
   show() {
-    this.field.addEventListener('focus', () => {
-      this.dropdown.classList.remove('dropdown--hidden');
-      this.dropdown.classList.add('dropdown--show');
-      document.body.addEventListener('click', this.bodyHandler);
-      document.body.addEventListener('focusin', this.bodyHandler);
-    });
+    this.dropdown.classList.remove('dropdown--hidden');
+    this.dropdown.classList.add('dropdown--show');
+    document.body.addEventListener('click', this.bodyHandler);
+    document.body.addEventListener('focusin', this.bodyHandler);
   }
 
-  hide(e) {
+  close(e) {
     if (!e.target.closest('.js-dropdown')) {
       this.dropdown.classList.remove('dropdown--show');
       this.dropdown.classList.add('dropdown--hidden');
@@ -86,7 +102,13 @@ class Dropdown {
   }
 
   bodyHandler(e) {
-    this.hide(e);
+    this.close(e);
+  }
+
+  dataActions() {
+    if (this.dropdown.dataset.show) {
+      this.show();
+    }
   }
 
   actions() {
@@ -96,7 +118,9 @@ class Dropdown {
       }
     });
 
-    this.show();
+    this.field.addEventListener('focus', () => {
+      this.show();
+    });
   }
 }
 
