@@ -49,16 +49,9 @@ block content
           label: "Filter date dropdown",
           isFilterDateDropdown: true,
           })
-      +formElement({title: "Subscription text field", mb: "margin-bottom-101"})
+      +formElement({title: "Subscription text field", mb: "margin-bottom-98"})
         +subscription()
-      +formElement({title: "Dropdown", state: "Default"})
-        +dropdown({
-          isComfortDropdown: true,
-          })
-      +formElement({title: "Dropdown", state: ""})
-        +dropdown({
-          isComfortDropdown: true,
-          })
+
 
     +contentSection({page: "form-elements"})
 
@@ -83,4 +76,29 @@ block content
           type: "button",
           buttonMod: "with-arrow",
           desc: "Перейти к оплате"
+          })
+
+    +contentSection({page: "form-elements"})
+      +formElement({title: "Dropdown", state: "Default"})
+        +dropdown({
+          isComfortDropdown: true,
+          })
+      +formElement({title: "Dropdown", state: "Expanded"})
+        +dropdown({
+          isComfortDropdown: true,
+          dataShow: "true",
+          })
+
+    +contentSection({page: "form-elements"})
+      +formElement()
+        +dropdown({
+          label: "Dropdown",
+          isGuestsDropdown: true,
+          dataShow: "true",
+          })
+      +formElement()
+        +dropdown({
+          label: "Dropdown",
+          isGuestsDropdown: true,
+          dataShow: "true",
           })
