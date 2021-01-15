@@ -156,8 +156,11 @@
 
 .dropdown__buttons {
   display: flex;
-  justify-content: space-between;
   padding: 12px 7px 13px 15px;
+}
+
+.dropdown__button[data-action="apply"] {
+  margin-left: auto;
 }
 
 .dropdown--hidden {
@@ -166,6 +169,7 @@
     overflow: hidden;
 
     border-width: 0;
+    visibility: hidden;
 
     transition: all 0.2s linear;
   }
@@ -183,6 +187,7 @@
     overflow: hidden;
 
     border-width: 1px;
+    visibility: visible;
 
     transition: all 0.2s linear;
   }
