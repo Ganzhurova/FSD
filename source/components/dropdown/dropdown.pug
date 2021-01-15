@@ -15,7 +15,6 @@ mixin dropdown(options)
     - options.isDropdownSelect = true
     - options.list = locals.guestsList
     - options.addButtons = true
-    - options.dataPlaceholder = "true"
     - classes.push("dropdown--guests")
 
   if options.isComfortDropdown
@@ -41,8 +40,7 @@ mixin dropdown(options)
 
   .dropdown(
     class = classes,
-    data-show = options.dataShow,
-    data-placeholder = options.dataPlaceholder)
+    data-show = options.dataShow)
     if options.label
       label.dropdown__label(for=options.id)= options.label
     - attributes.class = "dropdown__input"
@@ -60,22 +58,23 @@ mixin dropdownSelect(list, addButtons)
     if (addButtons)
       .dropdown__buttons
         +button({
+          mix: "dropdown__button",
           buttonMod: "text",
           type: "button",
-          desc: "Очистить"
+          desc: "Очистить",
+          dataAction: "clear",
           })
         +button({
+          mix: "dropdown__button",
           buttonMod: "text",
           type: "button",
-          desc: "Применить"
+          desc: "Применить",
+          dataAction: "apply",
           })
 
 mixin dropdownItem(item)
-  li.dropdown__item.js-dropdown__item
-    span.dropdown__option(
-      data-option=item.dataOption,
-      data-hide-at-zero=item.dataHideAtZero
-      )= item.option
+  li.dropdown__item.js-dropdown__item(data-option=item.dataOption)
+    span.dropdown__option= item.option
 
     .dropdown__number.js-dropdown__number
       button.dropdown__number-button(type="button", data-action="minus")
