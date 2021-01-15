@@ -17,7 +17,11 @@ mixin button(options)
     a.button(class = classes href = options.link)= options.desc
       +buttonIcon(options.iconName, options.hiddenDesc)
   else
-    button.button(class = classes type = options.type)= options.desc
+    button.button(
+      class = classes
+      type = options.type
+      data-action = options.dataAction
+      )= options.desc
       +buttonIcon(options.iconName, options.hiddenDesc)
 
 
