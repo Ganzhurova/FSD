@@ -5,7 +5,6 @@ import Total from './Total';
 class Dropdown {
   constructor() {
     this.options = [];
-    this.hiddenOptionsAtZero = {};
     this.txtForms = {
       bedroom: ['спален', 'спальня', 'спальни'],
       bed: ['кроватей', 'кровать', 'кровати'],
@@ -23,10 +22,8 @@ class Dropdown {
     this.totals = el.querySelectorAll('.js-dropdown__number');
 
     this.initTotals();
-    this.getHiddenOptionsAtZero();
-    if (!this.dropdown.dataset.placeholder) {
-      this.writeField();
-    }
+    this.getOptions();
+    // this.writeField();
     this.dataShow();
     this.actions();
   }
@@ -39,22 +36,47 @@ class Dropdown {
   }
 
   getOptions() {
+    // const set = new Set();
+
     this.items.forEach(item => {
+      let unique = true;
       const option = {};
-      option.name = item.querySelector('[data-option]').dataset.option;
-      option.total = item.querySelector('.js-dropdown__total').value;
-      this.options.push(option);
+      option.name = item.dataset.option;
+      option.total = Number(item.querySelector('.js-dropdown__total').value);
+
+      for (const value of this.options) {
+        if (option.name === value.name) {
+          unique = false;
+          value.total += option.total;
+        }
+      }
+
+      if (unique) {
+        this.options.push(option);
+      }
     });
+
+    // this.options = [...set];
+    console.log(this.options);
   }
 
-  getHiddenOptionsAtZero() {
+  // getHiddenOptionsAtZero() {
+  //   this.items.forEach(item => {
+  //     const hiddenOption = item.querySelector('[data-hide-at-zero]');
+  //     if (hiddenOption) {
+  //       const key = hiddenOption.dataset.option;
+  //       const value = hiddenOption.dataset.hideAtZero;
+  //       this.hiddenOptionsAtZero[key] = value;
+  //     }
+  //   });
+  // }
+
+  updateOptions(e) {
     this.items.forEach(item => {
-      const hiddenOption = item.querySelector('[data-hide-at-zero]');
-      if (hiddenOption) {
-        const key = hiddenOption.dataset.option;
-        const value = hiddenOption.dataset.hideAtZero;
-        this.hiddenOptionsAtZero[key] = value;
-      }
+      const itemClass = String(item.classList.value);
+      const parent = e.target.closest(itemClass);
+      console.log(parent);
+      console.log(itemClass);
     });
   }
 
@@ -69,8 +91,28 @@ class Dropdown {
     return txtArr[0];
   }
 
+  toggleButtonClear() {
+    const buttonClear = this.dropdown.querySelector('[data-action = clear]');
+
+    if (!buttonClear) {
+      return;
+    }
+
+    const value = this.options.reduce((acc, option) => {
+      const total = Number(option.total);
+      return acc + total;
+    }, 0);
+
+    if (value === 0) {
+      buttonClear.style.display = 'none';
+    } else {
+      buttonClear.removeAttribute('style');
+    }
+  }
+
   writeField() {
     this.getOptions();
+    this.getHiddenOptionsAtZero();
 
     const value = this.options.reduce((acc, option) => {
       const tally = acc;
@@ -85,22 +127,29 @@ class Dropdown {
     }, {});
 
     const values = [];
+    const { placeholder } = this.field;
 
     for (const key in value) {
       if ({}.hasOwnProperty.call(value, key)) {
         const hiddenOption = this.hiddenOptionsAtZero[key];
         const txtArr = this.txtForms[key];
-        const name = Dropdown.declension(value[key], txtArr);
+        const total = value[key];
+        const name = Dropdown.declension(total, txtArr);
 
-        if (!hiddenOption || (hiddenOption && value[key] > 0)) {
-          const result = `${value[key]} ${name}`;
-          values.push(result);
+        if (!hiddenOption || (hiddenOption && total > 0)) {
+          if (!placeholder || (placeholder && total > 0)) {
+            const result = `${total} ${name}`;
+            values.push(result);
+          }
         }
       }
     }
 
     const fieldValue = values.join(', ');
     this.field.value = fieldValue;
+
+    this.toggleButtonClear();
+
     this.options = [];
   }
 
@@ -112,7 +161,7 @@ class Dropdown {
   }
 
   close(e) {
-    if (!e.target.closest('.js-dropdown')) {
+    if (!(e.target.closest('.js-dropdown') === this.dropdown)) {
       this.dropdown.classList.remove('dropdown--show');
       this.dropdown.classList.add('dropdown--hidden');
       document.body.removeEventListener('click', this.bodyHandler);
@@ -130,10 +179,19 @@ class Dropdown {
     }
   }
 
+  clear() {
+    this.field.value = '';
+  }
+
   actions() {
     this.dropdown.addEventListener('click', e => {
-      if (e.target.dataset.action) {
-        this.writeField();
+      const { action } = e.target.dataset;
+
+      if (action === 'minus' || action === 'plus') {
+        this.updateOptions(e);
+        // this.writeField();
+      } else {
+        this[action]();
       }
     });
 
