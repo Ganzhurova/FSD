@@ -2,19 +2,22 @@ class Total {
   init(el) {
     this.total = el;
     this.input = el.querySelector('.js-dropdown__total');
-    this.value = Number(el.querySelector('.js-dropdown__total').value);
+
+    if (!this.input.value) {
+      this.input.value = 0;
+    }
+
+    this.defaultValue = Number(this.input.value);
+    this.value = Number(this.input.value);
     this.minusButton = el.querySelector('[data-action = minus]');
     this.plusButton = el.querySelector('[data-action = plus]');
 
-    this.setValue();
     this.checkValue();
     this.actions();
   }
 
-  setValue() {
-    if (!this.input.value) {
-      this.input.value = 0;
-    }
+  setDefaultValue() {
+    this.value = this.defaultValue;
   }
 
   checkValue() {
