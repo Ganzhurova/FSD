@@ -5,6 +5,7 @@ import Total from './Total';
 class Dropdown {
   constructor() {
     this.options = [];
+    this.initiatedTotals = [];
     this.txtForms = {
       bedroom: ['спален', 'спальня', 'спальни'],
       bed: ['кроватей', 'кровать', 'кровати'],
@@ -12,6 +13,7 @@ class Dropdown {
       guest: ['гостей', 'гость', 'гостя'],
       baby: ['младенцев', 'младенец', 'младенца'],
     };
+    this.autoClose = true;
     this.bodyHandler = this.bodyHandler.bind(this);
   }
 
@@ -20,10 +22,15 @@ class Dropdown {
     this.field = el.querySelector('.js-dropdown__input');
     this.items = el.querySelectorAll('.js-dropdown__item');
     this.totals = el.querySelectorAll('.js-dropdown__number');
+    this.buttonApply = el.querySelector('[data-action = apply]');
+    this.buttonClear = el.querySelector('[data-action = clear]');
+
+    if (this.buttonApply) {
+      this.autoClose = false;
+    }
 
     this.initTotals();
-    this.getOptions();
-    // this.writeField();
+    this.writeField();
     this.dataShow();
     this.actions();
   }
@@ -32,51 +39,27 @@ class Dropdown {
     this.totals.forEach(el => {
       const total = new Total();
       total.init(el);
+      this.initiatedTotals.push(total);
     });
   }
 
   getOptions() {
-    // const set = new Set();
-
     this.items.forEach(item => {
-      let unique = true;
+      let isUnique = true;
       const option = {};
       option.name = item.dataset.option;
       option.total = Number(item.querySelector('.js-dropdown__total').value);
 
       for (const value of this.options) {
         if (option.name === value.name) {
-          unique = false;
+          isUnique = false;
           value.total += option.total;
         }
       }
 
-      if (unique) {
+      if (isUnique) {
         this.options.push(option);
       }
-    });
-
-    // this.options = [...set];
-    console.log(this.options);
-  }
-
-  // getHiddenOptionsAtZero() {
-  //   this.items.forEach(item => {
-  //     const hiddenOption = item.querySelector('[data-hide-at-zero]');
-  //     if (hiddenOption) {
-  //       const key = hiddenOption.dataset.option;
-  //       const value = hiddenOption.dataset.hideAtZero;
-  //       this.hiddenOptionsAtZero[key] = value;
-  //     }
-  //   });
-  // }
-
-  updateOptions(e) {
-    this.items.forEach(item => {
-      const itemClass = String(item.classList.value);
-      const parent = e.target.closest(itemClass);
-      console.log(parent);
-      console.log(itemClass);
     });
   }
 
@@ -92,78 +75,74 @@ class Dropdown {
   }
 
   toggleButtonClear() {
-    const buttonClear = this.dropdown.querySelector('[data-action = clear]');
-
-    if (!buttonClear) {
+    if (!this.buttonClear) {
       return;
     }
 
-    const value = this.options.reduce((acc, option) => {
-      const total = Number(option.total);
+    const inputs = this.dropdown.querySelectorAll('.js-dropdown__total');
+    const values = [];
+
+    inputs.forEach(input => {
+      values.push(Number(input.value));
+    });
+
+    const value = values.reduce((acc, number) => {
+      const total = number;
       return acc + total;
     }, 0);
 
     if (value === 0) {
-      buttonClear.style.display = 'none';
+      this.buttonClear.style.display = 'none';
     } else {
-      buttonClear.removeAttribute('style');
+      this.buttonClear.removeAttribute('style');
     }
   }
 
   writeField() {
     this.getOptions();
-    this.getHiddenOptionsAtZero();
-
-    const value = this.options.reduce((acc, option) => {
-      const tally = acc;
-      const total = Number(option.total);
-
-      if (!tally[option.name]) {
-        tally[option.name] = total;
-      } else {
-        tally[option.name] += total;
-      }
-      return tally;
-    }, {});
-
     const values = [];
     const { placeholder } = this.field;
 
-    for (const key in value) {
-      if ({}.hasOwnProperty.call(value, key)) {
-        const hiddenOption = this.hiddenOptionsAtZero[key];
-        const txtArr = this.txtForms[key];
-        const total = value[key];
-        const name = Dropdown.declension(total, txtArr);
-
-        if (!hiddenOption || (hiddenOption && total > 0)) {
-          if (!placeholder || (placeholder && total > 0)) {
-            const result = `${total} ${name}`;
-            values.push(result);
-          }
-        }
+    this.options.forEach(option => {
+      if (!placeholder || (placeholder && option.total > 0)) {
+        const txtArr = this.txtForms[option.name];
+        const name = Dropdown.declension(option.total, txtArr);
+        const result = `${option.total} ${name}`;
+        values.push(result);
       }
-    }
+    });
 
     const fieldValue = values.join(', ');
     this.field.value = fieldValue;
+    this.options = [];
 
     this.toggleButtonClear();
-
-    this.options = [];
   }
 
   show() {
     this.dropdown.classList.remove('dropdown--hidden');
     this.dropdown.classList.add('dropdown--show');
-    document.body.addEventListener('click', this.bodyHandler);
-    document.body.addEventListener('focusin', this.bodyHandler);
+
+    if (this.autoClose) {
+      document.body.addEventListener('click', this.bodyHandler);
+      document.body.addEventListener('focusin', this.bodyHandler);
+    }
   }
 
   close(e) {
-    if (!(e.target.closest('.js-dropdown') === this.dropdown)) {
+    if (
+      (this.autoClose &&
+        !(e.target.closest('.js-dropdown') === this.dropdown)) ||
+      !this.autoClose
+    ) {
       this.dropdown.classList.remove('dropdown--show');
       this.dropdown.classList.add('dropdown--hidden');
+    }
+
+    if (
+      this.autoClose &&
+      !(e.target.closest('.js-dropdown') === this.dropdown)
+    ) {
       document.body.removeEventListener('click', this.bodyHandler);
       document.body.removeEventListener('focusin', this.bodyHandler);
     }
@@ -175,12 +154,36 @@ class Dropdown {
 
   dataShow() {
     if (this.dropdown.dataset.show) {
+      this.autoClose = false;
       this.show();
     }
   }
 
   clear() {
-    this.field.value = '';
+    const inputs = this.dropdown.querySelectorAll('input');
+
+    inputs.forEach(input => {
+      if (input.type.toLowerCase() === 'number') {
+        const number = input;
+        number.value = 0;
+      } else if (
+        input.type.toLowerCase() === ('text' || 'email' || 'password')
+      ) {
+        const text = input;
+        text.value = '';
+      }
+    });
+
+    this.initiatedTotals.forEach(total => {
+      total.setDefaultValue();
+      total.checkValue();
+    });
+
+    this.toggleButtonClear();
+  }
+
+  apply(e) {
+    this.close(e);
   }
 
   actions() {
@@ -188,10 +191,12 @@ class Dropdown {
       const { action } = e.target.dataset;
 
       if (action === 'minus' || action === 'plus') {
-        this.updateOptions(e);
-        // this.writeField();
+        this.writeField();
       } else {
-        this[action]();
+        if (!action) {
+          return;
+        }
+        this[action](e);
       }
     });
 
