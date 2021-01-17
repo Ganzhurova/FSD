@@ -17,6 +17,7 @@ class Total {
   }
 
   setDefaultValue() {
+    this.input.value = this.defaultValue;
     this.value = this.defaultValue;
   }
 
