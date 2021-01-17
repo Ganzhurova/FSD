@@ -160,19 +160,7 @@ class Dropdown {
   }
 
   clear() {
-    const inputs = this.dropdown.querySelectorAll('input');
-
-    inputs.forEach(input => {
-      if (input.type.toLowerCase() === 'number') {
-        const number = input;
-        number.value = 0;
-      } else if (
-        input.type.toLowerCase() === ('text' || 'email' || 'password')
-      ) {
-        const text = input;
-        text.value = '';
-      }
-    });
+    this.field.value = '';
 
     this.initiatedTotals.forEach(total => {
       total.setDefaultValue();
@@ -213,7 +201,6 @@ function initDropdowns() {
     const dropdownEl = dropdowns[i];
     const dropdown = new Dropdown();
     dropdown.init(dropdownEl);
-    console.log(dropdown);
   }
 }
 
