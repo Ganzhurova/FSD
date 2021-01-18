@@ -22,9 +22,17 @@ mixin input(options)
   if options.isDropdownSelect
     - classes.push("js-dropdown__input")
 
-  input(
-    class = classes
-    id = options.id
-    data-range = options.dataRange
-    data-date-format = options.dataDateFormat
-    )&attributes(attributes)
+  if (attributes.type === 'text' || attributes.type === 'email' || attributes.type === 'password' || attributes.type === 'number')
+    input(
+      class = classes
+      id = options.id
+      data-range = options.dataRange
+      data-date-format = options.dataDateFormat
+      )&attributes(attributes)
+
+  if (attributes.type === 'checkbox' || attributes.type === 'radio')
+    .input
+      input.visually-hidden.input__element(
+        id = options.id
+        )&attributes(attributes)
+      label.input__label(for=options.id)!= options.text
