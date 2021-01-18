@@ -76,3 +76,11 @@
     }
   }
 }
+
+.form-element--toggle {
+  .form-element__content .input {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

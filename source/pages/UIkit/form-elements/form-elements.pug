@@ -56,17 +56,14 @@ block content
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Checkbox buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "checkbox"})
-        +input({id: "smoke", text: "Можно курить"})(
-          type = "checkbox"
+        +input({isCheckbox: true, id: "smoke", text: "Можно курить"})(
           name = "smoke"
           )
-        +input({id: "pet", text: "Можно с питомцами"})(
-          type = "checkbox"
+        +input({isCheckbox: true, id: "pet", text: "Можно с питомцами"})(
           name = "pet"
           checked
           )
-        +input({id: "guests", text: "Можно пригласить гостей <br>(до 10 человек)"})(
-          type = "checkbox"
+        +input({isCheckbox: true, id: "guests", text: "Можно пригласить гостей <br>(до 10 человек)"})(
           name = "guests"
           checked
           )
@@ -82,7 +79,15 @@ block content
           name = "gender"
           value = "woman"
           )
-      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-36", mix: "toggle"})
+      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "toggle"})
+        +input({isToggle: true, id: "offer-1", text: "Получать спецпредложения"})(
+          name = "offer"
+          checked
+          )
+        +input({isToggle: true, id: "offer-2", text: "Получать спецпредложения"})(
+          name = "offer"
+          )
+      +formElement({title: "Like button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "like"})
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})
