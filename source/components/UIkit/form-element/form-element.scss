@@ -5,6 +5,10 @@
     margin-bottom: 23px;
   }
 
+  &--margin-bottom-37 {
+    margin-bottom: 37px;
+  }
+
   &--margin-bottom-40 {
     margin-bottom: 40px;
   }
@@ -51,6 +55,24 @@
   .form-element__content button {
     &:not(:last-child) {
       margin-bottom: 30px;
+    }
+  }
+}
+
+.form-element--checkbox {
+  .form-element__content .input {
+    &:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.form-element--radio {
+  .form-element__content {
+    display: flex;
+
+    & .input:first-child {
+      margin-right: 20px;
     }
   }
 }

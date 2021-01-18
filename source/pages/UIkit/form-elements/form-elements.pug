@@ -2,6 +2,7 @@ extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
 include ../../../components/UIkit/form-element/form-element
+include ../../../components/input/input
 include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
 include ../../../components/subscription/subscription
@@ -54,6 +55,34 @@ block content
 
 
     +contentSection({page: "form-elements"})
+      +formElement({title: "Checkbox buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "checkbox"})
+        +input({id: "smoke", text: "Можно курить"})(
+          type = "checkbox"
+          name = "smoke"
+          )
+        +input({id: "pet", text: "Можно с питомцами"})(
+          type = "checkbox"
+          name = "pet"
+          checked
+          )
+        +input({id: "guests", text: "Можно пригласить гостей <br>(до 10 человек)"})(
+          type = "checkbox"
+          name = "guests"
+          checked
+          )
+      +formElement({title: "Radio Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-37", mix: "radio"})
+        +input({id: "filter-man", text: "Мужчина"})(
+          type = "radio"
+          name = "gender"
+          value = "man"
+          checked
+          )
+        +input({id: "filter-woman", text: "Женщина"})(
+          type = "radio"
+          name = "gender"
+          value = "woman"
+          )
+      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-36", mix: "toggle"})
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})
