@@ -23,7 +23,8 @@ input[type="number"]:focus {
   user-select: none;
 }
 
-.input__element[type="checkbox"] + .input__label {
+.input__element--checkbox + .input__label {
+  color: $dark50;
   line-height: 18px;
 }
 
@@ -39,20 +40,28 @@ input[type="number"]:focus {
   content: "";
 }
 
+.input__element + .input__label::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+  display: block;
+  width: 12px;
+  height: 12px;
+
+  content: "";
+}
+
 .input__element:checked + .input__label::before {
   border-color: $purple;
 }
 
-.input__element[type="checkbox"] + .input__label::before {
+.input__element--checkbox + .input__label::before {
   border-radius: 4px;
 }
 
-.input__element[type="checkbox"]:checked + .input__label::after {
-  position: absolute;
-  top: 4px;
+.input__element--checkbox:checked + .input__label::after {
   left: 5px;
-
-  display: block;
 
   width: 10px;
   height: 11px;
@@ -60,8 +69,37 @@ input[type="number"]:focus {
   background-image: url("./img/check.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
 
-  content: "";
+.input__element--toggle + .input__label::before {
+  width: 38px;
+
+  border-radius: 10px;
+}
+
+.input__element--toggle + .input__label::after {
+  background-color: $dark25;
+
+  border-radius: 50%;
+  transform: translateX(0);
+
+  transition: 0.1s;
+}
+
+.input__element--toggle:checked + .input__label::after {
+  background: $primary-gradient;
+
+  transform: translateX(20px);
+
+  transition: 0.1s;
+}
+
+.input__element[type="radio"] + .input__label {
+  color: $dark50;
+}
+
+.input__element[type="radio"]:checked + .input__label {
+  color: $dark75;
 }
 
 .input__element[type="radio"] + .input__label::before {
@@ -69,18 +107,7 @@ input[type="number"]:focus {
 }
 
 .input__element[type="radio"]:checked + .input__label::after {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-
-  display: block;
-
-  width: 12px;
-  height: 12px;
-
   background: $primary-gradient;
 
   border-radius: 50%;
-
-  content: "";
 }

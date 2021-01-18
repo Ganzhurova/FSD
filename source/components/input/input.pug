@@ -22,6 +22,14 @@ mixin input(options)
   if options.isDropdownSelect
     - classes.push("js-dropdown__input")
 
+  if options.isToggle
+    - classes.push("input__element--toggle")
+    - attributes.type = "checkbox"
+
+  if options.isCheckbox
+    - classes.push("input__element--checkbox")
+    - attributes.type = "checkbox"
+
   if (attributes.type === 'text' || attributes.type === 'email' || attributes.type === 'password' || attributes.type === 'number')
     input(
       class = classes
@@ -33,6 +41,7 @@ mixin input(options)
   if (attributes.type === 'checkbox' || attributes.type === 'radio')
     .input
       input.visually-hidden.input__element(
+        class = classes
         id = options.id
         )&attributes(attributes)
       label.input__label(for=options.id)!= options.text
