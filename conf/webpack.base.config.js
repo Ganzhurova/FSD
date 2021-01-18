@@ -93,20 +93,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              esModule: false,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        include: glob.sync('./**/[^icon-]*.svg').map(item => {
+        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf|svg)$/,
+        exclude: glob.sync('./**/img/icon-*.svg').map(item => {
           return path.resolve(item);
         }),
         use: [
@@ -114,6 +102,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
+              esModule: false,
             },
           },
         ],
