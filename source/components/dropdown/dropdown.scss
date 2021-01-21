@@ -182,6 +182,10 @@
 }
 
 .dropdown--show {
+  .dropdown__input {
+    border-color: $dark50;
+  }
+
   .dropdown__select {
     max-height: 160px;
     overflow: hidden;
