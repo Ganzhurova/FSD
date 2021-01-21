@@ -7,6 +7,8 @@ include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
 include ../../../components/subscription/subscription
 include ../../../components/like/like
+include ../../../components/rating/rating
+include ../../../components/range/range
 
 block variables
   - var pageTitle = "Form elements"
@@ -89,10 +91,15 @@ block content
           name = "offer"
           )
       +formElement({title: "Like button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "like"})
-        +like("2", false)
-        +like("12", true)
+        +like(2, false)
+        +like(12, true)
+      +formElement({title: "Rate button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "rate"})
+        +rating(4)
+        +rating(5)
 
     +contentSection({page: "form-elements"})
+      +formElement({mb: "margin-bottom-44"})
+        +range("Range slider")
       +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})
         +button({
           type: "button",

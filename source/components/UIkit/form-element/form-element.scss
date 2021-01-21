@@ -13,6 +13,10 @@
     margin-bottom: 40px;
   }
 
+  &--margin-bottom-44 {
+    margin-bottom: 44px;
+  }
+
   &--margin-bottom-98 {
     margin-bottom: 98px;
   }
@@ -91,6 +95,16 @@
 
     & .like:first-child {
       margin-right: 10px;
+    }
+  }
+}
+
+.form-element--rate {
+  .form-element__content {
+    display: flex;
+
+    & .rating:first-child {
+      margin-right: 20px;
     }
   }
 }
