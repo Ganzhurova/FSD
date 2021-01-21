@@ -6,6 +6,7 @@ include ../../../components/input/input
 include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
 include ../../../components/subscription/subscription
+include ../../../components/like/like
 
 block variables
   - var pageTitle = "Form elements"
@@ -88,6 +89,8 @@ block content
           name = "offer"
           )
       +formElement({title: "Like button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "like"})
+        +like("2", false)
+        +like("12", true)
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})

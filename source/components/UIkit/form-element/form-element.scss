@@ -84,3 +84,13 @@
     }
   }
 }
+
+.form-element--like {
+  .form-element__content {
+    display: flex;
+
+    & .like:first-child {
+      margin-right: 10px;
+    }
+  }
+}
