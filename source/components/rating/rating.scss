@@ -1,0 +1,18 @@
+.rating__group {
+  display: flex;
+
+  list-style: none;
+}
+
+.rating__star::before {
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+
+  content: "star_border";
+  -webkit-text-fill-color: transparent;
+  @include material-icons($display: block);
+}
+
+.rating__star--active::before {
+  content: "star";
+}

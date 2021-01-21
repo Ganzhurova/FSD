@@ -1,0 +1,14 @@
+mixin rating(activeStarTotal)
+  - let starTotal = 5;
+  - let activeClass = "rating__star--active"
+
+  .rating
+    ul.rating__group(aria-label="Рейтинг")
+      - for (let i = 0; i < starTotal; i++)
+        if i < activeStarTotal
+          +ratingStar(activeClass)
+        else
+          +ratingStar()
+
+mixin ratingStar(active)
+  li.rating__star(class=active)
