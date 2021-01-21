@@ -6,14 +6,18 @@
   font-family: "montserratbold", "Arial", sans-serif;
 }
 
-@mixin material-icons {
-  display: inline-block;
+@mixin material-icons(
+  $display: inline-block,
+  $font-size: 24px,
+  $line-height: 1
+) {
+  display: $display;
 
   font-weight: normal;
-  font-size: 24px; /* Preferred icon size */
+  font-size: $font-size;
   font-family: "Material Icons";
   font-style: normal;
-  line-height: 1;
+  line-height: $line-height;
   direction: ltr;
   letter-spacing: normal;
   white-space: nowrap;
