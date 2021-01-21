@@ -1,0 +1,15 @@
+mixin range(title="Диапазон цены")
+  .range
+    .range__caption
+      h2.range__title= title
+      .range__prices
+        label.range__price.range__price--min 5 000
+          input.range__input.visually-hidden(type="number", name="min-price", value="5000")
+        label.range__price.range__price--max 10 000
+          input.range__input.visually-hidden(type="number", name="max-price", value="10000")
+    .range__controls
+      .range__scale
+        .range__bar
+      .range__thumbs
+        .range__thumb.range__thumb--min
+        .range__thumb.range__thumb--max

@@ -1,0 +1,71 @@
+.range__caption {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.range__title {
+  margin-right: 30px;
+  padding-top: 1px;
+  @include label-cta-text;
+}
+
+.range__prices {
+  padding-top: 1px;
+
+  color: $dark50;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.range__price::after {
+  content: "\20BD";
+}
+
+.range__price--min::after {
+  content: "\20BD - ";
+}
+
+.range__controls {
+  position: relative;
+}
+
+.range__scale {
+  width: 266px;
+  height: 6px;
+
+  background-color: $white;
+
+  border: 1px solid $dark25;
+  border-radius: 3px;
+
+  pointer-events: none;
+}
+
+.range__bar {
+  position: relative;
+  top: -1px;
+  left: -1px;
+
+  width: 80%;
+  height: 6px;
+
+  background: $secondary-gradient;
+  border-radius: 3px;
+
+  pointer-events: none;
+}
+
+.range__thumb {
+  position: absolute;
+  top: -5px;
+  left: 0;
+
+  width: 16px;
+  height: 16px;
+
+  background: $secondary-gradient;
+  border: 2px solid $white;
+  border-radius: 50%;
+  cursor: pointer;
+}
