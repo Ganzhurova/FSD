@@ -1,5 +1,5 @@
 mixin like(value, isLiked)
   - let activeClass = "like--actual"
 
-  button.like.js-like-button(class=isLiked?activeClass:"" type="button")
+  button.like.js-like-button(class=isLiked?activeClass:"" type="button" aria-label="Понравилось")
     span.like__value.js-like__value= value
