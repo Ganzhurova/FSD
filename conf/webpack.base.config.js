@@ -93,7 +93,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf|svg)$/,
+        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/,
         exclude: glob.sync('./**/img/icon-*.svg').map(item => {
           return path.resolve(item);
         }),
