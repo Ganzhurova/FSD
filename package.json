@@ -64,6 +64,7 @@
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "inputmask": "^5.0.6-beta.24",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   }
