@@ -22,14 +22,6 @@ h2 {
   @include title-section;
 }
 
-// h2 {
-//   @include title-element;
-// }
-//
-// h3 {
-//   @include label-cta-text;
-// }
-
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
