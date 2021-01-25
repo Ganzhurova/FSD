@@ -1,14 +1,20 @@
-mixin rating(activeStarTotal)
+mixin rating(ratingNum)
   - let starTotal = 5;
-  - let activeClass = "rating__star--active"
+  - let isVoting = false
 
-  .rating
-    ul.rating__group(aria-label="Рейтинг")
-      - for (let i = 0; i < starTotal; i++)
-        if i < activeStarTotal
-          +ratingStar(activeClass)
-        else
-          +ratingStar()
+  if !ratingNum
+    - isVoting = true
 
-mixin ratingStar(active)
-  li.rating__star(class=active)
+  .rating.js-rating(class = isVoting ? "rating--vote" : "")
+    .rating__active(data-rating = ratingNum)
+    .rating__list(aria-label = Рейтинг)
+      - for (let i = 1; i <= starTotal; i++)
+        +ratingItem(i, isVoting)
+
+mixin ratingItem(num, isVoting)
+  label.rating__item
+    if isVoting
+      input.rating__input.visually-hidden(
+        type = "radio"
+        name = "rating"
+        value = num)
