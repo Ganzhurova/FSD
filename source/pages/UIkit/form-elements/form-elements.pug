@@ -9,6 +9,7 @@ include ../../../components/subscription/subscription
 include ../../../components/like/like
 include ../../../components/rating/rating
 include ../../../components/range/range
+include ../../../components/pagination/pagination
 
 block variables
   - var pageTitle = "Form elements"
@@ -100,7 +101,7 @@ block content
     +contentSection({page: "form-elements"})
       +formElement({mb: "margin-bottom-44"})
         +range("Range slider")
-      +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mix: "buttons"})
+      +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "buttons"})
         +button({
           type: "button",
           buttonMod: "colored",
@@ -121,6 +122,8 @@ block content
           buttonMod: "with-arrow",
           desc: "Перейти к оплате"
           })
+      +formElement({title: "Pagination", categoryMb: "margin-bottom-16"})
+        +pagination()
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Dropdown", state: "Default"})
@@ -146,3 +149,16 @@ block content
           isGuestsDropdown: true,
           dataShow: "true",
           })
+
+    +contentSection({page: "form-elements"})
+      +formElement()
+
+    +contentSection({page: "form-elements"})
+      +formElement({title: "Rich checkbox buttons", categoryMb: "margin-bottom-16", mix: "rich-checkbox"})
+        +input({isCheckbox: true, id: "accessibility-corridor", title: "Широкий коридор", text: "Ширина коридоров в номере<br> не менее 91 см."})(
+          name = "accessibility-corridor"
+          )
+        +input({isCheckbox: true, id: "accessibility-helper", title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист<br> и проводит до номера."})(
+          name = "accessibility-helper"
+          )
+      +formElement({title: "Bullet list", categoryMb: "margin-bottom-16"})
