@@ -39,7 +39,12 @@
     padding-left: 27px;
   }
 
-  &:nth-child(6) {
+  &:nth-child(5) {
+    margin-bottom: 148px;
+  }
+
+  &:nth-child(6),
+  &:nth-child(8) {
     flex-direction: row;
     width: auto;
 

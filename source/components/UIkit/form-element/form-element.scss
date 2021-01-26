@@ -60,6 +60,9 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+    &:nth-child(2) {
+      margin-bottom: 31px;
+    }
   }
 }
 
@@ -81,7 +84,8 @@
   }
 }
 
-.form-element--toggle {
+.form-element--toggle,
+.form-element--rich-checkbox {
   .form-element__content .input {
     &:not(:last-child) {
       margin-bottom: 10px;
