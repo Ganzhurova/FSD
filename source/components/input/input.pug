@@ -30,6 +30,8 @@ mixin input(options)
     - classes.push("input__element--checkbox")
     - attributes.type = "checkbox"
 
+
+
   if (attributes.type === 'text' || attributes.type === 'email' || attributes.type === 'password' || attributes.type === 'number')
     input(
       class = classes
@@ -44,4 +46,10 @@ mixin input(options)
         class = classes
         id = options.id
         )&attributes(attributes)
-      label.input__label(for=options.id)!= options.text
+      label.input__label(for=options.id)
+        if options.title
+          div.input__desc
+            span.input__title!= options.title
+            span.input__text!= options.text
+        else
+          != options.text
