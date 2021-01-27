@@ -40,7 +40,7 @@
   }
 
   &:nth-child(5) {
-    margin-bottom: 148px;
+    margin-bottom: 134px;
   }
 
   &:nth-child(6),
@@ -51,6 +51,14 @@
     & .form-element:nth-child(1) {
       margin-right: 72px;
     }
+  }
+
+  &:nth-child(6) {
+    margin-bottom: 218px;
+  }
+
+  &:nth-child(8) {
+    padding-top: 18px;
   }
 }
 
