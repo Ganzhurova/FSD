@@ -1,0 +1,11 @@
+mixin radio(options)
+  if !options
+    - options = {}
+
+  if !options.attributes
+    - options.attributes = {}
+
+  label.radio
+    input.radio__input.visually-hidden(type="radio")&attributes(options.attributes)
+    span.radio__icon
+    span.radio__text!=options.text
