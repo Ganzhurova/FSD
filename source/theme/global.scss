@@ -2,6 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
 }
 
 body {
@@ -21,6 +26,23 @@ img {
 h2 {
   @include title-section;
 }
+
+/*Убирает стрелки из поля input type number*/
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+
+  -webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: textfield;
+}
+
+/**/
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
