@@ -1,0 +1,46 @@
+.checkbox {
+  display: flex;
+  align-items: flex-end;
+
+  color: $dark50;
+  line-height: 18px;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.checkbox__icon {
+  display: block;
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  border: 1px solid $dark25;
+  border-radius: 4px;
+}
+
+.checkbox__title {
+  display: block;
+  margin-bottom: 5px;
+
+  color: $dark75;
+  @include montserrat-bold;
+}
+
+.checkbox__text {
+  display: block;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/*Checked*/
+.checkbox__input:checked + .checkbox__icon {
+  background-image: url("./img/check.svg");
+  background-repeat: no-repeat;
+  background-position: top 40% left 50%;
+  border-color: $purple;
+}
