@@ -10,6 +10,10 @@ include ../../../components/like/like
 include ../../../components/rating/rating
 include ../../../components/range/range
 include ../../../components/pagination/pagination
+include ../../../components/checkbox/checkbox
+include ../../../components/radio/radio
+include ../../../components/toggle/toggle
+include ../../../components/checkbox-list/checkbox-list
 
 block variables
   - var pageTitle = "Form elements"
@@ -60,37 +64,56 @@ block content
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Checkbox buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "checkbox"})
-        +input({isCheckbox: true, id: "smoke", text: "Можно курить"})(
-          name = "smoke"
-          )
-        +input({isCheckbox: true, id: "pet", text: "Можно с питомцами"})(
-          name = "pet"
-          checked
-          )
-        +input({isCheckbox: true, id: "guests", text: "Можно пригласить гостей <br>(до 10 человек)"})(
-          name = "guests"
-          checked
-          )
-      +formElement({title: "Radio Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-37", mix: "radio"})
-        +input({id: "filter-man", text: "Мужчина"})(
-          type = "radio"
-          name = "gender"
-          value = "man"
-          checked
-          )
-        +input({id: "filter-woman", text: "Женщина"})(
-          type = "radio"
-          name = "gender"
-          value = "woman"
-          )
-      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "toggle"})
-        +input({isToggle: true, id: "offer-1", text: "Получать спецпредложения"})(
-          name = "offer"
-          checked
-          )
-        +input({isToggle: true, id: "offer-2", text: "Получать спецпредложения"})(
-          name = "offer"
-          )
+        +checkbox({
+          text: "Можно курить",
+          attributes: {
+            name: "smoke",
+          }
+        })
+        +checkbox({
+          text: "Можно с питомцами",
+          attributes: {
+            name: "pet",
+            checked: true,
+          }
+        })
+        +checkbox({
+          text: "Можно пригласить гостей <br>(до 10 человек)",
+          attributes: {
+            name: "guests",
+            checked: true,
+          }
+        })
+      +formElement({title: "Radio Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-42", mix: "radio"})
+        +radio({
+          text: "Мужчина",
+          attributes: {
+            name: "gender",
+            value: "man",
+            checked: true,
+          }
+          })
+        +radio({
+          text: "Женщина",
+          attributes: {
+            name: "gender",
+            value: "woman",
+          }
+          })
+      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-44", mix: "toggle"})
+        +toggle({
+          text: "Получать спецпредложения",
+          attributes: {
+            name: "offer",
+            checked: true,
+          }
+          })
+        +toggle({
+          text: "Получать спецпредложения",
+          attributes: {
+            name: "offer",
+          }
+          })
       +formElement({title: "Like button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "like"})
         +like(2, false)
         +like(12, true)
@@ -151,14 +174,24 @@ block content
           })
 
     +contentSection({page: "form-elements"})
-      +formElement()
+      +formElement({mix: "checkbox-list"})
+        +checkboxList("Expandable checkbox list", "additionalAmenities")
+        +checkboxList("Expandable checkbox list", "additionalAmenities", true)
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Rich checkbox buttons", categoryMb: "margin-bottom-16", mix: "rich-checkbox"})
-        +input({isCheckbox: true, id: "accessibility-corridor", title: "Широкий коридор", text: "Ширина коридоров в номере<br> не менее 91 см."})(
-          name = "accessibility-corridor"
-          )
-        +input({isCheckbox: true, id: "accessibility-helper", title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист<br> и проводит до номера."})(
-          name = "accessibility-helper"
-          )
+        +checkbox({
+          title: "Широкий коридор",
+          text: "Ширина коридоров в номере<br> не менее 91 см.",
+          attributes: {
+            name: "accessibility-corridor",
+          }
+          })
+        +checkbox({
+          title: "Помощник для инвалидов",
+          text: "На 1 этаже вас встретит специалист<br> и проводит до номера.",
+          attributes: {
+            name: "accessibility-helper",
+          }
+          })
       +formElement({title: "Bullet list", categoryMb: "margin-bottom-16"})
