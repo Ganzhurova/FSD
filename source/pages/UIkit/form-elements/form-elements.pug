@@ -13,7 +13,7 @@ include ../../../components/pagination/pagination
 include ../../../components/checkbox/checkbox
 include ../../../components/radio/radio
 include ../../../components/toggle/toggle
-include ../../../components/checkbox-list/checkbox-list
+include ../../../components/check-list/check-list
 
 block variables
   - var pageTitle = "Form elements"
@@ -174,9 +174,9 @@ block content
           })
 
     +contentSection({page: "form-elements"})
-      +formElement({mix: "checkbox-list"})
-        +checkboxList("Expandable checkbox list", "additionalAmenities")
-        +checkboxList("Expandable checkbox list", "additionalAmenities", true)
+      +formElement({mix: "check-list"})
+        +checkList("Expandable checkbox list", "additionalAmenities")
+        +checkList("Expandable checkbox list", "additionalAmenities", true)
 
     +contentSection({page: "form-elements"})
       +formElement({title: "Rich checkbox buttons", categoryMb: "margin-bottom-16", mix: "rich-checkbox"})
