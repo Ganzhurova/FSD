@@ -1,0 +1,11 @@
+mixin toggle(options)
+  if !options
+    - options = {}
+
+  if !options.attributes
+    - options.attributes = {}
+
+  label.toggle
+    input.toggle__input.visually-hidden(type="checkbox")&attributes(options.attributes)
+    span.toggle__icon
+    !=options.text
