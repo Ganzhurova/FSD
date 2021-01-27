@@ -1,0 +1,64 @@
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+.check-list {
+  position: relative;
+
+  width: 266px;
+
+  background-color: $white;
+}
+
+.check-list__title {
+  position: relative;
+
+  padding: 15px 50px 15px 0;
+
+  outline: none;
+  cursor: pointer;
+  @include label-cta-text;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    color: $dark50;
+
+    transform: translateY(-50%);
+
+    transition: all 0.2s;
+
+    content: "expand_more";
+    @include material-icons;
+  }
+}
+
+.check-list__items {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+
+  padding: 3px 3px 3px 0;
+
+  list-style: none;
+  background-color: $white;
+}
+
+.check-list__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.check-list[open] {
+  .check-list__title::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

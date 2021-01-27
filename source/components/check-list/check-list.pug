@@ -1,0 +1,17 @@
+include ../checkbox/checkbox
+
+mixin checkList(title, listName, opened)
+  include ./check-list-data
+
+  - let list = locals[listName]
+
+  details.check-list(open=opened?true:false)
+    summary.check-list__title= title
+    ul.check-list__items
+      for item in list
+        +checkListItem(item)
+
+
+mixin checkListItem(item)
+  li.check-list__item
+    +checkbox(item)
