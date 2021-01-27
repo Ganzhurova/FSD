@@ -10,8 +10,9 @@
   align-items: center;
   justify-content: center;
 
-  width: 40px;
+  min-width: 40px;
   height: 40px;
+  padding: 0 5px;
 
   color: $dark50;
   font-size: 12px;
@@ -19,6 +20,8 @@
 }
 
 .pagination__button {
+  padding: 0;
+
   background: $secondary-gradient;
   border-radius: 50%;
 
