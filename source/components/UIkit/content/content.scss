@@ -31,7 +31,6 @@
 }
 
 .content__section--form-elements {
-  align-items: flex-start;
   width: 320px;
   padding-top: 3px;
 
@@ -40,6 +39,7 @@
   }
 
   &:nth-child(5) {
+    align-items: flex-start;
     margin-bottom: 134px;
   }
 
