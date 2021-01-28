@@ -2,31 +2,19 @@ mixin input(options)
   if !options
     - options = {}
 
+  if !options.attributes
+    - options.attributes = {}
+
   - let classes = []
 
   if options.isDateMask
     - classes.push("js-input-date-mask")
-    - attributes.type = "text"
-    - attributes.placeholder = "ДД.ММ.ГГГГ"
-
-  if options.isDatepicker
-    - classes.push("datepicker-here")
-    - attributes.type = "text"
-
-  if options.isDatepickerFilter
-    - classes.push("datepicker-here")
-    - attributes.type = "text"
-    - options.dataRange = "true"
-    - options.dataDateFormat = "dd M"
-
-  if options.isDropdownSelect
-    - classes.push("js-dropdown__input")
+    - options.attributes.type = "text"
+    - options.attributes.placeholder = "ДД.ММ.ГГГГ"
 
 
-  if (attributes.type === 'text' || attributes.type === 'email' || attributes.type === 'password' || attributes.type === 'number')
-    input(
-      class = classes
-      id = options.id
-      data-range = options.dataRange
-      data-date-format = options.dataDateFormat
-      )&attributes(attributes)
+  input(
+    class = classes
+    data-range = options.dataRange
+    data-date-format = options.dataDateFormat
+    )&attributes(options.attributes)
