@@ -35,6 +35,7 @@
 }
 
 .dropdown__input {
+  background-color: $white;
   background-image: url("./img/arrow.svg");
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
@@ -51,23 +52,24 @@
   }
 }
 
-.dropdown__list {
+.dropdown__select {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 100;
 
-  display: block;
-
   width: 100%;
-  padding: 6px 7px 6px 15px;
-
-  list-style: none;
 
   background-color: $white;
   border: 1px solid $dark50;
   border-top: 0;
   border-radius: 0 0 4px 4px;
+}
+
+.dropdown__list {
+  padding: 6px 7px 6px 15px;
+
+  list-style: none;
 }
 
 .dropdown__item {
@@ -157,7 +159,7 @@
 }
 
 .dropdown--hidden {
-  .dropdown__list {
+  .dropdown__select {
     max-height: 0px;
     overflow: hidden;
 
@@ -175,15 +177,19 @@
 }
 
 .dropdown--show {
+  box-shadow: 0px 10px 20px 0px $dark05;
+
   .dropdown__input {
     border-color: $dark50;
   }
 
-  .dropdown__list {
+  .dropdown__select {
     max-height: 160px;
     overflow: hidden;
 
     border-width: 1px;
+    box-shadow: 0px 10px 20px 0px $dark05;
+
     visibility: visible;
 
     transition: all 0.2s linear;

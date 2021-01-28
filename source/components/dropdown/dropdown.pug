@@ -11,7 +11,6 @@ mixin dropdown(options)
     - options.attributes = {}
 
   - let classes = []
-  - let labelHiddenClass = options.labelVisually ? "" : "visually-hidden"
 
   - options.attributes.class = ["dropdown__input", "js-dropdown__input"]
   - options.attributes.type = "text"
@@ -26,12 +25,12 @@ mixin dropdown(options)
     - options.list = locals.comfortList
     - classes.push("dropdown--comfort")
 
-  label.js-dropdown.dropdown.dropdown--hidden(class=classes, data-show = options.dataShow)
-    span.dropdown__label(class=labelHiddenClass)= options.label
+  .js-dropdown.dropdown.dropdown--hidden(class=classes, data-show = options.dataShow)
     +input(options)
-    ul.dropdown__list
-      for item in options.list
-        +dropdownItem(item)
+    .dropdown__select
+      ul.dropdown__list
+        for item in options.list
+          +dropdownItem(item)
 
       if options.addButtons
         .dropdown__buttons
