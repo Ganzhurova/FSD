@@ -14,6 +14,7 @@ include ../../../components/checkbox/checkbox
 include ../../../components/radio/radio
 include ../../../components/toggle/toggle
 include ../../../components/check-list/check-list
+include ../../../components/bullet-list/bullet-list
 
 block variables
   - var pageTitle = "Form elements"
@@ -38,10 +39,8 @@ block content
             value: "This is pretty awesome",
           }
           })
-      +formElement({mb: "margin-bottom-23"})
+      +formElement({title: "Dropdown", mb: "margin-bottom-23"})
         +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
           isGuestsDropdown: true
           })
       +formElement({mb: "margin-bottom-40"})
@@ -167,17 +166,13 @@ block content
           })
 
     +contentSection({page: "form-elements"})
-      +formElement()
+      +formElement({title: "Dropdown"})
         +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
           isGuestsDropdown: true,
           dataShow: "true",
           })
-      +formElement()
+      +formElement({title: "Dropdown"})
         +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
           isGuestsDropdown: true,
           dataShow: "true",
           })
@@ -204,3 +199,4 @@ block content
           }
           })
       +formElement({title: "Bullet list", categoryMb: "margin-bottom-16"})
+        +bulletList("rules")

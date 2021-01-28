@@ -59,6 +59,14 @@
 
   &:nth-child(8) {
     padding-top: 18px;
+
+    & .form-element {
+      width: 320px;
+    }
+
+    & .form-element:nth-child(1) {
+      margin-right: 72px;
+    }
   }
 }
 
