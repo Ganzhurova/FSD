@@ -1,0 +1,9 @@
+.subscription-field {
+  display: flex;
+  width: 267px;
+  @include input-bordered;
+}
+
+.subscription-field__input {
+  @include input;
+}
