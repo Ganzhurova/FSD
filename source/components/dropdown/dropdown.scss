@@ -1,17 +1,11 @@
 .dropdown {
   position: relative;
 
+  display: block;
+
   width: 320px;
 
-  background-color: inherit;
-
-  &--date {
-    width: 150px;
-  }
-
-  &--filter-date {
-    width: 266px;
-  }
+  background-color: $white;
 }
 
 .dropdown--comfort {
@@ -57,24 +51,23 @@
   }
 }
 
-.dropdown__select {
+.dropdown__list {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 100;
 
+  display: block;
+
   width: 100%;
+  padding: 6px 7px 6px 15px;
+
+  list-style: none;
 
   background-color: $white;
   border: 1px solid $dark50;
   border-top: 0;
   border-radius: 0 0 4px 4px;
-}
-
-.dropdown__list {
-  padding: 6px 7px 6px 15px;
-
-  list-style: none;
 }
 
 .dropdown__item {
@@ -164,7 +157,7 @@
 }
 
 .dropdown--hidden {
-  .dropdown__select {
+  .dropdown__list {
     max-height: 0px;
     overflow: hidden;
 
@@ -186,7 +179,7 @@
     border-color: $dark50;
   }
 
-  .dropdown__select {
+  .dropdown__list {
     max-height: 160px;
     overflow: hidden;
 

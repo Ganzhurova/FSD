@@ -1,76 +1,54 @@
 include ../input/input
 include ../button/button
 
-
 mixin dropdown(options)
   include ./dropdown-data
 
   if !options
     - options = {}
 
+  if !options.attributes
+    - options.attributes = {}
+
   - let classes = []
+  - let labelHiddenClass = options.labelVisually ? "" : "visually-hidden"
+
+  - options.attributes.class = ["dropdown__input", "js-dropdown__input"]
+  - options.attributes.type = "text"
 
   if options.isGuestsDropdown
-    - attributes.placeholder = "Сколько гостей"
-    - options.isDropdownSelect = true
+    - options.attributes.placeholder = "Сколько гостей"
     - options.list = locals.guestsList
     - options.addButtons = true
     - classes.push("dropdown--guests")
 
   if options.isComfortDropdown
-    - options.isDropdownSelect = true
     - options.list = locals.comfortList
     - classes.push("dropdown--comfort")
 
-  if options.isDropdownSelect
-    - classes.push("js-dropdown dropdown--hidden")
-    - attributes.type = "text"
-    - attributes.readonly = true
-
-  if options.isDateDropdown
-    - options.isDateMask = true
-    - options.isDatepicker = true
-    - classes.push("dropdown--date")
-
-  if options.isFilterDateDropdown
-    - options.isDatepickerFilter = true
-    - attributes.placeholder = "19 авг - 23 авг"
-    - classes.push("dropdown--filter-date")
-
-
-  .dropdown(
-    class = classes,
-    data-show = options.dataShow)
-    if options.label
-      label.dropdown__label(for=options.id)= options.label
-    - attributes.class = "dropdown__input"
-    +input(options)&attributes(attributes)
-    if options.isDropdownSelect
-      +dropdownSelect(options.list, options.addButtons)
-
-
-mixin dropdownSelect(list, addButtons)
-  .dropdown__select.js-dropdown__select
+  label.js-dropdown.dropdown.dropdown--hidden(class=classes, data-show = options.dataShow)
+    span.dropdown__label(class=labelHiddenClass)= options.label
+    +input(options)
     ul.dropdown__list
-      for item in list
+      for item in options.list
         +dropdownItem(item)
 
-    if (addButtons)
-      .dropdown__buttons
-        +button({
-          mix: "dropdown__button",
-          buttonMod: "text",
-          type: "button",
-          desc: "Очистить",
-          dataAction: "clear",
-          })
-        +button({
-          mix: "dropdown__button",
-          buttonMod: "text",
-          type: "button",
-          desc: "Применить",
-          dataAction: "apply",
-          })
+      if options.addButtons
+        .dropdown__buttons
+          +button({
+            mix: "dropdown__button",
+            buttonMod: "text",
+            type: "button",
+            desc: "Очистить",
+            dataAction: "clear",
+            })
+          +button({
+            mix: "dropdown__button",
+            buttonMod: "text",
+            type: "button",
+            desc: "Применить",
+            dataAction: "apply",
+            })
 
 mixin dropdownItem(item)
   li.dropdown__item.js-dropdown__item(data-option=item.dataOption)
@@ -78,8 +56,7 @@ mixin dropdownItem(item)
 
     .dropdown__number.js-dropdown__number
       button.dropdown__number-button(type="button", data-action="minus")
-      +input()(
-        class = "dropdown__total js-dropdown__total"
+      input.dropdown__total.js-dropdown__total(
         type = "number"
         disabled = true
         value = item.defaultVal
