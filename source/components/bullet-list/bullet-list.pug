@@ -1,0 +1,10 @@
+mixin bulletList(listName)
+  include ./bullet-list-data
+  - let list = locals[listName]
+
+  ul.bullet-list
+    for item in list
+      +bulletListItem(item)
+
+mixin bulletListItem(item)
+  li.bullet-list__item!= item.text
