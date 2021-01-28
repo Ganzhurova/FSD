@@ -39,8 +39,10 @@ block content
             value: "This is pretty awesome",
           }
           })
-      +formElement({title: "Dropdown", mb: "margin-bottom-23"})
+      +formElement({mb: "margin-bottom-23"})
         +dropdown({
+          label: "Dropdown",
+          labelVisually: true,
           isGuestsDropdown: true
           })
       +formElement({mb: "margin-bottom-40"})
@@ -166,13 +168,17 @@ block content
           })
 
     +contentSection({page: "form-elements"})
-      +formElement({title: "Dropdown"})
+      +formElement()
         +dropdown({
+          label: "Dropdown",
+          labelVisually: true,
           isGuestsDropdown: true,
           dataShow: "true",
           })
-      +formElement({title: "Dropdown"})
+      +formElement()
         +dropdown({
+          label: "Dropdown",
+          labelVisually: true,
           isGuestsDropdown: true,
           dataShow: "true",
           })
@@ -200,3 +206,5 @@ block content
           })
       +formElement({title: "Bullet list", categoryMb: "margin-bottom-16"})
         +bulletList("rules")
+
+    +contentSection({page: "form-elements"})
