@@ -1,3 +1,39 @@
+.date-dropdown {
+  display: block;
+  width: 150px;
+
+  background-color: $white;
+
+  &--filter {
+    width: 266px;
+  }
+}
+
+.date-dropdown__label {
+  display: block;
+  margin-bottom: 5px;
+  padding-top: 1px;
+
+  @include label-cta-text;
+}
+
+.date-dropdown__input {
+  background-image: url("./img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: top 17px right 15px;
+  cursor: pointer;
+  @include input;
+  @include input-bordered;
+
+  & {
+    padding-right: 44px;
+  }
+
+  &::placeholder {
+    color: $dark75;
+  }
+}
+
 .datepickers-container {
   position: absolute;
   top: 0;

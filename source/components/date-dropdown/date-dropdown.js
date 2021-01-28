@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'air-datepicker';
-import './datepicker.scss';
+import './date-dropdown.scss';
 
 $('.datepicker-here').datepicker({
   navTitles: {

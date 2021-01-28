@@ -1,0 +1,24 @@
+mixin dateDropdown(options)
+  if !options
+    - options = {}
+
+  if !options.attributes
+    - options.attributes = {}
+
+  - let classes = []
+
+  - options.isDateMask = true
+  - options.attributes.type = "text"
+  - options.attributes.class = ["datepicker-here", "date-dropdown__input"]
+
+  if options.isFilter
+    - options.isDateMask = false
+    - classes.push("date-dropdown--filter")
+    - options.attributes.placeholder = "19 авг - 23 авг"
+    - options.dataRange = "true"
+    - options.dataDateFormat = "dd M"
+
+
+  label.date-dropdown(class=classes)
+    span.date-dropdown__label= options.label
+    +input(options)
