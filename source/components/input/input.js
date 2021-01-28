@@ -1,4 +1,3 @@
-import './input.scss';
 import Inputmask from 'inputmask';
 
 const dateMask = {
