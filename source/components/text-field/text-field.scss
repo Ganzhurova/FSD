@@ -1,7 +1,8 @@
 .text-field {
-  width: 320px;
+  display: block;
+  max-width: 320px;
 
-  background-color: inherit;
+  background-color: $white;
 }
 
 .text-field__label {

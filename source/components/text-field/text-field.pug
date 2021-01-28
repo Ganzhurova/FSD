@@ -4,9 +4,13 @@ mixin text-field(options)
   if !options
     - options = {}
 
-  - attributes.class = "text-field__input"
+  if !options.attributes
+    - options.attributes = {}
 
-  .text-field
-    if options.label
-      label.text-field__label(for=options.id)= options.label
-    +input(options)&attributes(attributes)
+  - options.attributes.class = "text-field__input"
+
+  - let hiddenClass = options.labelVisually ? "" : "visually-hidden"
+
+  label.text-field
+    span.text-field__label(class=hiddenClass)= options.label
+    +input(options)
