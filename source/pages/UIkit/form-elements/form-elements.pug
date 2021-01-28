@@ -2,10 +2,10 @@ extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
 include ../../../components/UIkit/form-element/form-element
-include ../../../components/input/input
 include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
-include ../../../components/subscription/subscription
+include ../../../components/date-dropdown/date-dropdown
+include ../../../components/subscription-field/subscription-field
 include ../../../components/like/like
 include ../../../components/rating/rating
 include ../../../components/range/range
@@ -22,17 +22,22 @@ block content
   +content()
     +contentSection({page: "form-elements"})
       +formElement({title: "Text Field", state: "Default"})
-        +text-field()(
-          type = "email"
-          placeholder = "Email"
-          )
+        +text-field({
+          label: "Email",
+          attributes: {
+            type: "email",
+            placeholder: "Email",
+          }
+          })
       +formElement({title: "Text Field", state: "Hover / Focus"})
-        +text-field()(
-          type = "text"
-          placeholder = "Text"
-          value = "This is pretty awesome"
-
-          )
+        +text-field({
+          label: "Text",
+          attributes: {
+            type: "text",
+            placeholder: "Text",
+            value: "This is pretty awesome",
+          }
+          })
       +formElement({mb: "margin-bottom-23"})
         +dropdown({
           label: "Dropdown",
@@ -41,25 +46,26 @@ block content
       +formElement({mb: "margin-bottom-40"})
         +text-field({
           label: "Masked text field",
-          id: "mask",
+          labelVisually: true,
           isDateMask: true
           })
       +formElement({mb: "margin-bottom-40", mix: "date-dropdown"})
-        +dropdown({
+        +dateDropdown({
           label: "Date Dropdown",
-          isDateDropdown: true,
           })
-        +dropdown({
+        +dateDropdown({
           label: "Date Dropdown",
-          isDateDropdown: true,
-          })(value = "19.08.2019")
+          attributes: {
+            value: "19.08.2019"
+          }
+          })
       +formElement({mb: "margin-bottom-40"})
-        +dropdown({
+        +dateDropdown({
           label: "Filter date dropdown",
-          isFilterDateDropdown: true,
+          isFilter: true,
           })
       +formElement({title: "Subscription text field", mb: "margin-bottom-98"})
-        +subscription()
+        +subscriptionField()
 
 
     +contentSection({page: "form-elements"})
