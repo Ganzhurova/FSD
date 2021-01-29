@@ -1,0 +1,20 @@
+include ../like/like
+
+mixin review(options)
+  if !options
+    - options = {}
+
+  if !options.like
+    - options.like = {}
+
+  .review
+    .review__header
+      .review__avatar
+        img.review__img(src=require(`Components/review/img/${options.img}`), width="48", height="48", alt= options.name)
+      .review__info
+        span.review__author= options.name
+        span.review__date= options.date
+    .review__body
+      .review__like
+        +like(options.like.count, options.like.isChecked)
+      p.review__text= options.text
