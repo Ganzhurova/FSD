@@ -2,7 +2,6 @@ import './like.scss';
 
 class Like {
   constructor() {
-    // this.isLiked = true;
     this.activeClass = 'like--actual';
   }
 
