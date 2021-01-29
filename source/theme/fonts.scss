@@ -2,8 +2,9 @@
 
 @font-face {
   font-weight: 400;
-  font-family: "montserratregular";
+  font-family: "Montserrat";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/montserrat-regular.eot");
   src: url("../fonts/montserrat-regular.eot?#iefix") format("embedded-opentype"),
     url("../fonts/montserrat-regular.woff2") format("woff2"),
@@ -13,9 +14,10 @@
 }
 
 @font-face {
-  font-weight: 400;
-  font-family: "montserratbold";
+  font-weight: 700;
+  font-family: "Montserrat";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/montserrat-bold.eot");
   src: url("../fonts/montserrat-bold.eot?#iefix") format("embedded-opentype"),
     url("../fonts/montserrat-bold.woff2") format("woff2"),

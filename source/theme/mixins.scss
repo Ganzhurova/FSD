@@ -1,9 +1,13 @@
 @mixin montserrat-regular {
-  font-family: "montserratregular", "Arial", sans-serif;
+  font-weight: 400;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
 }
 
 @mixin montserrat-bold {
-  font-family: "montserratbold", "Arial", sans-serif;
+  font-weight: 700;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
 }
 
 @mixin material-icons(
