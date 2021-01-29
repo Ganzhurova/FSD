@@ -15,6 +15,8 @@ include ../../../components/radio/radio
 include ../../../components/toggle/toggle
 include ../../../components/check-list/check-list
 include ../../../components/bullet-list/bullet-list
+include ../../../components/features/features
+include ../../../components/review/review
 
 block variables
   - var pageTitle = "Form elements"
@@ -208,3 +210,16 @@ block content
         +bulletList("rules")
 
     +contentSection({page: "form-elements"})
+      +formElement()
+        +features("featuresUikit")
+      +formElement()
+        +review({
+          name: "Мурад Сарафанов",
+          img: "image.png",
+          date: "5 дней назад",
+          like: {
+            count: 12,
+            isChecked: true,
+          },
+          text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+          })
