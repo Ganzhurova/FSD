@@ -1,7 +1,7 @@
-mixin content()
+mixin content(name)
   main
     section.content
-      .content__wrapper.container
+      .content__wrapper.container(class = name ? `content__wrapper--${name}` : "")
         if (h1)
           h1.content__title= h1
         else
@@ -12,9 +12,13 @@ mixin contentSection(options)
   if !options
     - options = {}
 
-  -
-    var classes = ''
-    classes += options.page ? "content__section--" + options.page : ''
+  - let classes = []
 
-  .content__section(class= classes)
+  if options.name
+    - classes.push(`content__section--${options.name}`)
+
+  if options.row
+    - classes.push("content__section--row")
+
+  .content__section(class = classes)
     block

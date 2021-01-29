@@ -19,12 +19,13 @@ include ../../../components/features/features
 include ../../../components/review/review
 
 block variables
-  - var pageTitle = "Form elements"
+  - let pageTitle = "Form elements"
+  - let name = "form-elements"
 
 block content
-  +content()
-    +contentSection({page: "form-elements"})
-      +formElement({title: "Text Field", state: "Default"})
+  +content(name)
+    +contentSection({...{}, name})
+      +formElement({title: "Text Field", state: "Default", mb: 20,})
         +text-field({
           label: "Email",
           attributes: {
@@ -32,7 +33,7 @@ block content
             placeholder: "Email",
           }
           })
-      +formElement({title: "Text Field", state: "Hover / Focus"})
+      +formElement({title: "Text Field", state: "Hover / Focus", mb: 20,})
         +text-field({
           label: "Text",
           attributes: {
@@ -41,19 +42,19 @@ block content
             value: "This is pretty awesome",
           }
           })
-      +formElement({mb: "margin-bottom-23"})
+      +formElement({mb: 22.56,})
         +dropdown({
           label: "Dropdown",
           labelVisually: true,
           isGuestsDropdown: true
           })
-      +formElement({mb: "margin-bottom-40"})
+      +formElement({mb: 40,})
         +text-field({
           label: "Masked text field",
           labelVisually: true,
           isDateMask: true
           })
-      +formElement({mb: "margin-bottom-40", mix: "date-dropdown"})
+      +formElement({mb: 41, mix: "date-dropdown"})
         +dateDropdown({
           label: "Date Dropdown",
           })
@@ -63,17 +64,17 @@ block content
             value: "19.08.2019"
           }
           })
-      +formElement({mb: "margin-bottom-40"})
+      +formElement({mb: 41,})
         +dateDropdown({
           label: "Filter date dropdown",
           isFilter: true,
           })
-      +formElement({title: "Subscription text field", mb: "margin-bottom-98"})
+      +formElement({title: "Subscription text field", mb: 100,})
         +subscriptionField()
 
 
-    +contentSection({page: "form-elements"})
-      +formElement({title: "Checkbox buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "checkbox"})
+    +contentSection({...{}, name})
+      +formElement({title: "Checkbox buttons", categoryMb: 16.56, mb: 40.88, mix: "checkbox"})
         +checkbox({
           text: "Можно курить",
           attributes: {
@@ -94,7 +95,7 @@ block content
             checked: true,
           }
         })
-      +formElement({title: "Radio Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-42", mix: "radio"})
+      +formElement({title: "Radio Buttons", categoryMb: 16, mb: 40.56, mix: "radio"})
         +radio({
           text: "Мужчина",
           attributes: {
@@ -110,7 +111,7 @@ block content
             value: "woman",
           }
           })
-      +formElement({title: "Toggle", categoryMb: "margin-bottom-16", mb: "margin-bottom-44", mix: "toggle"})
+      +formElement({title: "Toggle", categoryMb: 16, mb: 44.44, mix: "toggle"})
         +toggle({
           text: "Получать спецпредложения",
           attributes: {
@@ -124,17 +125,17 @@ block content
             name: "offer",
           }
           })
-      +formElement({title: "Like button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "like"})
+      +formElement({title: "Like button", categoryMb: 16, mb: 40, mix: "like"})
         +like(2, false)
         +like(12, true)
-      +formElement({title: "Rate button", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "rate"})
+      +formElement({title: "Rate button", categoryMb: 16, mb: 40, mix: "rate"})
         +rating(4)
         +rating(5)
 
-    +contentSection({page: "form-elements"})
-      +formElement({mb: "margin-bottom-44"})
+    +contentSection({...{}, name})
+      +formElement({mb: 43.56})
         +range("Range slider")
-      +formElement({title: "Buttons", categoryMb: "margin-bottom-16", mb: "margin-bottom-40", mix: "buttons"})
+      +formElement({title: "Buttons", categoryMb: 16, mb: 41, mix: "buttons"})
         +button({
           type: "button",
           buttonMod: "colored",
@@ -155,21 +156,21 @@ block content
           buttonMod: "with-arrow",
           desc: "Перейти к оплате"
           })
-      +formElement({title: "Pagination", categoryMb: "margin-bottom-16"})
+      +formElement({title: "Pagination", categoryMb: 16.44, mb: 40})
         +pagination()
 
-    +contentSection({page: "form-elements"})
-      +formElement({title: "Dropdown", state: "Default"})
+    +contentSection({...{}, name})
+      +formElement({title: "Dropdown", state: "Default", mb: 20,})
         +dropdown({
           isComfortDropdown: true,
           })
-      +formElement({title: "Dropdown", state: "Expanded"})
+      +formElement({title: "Dropdown", state: "Expanded", categoryMb: 4.56, mb: 158.44})
         +dropdown({
           isComfortDropdown: true,
           dataShow: "true",
           })
 
-    +contentSection({page: "form-elements"})
+    +contentSection({...{row: true}, name})
       +formElement()
         +dropdown({
           label: "Dropdown",
@@ -185,13 +186,13 @@ block content
           dataShow: "true",
           })
 
-    +contentSection({page: "form-elements"})
-      +formElement({mix: "check-list"})
+    +contentSection({...{}, name})
+      +formElement({mix: "check-list", mb: 274})
         +checkList("Expandable checkbox list", "additionalAmenities")
         +checkList("Expandable checkbox list", "additionalAmenities", true)
 
-    +contentSection({page: "form-elements"})
-      +formElement({title: "Rich checkbox buttons", categoryMb: "margin-bottom-16", mix: "rich-checkbox"})
+    +contentSection({...{row: true}, name})
+      +formElement({title: "Rich checkbox buttons", categoryMb: 16, mix: "rich-checkbox"})
         +checkbox({
           title: "Широкий коридор",
           text: "Ширина коридоров в номере<br> не менее 91 см.",
@@ -206,10 +207,10 @@ block content
             name: "accessibility-helper",
           }
           })
-      +formElement({title: "Bullet list", categoryMb: "margin-bottom-16"})
+      +formElement({title: "Bullet list", categoryMb: 16,})
         +bulletList("rules")
 
-    +contentSection({page: "form-elements"})
+    +contentSection({...{row: true}, name})
       +formElement()
         +features("featuresUikit")
       +formElement()

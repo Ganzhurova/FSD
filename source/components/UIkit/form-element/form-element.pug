@@ -3,17 +3,12 @@ mixin formElement(options)
     - options = {}
 
   -
-    var classes = ""
-    classes += options.mb ? " form-element--" + options.mb : ""
+    let classes = ""
     classes += options.mix ? " form-element--" + options.mix : ""
 
-  -
-    var categoryClasses = ""
-    categoryClasses += options.categoryMb ? " form-element__category--" + options.categoryMb : ""
-
-  .form-element(class=classes)
+  .form-element(class=classes style = options.mb ? `--margin-bottom: ${options.mb}px` : false)
     if (options.title)
-      .form-element__category(class=categoryClasses)
+      .form-element__category(style = options.categoryMb ? `--category-margin-bottom: ${options.categoryMb}px` : false)
         h2.form-element__title= options.title
         span.form-element__state= options.state
     .form-element__content
