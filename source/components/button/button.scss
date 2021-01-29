@@ -12,13 +12,24 @@
 }
 
 .button--icon {
+  position: relative;
+
   flex-shrink: 0;
   width: 44px;
-  height: 44px;
+  height: 42px;
 
-  background: $primary-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  .button__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    transform: translate(-50%, -50%);
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .button--colored {
