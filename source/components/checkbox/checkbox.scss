@@ -29,6 +29,7 @@
 .checkbox__title {
   display: block;
   margin-bottom: 5px;
+  padding-top: 1px;
 
   color: $dark75;
   @include montserrat-bold;
