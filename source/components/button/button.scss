@@ -80,7 +80,8 @@
 .button--with-arrow {
   position: relative;
 
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   padding: 15px 20px;
 
   color: $white;
