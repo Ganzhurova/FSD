@@ -1,0 +1,58 @@
+.signup {
+  @include card;
+}
+
+.signup__title {
+  margin-bottom: 20px;
+  padding-top: 1px;
+}
+
+.signup__fieldset {
+  margin-bottom: 20px;
+  padding: 0;
+
+  border: 0;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+}
+
+.signup__name,
+.signup__surname {
+  margin-bottom: 10px;
+}
+
+.signup__gender {
+  display: flex;
+  margin-bottom: 23.56px;
+
+  & > :first-child {
+    margin-right: 20px;
+  }
+}
+
+.signup__legend {
+  margin-bottom: 5px;
+  padding-top: 1px;
+  @include label-cta-text;
+}
+
+.signup__email,
+.signup__password {
+  margin-bottom: 10px;
+}
+
+.signup__button {
+  margin-bottom: 30px;
+}
+
+.signup__footer {
+  display: grid;
+  grid-template: 1fr / 1fr 99px;
+  align-items: center;
+}
+
+.signup__text {
+  margin-right: 20px;
+}
