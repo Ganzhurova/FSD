@@ -1,3 +1,5 @@
+include ../input/input
+
 mixin dateDropdown(options)
   if !options
     - options = {}
@@ -10,6 +12,12 @@ mixin dateDropdown(options)
   - options.isDateMask = true
   - options.attributes.type = "text"
   - options.attributes.class = ["datepicker-here", "date-dropdown__input"]
+
+  if options.isFilterStart
+    - options.attributes.class.push("js-datepicker-start")
+
+  if options.isFilterEnd
+    - options.attributes.class.push("js-datepicker-end")
 
   if options.isFilter
     - options.isDateMask = false

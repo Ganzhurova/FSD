@@ -60,3 +60,19 @@ $.fn.datepicker.language.ru = {
   timeFormat: 'hh:ii',
   firstDay: 1,
 };
+
+const $start = $('.js-datepicker-start');
+const $end = $('.js-datepicker-end');
+
+$start.datepicker({
+  onSelect(fd, date) {
+    $end.data('datepicker').update('minDate', date);
+    $end.focus();
+  },
+});
+
+$end.datepicker({
+  onSelect(fd, date) {
+    $start.data('datepicker').update('maxDate', date);
+  },
+});
