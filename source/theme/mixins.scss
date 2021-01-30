@@ -43,7 +43,7 @@
 @mixin title-section {
   color: $title-color;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 29px;
   @include montserrat-bold;
 }
 
@@ -102,4 +102,14 @@
     border: 1px solid $dark50;
     outline: none;
   }
+}
+
+@mixin card {
+  width: 380px;
+  padding: 39px 29px 29px;
+
+  background-color: $white;
+  border: 1px solid rgba($black, 0.12);
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px 0px rgba($black, 0.2);
 }
