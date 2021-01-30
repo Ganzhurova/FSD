@@ -26,7 +26,7 @@ block content
   +content(name)
     +contentSection({...{}, name})
       +formElement({title: "Text Field", state: "Default", mb: 20,})
-        +text-field({
+        +textField({
           label: "Email",
           attributes: {
             type: "email",
@@ -34,7 +34,7 @@ block content
           }
           })
       +formElement({title: "Text Field", state: "Hover / Focus", mb: 20,})
-        +text-field({
+        +textField({
           label: "Text",
           attributes: {
             type: "text",
@@ -49,7 +49,7 @@ block content
           isGuestsDropdown: true
           })
       +formElement({mb: 40,})
-        +text-field({
+        +textField({
           label: "Masked text field",
           labelVisually: true,
           isDateMask: true
