@@ -2,6 +2,7 @@ extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
 include ../../../components/search-room/search-room
+include ../../../components/signup/signup
 
 block variables
   - let pageTitle = "Cards"
@@ -13,6 +14,7 @@ block content
   +content(name)
     +contentSection({...{}, name})
       +searchRoom()
+      +signup()
     +contentSection({...{}, name})
     +contentSection({...{}, name})
       .uikit-calendar.datepicker-here
