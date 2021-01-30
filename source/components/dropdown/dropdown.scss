@@ -150,6 +150,10 @@
 
   background-color: inherit;
   border: 0;
+
+  user-select: none;
+
+  pointer-events: none;
   @include label-cta-text;
 }
 

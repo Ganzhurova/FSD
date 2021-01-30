@@ -60,7 +60,8 @@ mixin dropdownItem(item)
       button.dropdown__number-button(type="button", data-action="minus")
       input.dropdown__total.js-dropdown__total(
         type = "number"
-        disabled = true
+        readonly = true
         value = item.defaultVal
+        name = item.name
         )
       button.dropdown__number-button(type="button", data-action="plus")
