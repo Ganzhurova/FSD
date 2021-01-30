@@ -1,0 +1,39 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../button/button
+
+mixin searchRoom()
+  section.search-room
+    h2.search-room__title Найдём номера под ваши пожелания
+    form.search-room__form
+      .search-room__dates
+        +dateDropdown({
+          label: "Прибытие",
+          isFilterStart: true,
+          attributes: {
+            name: "arrival",
+            required: true,
+          }
+          })
+        +dateDropdown({
+          label: "Выезд",
+          isFilterEnd: true,
+          attributes: {
+            name: "departure",
+            required: true,
+          }
+          })
+      .search-room__guests
+        +dropdown({
+          label: "Гости",
+          labelVisually: true,
+          isGuestsDropdown: true,
+          attributes: {
+            required: true,
+          }
+          })
+      +button({
+        type: "submit",
+        buttonMod: "with-arrow",
+        desc: "Подобрать номер"
+        })
