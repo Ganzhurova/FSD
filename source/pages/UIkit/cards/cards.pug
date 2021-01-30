@@ -1,16 +1,18 @@
 extends ../../base/base-uikit.pug
 
 include ../../../components/UIkit/content/content
-include ../../../components/modal/modal
+include ../../../components/search-room/search-room
 
 block variables
-  - var pageTitle = "Cards"
-  - var uikitClass = "uikit-page--theme-light"
+  - let pageTitle = "Cards"
+  - let uikitClass = "uikit-page--theme-light"
+  - let name = "cards"
+
 
 block content
-  +content()
-    +contentSection({page: "cards"})
-    +contentSection({page: "cards"})
-    +contentSection({page: "cards"})
+  +content(name)
+    +contentSection({...{}, name})
+      +searchRoom()
+    +contentSection({...{}, name})
+    +contentSection({...{}, name})
       .uikit-calendar.datepicker-here
-    //- +modalSignin()
