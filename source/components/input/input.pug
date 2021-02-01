@@ -12,9 +12,4 @@ mixin input(options)
     - options.attributes.type = "text"
     - options.attributes.placeholder = "ДД.ММ.ГГГГ"
 
-
-  input(
-    class = classes
-    data-range = options.dataRange
-    data-date-format = options.dataDateFormat
-    )&attributes(options.attributes)
+  input(class = classes)&attributes(options.attributes)
