@@ -4,29 +4,45 @@ mixin dateDropdown(options)
   if !options
     - options = {}
 
+  if options.mode === "range"
+    .date-dropdown.date-dropdown--range
+      input.js-range-date-dropdown.visually-hidden.date-dropdown__range-input(type="text")
+      +dateDropdownPicker(options.from, options.mode, className="js-date-dropdown-from")
+      +dateDropdownPicker(options.to, options.mode, className="js-date-dropdown-to")
+
+  if options.mode === "filter"
+    +dateDropdownPicker(options.filter, options.mode)
+
+
+mixin dateDropdownPicker(options, mode, className="")
+  if !options
+    - options = {}
+
   if !options.attributes
     - options.attributes = {}
 
-  - let classes = []
+  -
+    let wrapClass = ""
 
-  - options.isDateMask = true
-  - options.attributes.type = "text"
-  - options.attributes.class = ["datepicker-here", "date-dropdown__input"]
+    options.attributes.class = []
+    options.attributes.class.push("date-dropdown__input")
+    options.attributes.type = "text"
 
-  if options.isFilterStart
-    - options.attributes.class.push("js-datepicker-start")
+    if (className) {
+      options.attributes.class.push(className)
+    }
 
-  if options.isFilterEnd
-    - options.attributes.class.push("js-datepicker-end")
+    if (mode === "range") {
+      wrapClass = "date-dropdown__picker";
+      options.isDateMask = true
+    }
 
-  if options.isFilter
-    - options.isDateMask = false
-    - classes.push("date-dropdown--filter")
-    - options.attributes.placeholder = "19 авг - 23 авг"
-    - options.dataRange = "true"
-    - options.dataDateFormat = "dd M"
+    if (mode === "filter") {
+      wrapClass = "date-dropdown"
+      options.attributes.class.push("js-filter-date-dropdown")
+      options.attributes.value = "19 авг - 23 авг"
+    }
 
-
-  label.date-dropdown(class=classes)
+  label(class=wrapClass)
     span.date-dropdown__label= options.label
     +input(options)

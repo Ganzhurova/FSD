@@ -1,12 +1,20 @@
-.date-dropdown {
+.date-dropdown,
+.date-dropdown__picker {
   display: block;
-  width: 150px;
 
   background-color: $white;
+}
 
-  &--filter {
-    width: 266px;
-  }
+.date-dropdown--range {
+  position: relative;
+
+  display: grid;
+  grid-template: 1fr / repeat(2, 150px);
+  justify-content: space-between;
+}
+
+.date-dropdown__range-input {
+  bottom: 0;
 }
 
 .date-dropdown__label {
@@ -319,9 +327,5 @@
 
   &:hover {
     color: $green;
-  }
-
-  &:last-child {
-    order: -1;
   }
 }
