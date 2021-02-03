@@ -5,11 +5,13 @@ mixin input(options)
   if !options.attributes
     - options.attributes = {}
 
-  - let classes = []
+  -
+    let classes = []
 
-  if options.isDateMask
-    - classes.push("js-input-date-mask")
-    - options.attributes.type = "text"
-    - options.attributes.placeholder = "ДД.ММ.ГГГГ"
+    if (options.isDateMask) {
+      classes.push("js-input-date-mask")
+      options.attributes.type = "text"
+      options.attributes.placeholder = "ДД.ММ.ГГГГ"
+    }
 
-  input(class = classes)&attributes(options.attributes)
+  input(class=classes)&attributes(options.attributes)
