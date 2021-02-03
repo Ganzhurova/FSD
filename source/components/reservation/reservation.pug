@@ -1,0 +1,26 @@
+include ../date-dropdown/date-dropdown
+
+mixin reservation()
+  section.reservation
+    form.reservation__info
+      h2.reservation__number 888
+        span.reservation__class Люкс
+      span.reservation__cost
+        span.reservation__price 9990
+        |в сутки
+      .reservation__dates
+        +dateDropdown({
+          label: "Прибытие",
+          attributes: {name: "arrival",},
+          })
+        +dateDropdown({
+          label: "Выезд",
+          attributes: {name: "departure",},
+          })
+      .reservation__guests
+        +dropdown({
+          label: "Гости",
+          labelVisually: true,
+          isGuestsDropdown: true,
+          })
+    ul.reservation__order
