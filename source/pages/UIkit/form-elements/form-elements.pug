@@ -56,20 +56,21 @@ block content
           })
       +formElement({mb: 41, mix: "date-dropdown"})
         +dateDropdown({
-          label: "Date Dropdown",
-          isFilterStart: true,
+          mode: "range",
+          from: {label: "Date Dropdown",},
+          to: {
+            label: "Date Dropdown",
+            attributes: {
+              value: "19.08.2019"
+              }
+            },
           })
+      +formElement({mb: 41, mix: "filter-date-dropdown"})
         +dateDropdown({
-          label: "Date Dropdown",
-          isFilterEnd: true,
-          attributes: {
-            value: "19.08.2019"
-          }
-          })
-      +formElement({mb: 41,})
-        +dateDropdown({
-          label: "Filter date dropdown",
-          isFilter: true,
+          mode: "filter",
+          filter: {
+            label: "Filter date dropdown",
+            },
           })
       +formElement({title: "Subscription text field", mb: 100,})
         +subscriptionField()
