@@ -1,0 +1,129 @@
+.reservation {
+  @include card;
+}
+
+.reservation__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-top: 1px;
+}
+
+.reservation__title {
+  margin-right: 30px;
+}
+
+.reservation__number {
+  &::before {
+    font-size: 14px;
+
+    line-height: 17px;
+
+    content: "№ ";
+  }
+}
+
+.reservation__class {
+  @include label-cta-text;
+  & {
+    color: $primary-color;
+  }
+}
+
+.reservation__cost {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.reservation__price {
+  font-size: 14px;
+
+  @include montserrat-bold;
+  &::after {
+    content: "₽ ";
+  }
+}
+
+.reservation__dates {
+  margin-bottom: 20px;
+}
+
+.reservation__guests {
+  margin-bottom: 20px;
+}
+
+.reservation__order {
+  margin-bottom: 20px;
+}
+
+.reservation__calculation {
+  margin-bottom: 30px;
+
+  list-style: none;
+}
+
+.reservation__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.reservation__text {
+  margin-right: 5px;
+
+  line-height: 18px;
+}
+
+.reservation__category {
+  display: flex;
+  flex-grow: 1;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.reservation__subtotal {
+  display: block;
+  min-width: 70px;
+  margin-left: 10px;
+
+  text-align: right;
+}
+
+.reservation__order-price,
+.reservation__subtotal,
+.reservation__discount {
+  &::after {
+    content: "₽";
+  }
+}
+
+.reservation__sum {
+  display: flex;
+  @include title-element;
+}
+
+.reservation__sum-text {
+  display: flex;
+  flex-grow: 1;
+  align-items: baseline;
+
+  &::after {
+    flex-grow: 1;
+
+    border-bottom: 1px dotted $dark25;
+
+    content: "";
+  }
+}
+
+.reservation__total {
+  margin-left: 5px;
+  &::after {
+    content: "₽";
+  }
+}

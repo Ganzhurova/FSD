@@ -1,26 +1,70 @@
 include ../date-dropdown/date-dropdown
+include ../button/button
+include ../tooltip/tooltip
 
 mixin reservation()
   section.reservation
-    form.reservation__info
-      h2.reservation__number 888
-        span.reservation__class Люкс
-      span.reservation__cost
-        span.reservation__price 9990
-        |в сутки
+    form#reservation-form.reservation__info
+      .reservation__header
+        h2.reservation__title
+          span.reservation__number 888
+          span.reservation__class Люкс
+        span.reservation__cost
+          span.reservation__price 9990
+          | в сутки
       .reservation__dates
         +dateDropdown({
-          label: "Прибытие",
-          attributes: {name: "arrival",},
-          })
-        +dateDropdown({
-          label: "Выезд",
-          attributes: {name: "departure",},
-          })
+          mode: "range",
+          from: {
+            label: "Прибытие",
+            attributes: {
+              name: "arrival",
+              required: true,
+              value: "19.08.2019",
+            },
+          },
+          to: {
+            label: "Выезд",
+            attributes: {
+              name: "departure",
+              required: true,
+              value: "23.08.2019",
+            },
+          }
+        })
       .reservation__guests
         +dropdown({
           label: "Гости",
           labelVisually: true,
           isGuestsDropdown: true,
           })
-    ul.reservation__order
+    .reservation__order
+      ul.reservation__calculation
+        li.reservation__row
+          .reservation__category
+            p.reservation__text
+              span.reservation__order-price 9 990
+              |&nbsp;х&nbsp;
+              span.reservation__duration 4 суток
+          span.reservation__subtotal(data-subtotal="calculation") 39 960
+        li.reservation__row
+          .reservation__category
+            p.reservation__text Сбор за услуги: скидка&nbsp;
+              span.reservation__discount 2 179
+            +tooltip("Lorem ipsum")
+          span.reservation__subtotal(data-subtotal="services") 0
+        li.reservation__row
+          .reservation__category
+            p.reservation__text Сбор за дополнительные услуги
+            +tooltip("Lorem ipsum dolor sit amet")
+          span.reservation__subtotal(data-subtotal="add-services") 300
+      .reservation__sum
+        span.reservation__sum-text Итого
+        span.reservation__total 38 081
+    +button({
+      type: "submit",
+      buttonMod: "with-arrow",
+      desc: "Забронировать",
+      mix: "reservation__button",
+      form: "reservation-form"
+      })
