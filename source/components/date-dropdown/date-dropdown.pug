@@ -6,7 +6,7 @@ mixin dateDropdown(options)
 
   if options.mode === "range"
     .date-dropdown.date-dropdown--range
-      input.js-range-date-dropdown.visually-hidden.date-dropdown__range-input(type="text")
+      input.js-range-date-dropdown.date-dropdown__range-input(type="text")
       +dateDropdownPicker(options.from, options.mode, className="js-date-dropdown-from")
       +dateDropdownPicker(options.to, options.mode, className="js-date-dropdown-to")
 
