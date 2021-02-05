@@ -93,5 +93,15 @@
 
   &:nth-child(3) {
     padding-top: 1px;
+
+    & .reservation {
+      margin-bottom: 39px;
+    }
+  }
+
+  &:nth-child(4) {
+    & .uikit-calendar {
+      margin-bottom: 40px;
+    }
   }
 }
