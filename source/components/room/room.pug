@@ -1,0 +1,17 @@
+include ../rating/rating
+
+mixin room()
+  .room
+    a.room__link(href="#")
+      .room__row
+        h2.room__title
+          span.room__number 888
+          span.room__class Люкс
+        span.room__cost
+          span.room__price 9990
+          | в сутки
+      .room__row
+        +rating(5)
+        p.room__review
+          span.room__review-number 145
+          |Отзывов
