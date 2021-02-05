@@ -3,15 +3,24 @@ include ../rating/rating
 mixin room()
   .room
     a.room__link(href="#")
-      .room__row
+      .room__info
         h2.room__title
           span.room__number 888
           span.room__class Люкс
         span.room__cost
           span.room__price 9990
           | в сутки
-      .room__row
+      .room__rating
         +rating(5)
         p.room__review
           span.room__review-number 145
           |Отзывов
+    .room__slider.js-slider
+      div.room__img-wrapper
+        img.room__img(src=require("Components/room/img/888-1@1x.jpg"), alt="Фото номера")
+      div.room__img-wrapper
+        img.room__img(src=require("Components/room/img/888-2@1x.jpg"), alt="Фото номера")
+      div.room__img-wrapper
+        img.room__img(src=require("Components/room/img/888-3@1x.jpg"), alt="Фото номера")
+      div.room__img-wrapper
+        img.room__img(src=require("Components/room/img/888-4@1x.jpg"), alt="Фото номера")
