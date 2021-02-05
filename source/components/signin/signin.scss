@@ -1,7 +1,35 @@
 .signin {
-  background-color: inherit;
+  @include card;
 }
 
 .signin__title {
   margin-bottom: 20px;
+}
+
+.signin__fieldset {
+  margin-bottom: 30px;
+  padding: 0;
+
+  border: 0;
+}
+
+.signin__email {
+  margin-bottom: 10px;
+}
+
+.signin__password {
+  margin-bottom: 20px;
+}
+
+.signin__footer {
+  display: grid;
+  grid-template: 1fr / 1fr 99px;
+  align-items: center;
+}
+
+.signin__text {
+  margin-right: 20px;
+
+  color: $black;
+  line-height: 18px;
 }

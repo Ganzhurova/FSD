@@ -1,3 +1,32 @@
+include ../text-field/text-field
+include ../button/button
+
 mixin signin()
-  form.signin
-    h2.signin__title Войти
+  section.signin
+    form.signin__form
+      h2.signin__title Войти
+      fieldset.signin__fieldset
+        legend.visually-hidden Данные для входа в сервис
+        .signin__email
+          +textField({
+            label: "Электронная почта",
+            attributes: {type: "email", name: "email", placeholder: "Email", required: true,}
+            })
+        .signin__password
+          +textField({
+            label: "Пароль",
+            attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,}
+            })
+        +button({
+          buttonMod: "with-arrow",
+          desc: "Войти",
+          type: "submit",
+          mix: "signin__entry-button"
+          })
+    .signin__footer
+      span.signin__text Нет аккаунта на Toxin?
+      +button({
+        link: "#",
+        buttonMod: "bordered",
+        desc: "Создать"
+        })
