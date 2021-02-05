@@ -4,6 +4,8 @@ include ../../../components/UIkit/content/content
 include ../../../components/search-room/search-room
 include ../../../components/signup/signup
 include ../../../components/reservation/reservation
+include ../../../components/signin/signin
+include ../../../components/room/room
 
 block variables
   - let pageTitle = "Cards"
@@ -18,5 +20,7 @@ block content
       +signup()
     +contentSection({...{}, name})
       +reservation()
+      +signin()
     +contentSection({...{}, name})
       .uikit-calendar.js-filter-date-dropdown
+      +room()
