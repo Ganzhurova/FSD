@@ -12,9 +12,11 @@ mixin rating(ratingNum)
         +ratingItem(i, isVoting)
 
 mixin ratingItem(num, isVoting)
-  label.rating__item
-    if isVoting
+  if isVoting
+    label.rating__item
       input.rating__input.visually-hidden(
         type = "radio"
         name = "rating"
         value = num)
+  else
+    .rating__item
