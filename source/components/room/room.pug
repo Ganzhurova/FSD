@@ -1,26 +1,31 @@
 include ../rating/rating
 
-mixin room()
+mixin room(room)
+  if !room
+    - room = {}
+
+  if !room.images
+    - room.images = []
+
   .room
-    a.room__link(href="#")
+    a.room__link(href=room.link)
       .room__info
         h2.room__title
-          span.room__number 888
-          span.room__class Люкс
+          span.room__number= room.number
+          span.room__class= room.category
         span.room__cost
-          span.room__price 9990
+          span.room__price= room.price
           | в сутки
       .room__rating
-        +rating(5)
+        +rating(room.rating)
         p.room__review
-          span.room__review-number 145
+          span.room__review-number= room.reviewTotal
           |Отзывов
     .room__slider.js-slider
-      div.room__img-wrapper
-        img.room__img(src=require("Components/room/img/888-1@1x.jpg"), alt="Фото номера")
-      div.room__img-wrapper
-        img.room__img(src=require("Components/room/img/888-2@1x.jpg"), alt="Фото номера")
-      div.room__img-wrapper
-        img.room__img(src=require("Components/room/img/888-3@1x.jpg"), alt="Фото номера")
-      div.room__img-wrapper
-        img.room__img(src=require("Components/room/img/888-4@1x.jpg"), alt="Фото номера")
+      for img in room.images
+        +roomImg(img)
+
+
+mixin roomImg(img)
+  .room__img-wrapper
+    img.room__img(src=require(`Components/room/img/${img.src}`), srcset=require(`Components/room/img/${img.srcset}`), alt="Фото номера")
