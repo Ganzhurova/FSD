@@ -10,7 +10,11 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
+  gap: 10px;
+
+  @media (min-width: $xs) {
+    gap: 20px;
+  }
 }
 
 .date-dropdown__range-input {
@@ -52,10 +56,20 @@
   }
 }
 
+/* Стили для плагина air-datepicer */
+$width-parent: 380px;
+$max-width: 320px;
+$width-content: 278px;
+$nav-margin-bottom: 30px;
+
 .datepickers-container {
   position: absolute;
   top: 0;
   left: 0;
+
+  width: 80.6%; //ширина контейнера
+  min-width: 280px;
+  max-width: 380px;
 }
 
 @media print {
@@ -69,7 +83,9 @@
   left: -100000px;
   z-index: 100;
 
-  width: 320px;
+  width: percent($max-width, $width-parent);
+  max-width: 380px;
+
   padding: 20px;
 
   background-color: $white;
@@ -110,6 +126,9 @@
   right: auto;
   left: auto;
 
+  width: 100%;
+  max-width: 320px;
+
   transform: none;
   opacity: 1;
 }
@@ -132,7 +151,7 @@
 .datepicker--nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: percent($nav-margin-bottom, $width-content);
 }
 
 .datepicker--nav-action {
@@ -145,6 +164,8 @@
 }
 
 .datepicker--nav-title {
+  text-align: center;
+
   cursor: pointer;
   @include title-element;
 }
@@ -161,10 +182,16 @@
   flex: 1;
   align-items: center;
   justify-content: center;
-  height: 40px;
 
   color: $primary-color;
   text-transform: none;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+
+    content: "";
+  }
 }
 
 .datepicker--cells {
@@ -180,11 +207,16 @@
   align-items: center;
   justify-content: center;
 
-  height: 40px;
-
   color: $dark50;
 
   cursor: pointer;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+
+    content: "";
+  }
 
   &.-current- {
     color: $white;
