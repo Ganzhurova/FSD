@@ -1,3 +1,11 @@
+.uikit-page {
+  position: relative;
+}
+
+.uikit-page--theme-light {
+  background-color: $grey;
+}
+
 .uikit-page__header {
   min-width: 320px;
 
@@ -19,8 +27,4 @@
 
 .uikit-page__logo-pic {
   display: block;
-}
-
-.uikit-page--theme-light {
-  background-color: $grey;
 }
