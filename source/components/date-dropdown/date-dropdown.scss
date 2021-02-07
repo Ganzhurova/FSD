@@ -9,8 +9,8 @@
   position: relative;
 
   display: grid;
-  grid-template: 1fr / repeat(2, 150px);
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
 }
 
 .date-dropdown__range-input {
