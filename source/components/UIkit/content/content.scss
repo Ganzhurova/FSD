@@ -87,14 +87,14 @@
 }
 
 .content__section--cards {
-  &:nth-child(2) .search-room {
+  &:nth-child(2) > :nth-child(1n) {
     margin-bottom: 40px;
   }
 
   &:nth-child(3) {
     padding-top: 1px;
 
-    & .reservation {
+    & > :nth-child(1n) {
       margin-bottom: 39px;
     }
   }
