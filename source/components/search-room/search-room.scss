@@ -1,20 +1,16 @@
-$width-content: 320px;
-$margin: 21px;
-$margin-big: 31px;
-
 .search-room {
   @include card;
 }
 
 .search-room__title {
-  margin-bottom: percent($margin, $width-content);
+  margin-bottom: 21px;
   padding-top: 1px;
 }
 
 .search-room__dates {
-  margin-bottom: percent($margin, $width-content);
+  margin-bottom: 21px;
 }
 
 .search-room__guests {
-  margin-bottom: percent($margin-big, $width-content);
+  margin-bottom: 31px;
 }
