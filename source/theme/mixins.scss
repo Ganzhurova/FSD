@@ -1,3 +1,10 @@
+/* Вычисление величины в процентах от ширины родителя (for responsive) */
+@function percent($value, $width-parent) {
+  $result: $value * 100% / $width-parent;
+  @return $result;
+}
+
+/* Шрифты */
 @mixin montserrat-regular {
   font-weight: 400;
   font-family: "Montserrat", "Arial", sans-serif;
@@ -69,6 +76,7 @@
   @include montserrat-regular;
 }
 
+/* Офомление input */
 @mixin input {
   width: 100%;
   padding: 12px 14px;
@@ -104,12 +112,23 @@
   }
 }
 
+/*Оформление карточек*/
+$width: 380px; //максимальная ширина карточки
+$padding-top: 39px;
+$padding: 29px;
+
 @mixin card {
-  width: 380px;
-  padding: 39px 29px 29px;
+  min-width: 260px;
+  max-width: $width;
+  padding: percent($padding-top, $width) percent($padding, $width)
+    percent($padding, $width);
 
   background-color: $white;
   border: 1px solid rgba($black, 0.12);
   border-radius: 4px;
-  box-shadow: 0px 0px 25px 0px rgba($black, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba($black, 0.2);
+
+  @media (min-width: $xs) {
+    box-shadow: 0px 0px 25px 0px rgba($black, 0.2);
+  }
 }
