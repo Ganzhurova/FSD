@@ -1,10 +1,13 @@
 extends ../../base/base-uikit.pug
 
+include ../../../components/header/header
+
 block variables
   - let pageTitle = "Headers & Footers"
   - let uikitClass = "uikit-page--theme-light"
 
 block content
   main
-    h1 Headers & Footers
+    h1.visually-hidden Headers & Footers
+    +header()
     include ../../../components/footer/footer
