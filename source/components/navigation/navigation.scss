@@ -1,0 +1,55 @@
+.nav {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template: 1fr / repeat(2, max-content);
+  justify-content: flex-end;
+}
+
+.nav__toggle {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+}
+
+.nav__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.nav__link,
+.nav__sub-link {
+  display: block;
+
+  color: $dark50;
+  line-height: 17px;
+}
+
+.nav__link--sub {
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "expand_more";
+    @include material-icons;
+
+    & {
+      line-height: 20px;
+    }
+  }
+}
+
+.nav__sub {
+  position: absolute;
+
+  display: none;
+
+  list-style: none;
+}

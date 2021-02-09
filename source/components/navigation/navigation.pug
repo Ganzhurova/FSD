@@ -1,0 +1,39 @@
+include ../button/button
+
+mixin navigation()
+  include ./navigation-data
+  - let menu = locals.navMenu
+
+  .nav
+    button.nav__toggle(type="button" aria-label="Открыть меню")
+    ul.nav__list.nav__list--site
+      for item in menu
+        +navigationItem(item)
+    ul.nav__list.nav__list--user
+      li.nav__item
+        +button({
+          mix: "nav__button-login",
+          link: "#",
+          buttonMod: "bordered",
+          desc: "Войти",
+          })
+      li.nav__item
+        +button({
+          mix: "nav__button-signup",
+          link: "#",
+          buttonMod: "colored",
+          desc: "Зарегистрироваться",
+          })
+
+mixin navigationItem(item)
+  li.nav__item
+    a.nav__link(class=item.sub?"nav__link--sub":"" href=item.href)= item.title
+
+    if item.sub
+      ul.nav__sub
+        for subItem in item.sub
+          +navigationSub(subItem)
+
+mixin navigationSub(subItem)
+  li.nav__sub-item
+    a.nav__sub-link(href=subItem.href)= subItem.title
