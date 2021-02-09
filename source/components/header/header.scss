@@ -1,10 +1,13 @@
 .header {
-  min-height: 70px;
-
   background-color: $white;
   box-shadow: 0 10px 20px 0 $dark05;
 }
 
 .header__wrapper {
+  display: grid;
+  grid-column-gap: 60px;
+  grid-template: 1fr / 106px 1fr;
+  align-items: center;
+  min-height: 70px;
   @include container;
 }
