@@ -39,13 +39,19 @@
 
   color: $white;
 
-  background: $primary-gradient;
+  background-image: $primary-gradient;
+
   border-radius: 22px;
 
   &:hover,
   &:focus {
-    background: $primary-translucent-gradient;
+    background-image: $primary-translucent-gradient;
     outline: none;
+  }
+
+  &.button--thin {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -55,8 +61,9 @@
   color: $primary-color;
 
   background-image: linear-gradient($white, $white), $primary-gradient;
-
-  -webkit-background-clip: padding-box, border-box;
+  background-repeat: no-repeat, no-repeat;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
   border: 2px solid transparent;
   border-radius: 22px;
 
@@ -65,6 +72,11 @@
     background-image: linear-gradient($white, $white),
       $primary-translucent-gradient;
     outline: none;
+  }
+
+  &.button--thin {
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
