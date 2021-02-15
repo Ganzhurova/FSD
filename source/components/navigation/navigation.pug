@@ -14,20 +14,20 @@ mixin navigation()
         +button({
           mix: "nav__button-login",
           link: "#",
-          buttonMod: "bordered",
+          buttonMod: ["bordered", "thin"],
           desc: "Войти",
           })
       li.nav__item
         +button({
           mix: "nav__button-signup",
           link: "#",
-          buttonMod: "colored",
+          buttonMod: ["colored", "thin"],
           desc: "Зарегистрироваться",
           })
 
 mixin navigationItem(item)
-  li.nav__item
-    a.nav__link(class=item.sub?"nav__link--sub":"" href=item.href)= item.title
+  li.nav__item(class=item.sub?"nav__item--sub":"")
+    a.nav__link(href=item.href)= item.title
 
     if item.sub
       ul.nav__sub

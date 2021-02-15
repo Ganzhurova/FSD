@@ -1,8 +1,10 @@
 .nav {
   display: grid;
   grid-column-gap: 20px;
-  grid-template: 1fr / repeat(2, max-content);
+  grid-template: 1fr / repeat(2, minmax(min-content, max-content));
   justify-content: flex-end;
+
+  background-color: $white;
 }
 
 .nav__toggle {
@@ -12,15 +14,39 @@
 .nav__list {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   list-style: none;
 }
 
-.nav__item {
-  position: relative;
+.nav__list--site {
+  flex-wrap: wrap;
+}
 
+.nav__item {
   &:not(:last-child) {
     margin-right: 20px;
+  }
+}
+
+.nav__item--sub {
+  position: relative;
+
+  .nav__link {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "expand_more";
+      @include material-icons;
+    }
+  }
+
+  &:hover > .nav__sub,
+  &:focus-within > .nav__sub,
+  & .nav__sub:hover {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -30,26 +56,46 @@
 
   color: $dark50;
   line-height: 17px;
-}
 
-.nav__link--sub {
-  display: flex;
-  align-items: center;
+  &:hover,
+  &:focus {
+    color: $dark75;
+    text-shadow: 0.65px 0px 0px $dark75, -0.65px 0px 0px $dark75;
 
-  &::after {
-    content: "expand_more";
-    @include material-icons;
+    outline: none;
 
-    & {
-      line-height: 20px;
-    }
+    transition: all 0.2s;
   }
 }
 
-.nav__sub {
-  position: absolute;
+.nav__link:hover::after,
+.nav__link:focus::after {
+  text-shadow: none;
+}
 
-  display: none;
+.nav__sub {
+  $padding: 10px;
+
+  position: absolute;
+  top: 100%;
+  left: -$padding;
+
+  padding: $padding;
 
   list-style: none;
+  background-color: $white;
+  border-radius: 4px;
+
+  box-shadow: 0 10px 20px 0 $dark05;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.2s;
+}
+
+.nav__sub-item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
