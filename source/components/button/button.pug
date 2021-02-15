@@ -2,16 +2,24 @@ mixin button(options)
   if !options
     - options = {}
 
-  - let classes = []
+  -
+    let classes = []
+    const defaultClass = "button"
 
-    if options.iconName
-      - classes.push("button--icon")
+    if (options.buttonMod)
+      if (options.buttonMod.constructor !== Array)
+        classes.push(`${defaultClass}--${options.buttonMod}`)
+      else if (options.buttonMod.length > 0)
+        options.buttonMod.forEach(item =>
+          classes.push(`${defaultClass}--${item}`)
+        )
 
-    if options.buttonMod
-      -classes.push(`button--${options.buttonMod}`)
+  if options.iconName
+    - classes.push(`${defaultClass}--icon`)
 
-    if options.mix
-      - classes.push(options.mix)
+  if options.mix
+    - classes.push(options.mix)
+
 
   if (options.link)
     a.button(class = classes href = options.link)= options.desc
