@@ -1,6 +1,6 @@
 include ../button/button
 
-mixin navigation()
+mixin navigation(userName)
   include ./navigation-data
   - let menu = locals.navMenu
 
@@ -13,20 +13,24 @@ mixin navigation()
         for item in menu
           +navigationItem(item)
       ul.nav__list.nav__list--user
-        li.nav__item
-          +button({
-            mix: "nav__button-login",
-            link: "#",
-            buttonMod: ["bordered", "thin"],
-            desc: "Войти",
-            })
-        li.nav__item
-          +button({
-            mix: "nav__button-signup",
-            link: "#",
-            buttonMod: ["colored", "thin"],
-            desc: "Зарегистрироваться",
-            })
+        if userName
+          li.nav__item
+            a.nav__user(href="#")= userName
+        else
+          li.nav__item
+            +button({
+              mix: "nav__button-login",
+              link: "#",
+              buttonMod: ["bordered", "thin"],
+              desc: "Войти",
+              })
+          li.nav__item
+            +button({
+              mix: "nav__button-signup",
+              link: "#",
+              buttonMod: ["colored", "thin"],
+              desc: "Зарегистрироваться",
+              })
 
 mixin navigationItem(item)
   if !item.sub

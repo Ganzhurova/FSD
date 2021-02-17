@@ -237,3 +237,32 @@
     margin-bottom: 10px;
   }
 }
+
+/* Пользователь */
+
+.nav__user {
+  display: block;
+  padding: 6.5px 0 6.5px 20px;
+
+  color: $dark50;
+  line-height: 17px;
+
+  border-left: 1px solid rgba($dark, 0.1);
+
+  @media (max-width: $lg) {
+    padding: 20px 0 0;
+
+    border-top: 1px solid rgba($dark, 0.1);
+    border-left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $dark75;
+    text-shadow: 0.65px 0px 0px $dark75, -0.65px 0px 0px $dark75;
+
+    outline: none;
+
+    transition: all 0.2s;
+  }
+}
