@@ -9,5 +9,8 @@ block variables
 block content
   main
     h1.visually-hidden Headers & Footers
-    +header()
+    .content-header
+      +header()
+    .content-header
+      +header("Юлий Цезарь")
     include ../../../components/footer/footer
