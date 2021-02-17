@@ -171,6 +171,8 @@
   color: $dark50;
   line-height: 17px;
 
+  cursor: pointer;
+
   @media (max-width: $lg) {
     line-height: 24px;
   }
@@ -248,6 +250,7 @@
   line-height: 17px;
 
   border-left: 1px solid rgba($dark, 0.1);
+  cursor: pointer;
 
   @media (max-width: $lg) {
     padding: 20px 0 0;
