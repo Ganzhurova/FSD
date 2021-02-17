@@ -6,33 +6,39 @@ mixin navigation()
 
   .nav
     button.nav__toggle(type="button" aria-label="Открыть меню")
-    ul.nav__list.nav__list--site
-      for item in menu
-        +navigationItem(item)
-    ul.nav__list.nav__list--user
-      li.nav__item
-        +button({
-          mix: "nav__button-login",
-          link: "#",
-          buttonMod: ["bordered", "thin"],
-          desc: "Войти",
-          })
-      li.nav__item
-        +button({
-          mix: "nav__button-signup",
-          link: "#",
-          buttonMod: ["colored", "thin"],
-          desc: "Зарегистрироваться",
-          })
+      i.nav__toggle--menu.material-icons menu
+      i.nav__toggle--close.material-icons close
+    .nav__wrapper
+      ul.nav__list.nav__list--site
+        for item in menu
+          +navigationItem(item)
+      ul.nav__list.nav__list--user
+        li.nav__item
+          +button({
+            mix: "nav__button-login",
+            link: "#",
+            buttonMod: ["bordered", "thin"],
+            desc: "Войти",
+            })
+        li.nav__item
+          +button({
+            mix: "nav__button-signup",
+            link: "#",
+            buttonMod: ["colored", "thin"],
+            desc: "Зарегистрироваться",
+            })
 
 mixin navigationItem(item)
-  li.nav__item(class=item.sub?"nav__item--sub":"")
-    a.nav__link(href=item.href)= item.title
-
-    if item.sub
+  if !item.sub
+    li.nav__item
+      a.nav__link(href=item.href)= item.title
+  else
+    li.nav__item.nav__item--sub
+      a.nav__link(tabindex="0")= item.title
       ul.nav__sub
         for subItem in item.sub
           +navigationSub(subItem)
+
 
 mixin navigationSub(subItem)
   li.nav__sub-item
