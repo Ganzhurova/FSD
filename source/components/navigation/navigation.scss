@@ -4,6 +4,44 @@
   }
 }
 
+.nav--closed {
+  @media (max-width: $lg) {
+    .nav__toggle--close {
+      display: none;
+    }
+
+    .nav__toggle--menu {
+      display: block;
+    }
+
+    .nav__wrapper {
+      visibility: hidden;
+      opacity: 0;
+
+      transition: all 0.3s;
+    }
+  }
+}
+
+.nav--opened {
+  @media (max-width: $lg) {
+    .nav__toggle--close {
+      display: block;
+    }
+
+    .nav__toggle--menu {
+      display: none;
+    }
+
+    .nav__wrapper {
+      visibility: visible;
+      opacity: 1;
+
+      transition: all 0.3s;
+    }
+  }
+}
+
 .nav__wrapper {
   display: grid;
   grid-column-gap: 20px;
@@ -16,6 +54,7 @@
     position: absolute;
     top: 100%;
     right: -20px;
+    z-index: 100;
 
     grid-template: repeat(2, auto) / 1fr;
     width: 320px;
@@ -26,6 +65,8 @@
     box-shadow: 0 10px 20px 0 $dark05;
   }
 }
+
+/* Кнопка открытия/закрытия */
 
 .nav__toggle {
   display: none;
@@ -45,8 +86,6 @@
     cursor: pointer;
   }
 }
-
-/* Кнопка открытия/закрытия */
 
 .nav__toggle--menu,
 .nav__toggle--close {
