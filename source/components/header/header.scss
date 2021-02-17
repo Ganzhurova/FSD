@@ -1,4 +1,6 @@
 .header {
+  min-width: 320px;
+
   background-color: $white;
   box-shadow: 0 10px 20px 0 $dark05;
 }
@@ -10,4 +12,8 @@
   align-items: center;
   min-height: 70px;
   @include container;
+
+  @media (max-width: $lg) {
+    position: relative;
+  }
 }
