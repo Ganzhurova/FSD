@@ -1,10 +1,10 @@
 include ../logo/logo
 include ../navigation/navigation
 
-mixin header()
+mixin header(userName)
   .header
     .header__wrapper
       .header__logo
         +logo()
       .header__menu
-        +navigation()
+        +navigation(userName)
