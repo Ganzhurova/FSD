@@ -1,0 +1,14 @@
+mixin social()
+  include ./social-data
+  - let social = locals.social
+
+  .social
+    ul.social__list
+      for item in social
+        +socialItem(item)
+
+
+mixin socialItem(item)
+  li.social__item
+    a.social__link(href=item.href)
+      span= item.text
