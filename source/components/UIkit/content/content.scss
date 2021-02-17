@@ -45,6 +45,10 @@
 }
 
 .content__section--form-elements {
+  &:nth-child(2) {
+    width: 320px;
+  }
+
   &:nth-child(3) {
     width: 320px;
     padding-left: 27px;
@@ -56,6 +60,12 @@
 
   &:nth-child(5) {
     align-items: flex-start;
+  }
+
+  &:nth-child(6) {
+    & .form-element {
+      width: 320px;
+    }
   }
 
   &:nth-child(6),
@@ -103,7 +113,7 @@
 
   &:nth-child(4) {
     & .uikit-calendar {
-      margin-bottom: 40px;
+      margin-bottom: 42px;
     }
 
     & .room {
