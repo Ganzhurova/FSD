@@ -1,9 +1,9 @@
-.subscription-field {
+.subscription__field {
   display: flex;
   width: 267px;
   @include input-bordered;
 }
 
-.subscription-field__input {
+.subscription__input {
   @include input;
 }
