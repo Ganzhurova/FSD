@@ -5,7 +5,7 @@ include ../../../components/UIkit/form-element/form-element
 include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
 include ../../../components/date-dropdown/date-dropdown
-include ../../../components/subscription-field/subscription-field
+include ../../../components/subscription/subscription
 include ../../../components/like/like
 include ../../../components/rating/rating
 include ../../../components/range/range
@@ -73,7 +73,7 @@ block content
             },
           })
       +formElement({title: "Subscription text field", mb: 100,})
-        +subscriptionField()
+        +subscription()
 
 
     +contentSection({...{}, name})
