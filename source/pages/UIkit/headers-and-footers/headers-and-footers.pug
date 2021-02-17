@@ -1,6 +1,7 @@
 extends ../../base/base-uikit.pug
 
 include ../../../components/header/header
+include ../../../components/footer/footer
 
 block variables
   - let pageTitle = "Headers & Footers"
@@ -13,4 +14,5 @@ block content
       +header()
     .content-header
       +header("Юлий Цезарь")
-    include ../../../components/footer/footer
+    .content-footer
+      +footer()
