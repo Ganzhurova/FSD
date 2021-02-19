@@ -11,4 +11,5 @@ mixin social()
 mixin socialItem(item)
   li.social__item
     a.social__link(href=item.href)
-      span= item.text
+      span.visually-hidden= item.text
+      i.social__icon(class=item.iconClass)
