@@ -6,5 +6,67 @@
 }
 
 .footer__wrapper {
+  padding: 120px 0;
+
   @include container;
+}
+
+.footer__top {
+  display: flex;
+
+  @media (min-width: $sm) {
+    position: relative;
+
+    box-shadow: 0 1px 0 0 rgba($dark, 0.1);
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+
+      width: calc(50vw - 50%);
+      height: 100%;
+
+      box-shadow: 0 1px 0 0 rgba($dark, 0.1);
+
+      content: "";
+    }
+
+    &::before {
+      left: calc((50vw - 50%) * -1);
+    }
+
+    &::after {
+      right: calc((50vw - 50%) * -1);
+    }
+  }
+}
+
+.footer__desc,
+.footer__links,
+.footer__subscription {
+  display: none;
+}
+
+.footer__logo {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  width: 100%;
+  margin-bottom: 25px;
+  padding-top: 1px;
+
+  line-height: 17px;
+  text-align: center;
+}
+
+.footer__social {
+  margin: 0 auto;
 }
