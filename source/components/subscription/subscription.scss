@@ -1,6 +1,7 @@
 .subscription__field {
   display: flex;
-  width: 267px;
+  min-width: 260px;
+  max-width: 267px;
   @include input-bordered;
 }
 
