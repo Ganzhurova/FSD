@@ -57,8 +57,7 @@
 }
 
 /* Стили для плагина air-datepicer */
-$width-parent: 380px;
-$max-width: 320px;
+$padding-container: 30px;
 $width-content: 278px;
 $nav-margin-bottom: 30px;
 
@@ -83,7 +82,7 @@ $nav-margin-bottom: 30px;
   left: -100000px;
   z-index: 100;
 
-  width: percent($max-width, $width-parent);
+  width: calc(100% - #{$padding-container} * 2);
   max-width: 380px;
 
   padding: 20px;
