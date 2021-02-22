@@ -1,0 +1,22 @@
+.offer {
+  $ratio: 830 / 1440;
+  height: calc(100vw * #{$ratio});
+  min-height: 620px;
+  max-height: 900px;
+
+  background-color: $grey;
+  background-image: url("./img/offer-bg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("./img/offer-bg@2x.jpg");
+  }
+}
+
+.offer__wrapper {
+  height: 100%;
+  padding: 70px 0;
+  @include container;
+}
