@@ -18,6 +18,8 @@
   margin-bottom: 20px;
   padding-left: 20px;
 
+  text-align: center;
+
   @media (max-width: $md) {
     padding-left: 0;
   }
@@ -37,6 +39,8 @@
 
 .pages-nav__link {
   display: block;
+
+  text-align: center;
 
   @include title-element;
 }
