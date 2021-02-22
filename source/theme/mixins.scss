@@ -123,23 +123,15 @@
 }
 
 /*Оформление карточек*/
-$width: 380px; //максимальная ширина карточки
-$padding-top: 39px;
-$padding: 29px;
 
 @mixin card {
   width: 100%;
   min-width: 280px;
-  max-width: $width;
-  padding: percent($padding-top, $width) percent($padding, $width)
-    percent($padding, $width);
+  max-width: 380px;
+  padding: 39px 29px 29px;
 
   background-color: $white;
   border: 1px solid rgba($black, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px 0 rgba($black, 0.2);
-
-  @media (min-width: $xs) {
-    width: $width;
-  }
 }
