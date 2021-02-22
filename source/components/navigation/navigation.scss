@@ -196,6 +196,7 @@
 /* Подменю */
 
 .nav__sub {
+  $padding: 10px;
   position: absolute;
   top: 100%;
   left: -$padding;
@@ -223,7 +224,6 @@
 
     box-shadow: none;
   }
-  $padding: 10px;
 }
 
 .nav__sub-item {
