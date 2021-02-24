@@ -197,9 +197,11 @@
 
 .nav__sub {
   $padding: 10px;
+
   position: absolute;
   top: 100%;
   left: -$padding;
+  z-index: 1;
 
   padding: $padding;
 
