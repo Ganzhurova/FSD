@@ -78,7 +78,7 @@
 
 /* Контейнер */
 @mixin container {
-  width: 80.6%;
+  width: calc(#{$content-width} * 1%);
   min-width: 280px;
   max-width: 1550px; //для ширины окна 1920px
   margin: 0 auto;
