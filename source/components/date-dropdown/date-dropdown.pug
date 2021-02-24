@@ -27,6 +27,7 @@ mixin dateDropdownPicker(options, mode, className="")
     options.attributes.class = []
     options.attributes.class.push("date-dropdown__input")
     options.attributes.type = "text"
+    options.attributes.readonly = true
 
     if (className) {
       options.attributes.class.push(className)

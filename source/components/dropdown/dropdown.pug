@@ -15,6 +15,7 @@ mixin dropdown(options)
 
   - options.attributes.class = ["dropdown__input", "js-dropdown__input"]
   - options.attributes.type = "text"
+  - options.attributes.readonly = true
 
   if options.isGuestsDropdown
     - options.attributes.placeholder = "Сколько гостей"
