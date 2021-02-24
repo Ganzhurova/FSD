@@ -1,0 +1,21 @@
+.registration {
+  min-width: 320px;
+
+  background-color: $grey;
+  background-image: url("./img/registration-bg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("./img/registration-bg@2x.jpg");
+  }
+}
+
+.registration__wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 19px 0;
+  @include container;
+}
