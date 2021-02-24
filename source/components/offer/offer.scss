@@ -1,7 +1,12 @@
 .offer {
   $ratio: 830 / 1440;
+
+  position: relative;
+
+  min-width: 320px;
+
   height: calc(100vw * #{$ratio});
-  min-height: 620px;
+  min-height: 630px;
   max-height: 900px;
 
   background-color: $grey;
@@ -19,4 +24,14 @@
   height: 100%;
   padding: 70px 0;
   @include container;
+}
+
+.offer__text {
+  position: absolute;
+  right: 9.3%;
+  bottom: 18px;
+
+  width: 297px;
+
+  text-align: right;
 }
