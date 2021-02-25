@@ -6,7 +6,7 @@
 }
 
 .footer__wrapper {
-  padding: 120px 0;
+  padding: percent(120px, 768px) 0;
 
   @include container;
 
