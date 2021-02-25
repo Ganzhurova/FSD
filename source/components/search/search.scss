@@ -1,0 +1,12 @@
+.search {
+  min-width: 320px;
+
+  background-color: $white;
+}
+
+.search__wrapper {
+  display: grid;
+  grid-template: 1fr / 266px 1fr;
+
+  @include container;
+}
