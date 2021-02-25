@@ -1,0 +1,20 @@
+.login {
+  min-width: 320px;
+
+  background-color: $grey;
+  background-image: url("./img/login-bg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("./img/login-bg@2x.jpg");
+  }
+}
+
+.login__wrapper {
+  display: flex;
+  justify-content: center;
+  padding: percent(173px, 1440px) 0;
+  @include container;
+}
