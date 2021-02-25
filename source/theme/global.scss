@@ -9,6 +9,10 @@
   }
 }
 
+html {
+  height: 100%; //для прижатия подвала
+}
+
 body {
   background-color: $white;
   @include base-text;
@@ -78,4 +82,10 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
 
   clip-path: inset(100%);
+}
+
+.website {
+  display: grid;
+  grid-template: auto 1fr auto / 1fr;
+  min-height: 100%;
 }
