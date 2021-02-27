@@ -1,0 +1,81 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../range/range
+include ../checkbox/checkbox
+include ../check-list/check-list
+
+section.filter
+  form.filter__form
+    h2.visually-hidden Фильтр
+    .filter__item.filter__item--dates
+      +dateDropdown({
+        mode: "filter",
+        filter: {
+          label: "Даты пребывания в отеле",
+          attributes: {
+            name: "dates",
+          }
+        },
+        })
+    .filter__item
+      +dropdown({
+        isGuestsDropdown: true,
+        labelVisually: true,
+        label: "Гости",
+        })
+    .filter__item
+      +range()
+      p.filter__range-desc Стоимость за сутки пребывания в номере
+    .filter__item
+      fieldset.filter__rules
+        legend.filter__title Правила дома
+        p.filter__rule
+          +checkbox({
+            text: "Можно курить",
+            attributes: {
+              name: "smoke",
+            }
+            })
+        p.filter__rule
+          +checkbox({
+            text: "Можно с питомцами",
+            attributes: {
+              name: "pet",
+              checked: true,
+            }
+          })
+        p.filter__rule
+          +checkbox({
+            text: "Можно пригласить гостей <br>(до 10 человек)",
+            attributes: {
+              name: "guests",
+              checked: true,
+            }
+          })
+    .filter__item
+      fieldset.filter__availability
+        legend.filter__title Доступность
+        p.filter__availability-item
+          +checkbox({
+            title: "Широкий коридор",
+            text: "Ширина коридоров в номере<br> не менее 91 см.",
+            attributes: {
+              name: "accessibility-corridor",
+            }
+            })
+        p.filter__availability-item
+          +checkbox({
+            title: "Помощник для инвалидов",
+            text: "На 1 этаже вас встретит специалист<br> и проводит до номера.",
+            attributes: {
+              name: "accessibility-helper",
+            }
+            })
+    .filter__item
+      +dropdown({
+          isComfortDropdown: true,
+          label: "Удобства номера",
+          labelVisually: true,
+        })
+    .filter__item
+      +checkList("Дополнительные удобства", "additionalAmenities")
