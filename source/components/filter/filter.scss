@@ -1,0 +1,46 @@
+.filter {
+  background-color: $white;
+}
+
+.filter__item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filter__item--dates {
+  margin-bottom: 20px;
+}
+
+.filter__item--amenities {
+  margin-top: -15px;
+}
+
+.filter__range-desc {
+  padding-top: 13.5px;
+
+  color: $dark50;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.filter__title {
+  margin-bottom: 16px;
+  padding-top: 1px;
+
+  @include label-cta-text;
+}
+
+.filter__rule {
+  &:not(:last-child) {
+    margin-bottom: 11px;
+  }
+}
+
+.filter__availability-item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
