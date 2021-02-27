@@ -4,85 +4,86 @@ include ../range/range
 include ../checkbox/checkbox
 include ../check-list/check-list
 
-section.filter.filter--opened.js-filter
-  button.filter__toggle.js-filter-toggle(type="button" aria-label="Отркыть фильтр")
-    span.filter__toggle--filter
-      i.filter__toggle-icon.material-icons filter_list
-      span.filter__toggle-text Фильтр
-    i.filter__toggle--close.material-icons close
+section.filter.filter--closed.js-filter
   .filter__overlay
-  form.filter__form
-    h2.visually-hidden Фильтр
+  .filter__body
     .filter__wrapper
-      .filter__item.filter__item--dates
-        +dateDropdown({
-          mode: "filter",
-          filter: {
-            label: "Даты пребывания в отеле",
-            attributes: {
-              name: "dates",
-            }
-          },
-          })
-      .filter__item
-        +dropdown({
-          isGuestsDropdown: true,
-          labelVisually: true,
-          label: "Гости",
-          })
-      .filter__item
-        +range()
-        p.filter__range-desc Стоимость за сутки пребывания в номере
-      .filter__item
-        fieldset.filter__rules
-          legend.filter__title Правила дома
-          p.filter__rule
-            +checkbox({
-              text: "Можно курить",
+      button.filter__toggle.js-filter-toggle(type="button" aria-label="Отркыть фильтр")
+        span.filter__toggle--filter
+          i.filter__toggle-icon.material-icons filter_list
+          span.filter__toggle-text Фильтр
+        i.filter__toggle--close.material-icons close
+      form.filter__form
+        h2.visually-hidden Фильтр
+        .filter__item.filter__item--dates
+          +dateDropdown({
+            mode: "filter",
+            filter: {
+              label: "Даты пребывания в отеле",
               attributes: {
-                name: "smoke",
+                name: "dates",
               }
-              })
-          p.filter__rule
-            +checkbox({
-              text: "Можно с питомцами",
-              attributes: {
-                name: "pet",
-                checked: true,
-              }
+            },
             })
-          p.filter__rule
-            +checkbox({
-              text: "Можно пригласить гостей <br>(до 10 человек)",
-              attributes: {
-                name: "guests",
-                checked: true,
-              }
-            })
-      .filter__item
-        fieldset.filter__availability
-          legend.filter__title Доступность
-          p.filter__availability-item
-            +checkbox({
-              title: "Широкий коридор",
-              text: "Ширина коридоров в номере<br> не менее 91 см.",
-              attributes: {
-                name: "accessibility-corridor",
-              }
-              })
-          p.filter__availability-item
-            +checkbox({
-              title: "Помощник для инвалидов",
-              text: "На 1 этаже вас встретит специалист<br> и проводит до номера.",
-              attributes: {
-                name: "accessibility-helper",
-              }
-              })
-      .filter__item
-        +dropdown({
-            isComfortDropdown: true,
-            label: "Удобства номера",
+        .filter__item
+          +dropdown({
+            isGuestsDropdown: true,
             labelVisually: true,
-          })
-      .filter__item.filter__item--amenities
-        +checkList("Дополнительные удобства", "additionalAmenities")
+            label: "Гости",
+            })
+        .filter__item
+          +range()
+          p.filter__range-desc Стоимость за сутки пребывания в номере
+        .filter__item
+          fieldset.filter__rules
+            legend.filter__title Правила дома
+            p.filter__rule
+              +checkbox({
+                text: "Можно курить",
+                attributes: {
+                  name: "smoke",
+                }
+                })
+            p.filter__rule
+              +checkbox({
+                text: "Можно с питомцами",
+                attributes: {
+                  name: "pet",
+                  checked: true,
+                }
+              })
+            p.filter__rule
+              +checkbox({
+                text: "Можно пригласить гостей <br>(до 10 человек)",
+                attributes: {
+                  name: "guests",
+                  checked: true,
+                }
+              })
+        .filter__item
+          fieldset.filter__availability
+            legend.filter__title Доступность
+            p.filter__availability-item
+              +checkbox({
+                title: "Широкий коридор",
+                text: "Ширина коридоров в номере<br> не менее 91 см.",
+                attributes: {
+                  name: "accessibility-corridor",
+                }
+                })
+            p.filter__availability-item
+              +checkbox({
+                title: "Помощник для инвалидов",
+                text: "На 1 этаже вас встретит специалист<br> и проводит до номера.",
+                attributes: {
+                  name: "accessibility-helper",
+                }
+                })
+        .filter__item
+          +dropdown({
+              isComfortDropdown: true,
+              label: "Удобства номера",
+              labelVisually: true,
+            })
+        .filter__item.filter__item--amenities
+          +checkList("Дополнительные удобства", "additionalAmenities")

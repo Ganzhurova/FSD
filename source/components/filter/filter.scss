@@ -1,22 +1,33 @@
 .filter {
   background-color: $white;
-  background-color: lightgreen;
 }
 
 .filter--closed {
   @media (max-width: $lg) {
+    position: relative;
+
+    .filter__body {
+      position: absolute;
+
+      transform: translateY(-150%);
+
+      transition: all 0.3s;
+    }
+
+    .filter__toggle {
+      position: absolute;
+      top: 150%;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
     .filter__toggle--close {
       display: none;
     }
 
     .filter__toggle--filter {
       display: flex;
-    }
-
-    .filter__form {
-      transform: translateY(-150%);
-
-      transition: all 0.3s;
     }
 
     .filter__overlay {
@@ -31,11 +42,22 @@
 
 .filter--opened {
   @media (max-width: $lg) {
+    .filter__body {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 101;
+
+      max-height: 100vh;
+      overflow-y: auto;
+
+      transform: translateY(0);
+
+      transition: all 0.3s;
+    }
+
     .filter__toggle {
-      position: absolute;
-      top: 10px;
-      right: 9.7%;
-      z-index: 102;
+      margin-left: auto;
     }
 
     .filter__toggle--close {
@@ -44,12 +66,6 @@
 
     .filter__toggle--filter {
       display: none;
-    }
-
-    .filter__form {
-      transform: translateY(0);
-
-      transition: all 0.3s;
     }
 
     .filter__overlay {
@@ -62,6 +78,16 @@
   }
 }
 
+.filter__body {
+  @media (max-width: $lg) {
+    width: 100%;
+
+    background-color: $white;
+
+    box-shadow: 0 10px 20px 0 $dark25;
+  }
+}
+
 .filter__toggle {
   display: none;
 
@@ -71,11 +97,11 @@
     display: block;
     min-width: 44px;
     height: 44px;
-    margin: 0 auto;
 
     background-color: transparent;
 
     border: 0;
+    outline: none;
 
     cursor: pointer;
   }
@@ -128,34 +154,20 @@
   }
 }
 
-.filter__form {
-  background-color: $white;
-
+.filter__wrapper {
   @media (max-width: $lg) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 101;
+    padding: 30px 0;
 
-    width: 100%;
-    max-height: 100vh;
-
-    padding: 60px 0 40px;
-    overflow-y: scroll;
-
-    box-shadow: 0 10px 20px 0 $dark25;
+    @include container;
   }
 }
 
-.filter__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-
+.filter__form {
   @media (max-width: $lg) {
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     justify-content: space-around;
-
-    @include container;
   }
 }
 
