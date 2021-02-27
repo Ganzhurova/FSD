@@ -31,6 +31,12 @@ h2 {
   @include title-section;
 }
 
+fieldset {
+  padding: 0;
+
+  border: 0;
+}
+
 /*Убирает стрелки из поля input type number*/
 
 input[type="number"]::-webkit-outer-spin-button,
