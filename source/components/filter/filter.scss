@@ -9,9 +9,11 @@
     .filter__body {
       position: absolute;
 
+      box-shadow: none;
+
       transform: translateY(-150%);
 
-      transition: all 0.3s;
+      transition: transform 0.1s linear 0s;
     }
 
     .filter__toggle {
@@ -53,7 +55,7 @@
 
       transform: translateY(0);
 
-      transition: all 0.3s;
+      transition: transform 0.3s linear 0s;
     }
 
     .filter__toggle {
@@ -162,12 +164,13 @@
   }
 }
 
-.filter__form {
+.filter__list {
   @media (max-width: $lg) {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: space-around;
+    margin-bottom: 30px;
   }
 }
 
@@ -220,5 +223,24 @@
 .filter__availability-item {
   &:not(:last-child) {
     margin-bottom: 10px;
+  }
+}
+
+.filter__show-btn {
+  display: none;
+
+  @media (max-width: $lg) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.filter__total-number {
+  &::before {
+    content: " ( ";
+  }
+
+  &::after {
+    content: " )";
   }
 }
