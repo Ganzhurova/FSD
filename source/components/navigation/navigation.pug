@@ -4,8 +4,8 @@ mixin navigation(userName)
   include ./navigation-data
   - let menu = locals.navMenu
 
-  .nav.nav--closed.js-nav
-    button.nav__toggle.js-nav-toggle(type="button" aria-label="Открыть меню")
+  .nav.nav--closed.js-switchable(data-name="nav")
+    button.nav__toggle.js-toggle(type="button" aria-label="Открыть меню")
       i.nav__toggle--menu.material-icons menu
       i.nav__toggle--close.material-icons close
     .nav__wrapper
