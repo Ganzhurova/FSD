@@ -2,13 +2,15 @@ import $ from 'jquery';
 import 'air-datepicker';
 import './date-dropdown.scss';
 
-const rangeInitClass = '.js-range-date-dropdown';
-const filterInitClass = '.js-filter-date-dropdown';
-const rangeWrapClass = '.date-dropdown--range';
-const rangeFromClass = '.js-date-dropdown-from';
-const rangeToClass = '.js-date-dropdown-to';
+const filterClass = '.js-filter';
+const filterInputClass = '.js-input';
+const rangeClass = '.js-range';
+const fromClass = '.js-from';
+const toClass = '.js-to';
+const calendarClass = '.js-calendar';
 
 /* Базовая конфигурация datepicker */
+
 const baseConfig = {
   navTitles: {
     days: 'MM yyyy',
@@ -17,27 +19,61 @@ const baseConfig = {
   nextHtml: '<i class="material-icons">arrow_forward</i>',
   multipleDatesSeparator: ' - ',
   range: true,
+  language: {
+    monthsShort: [
+      'янв',
+      'фев',
+      'мар',
+      'апр',
+      'май',
+      'июн',
+      'июл',
+      'авг',
+      'сен',
+      'окт',
+      'ноя',
+      'дек',
+    ],
+  },
   clearButton: true,
   minDate: new Date(),
 };
 
 /* Инициализация плагина datepicker */
 
+/* на странице Cards */
+
+$('.uikit-calendar').datepicker(baseConfig);
+
 /* для фильтра */
-const filterConfig = { dateFormat: 'dd M' };
 
-$.extend(true, filterConfig, baseConfig);
+const filterItems = $(filterClass);
 
-$(filterInitClass).datepicker(filterConfig);
+if (filterItems.length > 0) {
+  filterItems.each(function initFilter() {
+    const item = $(this);
+    const input = item.find(filterInputClass);
+    const filterConfig = {
+      dateFormat: 'dd M',
+      onSelect: date => {
+        input.val(date);
+      },
+    };
+    $.extend(true, filterConfig, baseConfig);
+
+    const calendar = item.find(calendarClass);
+    $(calendar).datepicker(filterConfig);
+  });
+}
 
 /* для диапазона дат (вывод в два инпута) */
-const rangeItems = $(rangeWrapClass);
+const rangeItems = $(rangeClass);
 
 if (rangeItems.length > 0) {
   rangeItems.each(function initRange() {
     const item = $(this);
-    const dateFrom = item.find(rangeFromClass);
-    const dateTo = item.find(rangeToClass);
+    const dateFrom = item.find(fromClass);
+    const dateTo = item.find(toClass);
     const rangeConfig = {
       onSelect: date => {
         const dates = date.split(' - ');
@@ -46,71 +82,32 @@ if (rangeItems.length > 0) {
       },
     };
     $.extend(true, rangeConfig, baseConfig);
-    item.find(rangeInitClass).datepicker(rangeConfig);
 
-    const datepicker = item.find(rangeInitClass).data('datepicker');
+    const calendar = item.find(calendarClass);
+    $(calendar).datepicker(rangeConfig);
 
-    dateFrom.click(() => {
-      datepicker.show();
-    });
-
-    dateTo.click(() => {
-      datepicker.show();
-    });
+    // const datepicker = $(calendar).data('datepicker');
+    //
+    // dateFrom.click(() => {
+    //   datepicker.hide();
+    // });
+    //
+    // dateTo.click(() => {
+    //   datepicker.show();
+    // });
   });
 }
 
 /* Добавление кнопки "Применить" */
 
-const buttonApply = $(
-  '<span class="datepicker--button datepicker--button-apply" data-action="apply">Применить</span>'
-);
-
-$('.datepicker--buttons').append(buttonApply);
-
-$.fn.datepicker.language.ru = {
-  days: [
-    'Воскресенье',
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-    'Суббота',
-  ],
-  daysShort: ['Вос', 'Пон', 'Вто', 'Сре', 'Чет', 'Пят', 'Суб'],
-  daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-  months: [
-    'Январь',
-    'Февраль',
-    'Март',
-    'Апрель',
-    'Май',
-    'Июнь',
-    'Июль',
-    'Август',
-    'Сентябрь',
-    'Октябрь',
-    'Ноябрь',
-    'Декабрь',
-  ],
-  monthsShort: [
-    'янв',
-    'фев',
-    'мар',
-    'апр',
-    'май',
-    'июн',
-    'июл',
-    'авг',
-    'сен',
-    'окт',
-    'ноя',
-    'дек',
-  ],
-  today: 'Сегодня',
-  clear: 'Очистить',
-  dateFormat: 'dd.mm.yyyy',
-  timeFormat: 'hh:ii',
-  firstDay: 1,
-};
+// const buttonApply = $(
+//   '<span class="datepicker--button datepicker--button-apply">Применить</span>'
+// );
+//
+// $('.datepicker--buttons').append(buttonApply);
+//
+// const apply = $('.datepicker--button-apply');
+// console.log(apply);
+// apply.on('click', () => {
+//   console.log(1);
+// });

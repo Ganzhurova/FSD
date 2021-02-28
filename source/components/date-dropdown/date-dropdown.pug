@@ -4,17 +4,20 @@ mixin dateDropdown(options)
   if !options
     - options = {}
 
-  if options.mode === "range"
-    .date-dropdown.date-dropdown--range
-      input.js-range-date-dropdown.date-dropdown__range-input(type="text")
-      +dateDropdownPicker(options.from, options.mode, className="js-date-dropdown-from")
-      +dateDropdownPicker(options.to, options.mode, className="js-date-dropdown-to")
-
   if options.mode === "filter"
-    +dateDropdownPicker(options.filter, options.mode)
+    .date-dropdown.js-filter
+      .date-dropdown__body
+        +datePicker(options.filter, options.mode, className = "js-input")
+      .date-dropdown__calendar.js-calendar
 
+  if options.mode === "range"
+    .date-dropdown.date-dropdown--range.js-range
+      .date-dropdown__body
+        +datePicker(options.from, options.mode, className = "js-from")
+        +datePicker(options.to, options.mode, className = "js-to")
+      .date-dropdown__calendar.js-calendar
 
-mixin dateDropdownPicker(options, mode, className="")
+mixin datePicker(options, mode, className)
   if !options
     - options = {}
 
@@ -22,8 +25,6 @@ mixin dateDropdownPicker(options, mode, className="")
     - options.attributes = {}
 
   -
-    let wrapClass = ""
-
     options.attributes.class = []
     options.attributes.class.push("date-dropdown__input")
     options.attributes.type = "text"
@@ -34,16 +35,9 @@ mixin dateDropdownPicker(options, mode, className="")
     }
 
     if (mode === "range") {
-      wrapClass = "date-dropdown__picker";
       options.isDateMask = true
     }
 
-    if (mode === "filter") {
-      wrapClass = "date-dropdown"
-      options.attributes.class.push("js-filter-date-dropdown")
-      options.attributes.value = "19 авг - 23 авг"
-    }
-
-  label(class=wrapClass)
+  label.date-dropdown__picker
     span.date-dropdown__label= options.label
     +input(options)

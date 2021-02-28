@@ -1,34 +1,17 @@
-.date-dropdown,
-.date-dropdown__picker {
-  display: block;
-
-  background-color: $white;
+.date-dropdown {
+  position: relative;
 }
 
 .date-dropdown--range {
-  position: relative;
+  .date-dropdown__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-
-  @media (min-width: $xs) {
-    gap: 20px;
+    @media (min-width: $xs) {
+      gap: 20px;
+    }
   }
-}
-
-.date-dropdown__range-input {
-  position: absolute;
-
-  bottom: 0;
-  left: 0;
-
-  width: 0;
-  height: 0;
-  overflow: hidden;
-
-  border: 0;
-  visibility: hidden;
 }
 
 .date-dropdown__label {
@@ -57,100 +40,29 @@
 }
 
 /* Стили для плагина air-datepicer */
-$padding-container: 30px;
-$width-content: 278px;
-$nav-margin-bottom: 30px;
-
-.datepickers-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 80.6%; //ширина контейнера
-  min-width: 280px;
-  max-width: 380px;
-}
-
-@media print {
-  .datepickers-container {
-    display: none;
-  }
-}
-
 .datepicker {
-  position: absolute;
-  left: -100000px;
-  z-index: 100;
-
-  width: calc(100% - #{$padding-container} * 2);
-  max-width: 380px;
-
-  padding: 20px;
-
-  background-color: $white;
-
-  border: 1px solid $dark25;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px 0 $dark05;
-  opacity: 0;
-
-  transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
-}
-
-.datepicker.-from-top- {
-  transform: translateY(-8px);
-}
-.datepicker.-from-right- {
-  transform: translateX(8px);
-}
-.datepicker.-from-bottom- {
-  transform: translateY(8px);
-}
-.datepicker.-from-left- {
-  transform: translateX(-8px);
-}
-.datepicker.active {
-  transform: translate(0);
-  opacity: 1;
-
-  transition: opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
-}
-
-.datepicker-inline .datepicker {
-  position: static;
-  right: auto;
-  left: auto;
+  // position: absolute;
+  z-index: 102;
 
   width: 100%;
   max-width: 320px;
+  padding: 20px;
 
-  transform: none;
-  opacity: 1;
-}
-
-.datepicker--pointer {
-  display: none;
+  background-color: $white;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px 0 $dark05;
 }
 
 .datepicker--content {
   margin-bottom: 20px;
 }
 
-.datepicker--body {
-  display: none;
-}
-.datepicker--body.active {
-  display: block;
-}
-
 .datepicker--nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: percent($nav-margin-bottom, $width-content);
+  margin-bottom: 30px;
 }
 
 .datepicker--nav-action {
