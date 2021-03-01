@@ -85,29 +85,65 @@ if (rangeItems.length > 0) {
 
     const calendar = item.find(calendarClass);
     $(calendar).datepicker(rangeConfig);
-
-    // const datepicker = $(calendar).data('datepicker');
-    //
-    // dateFrom.click(() => {
-    //   datepicker.hide();
-    // });
-    //
-    // dateTo.click(() => {
-    //   datepicker.show();
-    // });
   });
 }
 
-/* Добавление кнопки "Применить" */
+/* Открытие / закрытие календаря */
 
-// const buttonApply = $(
-//   '<span class="datepicker--button datepicker--button-apply">Применить</span>'
-// );
-//
-// $('.datepicker--buttons').append(buttonApply);
-//
-// const apply = $('.datepicker--button-apply');
-// console.log(apply);
-// apply.on('click', () => {
-//   console.log(1);
-// });
+class DateDropdown {
+  constructor() {
+    this.openedClass = 'date-dropdown--opened';
+    this.closedClass = 'date-dropdown--closed';
+  }
+
+  init(el) {
+    this.dateDropdown = el;
+
+    this.actions();
+  }
+
+  show() {
+    this.dateDropdown.classList.remove(this.closedClass);
+    this.dateDropdown.classList.add(this.openedClass);
+  }
+
+  close() {
+    this.dateDropdown.classList.add(this.closedClass);
+    this.dateDropdown.classList.remove(this.openedClass);
+  }
+
+  apply() {
+    this.close();
+  }
+
+  handler(event, actionName) {
+    this.dateDropdown.addEventListener(event, e => {
+      const { action } = e.target.dataset;
+
+      if (action === actionName) {
+        this[action]();
+      }
+    });
+  }
+
+  actions() {
+    this.handler('focusin', 'show');
+    this.handler('click', 'apply');
+  }
+}
+
+function initDateDropdowns() {
+  const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
+
+  if (dateDropdowns.length > 0) {
+    for (let i = 0; i < dateDropdowns.length; i += 1) {
+      const el = dateDropdowns[i];
+      const dateDropdown = new DateDropdown();
+      dateDropdown.init(el);
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initDateDropdowns();
+});

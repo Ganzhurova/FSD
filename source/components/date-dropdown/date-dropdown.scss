@@ -14,6 +14,26 @@
   }
 }
 
+.date-dropdown--closed {
+  .date-dropdown__calendar {
+    transform: translateY(8px);
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.3s ease;
+  }
+}
+
+.date-dropdown--opened {
+  .date-dropdown__calendar {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+
+    transition: all 0.3s ease;
+  }
+}
+
 .date-dropdown__label {
   display: block;
   margin-bottom: 5px;
@@ -39,11 +59,24 @@
   }
 }
 
+.date-dropdown__calendar {
+  position: absolute;
+  top: calc(100% + 5.56px);
+  z-index: 102;
+}
+
+.date-dropdown__button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  &:hover {
+    color: $green;
+  }
+}
+
 /* Стили для плагина air-datepicer */
 .datepicker {
-  // position: absolute;
-  z-index: 102;
-
   width: 100%;
   max-width: 320px;
   padding: 20px;

@@ -1,21 +1,22 @@
 include ../input/input
+include ../button/button
 
 mixin dateDropdown(options)
   if !options
     - options = {}
 
   if options.mode === "filter"
-    .date-dropdown.js-filter
+    .date-dropdown.date-dropdown--closed.js-filter.js-date-dropdown
       .date-dropdown__body
         +datePicker(options.filter, options.mode, className = "js-input")
-      .date-dropdown__calendar.js-calendar
+      +calendar()
 
   if options.mode === "range"
-    .date-dropdown.date-dropdown--range.js-range
+    .date-dropdown.date-dropdown--closed.date-dropdown--range.js-range.js-date-dropdown
       .date-dropdown__body
         +datePicker(options.from, options.mode, className = "js-from")
         +datePicker(options.to, options.mode, className = "js-to")
-      .date-dropdown__calendar.js-calendar
+      +calendar()
 
 mixin datePicker(options, mode, className)
   if !options
@@ -26,9 +27,11 @@ mixin datePicker(options, mode, className)
 
   -
     options.attributes.class = []
-    options.attributes.class.push("date-dropdown__input")
     options.attributes.type = "text"
     options.attributes.readonly = true
+    options.attributes["data-action"] = "show"
+
+    options.attributes.class.push("date-dropdown__input")
 
     if (className) {
       options.attributes.class.push(className)
@@ -41,3 +44,13 @@ mixin datePicker(options, mode, className)
   label.date-dropdown__picker
     span.date-dropdown__label= options.label
     +input(options)
+
+mixin calendar()
+  .date-dropdown__calendar.js-calendar
+    +button({
+      mix: "date-dropdown__button",
+      type: "button",
+      buttonMod: "text",
+      desc: "Применить",
+      dataAction: "apply",
+      })
