@@ -8,13 +8,25 @@
 .search__wrapper {
   display: grid;
   grid-column-gap: percent(60px, 1160px);
-  grid-template: 1fr / 266px 1fr;
-  padding: 30px 0 70px;
+  grid-template: 1fr auto / 266px 1fr;
+  padding: 30px 0 percent(70px, 1440px);
 
   @include container;
 
   @media (max-width: $lg) {
-    grid-template: 44px 1fr / 1fr;
+    grid-template: 44px 1fr auto / 1fr;
     padding-top: 0;
   }
+}
+
+.search__filter {
+  grid-row: 1 / -1;
+}
+
+.search__catalog {
+  margin-bottom: percent(41px, 835px);
+}
+
+.search__pagination {
+  justify-self: center;
 }

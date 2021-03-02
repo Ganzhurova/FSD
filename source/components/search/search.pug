@@ -1,5 +1,11 @@
+include ../pagination/pagination
+
 section.search
   h1.visually-hidden Поиск номеров. Отель Toxin
   .search__wrapper
-    include ../filter/filter
-    include ../catalog-result/catalog-result
+    .search__filter
+      include ../filter/filter
+    .search__catalog
+      include ../catalog-result/catalog-result
+    .search__pagination
+      +pagination()
