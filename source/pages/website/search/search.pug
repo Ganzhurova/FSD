@@ -1,7 +1,18 @@
 extends ../../base/base.pug
 
+include ../../../components/pagination/pagination
+include ../../../components/catalog-result/catalog-result
+
 block variables
   - let title = "Поиск номеров Toxin отель"
 
 block content
-  include ../../../components/search/search
+  section.search
+    h1.visually-hidden Поиск номеров. Отель Toxin
+    .search__wrapper
+      .search__filter
+        include ../../../components/filter/filter
+      .search__catalog
+        +catalogResult
+      .search__pagination
+        +pagination()
