@@ -1,0 +1,32 @@
+{
+  "rooms": [
+    {
+      "link": "#",
+      "number": 888,
+      "category": "Люкс",
+      "price": 9990,
+      "rating": 5,
+      "reviewTotal": 145,
+      "images": [
+        { "src": "888-1@1x.jpg", "srcset": "888-1@2x.jpg" },
+        { "src": "888-2@1x.jpg", "srcset": "888-2@2x.jpg" },
+        { "src": "888-3@1x.jpg", "srcset": "888-3@2x.jpg" },
+        { "src": "888-4@1x.jpg", "srcset": "888-4@2x.jpg" }
+      ]
+    },
+    {
+      "link": "#",
+      "number": 840,
+      "category": "",
+      "price": 9900,
+      "rating": 4,
+      "reviewTotal": 65,
+      "images": [
+        { "src": "840-1@1x.jpg", "srcset": "840-1@2x.jpg" },
+        { "src": "840-2@1x.jpg", "srcset": "840-2@2x.jpg" },
+        { "src": "840-3@1x.jpg", "srcset": "840-3@2x.jpg" },
+        { "src": "840-4@1x.jpg", "srcset": "840-4@2x.jpg" }
+      ]
+    }
+  ]
+}
