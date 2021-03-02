@@ -43,7 +43,6 @@ function initToggle() {
       const block = blocks[i];
       const toggle = new Toggle();
       toggle.init(block);
-      console.log(toggle);
     }
   }
 }
