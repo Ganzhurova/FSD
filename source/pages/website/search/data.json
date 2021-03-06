@@ -27,6 +27,96 @@
         { "src": "840-3@1x.jpg", "srcset": "840-3@2x.jpg" },
         { "src": "840-4@1x.jpg", "srcset": "840-4@2x.jpg" }
       ]
+    },
+    {
+      "link": "#",
+      "number": 980,
+      "category": "Люкс",
+      "price": 8500,
+      "rating": 3,
+      "reviewTotal": 35,
+      "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 856,
+      "category": "",
+      "price": 7300,
+      "rating": 5,
+      "reviewTotal": 19,
+      "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 740,
+      "category": "",
+      "price": 6000,
+      "rating": 4,
+      "reviewTotal": 44,
+      "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 982,
+      "category": "",
+      "price": 5800,
+      "rating": 3,
+      "reviewTotal": 56,
+      "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 678,
+      "category": "",
+      "price": 5500,
+      "rating": 5,
+      "reviewTotal": 45,
+      "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 450,
+      "category": "",
+      "price": 5300,
+      "rating": 4,
+      "reviewTotal": 39,
+      "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 350,
+      "category": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewTotal": 77,
+      "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 666,
+      "category": "",
+      "price": 5000,
+      "rating": 5,
+      "reviewTotal": 25,
+      "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 444,
+      "category": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewTotal": 15,
+      "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
+    },
+    {
+      "link": "#",
+      "number": 352,
+      "category": "",
+      "price": 5000,
+      "rating": 3,
+      "reviewTotal": 55,
+      "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     }
   ]
 }
