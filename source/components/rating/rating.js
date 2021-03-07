@@ -5,7 +5,6 @@ class Rating {
     this.value = 0;
     this.starWidthPercent = 20;
     this.voteClassName = 'rating--vote';
-    // this.mouseleaveHandler = this.mouseleaveHandler.bind(this);
   }
 
   init(el) {
@@ -73,6 +72,8 @@ function initRatings() {
     }
   }
 }
+
+export default initRatings;
 
 window.addEventListener('DOMContentLoaded', () => {
   initRatings();
