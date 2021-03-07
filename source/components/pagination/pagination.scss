@@ -1,25 +1,56 @@
-.pagination__body {
-  display: flex;
-}
-
-.pagination__button,
-.pagination__page,
-.pagination__ellipsis {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 40px;
-  height: 40px;
-  padding: 0 5px;
-
+.paginationjs a {
   color: $dark50;
   font-size: 12px;
   line-height: 14px;
 }
 
-.pagination__button {
+.paginationjs-pages {
+  margin-bottom: 10px;
+
+  ul {
+    display: flex;
+
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 40px;
+
+    @media (max-width: $xs) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      width: 16.67%;
+      min-width: 30px;
+    }
+
+    &::before {
+      display: block;
+      padding-top: 100%;
+
+      content: "";
+    }
+  }
+}
+
+.paginationjs-prev a,
+.paginationjs-next a,
+.paginationjs-page a,
+.paginationjs-ellipsis a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  padding: 0 5px;
+
+  cursor: pointer;
+}
+
+.paginationjs-prev a,
+.paginationjs-next a {
   padding: 0;
 
   background: $secondary-gradient;
@@ -31,27 +62,25 @@
     content: "";
     @include material-icons($display: block);
   }
-
-  &--prev::before {
-    content: "arrow_back";
-  }
-
-  &--next::before {
-    content: "arrow_forward";
-  }
-
-  &--disabled {
-    display: none;
-  }
 }
 
-.pagination__page--current {
-  color: $white;
+.paginationjs-prev a::before {
+  content: "arrow_back";
+}
 
+.paginationjs-next a::before {
+  content: "arrow_forward";
+}
+
+.paginationjs-page.active {
   background: $primary-gradient;
   border-radius: 50%;
+
+  & a {
+    color: $white;
+  }
 }
 
 .pagination__footer {
-  padding: 10px 0 0 4px;
+  padding-left: 4px;
 }
