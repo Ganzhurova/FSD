@@ -1,13 +1,13 @@
 include ../like/like
 
-mixin review(options)
+mixin review(options, mix)
   if !options
     - options = {}
 
   if !options.like
     - options.like = {}
 
-  .review
+  .review(class=mix?mix:"")
     .review__header
       .review__avatar
         img.review__img(src=require(`Components/review/img/${options.img}`), width="48", height="48", alt= options.name)
