@@ -1,0 +1,24 @@
+{
+  "images": [
+    { "src": "room-bg-1@1x.jpg", "srcset": "room-bg-1@2x.jpg", "big": true },
+    { "src": "room-bg-2@1x.jpg", "srcset": "room-bg-2@2x.jpg" },
+    { "src": "room-bg-3@1x.jpg", "srcset": "room-bg-3@2x.jpg" }
+  ],
+  "features": [
+    {
+      "icon": "insert_emoticon",
+      "title": "Комфорт",
+      "text": "Шумопоглощающие стены"
+    },
+    {
+      "icon": "location_city",
+      "title": "Удобство",
+      "text": "Окно в каждой из спален"
+    },
+    {
+      "icon": "whatshot",
+      "title": "Уют",
+      "text": "Номер оснащён камином"
+    }
+  ]
+}
