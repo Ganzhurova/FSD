@@ -20,13 +20,38 @@
 
 .room-details__wrapper {
   display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: minmax(280px, 1fr) minmax(280px, 380px);
+  grid-template: 1fr / minmax(280px, 1fr) minmax(280px, 380px);
   padding: percent(70px, 1440px) 0;
+
+  column-gap: 70px;
   @include container;
+}
+
+.room-details__list {
+  display: grid;
+  grid-template: repeat(3, auto) / auto auto;
+  row-gap: 30px;
+
+  column-gap: 70px;
+}
+
+.room-details__item--wide {
+  grid-column: span 2;
+}
+
+.room-details__item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .room-details__title {
   margin-bottom: 20px;
   @include title-element;
+}
+
+.room-details__review {
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
 }
