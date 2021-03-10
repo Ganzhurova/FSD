@@ -1,6 +1,15 @@
 mixin features(listName)
   include ./features-data
-  - let list = locals[listName]
+
+  - let list
+
+  -
+    if (!listName) {
+      list = locals.featuresUikit
+    }
+    else {
+      list = listName
+    }
 
   ul.features
     for item in list
