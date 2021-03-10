@@ -1,0 +1,32 @@
+.room-details {
+  min-width: 320px;
+
+  background-color: $white;
+  border-bottom: 1px solid $dark25;
+}
+
+.room-details__header {
+  display: grid;
+  grid-template: auto auto / 68.125% 31.875%;
+}
+
+.room-details__pic--big {
+  grid-row: span 2;
+}
+
+.room-details__img {
+  display: block;
+}
+
+.room-details__wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: minmax(280px, 1fr) minmax(280px, 380px);
+  padding: percent(70px, 1440px) 0;
+  @include container;
+}
+
+.room-details__title {
+  margin-bottom: 20px;
+  @include title-element;
+}

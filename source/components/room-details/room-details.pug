@@ -1,0 +1,29 @@
+include ../features/features
+include ../reservation/reservation
+
+mixin roomDetails(options)
+  if !options
+    - options = {}
+
+  if !options.images
+    - options.images = []
+
+  section.room-details
+    header.room-details__header
+      for img in options.images
+        +roomImg(img)
+    .room-details__wrapper
+      h1.visually-hidden Информация о номере
+      .room-details__list
+        .room-details__item
+          h2.room-details__title Сведения о номере
+          +features(options.features)
+        .room-details__item
+          .room-details__title Впечатления от номера
+      .room-details__reservation
+        +reservation()
+
+
+mixin roomImg(img)
+  .room-details__pic(class=img.big?"room-details__pic--big":"")
+    img.room-details__img(src=require(`Components/room-details/img/${img.src}`), srcset=require(`Components/room-details/img/${img.srcset}`), alt="Фото номера")
