@@ -1,6 +1,15 @@
 mixin bulletList(listName)
   include ./bullet-list-data
-  - let list = locals[listName]
+
+  - let list
+
+  -
+    if (!listName) {
+      list = locals.rules
+    }
+    else {
+      list = listName
+    }
 
   ul.bullet-list
     for item in list
