@@ -1,0 +1,10 @@
+mixin chart(mix)
+  .chart(class=mix)
+    svg.chart__body(viewBox="0 0 32.8 32.8")
+      circle.chart__unit(r="15.9" cx="50%" cy="50%")
+      circle.chart__unit(r="15.9" cx="50%" cy="50%")
+      circle.chart__unit(r="15.9" cx="50%" cy="50%")
+      circle.chart__unit(r="15.9" cx="50%" cy="50%")
+      g.chart__total
+        text.chart__total-number(x="50%" y="50%") 260
+        text.chart__total-text(x="50%" y="50%") голосов
