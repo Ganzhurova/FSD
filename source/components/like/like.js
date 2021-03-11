@@ -39,3 +39,5 @@ function initLikes() {
 window.addEventListener('DOMContentLoaded', () => {
   initLikes();
 });
+
+export default initLikes;
