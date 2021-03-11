@@ -7,8 +7,6 @@ details > summary {
 }
 
 .check-list {
-  // position: relative;
-
   min-width: 266px;
 
   background-color: $white;
@@ -40,11 +38,6 @@ details > summary {
 }
 
 .check-list__items {
-  // position: absolute;
-  // z-index: 1;
-  //
-  // width: 100%;
-  //
   padding: 3px 3px 3px 0;
 
   list-style: none;
