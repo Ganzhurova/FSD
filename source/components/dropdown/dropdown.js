@@ -207,3 +207,5 @@ function initDropdowns() {
 window.addEventListener('DOMContentLoaded', () => {
   initDropdowns();
 });
+
+export default initDropdowns;
