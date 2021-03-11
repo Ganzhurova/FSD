@@ -2,6 +2,7 @@ include ../features/features
 include ../reservation/reservation
 include ../review/review
 include ../bullet-list/bullet-list
+include ../chart/chart
 
 mixin roomDetails(options)
   if !options
@@ -11,27 +12,34 @@ mixin roomDetails(options)
     header.room-details__header
       for img in options.images
         +roomImg(img)
+
     .room-details__wrapper
       h1.visually-hidden Информация о номере
       .room-details__list
         .room-details__item
           h2.room-details__title Сведения о номере
           +features(options.features)
+
         .room-details__item
           h2.room-details__title Впечатления от номера
+          +chart("room-details__chart")
+
         .room-details__item.room-details__item--wide
           .room-details__item-top
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-total 2 отзыва
           for review in options.reviews
             +review(review, "room-details__review")
+
         .room-details__item
           h2.room-details__title Правила
           +bulletList(options.rules)
+
         .room-details__item
           h2.room-details__title Отмена
           p.room-details__cancellation.
             Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
       .room-details__reservation
         +reservation()
 
