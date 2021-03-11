@@ -46,46 +46,49 @@ const baseConfig = {
 $('.uikit-calendar').datepicker(baseConfig);
 
 /* для фильтра */
+function initFilters() {
+  const filterItems = $(filterClass);
 
-const filterItems = $(filterClass);
+  if (filterItems.length > 0) {
+    filterItems.each(function initFilter() {
+      const item = $(this);
+      const input = item.find(filterInputClass);
+      const filterConfig = {
+        dateFormat: 'dd M',
+        onSelect: date => {
+          input.val(date);
+        },
+      };
+      $.extend(true, filterConfig, baseConfig);
 
-if (filterItems.length > 0) {
-  filterItems.each(function initFilter() {
-    const item = $(this);
-    const input = item.find(filterInputClass);
-    const filterConfig = {
-      dateFormat: 'dd M',
-      onSelect: date => {
-        input.val(date);
-      },
-    };
-    $.extend(true, filterConfig, baseConfig);
-
-    const calendar = item.find(calendarClass);
-    $(calendar).datepicker(filterConfig);
-  });
+      const calendar = item.find(calendarClass);
+      $(calendar).datepicker(filterConfig);
+    });
+  }
 }
 
 /* для диапазона дат (вывод в два инпута) */
-const rangeItems = $(rangeClass);
+function initRanges() {
+  const rangeItems = $(rangeClass);
 
-if (rangeItems.length > 0) {
-  rangeItems.each(function initRange() {
-    const item = $(this);
-    const dateFrom = item.find(fromClass);
-    const dateTo = item.find(toClass);
-    const rangeConfig = {
-      onSelect: date => {
-        const dates = date.split(' - ');
-        dateFrom.val(dates[0]);
-        dateTo.val(dates[1]);
-      },
-    };
-    $.extend(true, rangeConfig, baseConfig);
+  if (rangeItems.length > 0) {
+    rangeItems.each(function initRange() {
+      const item = $(this);
+      const dateFrom = item.find(fromClass);
+      const dateTo = item.find(toClass);
+      const rangeConfig = {
+        onSelect: date => {
+          const dates = date.split(' - ');
+          dateFrom.val(dates[0]);
+          dateTo.val(dates[1]);
+        },
+      };
+      $.extend(true, rangeConfig, baseConfig);
 
-    const calendar = item.find(calendarClass);
-    $(calendar).datepicker(rangeConfig);
-  });
+      const calendar = item.find(calendarClass);
+      $(calendar).datepicker(rangeConfig);
+    });
+  }
 }
 
 /* Открытие / закрытие календаря */
@@ -145,5 +148,9 @@ function initDateDropdowns() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  initFilters();
+  initRanges();
   initDateDropdowns();
 });
+
+export { initRanges, initDateDropdowns };
