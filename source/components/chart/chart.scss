@@ -1,15 +1,16 @@
 .chart {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // max-width: 800px;
+
+  column-gap: 30px;
 }
 
 .chart__body {
-  position: relative;
-
   width: 120px;
   height: 120px;
+}
+
+.chart__svg {
+  height: auto;
 }
 
 .chart__unit {
@@ -40,20 +41,6 @@
   stroke-dashoffset: -100;
 }
 
-// .chart__total {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//
-//   text-align: center;
-//
-//   transform: translate(-50%, -50%);
-// }
-
-// .chart__total-number,
-// .chart__total-text {
-//   display: block;
-// }
 $viewBox: 32.8;
 $width: 120;
 $number-font-size: 24px;
@@ -80,4 +67,46 @@ $text-font-size: 12px;
   text-transform: uppercase;
 
   transform: translateY(1em);
+}
+
+/* Legend */
+$orange-gradient: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+
+.chart__legend {
+  padding-top: 30px;
+}
+
+.chart__list {
+  list-style: none;
+}
+
+.chart__item {
+  display: flex;
+  align-items: center;
+}
+
+.chart__marker {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+
+  border-radius: 50%;
+}
+
+.chart__marker--sumptuously {
+  background: $orange-gradient;
+}
+
+.chart__marker--good {
+  background: $secondary-gradient;
+}
+
+.chart__marker--fine {
+  background: $primary-gradient;
+}
+
+.chart__marker--badly {
+  background: $black-gradient;
 }
