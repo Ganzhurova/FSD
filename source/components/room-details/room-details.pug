@@ -24,7 +24,7 @@ mixin roomDetails(options)
           h2.room-details__title Впечатления от номера
           +chart("room-details__chart")
 
-        .room-details__item.room-details__item--wide
+        .room-details__item
           .room-details__item-top
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-total 2 отзыва
@@ -32,7 +32,7 @@ mixin roomDetails(options)
             +review(review, "room-details__review")
 
         .room-details__item
-          h2.room-details__title Правила
+          h2.room-details__title.room-details__title--indent Правила
           +bulletList(options.rules)
 
         .room-details__item

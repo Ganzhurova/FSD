@@ -28,15 +28,19 @@
 }
 
 .room-details__list {
-  display: grid;
-  grid-template: repeat(3, auto) / auto auto;
+  display: flex;
+  flex-wrap: wrap;
   row-gap: 30px;
 
   column-gap: 70px;
 }
 
-.room-details__item--wide {
-  grid-column: span 2;
+// .room-details__item--wide {
+//   grid-column: span 2;
+// }
+
+.room-details__item:last-child {
+  max-width: 341px;
 }
 
 .room-details__item-top {
@@ -50,8 +54,16 @@
   @include title-element;
 }
 
+.room-details__title--indent {
+  padding-left: 20px;
+}
+
 .room-details__review {
   &:not(:last-child) {
     margin-bottom: 22px;
   }
 }
+
+// .room-details__cancellation {
+//   min-width: 0;
+// }
