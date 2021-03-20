@@ -22,7 +22,7 @@ mixin roomDetails(options)
 
         .room-details__item
           h2.room-details__title Впечатления от номера
-          +chart("room-details__chart")
+          +chart(options.impression, "room-details__chart")
 
         .room-details__item
           .room-details__item-top
