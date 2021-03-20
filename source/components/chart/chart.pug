@@ -1,27 +1,72 @@
-mixin chart(mix)
-  figure.chart(class=mix)
+mixin chart(data, mix)
+  if !data
+    - data = {}
+
+  -
+    let segments = [
+      {
+        title: "Великолепно",
+        classLegend: "sumptuously",
+        total: data.sumptuously,
+        idColor: "orangeGradient",
+      },
+      {
+        title: "Хорошо",
+        classLegend: "good",
+        total: data.good,
+        idColor: "secondaryGradient",
+      },
+      {
+        title: "Удовлетворительно",
+        classLegend: "fine",
+        total: data.fine,
+        idColor: "primaryGradient",
+      },
+      {
+        title: "Разочарован",
+        classLegend: "badly",
+        total: data.badly,
+        idColor: "blackGradient",
+      },
+    ]
+
+
+  figure.chart.js-chart(class=mix)
     .chart__body
-      svg.chart__svg(width="100%" height="100%" viewBox="0 0 32.8 32.8")
+      svg.chart__svg(width="100%" height="100%" viewBox="0 0 120 120")
         title Диаграмма
         desc Круговая диаграмма, показывает впечатления от номера
-        circle.chart__unit(r="15.9" cx="50%" cy="50%")
-        circle.chart__unit(r="15.9" cx="50%" cy="50%")
-        circle.chart__unit(r="15.9" cx="50%" cy="50%")
-        circle.chart__unit(r="15.9" cx="50%" cy="50%")
+        for item in segments
+          +chartItem(item)
         g.chart__total
-          text.chart__total-number(x="50%" y="50%") 260
-          text.chart__total-text(x="50%" y="50%") голосов
+          title Всего
+          text.chart__total-number.js-total-number(x="50%" y="50%")
+          text.chart__total-text.js-total-text(x="50%" y="50%") голосов
+        defs
+          linearGradient(id="blackGradient" x1="0" x2="0" y1="0" y2="1")
+            stop(offset="0%" stop-color="#919191")
+            stop(offset="100%" stop-color="#3d4975")
+          linearGradient(id="primaryGradient" x1="0" x2="0" y1="0" y2="1")
+            stop(offset="0%" stop-color="#bc9cff")
+            stop(offset="100%" stop-color="#8ba4f9")
+          linearGradient(id="secondaryGradient" x1="0" x2="0" y1="0" y2="1")
+            stop(offset="0%" stop-color="#6fcf97")
+            stop(offset="100%" stop-color="#66d2ea")
+          linearGradient(id="orangeGradient" x1="0" x2="0" y1="0" y2="1")
+            stop(offset="0%" stop-color="#ffe39c")
+            stop(offset="100%" stop-color="#ffba9c")
     figcaption.chart__legend
       ul.chart__list(aria-hidden="true")
-        li.chart__item
-          span.chart__marker.chart__marker--sumptuously
-          |Великолепно
-        li.chart__item
-          span.chart__marker.chart__marker--good
-          |Хорошо
-        li.chart__item
-          span.chart__marker.chart__marker--fine
-          |Удовлетворительно
-        li.chart__item
-          span.chart__marker.chart__marker--badly
-          |Разочарован
+        for item in segments
+          +legendItem(item)
+
+
+mixin chartItem(item)
+  g(data-segment=item.classLegend, data-total=item.total)
+    title= item.title
+    desc Проголосовало - #{item.total}
+    circle.chart__segment(fill="none" r="58" cx="50%" cy="50%" stroke-width="4" stroke=`url(#${item.idColor})`)
+
+
+mixin legendItem(item)
+  li.chart__item(class=`chart__item--${item.classLegend}`)= item.title
