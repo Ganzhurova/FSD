@@ -45,16 +45,16 @@ mixin chart(data, mix)
           text.chart__total-number.js-total-number(x="50%" y="50%")
           text.chart__total-text.js-total-text(x="50%" y="50%") голосов
         defs
-          linearGradient(id="blackGradient" x1="0" x2="0" y1="0" y2="1")
-            stop(offset="0%" stop-color="#919191")
-            stop(offset="100%" stop-color="#3d4975")
-          linearGradient(id="primaryGradient" x1="0" x2="0" y1="0" y2="1")
-            stop(offset="0%" stop-color="#bc9cff")
-            stop(offset="100%" stop-color="#8ba4f9")
-          linearGradient(id="secondaryGradient" x1="0" x2="0" y1="0" y2="1")
-            stop(offset="0%" stop-color="#6fcf97")
-            stop(offset="100%" stop-color="#66d2ea")
-          linearGradient(id="orangeGradient" x1="0" x2="0" y1="0" y2="1")
+          linearGradient(id="blackGradient")
+            stop(offset="0%" stop-color="#3d4975")
+            stop(offset="100%" stop-color="#919191")
+          linearGradient(id="primaryGradient")
+            stop(offset="0%" stop-color="#8ba4f9")
+            stop(offset="100%" stop-color="#bc9cff")
+          linearGradient(id="secondaryGradient")
+            stop(offset="0%" stop-color="#66d2ea")
+            stop(offset="100%" stop-color="#6fcf97")
+          linearGradient(id="orangeGradient")
             stop(offset="0%" stop-color="#ffe39c")
             stop(offset="100%" stop-color="#ffba9c")
     figcaption.chart__legend
@@ -64,10 +64,11 @@ mixin chart(data, mix)
 
 
 mixin chartItem(item)
-  g(data-segment=item.classLegend, data-total=item.total)
-    title= item.title
-    desc Проголосовало - #{item.total}
-    circle.chart__segment.js-segment(fill="none" r="58" cx="50%" cy="50%" stroke-width="4" stroke=`url(#${item.idColor})`)
+  if item.total > 0
+    g
+      title= item.title
+      desc Проголосовало - #{item.total}
+      circle.chart__segment.js-segment(data-total=item.total fill="none" r="58" cx="50%" cy="50%" stroke-width="4" stroke=`url(#${item.idColor})`)
 
 
 mixin legendItem(item)

@@ -3,10 +3,11 @@ import declensionNouns from '../helper/declensionNouns';
 
 class Chart {
   constructor() {
-    this.data = {};
-    this.dataPercent = {};
+    this.data = [];
+    this.percentage = [];
     this.total = 0;
     this.circumference = 0;
+    this.adjustedCircumference = 0;
     this.cx = 60;
     this.cy = 60;
     this.angleOffset = -90;
@@ -15,70 +16,69 @@ class Chart {
 
   init(el) {
     this.chart = el;
+    this.segments = this.chart.querySelectorAll('.js-segment');
     this.totalEl = el.querySelector('.js-total-number');
     this.totalTextEl = el.querySelector('.js-total-text');
     this.radius = el.querySelector('.js-segment').getAttribute('r');
 
-    this.getSegments();
+    this.getData();
     this.getTotal();
-    this.getCircumference();
-    this.getDasharrayVal();
+    this.getPercentage();
     this.renderTotal();
+    this.renderSegment();
   }
 
-  getSegments() {
-    const segments = this.chart.querySelectorAll('[data-segment]');
-    segments.forEach(item => {
-      const name = item.dataset.segment;
-      const value = Number(item.dataset.total);
-      this.data[name] = value;
+  getData() {
+    this.segments.forEach(segment => {
+      const value = Number(segment.dataset.total);
+      this.data.push(value);
     });
   }
 
   getTotal() {
-    this.total = Object.values(this.data).reduce(
-      (total, amount) => total + amount
-    );
-  }
-
-  renderTotal() {
-    this.totalEl.textContent = this.total;
-    this.totalTextEl.textContent = declensionNouns(this.total, this.textForms);
+    this.total = this.data.reduce((total, amount) => total + amount);
   }
 
   getCircumference() {
     this.circumference = 2 * Math.PI * this.radius;
   }
 
-  getDasharrayVal() {
-    const segments = this.chart.querySelectorAll('[data-segment]');
-    // let offset = 0;
+  getAdjustedCircumference() {
+    this.adjustedCircumference = this.circumference - 2;
+  }
 
-    segments.forEach(item => {
-      const value = Number(item.dataset.total);
-      const percent = value / this.total;
-      // const dash = this.circumference * percent;
-      // const adjustedDash = dash - 2;
-      // const gap = this.circumference - dash;
-      // const attrVal = `${adjustedDash} ${gap}`;
-      const offset = this.circumference - this.circumference * percent;
-      const circle = item.querySelector('.js-segment');
-      const adjustedCircumference = this.circumference - 2;
+  getPercentage() {
+    this.percentage = this.data.map(item => {
+      return item / this.total;
+    });
+  }
 
-      circle.setAttribute('stroke-dasharray', adjustedCircumference);
-      circle.setAttribute('stroke-dashoffset', offset);
-      circle.setAttribute(
+  getOffset(percent) {
+    return this.circumference - this.circumference * percent;
+  }
+
+  renderSegment() {
+    this.getCircumference();
+    this.getAdjustedCircumference();
+
+    this.segments.forEach((segment, i) => {
+      const percent = this.percentage[i];
+      const offset = this.getOffset(percent);
+
+      segment.setAttribute('stroke-dasharray', this.adjustedCircumference);
+      segment.setAttribute('stroke-dashoffset', offset);
+      segment.setAttribute(
         'transform',
         `rotate(${this.angleOffset}, ${this.cx}, ${this.cy})`
       );
 
       this.angleOffset = percent * 360 + this.angleOffset;
-      // offset += dash;
-      //
-      // console.log(dash);
-      console.log(this.angleOffset);
-      // console.log(offset);
     });
+  }
+
+  renderTotal() {
+    this.totalEl.textContent = this.total;
+    this.totalTextEl.textContent = declensionNouns(this.total, this.textForms);
   }
 }
 
@@ -88,7 +88,6 @@ function initCharts() {
   for (let i = 0; i < charts.length; i += 1) {
     const chart = new Chart();
     chart.init(charts[i]);
-    console.log(chart);
   }
 }
 
