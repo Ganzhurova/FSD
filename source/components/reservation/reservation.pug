@@ -3,15 +3,18 @@ include ../dropdown/dropdown
 include ../button/button
 include ../tooltip/tooltip
 
-mixin reservation()
+mixin reservation(options)
+  if !options
+    - options = {}
+
   section.reservation
     form#reservation-form.reservation__info
       .reservation__header
         h2.reservation__title
-          span.reservation__number 888
-          span.reservation__class Люкс
+          span.reservation__number= options.number
+          span.reservation__class= options.category
         span.reservation__cost
-          span.reservation__price 9990
+          span.reservation__price= options.price
           | в сутки
       .reservation__dates
         +dateDropdown({
@@ -21,7 +24,7 @@ mixin reservation()
             attributes: {
               name: "arrival",
               required: true,
-              value: "19.08.2019",
+              value: options.arrival,
             },
           },
           to: {
@@ -29,7 +32,7 @@ mixin reservation()
             attributes: {
               name: "departure",
               required: true,
-              value: "23.08.2019",
+              value: options.departure,
             },
           }
         })
@@ -38,13 +41,14 @@ mixin reservation()
           label: "Гости",
           labelVisually: true,
           isGuestsDropdown: true,
+          guests: options.guests,
           })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row
           .reservation__category
             p.reservation__text
-              span.reservation__order-price 9 990
+              span.reservation__order-price= options.price
               |&nbsp;х&nbsp;
               span.reservation__duration 4 суток
           span.reservation__subtotal(data-subtotal="calculation") 39 960
