@@ -4,6 +4,7 @@
 
 .reservation__header {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -11,7 +12,8 @@
 }
 
 .reservation__title {
-  margin-right: 30px;
+  flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .reservation__number {
@@ -32,6 +34,8 @@
 }
 
 .reservation__cost {
+  flex-shrink: 0;
+
   font-size: 12px;
   line-height: 18px;
 }
