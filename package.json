@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --open --config conf/webpack.dev.config.js",
     "build": "webpack --config conf/webpack.prod.config.js",
     "stylelint": "stylelint \"source/**/*.scss\"",
-    "stylelint:fix": "stylelint \"source/**/*.scss\" --fix"
+    "stylelint:fix": "stylelint \"source/**/*.scss\" --fix",
+    "lint": "eslint \"source/**/*.js\""
   },
   "author": "",
   "license": "ISC",
