@@ -27,10 +27,7 @@
 }
 
 .reservation__class {
-  @include label-cta-text;
-  & {
-    color: $primary-color;
-  }
+  @include label-cta-text($color: $primary-color);
 }
 
 .reservation__cost {

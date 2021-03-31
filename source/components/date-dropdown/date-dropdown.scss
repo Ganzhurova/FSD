@@ -47,16 +47,13 @@
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
   cursor: pointer;
-  @include input;
-  @include input-bordered;
-
-  & {
-    padding-right: 44px;
-  }
 
   &::placeholder {
     color: $dark75;
   }
+
+  @include input($padding-right: 44px);
+  @include input-bordered;
 }
 
 .date-dropdown__calendar {

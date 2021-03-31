@@ -61,8 +61,8 @@
   @include montserrat-bold;
 }
 
-@mixin label-cta-text {
-  color: $title-color;
+@mixin label-cta-text($color: $title-color) {
+  color: $color;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
@@ -82,14 +82,13 @@
   min-width: 280px;
   max-width: 1550px; //для ширины окна 1920px
   margin: 0 auto;
-
-  // background-color: blue;
 }
 
 /* Офомление input */
-@mixin input {
+@mixin input($padding-right: 14px) {
   width: 100%;
   padding: 12px 14px;
+  padding-right: $padding-right;
 
   background-color: $white;
   border: 0;
@@ -122,7 +121,7 @@
   }
 }
 
-/*Оформление карточек*/
+/* Оформление карточек */
 
 @mixin card {
   width: 100%;

@@ -6,7 +6,7 @@
 
   background-color: $white;
   border-radius: 4px;
-  box-shadow: 0px 10px 20px 0px $dark05;
+  box-shadow: 0 10px 20px 0 $dark05;
 }
 
 .room__link {
@@ -49,10 +49,7 @@
 }
 
 .room__class {
-  @include label-cta-text;
-  & {
-    color: $primary-color;
-  }
+  @include label-cta-text($color: $primary-color);
 }
 
 .room__cost {
@@ -166,14 +163,14 @@
   margin-right: auto;
   margin-left: auto;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     display: table;
 
     content: "";
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -281,7 +278,7 @@
 
   color: transparent;
 
-  font-size: 0px;
+  font-size: 0;
   line-height: 0px;
 
   background: transparent;
@@ -302,13 +299,13 @@
   width: 7.5px;
   height: 7.5px;
 
-  font-size: 0px;
+  font-size: 0;
   line-height: 0px;
 
   background-color: transparent;
   border: 1px solid $white;
   border-radius: 50%;
-  box-shadow: 0px 5px 5px 0px rgba($dark, 0.3);
+  box-shadow: 0 5px 5px 0 rgba($dark, 0.3);
 
   content: "";
 }

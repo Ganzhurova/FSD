@@ -27,7 +27,6 @@
     z-index: 100;
 
     display: block;
-
     width: 10px;
     height: 10px;
 
@@ -43,7 +42,6 @@
     pointer-events: none;
   }
 
-  &:hover > .tooltip__text,
   &:hover::after {
     visibility: visible;
     opacity: 1;
@@ -60,27 +58,28 @@
   display: block;
   min-width: 100px;
   max-width: 170px;
-
   padding: 5px;
   overflow: hidden;
 
   color: $dark75;
   white-space: nowrap;
-
   text-align: center;
   text-overflow: ellipsis;
 
   background: $grey;
   border-radius: 22px;
   visibility: hidden;
-
   opacity: 0;
 
   transition: all 0.2s;
 
   user-select: none;
   pointer-events: none;
+}
 
-  &::before {
-  }
+.tooltip:hover > .tooltip__text {
+  visibility: visible;
+  opacity: 1;
+
+  transition: all 0.2s;
 }

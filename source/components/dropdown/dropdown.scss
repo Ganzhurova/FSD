@@ -45,16 +45,13 @@
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
   cursor: pointer;
-  @include input;
-  @include input-bordered;
-
-  & {
-    padding-right: 44px;
-  }
 
   &::placeholder {
     color: $dark75;
   }
+
+  @include input($padding-right: 44px);
+  @include input-bordered;
 }
 
 .dropdown__select {
@@ -169,7 +166,7 @@
 
 .dropdown--hidden {
   .dropdown__select {
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
 
     border-width: 0;
@@ -186,7 +183,7 @@
 }
 
 .dropdown--show {
-  box-shadow: 0px 10px 20px 0px $dark05;
+  box-shadow: 0 10px 20px 0 $dark05;
 
   .dropdown__input {
     border-color: $dark50;
@@ -197,7 +194,7 @@
     overflow: hidden;
 
     border-width: 1px;
-    box-shadow: 0px 10px 20px 0px $dark05;
+    box-shadow: 0 10px 20px 0 $dark05;
 
     visibility: visible;
 

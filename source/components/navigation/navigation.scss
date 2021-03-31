@@ -180,7 +180,7 @@
   &:hover,
   &:focus {
     color: $dark75;
-    text-shadow: 0.65px 0px 0px $dark75, -0.65px 0px 0px $dark75;
+    text-shadow: 0.65px 0 0 $dark75, -0.65px 0 0 $dark75;
 
     outline: none;
 
@@ -264,7 +264,7 @@
   &:hover,
   &:focus {
     color: $dark75;
-    text-shadow: 0.65px 0px 0px $dark75, -0.65px 0px 0px $dark75;
+    text-shadow: 0.65px 0 0 $dark75, -0.65px 0 0 $dark75;
 
     outline: none;
 
