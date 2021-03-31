@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const glob = require('glob');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const htmlPlugins = require('./utils/htmlPlugins');
 
 module.exports = {
@@ -136,5 +137,18 @@ module.exports = {
     }),
     ...htmlPlugins,
     new SpriteLoaderPlugin({}),
+    new FaviconsWebpackPlugin({
+      logo: './logo.png',
+      cache: true,
+      publicPath: '',
+      inject: true,
+      favicons: {
+        icons: {
+          coast: false,
+          yandex: false,
+          appleStartup: false,
+        },
+      },
+    }),
   ],
 };
