@@ -29,6 +29,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
+    publicPath: '',
   },
 
   module: {
@@ -94,15 +95,36 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|png|jpg|jpeg|woff(2)?|eot|ttf|otf|svg)$/,
-        exclude: glob.sync('./**/img/icon-*.svg').map(item => {
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+        exclude: glob.sync('./**/img/*.svg').map(item => {
           return path.resolve(item);
         }),
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: '[name].[ext]',
+              outputPath: 'fonts',
+              esModule: false,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(gif|png|jpg|jpeg|svg)$/,
+        include: glob
+          .sync('./**/img/*', {
+            ignore: ['./**/img/icon-*.svg'],
+          })
+          .map(item => {
+            return path.resolve(item);
+          }),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img',
               esModule: false,
             },
           },
@@ -140,7 +162,7 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './logo.png',
       cache: true,
-      publicPath: '',
+      outputPath: 'static',
       inject: true,
       favicons: {
         icons: {
