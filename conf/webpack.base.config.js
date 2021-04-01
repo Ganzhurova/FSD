@@ -147,6 +147,8 @@ module.exports = {
           coast: false,
           yandex: false,
           appleStartup: false,
+          android: false,
+          appleIcon: false,
         },
       },
     }),
