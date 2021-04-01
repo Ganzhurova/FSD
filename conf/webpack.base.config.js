@@ -163,6 +163,7 @@ module.exports = {
       logo: './logo.png',
       cache: true,
       outputPath: 'static',
+      prefix: 'static/',
       inject: true,
       favicons: {
         icons: {
