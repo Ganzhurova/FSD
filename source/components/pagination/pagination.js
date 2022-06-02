@@ -1,4 +1,5 @@
-import $ from 'jquery';
+/* global $ */
+
 import './pagination.scss';
 import 'paginationjs';
 import initRatings from '../rating/rating';
@@ -9,7 +10,7 @@ const roomTemplate = require('../room/template.pug');
 
 function template(rooms) {
   let html = '';
-  $.each(rooms, function getHtml(index, room) {
+  $.each(rooms, (index, room) => {
     const locals = {
       room,
     };
@@ -79,7 +80,7 @@ function initPagination() {
     initRatings();
     initSlider();
 
-    container.addHook('afterPaging', function update() {
+    container.addHook('afterPaging', () => {
       initSlider();
       writeFooter(container, config);
       initRatings();

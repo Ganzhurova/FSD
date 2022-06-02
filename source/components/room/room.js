@@ -1,4 +1,5 @@
-import $ from 'jquery';
+/* global $ */
+
 import './room.scss';
 import 'slick-slider';
 

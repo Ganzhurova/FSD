@@ -36,7 +36,7 @@ class Dropdown {
   }
 
   initTotals() {
-    this.totals.forEach(el => {
+    this.totals.forEach((el) => {
       const total = new Total();
       total.init(el);
       this.initiatedTotals.push(total);
@@ -44,12 +44,13 @@ class Dropdown {
   }
 
   getOptions() {
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       let isUnique = true;
       const option = {};
       option.name = item.dataset.option;
       option.total = Number(item.querySelector('.js-dropdown__total').value);
 
+      // eslint-disable-next-line no-restricted-syntax
       for (const value of this.options) {
         if (option.name === value.name) {
           isUnique = false;
@@ -82,7 +83,7 @@ class Dropdown {
     const inputs = this.dropdown.querySelectorAll('.js-dropdown__total');
     const values = [];
 
-    inputs.forEach(input => {
+    inputs.forEach((input) => {
       values.push(Number(input.value));
     });
 
@@ -103,7 +104,7 @@ class Dropdown {
     const values = [];
     const { placeholder } = this.field;
 
-    this.options.forEach(option => {
+    this.options.forEach((option) => {
       if (!placeholder || (placeholder && option.total > 0)) {
         const txtArr = this.txtForms[option.name];
         const name = Dropdown.declension(option.total, txtArr);
@@ -162,7 +163,7 @@ class Dropdown {
   clear() {
     this.field.value = '';
 
-    this.initiatedTotals.forEach(total => {
+    this.initiatedTotals.forEach((total) => {
       total.setDefaultValue();
       total.checkValue();
     });
@@ -175,7 +176,7 @@ class Dropdown {
   }
 
   actions() {
-    this.dropdown.addEventListener('click', e => {
+    this.dropdown.addEventListener('click', (e) => {
       const { action } = e.target.dataset;
 
       if (action === 'minus' || action === 'plus') {

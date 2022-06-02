@@ -1,4 +1,5 @@
-import $ from 'jquery';
+/* global $ */
+
 import 'ion-rangeslider';
 import './range.scss';
 

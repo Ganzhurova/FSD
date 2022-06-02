@@ -1,4 +1,5 @@
-import $ from 'jquery';
+/* global $ */
+
 import 'air-datepicker';
 import './date-dropdown.scss';
 
@@ -55,7 +56,7 @@ function initFilters() {
       const input = item.find(filterInputClass);
       const filterConfig = {
         dateFormat: 'dd M',
-        onSelect: date => {
+        onSelect: (date) => {
           input.val(date);
         },
       };
@@ -68,6 +69,7 @@ function initFilters() {
 }
 
 /* для диапазона дат (вывод в два инпута) */
+
 function initRanges() {
   const rangeItems = $(rangeClass);
 
@@ -77,7 +79,7 @@ function initRanges() {
       const dateFrom = item.find(fromClass);
       const dateTo = item.find(toClass);
       const rangeConfig = {
-        onSelect: date => {
+        onSelect: (date) => {
           const dates = date.split(' - ');
           dateFrom.val(dates[0]);
           dateTo.val(dates[1]);
@@ -120,7 +122,7 @@ class DateDropdown {
   }
 
   handler(event, actionName) {
-    this.dateDropdown.addEventListener(event, e => {
+    this.dateDropdown.addEventListener(event, (e) => {
       const { action } = e.target.dataset;
 
       if (action === actionName) {

@@ -48,9 +48,7 @@ class Chart {
   }
 
   getPercentage() {
-    this.percentage = this.data.map(item => {
-      return item / this.total;
-    });
+    this.percentage = this.data.map(item => item / this.total);
   }
 
   getOffset(percent) {
