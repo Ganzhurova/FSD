@@ -1,16 +1,20 @@
 # FSD
+
 FSD - пример сайта для бронирования номеров в отеле Toxin.
 
-Сайт расположен: https://ganzhurova.github.io/Toxin-hotel/
+Сайт расположен: https://ganzhurova.github.io/fsd/
 
 ## Установка
+
 Инициализация проекта: npm install
 
 ## Запуск сборок
-* в режиме development: npm run dev
-* в режиме production: npm run build
+
+- в режиме development: npm run dev
+- в режиме production: npm run build
 
 ## Создано с помощью
+
 **Сборщик:** webpack
 
 **Языки:** pug, scss, JavaScript, jQuery
