@@ -1,7 +1,7 @@
 import 'normalize.css';
 
 import './theme/fonts.scss';
-import './theme/global.scss';
+import './styles/global.scss';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
