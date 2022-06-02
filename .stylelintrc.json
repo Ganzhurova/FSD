@@ -1,29 +1,14 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-rational-order",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order",
     "stylelint-config-prettier"
   ],
-
-  "plugins": [
-    "stylelint-order",
-    "stylelint-scss",
-    "stylelint-config-rational-order/plugin"
-  ],
-
+  "customSyntax": "postcss-scss",
   "rules": {
-    "font-family-no-missing-generic-family-keyword": null,
-    "no-descending-specificity": null,
-    "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true,
-    "declaration-empty-line-before": null,
-    "order/properties-order": [],
-    "plugin/rational-order": [
-      true,
-      {
-        "border-in-box-model": false,
-        "empty-line-between-groups": true
-      }
-    ]
+    "selector-class-pattern": "^-?[a-z][a-zA-Z0-9_-]+$",
+    "selector-id-pattern": "^[a-z][a-zA-Z0-9_-]+$",
+    "function-no-unknown": [true, { "ignoreFunctions": ["calc-in-percent"] }]
   }
 }
