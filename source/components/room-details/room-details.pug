@@ -17,26 +17,26 @@ mixin roomDetails(options)
     .room-details__wrapper
       h1.visually-hidden Информация о номере
       .room-details__list
-        .room-details__item.room-details__item--features
+        section.room-details__item.room-details__item--features
           h2.room-details__title Сведения о номере
           +features(options.features)
 
-        .room-details__item.room-details__item--impression
+        section.room-details__item.room-details__item--impression
           h2.room-details__title Впечатления от номера
           +chart(options.impression, "room-details__chart")
 
-        .room-details__item.room-details__item--reviews
+        section.room-details__item.room-details__item--reviews
           .room-details__item-top
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-total 2 отзыва
           for review in options.reviews
             +review(review, "room-details__review")
 
-        .room-details__item.room-details__item--rules
+        section.room-details__item.room-details__item--rules
           h2.room-details__title.room-details__title--indent Правила
           +bulletList(options.rules)
 
-        .room-details__item.room-details__item--cancellation
+        section.room-details__item.room-details__item--cancellation
           h2.room-details__title Отмена
           p.room-details__cancellation.
             Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

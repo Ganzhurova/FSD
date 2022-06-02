@@ -7,12 +7,12 @@ mixin review(options, mix)
   if !options.like
     - options.like = {}
 
-  .review(class=mix?mix:"")
+  article.review(class=mix?mix:"")
     .review__header
       .review__avatar
         img.review__img(src=require(`./img/${options.img}`), width="48", height="48", alt= options.name)
       .review__info
-        span.review__author= options.name
+        h3.review__author= options.name
         span.review__date= options.date
     .review__body
       .review__like
