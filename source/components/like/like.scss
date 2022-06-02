@@ -3,27 +3,23 @@
   align-items: center;
   min-width: 40px;
   padding: 3px 4px;
-
   color: $dark25;
-
+  cursor: pointer;
   background-color: $white;
-
   border: 1px solid $dark25;
   border-radius: 10px;
   outline: none;
-  cursor: pointer;
 }
 
 .like__value {
   display: flex;
-
   font-size: 10px;
   line-height: 12px;
 
   &::before {
     margin-right: 7px;
-
     content: "favorite_border";
+
     @include material-icons(
       $display: block,
       $font-size: 10px,
@@ -34,15 +30,12 @@
 
 .like--actual {
   color: $primary-color;
-
   background-image: linear-gradient($white, $white), $primary-gradient;
-
-  -webkit-background-clip: padding-box, border-box;
+  background-clip: padding-box, border-box;
   border: 1px solid transparent;
 
   .like__value::before {
     margin-right: 5px;
-
     content: "favorite";
   }
 }

@@ -1,9 +1,8 @@
 .chart {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
   column-gap: 30px;
+  justify-content: center;
 }
 
 .chart__body {
@@ -25,10 +24,8 @@
 
 .chart__total-text {
   font-size: 12px;
-  text-anchor: middle;
-
   text-transform: uppercase;
-
+  text-anchor: middle;
   transform: translateY(1.5em);
 }
 
@@ -53,10 +50,8 @@ $black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     width: 10px;
     height: 10px;
     margin-right: 5px;
-
-    border-radius: 50%;
-
     content: "";
+    border-radius: 50%;
   }
 }
 

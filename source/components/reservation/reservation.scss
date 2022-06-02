@@ -7,8 +7,8 @@
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 20px;
   padding-top: 1px;
+  margin-bottom: 20px;
 }
 
 .reservation__title {
@@ -19,9 +19,7 @@
 .reservation__number {
   &::before {
     font-size: 14px;
-
     line-height: 17px;
-
     content: "№ ";
   }
 }
@@ -32,7 +30,6 @@
 
 .reservation__cost {
   flex-shrink: 0;
-
   font-size: 12px;
   line-height: 18px;
 }
@@ -41,6 +38,7 @@
   font-size: 14px;
 
   @include montserrat-bold;
+
   &::after {
     content: "₽ ";
   }
@@ -60,7 +58,6 @@
 
 .reservation__calculation {
   margin-bottom: 30px;
-
   list-style: none;
 }
 
@@ -76,7 +73,6 @@
 
 .reservation__text {
   margin-right: 5px;
-
   line-height: 18px;
 }
 
@@ -91,7 +87,6 @@
   display: block;
   min-width: 70px;
   margin-left: 10px;
-
   text-align: right;
 }
 
@@ -115,15 +110,14 @@
 
   &::after {
     flex-grow: 1;
-
-    border-bottom: 1px dotted $dark25;
-
     content: "";
+    border-bottom: 1px dotted $dark25;
   }
 }
 
 .reservation__total {
   margin-left: 5px;
+
   &::after {
     content: "₽";
   }

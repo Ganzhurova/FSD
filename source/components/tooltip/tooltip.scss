@@ -1,20 +1,17 @@
 .tooltip {
   position: relative;
-
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-
-  color: $dark25;
   font-size: 12px;
   line-height: 14px;
-
+  color: $dark25;
+  cursor: pointer;
   border: 1px solid $dark25;
   border-radius: 50%;
-  cursor: pointer;
 
   &::before {
     content: "i";
@@ -25,27 +22,23 @@
     bottom: calc(100% - 5px);
     left: 50%;
     z-index: 100;
-
     display: block;
     width: 10px;
     height: 10px;
-
+    pointer-events: none;
+    visibility: hidden;
+    content: "";
+    user-select: none;
     border: 5px solid transparent;
     border-top-color: $grey;
     border-bottom-width: 0;
-    transform: translateX(-50%);
-    visibility: hidden;
     opacity: 0;
-
-    content: "";
-    user-select: none;
-    pointer-events: none;
+    transform: translateX(-50%);
   }
 
   &:hover::after {
     visibility: visible;
     opacity: 1;
-
     transition: all 0.2s;
   }
 }
@@ -54,32 +47,26 @@
   position: absolute;
   bottom: calc(100% + 5px);
   z-index: 99;
-
   display: block;
   min-width: 100px;
   max-width: 170px;
   padding: 5px;
   overflow: hidden;
-
   color: $dark75;
-  white-space: nowrap;
   text-align: center;
   text-overflow: ellipsis;
-
+  white-space: nowrap;
+  pointer-events: none;
+  visibility: hidden;
+  user-select: none;
   background: $grey;
   border-radius: 22px;
-  visibility: hidden;
   opacity: 0;
-
   transition: all 0.2s;
-
-  user-select: none;
-  pointer-events: none;
 }
 
 .tooltip:hover > .tooltip__text {
   visibility: visible;
   opacity: 1;
-
   transition: all 0.2s;
 }

@@ -8,38 +8,31 @@ details > summary {
 
 .check-list {
   min-width: 266px;
-
   background-color: $white;
 }
 
 .check-list__title {
   position: relative;
-
   padding: 15px 50px 15px 0;
-
-  outline: none;
   cursor: pointer;
+  outline: none;
   @include label-cta-text;
 
   &::after {
     position: absolute;
     top: 50%;
     right: 10px;
-
     color: $dark50;
-
+    content: "expand_more";
+    transition: all 0.2s;
     transform: translateY(-50%);
 
-    transition: all 0.2s;
-
-    content: "expand_more";
     @include material-icons;
   }
 }
 
 .check-list__items {
   padding: 3px 3px 3px 0;
-
   list-style: none;
   background-color: $white;
 }

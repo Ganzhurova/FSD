@@ -1,7 +1,7 @@
-//container width
+// container width
 $content-width: 80.6;
 
-//breakpoints
+// breakpoints
 $xxs: 320px;
 $xs: 575px;
 $sm: 769px;
@@ -10,11 +10,11 @@ $lg: 1199px;
 $xl: 1440px;
 $max-width-xl: 1439px;
 
-//retina
+// retina
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
-//colors
+// colors
 $white: #fff;
 $black: #000;
 $grey: #f4f4f6;
@@ -25,16 +25,13 @@ $dark25: rgba($dark, 0.25);
 $dark05: rgba($dark, 0.05);
 $purple: #bc9cff;
 $green: #6fcf97;
-
 $primary-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 $secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 $primary-translucent-gradient: linear-gradient(
   180deg,
-  rgba(188, 156, 255, 0.5) 0%,
-  rgba(139, 164, 249, 0.5) 100%
+  rgb(188 156 255 / 50%) 0%,
+  rgb(139 164 249 / 50%) 100%
 );
-
 $primary-color: $purple;
-
 $text-color: $dark75;
 $title-color: $dark;

@@ -3,14 +3,13 @@
 }
 
 .signup__title {
-  margin-bottom: 20px;
   padding-top: 1px;
+  margin-bottom: 20px;
 }
 
 .signup__fieldset {
-  margin-bottom: 20px;
   padding: 0;
-
+  margin-bottom: 20px;
   border: 0;
 
   &:last-child {
@@ -33,8 +32,8 @@
 }
 
 .signup__legend {
-  margin-bottom: 5px;
   padding-top: 1px;
+  margin-bottom: 5px;
   @include label-cta-text;
 }
 
@@ -55,7 +54,6 @@
 
 .signup__text {
   margin-right: 20px;
-
-  color: $black;
   line-height: 18px;
+  color: $black;
 }

@@ -1,7 +1,7 @@
 .paginationjs a {
-  color: $dark50;
   font-size: 12px;
   line-height: 14px;
+  color: $dark50;
 }
 
 .paginationjs-pages {
@@ -9,7 +9,6 @@
 
   ul {
     display: flex;
-
     list-style: none;
   }
 
@@ -28,7 +27,6 @@
     &::before {
       display: block;
       padding-top: 100%;
-
       content: "";
     }
   }
@@ -39,27 +37,23 @@
 .paginationjs-page a,
 .paginationjs-ellipsis a {
   display: flex;
-
   align-items: center;
   justify-content: center;
   width: 100%;
-
   padding: 0 5px;
-
   cursor: pointer;
 }
 
 .paginationjs-prev a,
 .paginationjs-next a {
   padding: 0;
-
   background: $secondary-gradient;
   border-radius: 50%;
 
   &::before {
     color: $white;
-
     content: "";
+
     @include material-icons($display: block);
   }
 }

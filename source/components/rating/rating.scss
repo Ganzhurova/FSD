@@ -1,8 +1,6 @@
 .rating {
   position: relative;
-
   width: 120px;
-
   background-color: $white;
 }
 
@@ -10,12 +8,9 @@
   position: absolute;
   top: 0;
   left: 0;
-
   width: 0%;
   height: 100%;
-
   background: $primary-gradient;
-
   transition: all 0.2s;
 }
 
@@ -29,10 +24,9 @@
   @include material-icons($display: block);
 
   &::before {
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-
     content: "star_border";
+    background: $primary-gradient;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -40,13 +34,10 @@
     position: absolute;
     top: 0;
     left: 0;
-
     color: $black;
-
+    content: "star";
     background-color: $white;
     mix-blend-mode: screen;
-
-    content: "star";
   }
 }
 

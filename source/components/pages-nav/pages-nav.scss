@@ -1,11 +1,9 @@
 .pages-nav {
   width: 50%;
-
   background-color: inherit;
 
   @media (max-width: $md) {
     width: 100%;
-
     text-align: center;
 
     &:not(:last-child) {
@@ -15,9 +13,8 @@
 }
 
 .pages-nav__title {
-  margin-bottom: 20px;
   padding-left: 20px;
-
+  margin-bottom: 20px;
   text-align: center;
 
   @media (max-width: $md) {
@@ -39,7 +36,6 @@
 
 .pages-nav__link {
   display: block;
-
   text-align: center;
 
   @include title-element;

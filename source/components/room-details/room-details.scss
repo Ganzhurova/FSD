@@ -1,6 +1,5 @@
 .room-details {
   min-width: 320px;
-
   background-color: $white;
   border-bottom: 1px solid $dark25;
 }
@@ -31,9 +30,8 @@
 
 .room-details__wrapper {
   display: flex;
-  padding: percent(70px, 1440px) 0;
-
-  column-gap: percent(70px, 1160px);
+  column-gap: calc-in-percent(70px, 1160px);
+  padding: calc-in-percent(70px, 1440px) 0;
   @include container;
 
   @media (max-width: $max-width-xl) {
@@ -45,8 +43,7 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 30px;
-
-  column-gap: percent(70px, 724px);
+  column-gap: calc-in-percent(70px, 724px);
 
   @media (max-width: $max-width-xl) {
     margin-bottom: 70px;

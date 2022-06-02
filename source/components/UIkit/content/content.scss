@@ -1,6 +1,5 @@
 .content {
   min-width: 320px;
-
   background-color: inherit;
 }
 
@@ -25,9 +24,8 @@
   width: 100%;
   margin: 0;
   margin-bottom: 40px;
-
-  color: $title-color;
   line-height: 1.2;
+  color: $title-color;
   text-align: center;
 
   @include montserrat-bold;
@@ -70,13 +68,6 @@
     }
   }
 
-  &:nth-child(6),
-  &:nth-child(8) {
-    & .form-element:nth-child(1) {
-      margin-right: 72px;
-    }
-  }
-
   &:nth-child(8) {
     padding-top: 14px;
 
@@ -84,6 +75,13 @@
       width: 320px;
     }
 
+    & .form-element:nth-child(1) {
+      margin-right: 72px;
+    }
+  }
+
+  &:nth-child(6),
+  &:nth-child(8) {
     & .form-element:nth-child(1) {
       margin-right: 72px;
     }

@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.date-dropdown__calendar {
+  position: absolute;
+  top: calc(100% + 5.56px);
+  z-index: 102;
+}
+
 .date-dropdown--range {
   .date-dropdown__body {
     display: grid;
@@ -16,37 +22,35 @@
 
 .date-dropdown--closed {
   .date-dropdown__calendar {
-    transform: translateY(8px);
     visibility: hidden;
     opacity: 0;
-
     transition: all 0.3s ease;
+    transform: translateY(8px);
   }
 }
 
 .date-dropdown--opened {
   .date-dropdown__calendar {
-    transform: translateY(0);
     visibility: visible;
     opacity: 1;
-
     transition: all 0.3s ease;
+    transform: translateY(0);
   }
 }
 
 .date-dropdown__label {
   display: block;
-  margin-bottom: 5px;
   padding-top: 1px;
+  margin-bottom: 5px;
 
   @include label-cta-text;
 }
 
 .date-dropdown__input {
+  cursor: pointer;
   background-image: url("./img/arrow.svg");
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
-  cursor: pointer;
 
   &::placeholder {
     color: $dark75;
@@ -54,12 +58,6 @@
 
   @include input($padding-right: 44px);
   @include input-bordered;
-}
-
-.date-dropdown__calendar {
-  position: absolute;
-  top: calc(100% + 5.56px);
-  z-index: 102;
 }
 
 .date-dropdown__button {
@@ -77,7 +75,6 @@
   width: 100%;
   max-width: 320px;
   padding: 20px;
-
   background-color: $white;
   border: 1px solid $dark25;
   border-radius: 4px;
@@ -97,16 +94,15 @@
 
 .datepicker--nav-action {
   cursor: pointer;
+
   & i {
     display: block;
-
     color: $primary-color;
   }
 }
 
 .datepicker--nav-title {
   text-align: center;
-
   cursor: pointer;
   @include title-element;
 }
@@ -119,18 +115,15 @@
 
 .datepicker--day-name {
   display: flex;
-
   flex: 1;
   align-items: center;
   justify-content: center;
-
   color: $primary-color;
   text-transform: none;
 
   &::before {
     display: block;
     padding-top: 100%;
-
     content: "";
   }
 }
@@ -143,39 +136,32 @@
 .datepicker--cell {
   position: relative;
   z-index: 1;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: $dark50;
-
   cursor: pointer;
 
   &::before {
     display: block;
     padding-top: 100%;
-
     content: "";
   }
 
   &.-current- {
     color: $white;
-
     background: $secondary-gradient;
     border-radius: 50%;
   }
 
   &.-current-.-focus- {
     color: $white;
-
     background: $primary-gradient;
     border-radius: 50%;
   }
 
   &.-current-.-in-range- {
     color: $dark50;
-
     border-radius: 0;
 
     &::before {
@@ -185,11 +171,9 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-
+      content: "";
       background: $secondary-gradient;
       border-radius: 50%;
-
-      content: "";
     }
 
     &:hover::before {
@@ -197,20 +181,18 @@
     }
 
     &:hover {
-      background: rgba(139, 164, 249, 0.4);
+      background: rgb(139 164 249 / 40%);
     }
   }
 
   &.-focus- {
     color: $white;
-
     background: $primary-gradient;
     border-radius: 50%;
   }
 
   &.-selected- {
     color: $white;
-
     background: $primary-gradient;
     border-radius: 50%;
   }
@@ -231,15 +213,13 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-
+      content: "";
       background: linear-gradient(
         180deg,
-        rgba(188, 156, 255, 0.25) 0%,
-        rgba(139, 164, 249, 0.25) 100%
+        rgb(188 156 255 / 25%) 0%,
+        rgb(139 164 249 / 25%) 100%
       );
       border-radius: 50% 0 0 50%;
-
-      content: "";
     }
   }
 
@@ -251,29 +231,26 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-
+      content: "";
       background: linear-gradient(
         180deg,
-        rgba(188, 156, 255, 0.25) 0%,
-        rgba(139, 164, 249, 0.25) 100%
+        rgb(188 156 255 / 25%) 0%,
+        rgb(139 164 249 / 25%) 100%
       );
       border-radius: 0 50% 50% 0;
-
-      content: "";
     }
   }
 
   &.-in-range- {
     color: $dark50;
-
     background: linear-gradient(
       180deg,
-      rgba(188, 156, 255, 0.25) 0%,
-      rgba(139, 164, 249, 0.25) 100%
+      rgb(188 156 255 / 25%) 0%,
+      rgb(139 164 249 / 25%) 100%
     );
 
     &:hover {
-      background: rgba(139, 164, 249, 0.4);
+      background: rgb(139 164 249 / 40%);
       border-radius: 0;
     }
   }
@@ -284,13 +261,12 @@
 
   &.-focus- {
     color: $dark50;
-
     background: $white;
   }
 }
 
 .datepicker--cell-day {
-  width: 14.28571%;
+  width: 14.2857%;
 
   &.-other-month- {
     color: $dark25;
@@ -305,7 +281,6 @@
 
 .datepicker--button {
   color: $primary-color;
-
   cursor: pointer;
 
   &:hover {

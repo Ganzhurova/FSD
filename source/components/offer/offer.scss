@@ -1,14 +1,11 @@
 .offer {
-  $ratio: 830 / 1440;
+  $ratio: calc(830 / 1440);
 
   position: relative;
-
   min-width: 320px;
-
   height: calc(100vw * #{$ratio});
   min-height: 630px;
   max-height: 900px;
-
   background-color: $grey;
   background-image: url("./img/offer-bg@1x.jpg");
   background-repeat: no-repeat;
@@ -30,8 +27,6 @@
   position: absolute;
   right: 9.3%;
   bottom: 18px;
-
   width: 297px;
-
   text-align: right;
 }

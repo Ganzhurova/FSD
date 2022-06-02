@@ -10,9 +10,8 @@
 .form-element__category {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--category-margin-bottom);
   padding-top: 1px;
-
+  margin-bottom: var(--category-margin-bottom);
   text-transform: uppercase;
 }
 
@@ -22,10 +21,9 @@
 
 .form-element__state {
   display: block;
-
-  color: $dark50;
   font-size: 12px;
   line-height: 14px;
+  color: $dark50;
 }
 
 .form-element--filter-date-dropdown {
@@ -39,6 +37,7 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+
     &:nth-child(2) {
       margin-bottom: 31px;
     }
@@ -72,6 +71,7 @@
 }
 
 .form-element--rich-checkbox {
+  /* stylelint-disable-next-line no-descending-specificity */
   .form-element__content .checkbox {
     &:not(:last-child) {
       margin-bottom: 10px;

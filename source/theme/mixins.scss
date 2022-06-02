@@ -1,20 +1,20 @@
 /* Вычисление величины в процентах от ширины родителя (for responsive) */
-@function percent($value, $width-parent) {
-  $result: $value * 100% / $width-parent;
+@function calc-in-percent($value, $width-parent) {
+  $result: calc($value * 100% / $width-parent);
   @return $result;
 }
 
 /* Шрифты */
 @mixin montserrat-regular {
-  font-weight: 400;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
+  font-weight: 400;
 }
 
 @mixin montserrat-bold {
-  font-weight: 700;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
+  font-weight: 700;
 }
 
 @mixin material-icons(
@@ -23,56 +23,55 @@
   $line-height: 1
 ) {
   display: $display;
-
-  font-weight: normal;
-  font-size: $font-size;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
   font-family: "Material Icons";
+  font-size: $font-size;
   font-style: normal;
+  font-weight: normal;
+  font-feature-settings: "liga";
   line-height: $line-height;
-  direction: ltr;
-  letter-spacing: normal;
-  white-space: nowrap;
   text-transform: none;
+  letter-spacing: normal;
   word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
 
   /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
 }
 
 @mixin title-section {
-  color: $title-color;
   font-size: 24px;
   line-height: 29px;
+  color: $title-color;
   @include montserrat-bold;
 }
 
 @mixin title-element {
-  color: $title-color;
   font-size: 19px;
   line-height: 23px;
+  color: $title-color;
   @include montserrat-bold;
 }
 
 @mixin label-cta-text($color: $title-color) {
-  color: $color;
   font-size: 12px;
   line-height: 14px;
+  color: $color;
   text-transform: uppercase;
   @include montserrat-bold;
 }
 
 @mixin base-text($line-height: 24px) {
-  color: $text-color;
   font-size: 14px;
   line-height: $line-height;
+  color: $text-color;
   @include montserrat-regular;
 }
 
@@ -80,7 +79,7 @@
 @mixin container {
   width: calc(#{$content-width} * 1%);
   min-width: 280px;
-  max-width: 1550px; //для ширины окна 1920px
+  max-width: 1550px; // для ширины окна 1920px
   margin: 0 auto;
 }
 
@@ -89,18 +88,16 @@
   width: 100%;
   padding: 12px 14px;
   padding-right: $padding-right;
-
   background-color: $white;
   border: 0;
-
   border-radius: 4px;
 
   @include base-text($line-height: 18px);
 
   &::placeholder {
-    color: $dark25;
     font-size: 14px;
     line-height: 18px;
+    color: $dark25;
   }
 
   &:hover,
@@ -128,7 +125,6 @@
   min-width: 280px;
   max-width: 380px;
   padding: 39px 29px 29px;
-
   background-color: $white;
   border: 1px solid rgba($black, 0.12);
   border-radius: 4px;

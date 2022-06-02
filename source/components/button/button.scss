@@ -1,21 +1,16 @@
 .button {
   display: block;
   padding: 0;
-
   text-align: center;
-
-  background-color: transparent;
-
-  border: 0;
-
   cursor: pointer;
+  background-color: transparent;
+  border: 0;
 
   @include label-cta-text;
 }
 
 .button--icon {
   position: relative;
-
   flex-shrink: 0;
   width: 44px;
   height: 42px;
@@ -24,11 +19,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-
     display: block;
-
     background: $primary-gradient;
-    -webkit-background-clip: text;
+    background-clip: text;
     transform: translate(-50%, -50%);
     -webkit-text-fill-color: transparent;
   }
@@ -36,11 +29,8 @@
 
 .button--colored {
   padding: 15px 20px;
-
   color: $white;
-
   background-image: $primary-gradient;
-
   border-radius: 22px;
 
   &:hover,
@@ -57,9 +47,7 @@
 
 .button--bordered {
   padding: 13px 18px;
-
   color: $primary-color;
-
   background-image: linear-gradient($white, $white), $primary-gradient;
   background-repeat: no-repeat, no-repeat;
   background-clip: padding-box, border-box;
@@ -86,20 +74,16 @@
   &:hover,
   &:focus {
     color: $dark50;
-
     outline: none;
   }
 }
 
 .button--with-arrow {
   position: relative;
-
   width: 100%;
   max-width: 320px;
   padding: 15px 20px;
-
   color: $white;
-
   background: $primary-gradient;
   border-radius: 22px;
 
@@ -107,10 +91,9 @@
     position: absolute;
     top: 50%;
     right: 10px;
-
+    content: "arrow_forward";
     transform: translateY(-50%);
 
-    content: "arrow_forward";
     @include material-icons;
   }
 

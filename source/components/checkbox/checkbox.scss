@@ -1,12 +1,9 @@
 .checkbox {
   display: flex;
   align-items: flex-end;
-
-  color: $dark50;
   line-height: 18px;
-
+  color: $dark50;
   cursor: pointer;
-
   user-select: none;
 }
 
@@ -17,7 +14,6 @@
   width: 20px;
   height: 20px;
   margin-right: 10px;
-
   border: 1px solid $dark25;
   border-radius: 4px;
 }
@@ -28,16 +24,14 @@
 
 .checkbox__title {
   display: block;
-  margin-bottom: 5px;
   padding-top: 1px;
-
+  margin-bottom: 5px;
   color: $dark75;
   @include montserrat-bold;
 }
 
 .checkbox__text {
   display: block;
-
   font-size: 12px;
   line-height: 14px;
 }

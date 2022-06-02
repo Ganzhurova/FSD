@@ -1,14 +1,13 @@
 .text-field {
   display: block;
   max-width: 320px;
-
   background-color: $white;
 }
 
 .text-field__label {
   display: block;
-  margin-bottom: 5px;
   padding-top: 1px;
+  margin-bottom: 5px;
 
   @include label-cta-text;
 }

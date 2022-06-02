@@ -1,15 +1,14 @@
 .search {
   min-width: 320px;
-
   background-color: $white;
   border-bottom: 1px solid $dark25;
 }
 
 .search__wrapper {
   display: grid;
-  grid-column-gap: percent(60px, 1160px);
   grid-template: 1fr auto / 266px 1fr;
-  padding: 30px 0 percent(70px, 1440px);
+  grid-column-gap: calc-in-percent(60px, 1160px);
+  padding: 30px 0 calc-in-percent(70px, 1440px);
 
   @include container;
 

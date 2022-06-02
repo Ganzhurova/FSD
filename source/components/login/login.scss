@@ -1,6 +1,5 @@
 .login {
   min-width: 320px;
-
   background-color: $grey;
   background-image: url("./img/login-bg@1x.jpg");
   background-repeat: no-repeat;
@@ -15,6 +14,6 @@
 .login__wrapper {
   display: flex;
   justify-content: center;
-  padding: percent(173px, 1440px) 0;
+  padding: calc-in-percent(173px, 1440px) 0;
   @include container;
 }

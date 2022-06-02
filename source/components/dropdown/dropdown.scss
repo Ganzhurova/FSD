@@ -1,30 +1,9 @@
 .dropdown {
   position: relative;
-
   display: block;
-
   width: 100%;
   max-width: 320px;
-
   background-color: $white;
-}
-
-.dropdown--comfort {
-  width: 266px;
-
-  .dropdown__input {
-    padding-right: 90px;
-
-    text-overflow: ellipsis;
-
-    border-radius: 4px 4px 0 0;
-  }
-}
-
-.dropdown--guests.dropdown--show {
-  .dropdown__input {
-    border-radius: 4px 4px 0 0;
-  }
 }
 
 .dropdown__body {
@@ -33,18 +12,18 @@
 
 .dropdown__label {
   display: block;
-  margin-bottom: 5px;
   padding-top: 1px;
+  margin-bottom: 5px;
 
   @include label-cta-text;
 }
 
 .dropdown__input {
+  cursor: pointer;
   background-color: $white;
   background-image: url("./img/arrow.svg");
   background-repeat: no-repeat;
   background-position: top 17px right 15px;
-  cursor: pointer;
 
   &::placeholder {
     color: $dark75;
@@ -59,9 +38,7 @@
   top: 100%;
   left: 0;
   z-index: 100;
-
   width: 100%;
-
   background-color: $white;
   border: 1px solid $dark50;
   border-top: 0;
@@ -70,7 +47,6 @@
 
 .dropdown__list {
   padding: 6px 7px 6px 15px;
-
   list-style: none;
 }
 
@@ -95,41 +71,35 @@
 
 .dropdown__number-button {
   position: relative;
-
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-
   width: 30px;
   height: 30px;
-
+  cursor: pointer;
   background-color: inherit;
-
   border: 1px solid $dark25;
   border-radius: 50%;
-  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    font-size: 18px;
+    line-height: 1;
+    color: $dark50;
+  }
 
   &:focus {
     outline: none;
   }
 
   &:disabled {
-    border-color: $dark05;
     cursor: default;
+    border-color: $dark05;
 
     &::before {
       color: $dark05;
     }
-  }
-
-  &::before {
-    position: absolute;
-
-    color: $dark50;
-
-    font-size: 18px;
-    line-height: 1;
   }
 
   &[data-action="minus"]::before {
@@ -143,15 +113,11 @@
 
 .dropdown__total {
   width: 32px;
-
   text-align: center;
-
+  pointer-events: none;
+  user-select: none;
   background-color: inherit;
   border: 0;
-
-  user-select: none;
-
-  pointer-events: none;
   @include label-cta-text;
 }
 
@@ -168,17 +134,14 @@
   .dropdown__select {
     max-height: 0;
     overflow: hidden;
-
-    border-width: 0;
     visibility: hidden;
-
+    border-width: 0;
     transition: all 0.2s linear;
   }
 
   .dropdown__item {
-    transform: translateY(-100%);
-
     transition: all 0.2s linear;
+    transform: translateY(-100%);
   }
 }
 
@@ -192,18 +155,30 @@
   .dropdown__select {
     max-height: 160px;
     overflow: hidden;
-
+    visibility: visible;
     border-width: 1px;
     box-shadow: 0 10px 20px 0 $dark05;
-
-    visibility: visible;
-
     transition: all 0.2s linear;
   }
 
   .dropdown__item {
-    transform: translateY(0);
-
     transition: all 0.2s linear;
+    transform: translateY(0);
+  }
+}
+
+.dropdown--comfort {
+  width: 266px;
+
+  .dropdown__input {
+    padding-right: 90px;
+    text-overflow: ellipsis;
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+.dropdown--guests.dropdown--show {
+  .dropdown__input {
+    border-radius: 4px 4px 0 0;
   }
 }

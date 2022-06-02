@@ -1,12 +1,11 @@
 .footer {
   min-width: 320px;
-
   background-color: $white;
   box-shadow: 0 10px 20px 0 $dark05;
 }
 
 .footer__wrapper {
-  padding: percent(120px, 768px) 0;
+  padding: calc-in-percent(120px, 768px) 0;
 
   @include container;
 
@@ -20,27 +19,21 @@
 
   @media (min-width: $sm) {
     position: relative;
-
     flex-direction: column;
-
     padding: 50px 0;
-
     box-shadow: 0 1px 0 0 rgba($dark, 0.1);
 
     &::before,
     &::after {
-      $screen-width: (10000 / $content-width) * 1%;
+      $screen-width: calc((10000 / $content-width) * 1%);
       $width-pseudo: calc((#{$screen-width} - 100%) / 2);
 
       position: absolute;
       top: 0;
-
       width: $width-pseudo;
       height: 100%;
-
-      box-shadow: 0 1px 0 0 rgba($dark, 0.1);
-
       content: "";
+      box-shadow: 0 1px 0 0 rgba($dark, 0.1);
     }
 
     &::before {
@@ -53,8 +46,7 @@
   }
 
   @media (min-width: $md) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
   }
 
   @media (min-width: $xl) {
@@ -99,7 +91,6 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-
     list-style: none;
   }
 
@@ -134,9 +125,8 @@
 
 .footer__title {
   @media (min-width: $sm) {
-    margin-bottom: 5px;
     padding-top: 1px;
-
+    margin-bottom: 5px;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
@@ -164,13 +154,11 @@
 .footer__link {
   @media (min-width: $sm) {
     display: block;
-
     color: $dark50;
   }
 
   @media (min-width: $xl) {
     padding-top: 1px;
-
     line-height: 17px;
   }
 }
@@ -237,9 +225,8 @@
 
 .footer__copyright {
   width: 100%;
-  margin-bottom: 25px;
   padding-top: 1px;
-
+  margin-bottom: 25px;
   line-height: 17px;
   text-align: center;
 

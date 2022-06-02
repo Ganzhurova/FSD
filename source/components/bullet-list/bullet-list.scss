@@ -1,6 +1,5 @@
 .bullet-list {
   min-width: 292px;
-
   list-style: none;
 }
 
@@ -17,11 +16,8 @@
     width: 10px;
     height: 10px;
     margin-right: 10.43px;
-
-    background-color: $dark25;
-
-    border-radius: 50%;
-
     content: "";
+    background-color: $dark25;
+    border-radius: 50%;
   }
 }

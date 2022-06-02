@@ -1,14 +1,11 @@
 .social__list {
   display: flex;
-
   list-style: none;
 }
 
 .social__item {
   position: relative;
-
   flex-shrink: 0;
-
   width: 24px;
   height: 24px;
 
@@ -21,14 +18,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-
   display: block;
-
   font-size: 24px;
   line-height: 23px;
-
   background: $primary-gradient;
-  -webkit-background-clip: text;
+  background-clip: text;
   transform: translate(-50%, -50%);
   -webkit-text-fill-color: transparent;
 }
