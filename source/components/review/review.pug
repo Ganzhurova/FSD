@@ -10,7 +10,7 @@ mixin review(options, mix)
   .review(class=mix?mix:"")
     .review__header
       .review__avatar
-        img.review__img(src=require(`Components/review/img/${options.img}`), width="48", height="48", alt= options.name)
+        img.review__img(src=require(`./img/${options.img}`), width="48", height="48", alt= options.name)
       .review__info
         span.review__author= options.name
         span.review__date= options.date

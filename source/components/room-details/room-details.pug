@@ -47,4 +47,4 @@ mixin roomDetails(options)
 
 mixin roomImg(img)
   .room-details__pic(class=img.big?"room-details__pic--big":"")
-    img.room-details__img(src=require(`Components/room-details/img/${img.src}`), srcset=require(`Components/room-details/img/${img.srcset}`), alt="Фото номера")
+    img.room-details__img(src=require(`./img/${img.src}`), srcset=require(`./img/${img.srcset}`), alt="Фото номера")
