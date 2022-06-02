@@ -2,7 +2,7 @@
 
 FSD - пример сайта для бронирования номеров в отеле Toxin.
 
-Сайт расположен: https://ganzhurova.github.io/fsd/
+Сайт расположен: https://ganzhurova.github.io/FSD/
 
 ## Установка
 
