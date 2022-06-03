@@ -10,6 +10,6 @@ mixin social()
 
 mixin socialItem(item)
   li.social__item
-    a.social__link(href=item.href)
+    a.social__link(href=item.href, title=item.text, target="_blank", rel="noopener noreferrer")
       span.visually-hidden= item.text
       i.social__icon(class=item.iconClass)

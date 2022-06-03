@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -38,7 +38,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -47,7 +47,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -56,7 +56,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -65,7 +65,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -74,7 +74,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -83,7 +83,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -92,7 +92,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -101,7 +101,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -110,7 +110,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -119,7 +119,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -156,7 +156,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -165,7 +165,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -174,7 +174,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -183,7 +183,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -192,7 +192,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -201,7 +201,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -210,7 +210,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -224,7 +224,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -247,7 +247,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -256,7 +256,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -265,7 +265,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -274,7 +274,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -283,7 +283,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -292,7 +292,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -301,7 +301,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -310,7 +310,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -319,7 +319,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -328,7 +328,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -342,7 +342,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -356,7 +356,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -365,7 +365,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -374,7 +374,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -383,7 +383,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -392,7 +392,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -401,7 +401,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -410,7 +410,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -419,7 +419,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -433,7 +433,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -447,7 +447,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -456,7 +456,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -465,7 +465,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -474,7 +474,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -483,7 +483,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -492,7 +492,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -501,7 +501,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -510,7 +510,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -519,7 +519,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -528,7 +528,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -537,7 +537,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -551,7 +551,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -565,7 +565,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -574,7 +574,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -583,7 +583,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -592,7 +592,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -601,7 +601,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -610,7 +610,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -619,7 +619,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -628,7 +628,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -642,7 +642,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -656,7 +656,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -665,7 +665,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -674,7 +674,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -683,7 +683,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -692,7 +692,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -701,7 +701,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -710,7 +710,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -719,7 +719,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -728,7 +728,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -737,7 +737,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -746,7 +746,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -760,7 +760,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -774,7 +774,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -783,7 +783,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -792,7 +792,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -801,7 +801,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -810,7 +810,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -819,7 +819,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -828,7 +828,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -837,7 +837,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -851,7 +851,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -865,7 +865,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -874,7 +874,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -883,7 +883,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -892,7 +892,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -901,7 +901,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -910,7 +910,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -919,7 +919,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -928,7 +928,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -937,7 +937,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -946,7 +946,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -955,7 +955,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -969,7 +969,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -983,7 +983,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -992,7 +992,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1001,7 +1001,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1010,7 +1010,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1019,7 +1019,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1028,7 +1028,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1037,7 +1037,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1046,7 +1046,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1060,7 +1060,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1074,7 +1074,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1083,7 +1083,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1092,7 +1092,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1101,7 +1101,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1110,7 +1110,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1119,7 +1119,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1128,7 +1128,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1137,7 +1137,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -1146,7 +1146,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -1155,7 +1155,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -1164,7 +1164,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1178,7 +1178,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1192,7 +1192,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1201,7 +1201,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1210,7 +1210,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1219,7 +1219,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1228,7 +1228,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1237,7 +1237,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1246,7 +1246,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1255,7 +1255,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1269,7 +1269,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1283,7 +1283,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1292,7 +1292,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1301,7 +1301,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1310,7 +1310,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1319,7 +1319,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1328,7 +1328,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1337,7 +1337,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1346,7 +1346,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -1355,7 +1355,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -1364,7 +1364,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -1373,7 +1373,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1387,7 +1387,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1401,7 +1401,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1410,7 +1410,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1419,7 +1419,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1428,7 +1428,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1437,7 +1437,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1446,7 +1446,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1455,7 +1455,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1464,7 +1464,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1478,7 +1478,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1492,7 +1492,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1501,7 +1501,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1510,7 +1510,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1519,7 +1519,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1528,7 +1528,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1537,7 +1537,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1546,7 +1546,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1555,7 +1555,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 666,
       "category": "",
       "price": 5000,
@@ -1564,7 +1564,7 @@
       "images": [{ "src": "666-1@1x.jpg", "srcset": "666-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 444,
       "category": "",
       "price": 5000,
@@ -1573,7 +1573,7 @@
       "images": [{ "src": "444-1@1x.jpg", "srcset": "444-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 352,
       "category": "",
       "price": 5000,
@@ -1582,7 +1582,7 @@
       "images": [{ "src": "352-1@1x.jpg", "srcset": "352-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 888,
       "category": "Люкс",
       "price": 9990,
@@ -1596,7 +1596,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 840,
       "category": "",
       "price": 9900,
@@ -1610,7 +1610,7 @@
       ]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 980,
       "category": "Люкс",
       "price": 8500,
@@ -1619,7 +1619,7 @@
       "images": [{ "src": "980-1@1x.jpg", "srcset": "980-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 856,
       "category": "",
       "price": 7300,
@@ -1628,7 +1628,7 @@
       "images": [{ "src": "856-1@1x.jpg", "srcset": "856-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 740,
       "category": "",
       "price": 6000,
@@ -1637,7 +1637,7 @@
       "images": [{ "src": "740-1@1x.jpg", "srcset": "740-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 982,
       "category": "",
       "price": 5800,
@@ -1646,7 +1646,7 @@
       "images": [{ "src": "982-1@1x.jpg", "srcset": "982-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1655,7 +1655,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1664,7 +1664,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,
@@ -1673,7 +1673,7 @@
       "images": [{ "src": "350-1@1x.jpg", "srcset": "350-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 678,
       "category": "",
       "price": 5500,
@@ -1682,7 +1682,7 @@
       "images": [{ "src": "678-1@1x.jpg", "srcset": "678-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 450,
       "category": "",
       "price": 5300,
@@ -1691,7 +1691,7 @@
       "images": [{ "src": "450-1@1x.jpg", "srcset": "450-1@2x.jpg" }]
     },
     {
-      "link": "#",
+      "link": "/mock-address/change-me",
       "number": 350,
       "category": "",
       "price": 5000,

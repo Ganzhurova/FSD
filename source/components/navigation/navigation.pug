@@ -15,7 +15,7 @@ mixin navigation(userName)
       ul.nav__list.nav__list--user
         if userName
           li.nav__item
-            a.nav__user(href="#")= userName
+            a.nav__user(href="/mock-address/change-me")= userName
         else
           li.nav__item
             +button({
