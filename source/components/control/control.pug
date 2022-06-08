@@ -1,0 +1,6 @@
+include ../button/button
+
+mixin control
+  .control
+    +button({mode: "text", text: "Очистить", attributes: { type: "button", class: "control__button", "data-action": "clear" }})
+    +button({mode: "text", text: "Применить", attributes: { type: "button", class: "control__button", "data-action": "apply" }})

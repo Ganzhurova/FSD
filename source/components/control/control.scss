@@ -1,0 +1,15 @@
+.control {
+  display: flex;
+  padding: 14px 7px 13px 15px;
+}
+
+.control__button {
+  &[data-action="apply"] {
+    margin-left: auto;
+  }
+
+  &:hover,
+  &:focus {
+    color: $green;
+  }
+}
