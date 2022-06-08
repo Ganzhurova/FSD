@@ -1,0 +1,21 @@
+include ../input/input
+include ../control/control
+
+mixin guests(options={})
+  include ./guests-data
+
+  .guests
+    ul.guests__list
+      each item in guestsList 
+        +item(item)
+    .guests__control 
+      +control
+
+mixin item(item)
+  li.guests__item
+    span.guests__option= item.text
+
+    .guests__number
+      button.guests__button(type="button", data-action="decrease")
+      +input({ attributes: { class: ["guests__total"], type: "number", readonly: true, name: item.name, value: 0} })
+      button.guests__button(type="button", data-action="increase")
