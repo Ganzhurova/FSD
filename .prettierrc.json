@@ -6,9 +6,15 @@
   "overrides": [
     {
       "files": "*.scss",
-        "options": {
-          "singleQuote": false
-        }
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pug",
+      "options": {
+        "singleQuote": false
+      }
     }
   ]
 }
