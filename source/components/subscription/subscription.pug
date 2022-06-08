@@ -1,19 +1,8 @@
 include ../input/input
 include ../button/button
 
-mixin subscription()
+mixin subscription
   form.subscription
     .subscription__field
-      +input({
-        attributes: {
-          class: "subscription__input",
-          type: "email",
-          placeholder: "Email",
-          required: true,
-        }
-        })
-      +button({
-        type: "submit",
-        iconName: "arrow_forward",
-        hiddenDesc: "Подписаться",
-        })
+      +input({ attributes: { class: "subscription__input", type: "email", placeholder: "Email", required: true, } })
+      +button({ icon: { name: "arrow_forward", text: "Подписаться" }, attributes: {type: "submit"} })

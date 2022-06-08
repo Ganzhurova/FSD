@@ -1,40 +1,23 @@
-mixin button(options)
-  if !options
-    - options = {}
-
+mixin button(options={})
   -
     let classes = []
-    const defaultClass = "button"
+    if (options.mode)
+      if(Array.isArray(options.mode))
+        classes = options.mode.map(mode => `button--${mode}`)
+      else
+        classes.push(`button--${options.mode}`);
 
-    if (options.buttonMod)
-      if (options.buttonMod.constructor !== Array)
-        classes.push(`${defaultClass}--${options.buttonMod}`)
-      else if (options.buttonMod.length > 0)
-        options.buttonMod.forEach(item =>
-          classes.push(`${defaultClass}--${item}`)
-        )
-
-  if options.iconName
-    - classes.push(`${defaultClass}--icon`)
-
-  if options.mix
-    - classes.push(options.mix)
-
+    if (options.icon)
+      classes.push("button--icon")
 
   if (options.link)
-    a.button(class = classes href = options.link)= options.desc
-      +buttonIcon(options.iconName, options.hiddenDesc)
+    a.button(class=classes, href=options.link)&attributes(options.attributes)= options.text
+      +icon(options.icon)
   else
-    button.button(
-      class = classes
-      type = options.type
-      data-action = options.dataAction
-      form = options.form
-      )= options.desc
-      +buttonIcon(options.iconName, options.hiddenDesc)
+    button.button(class=classes)&attributes(options.attributes)= options.text
+      +icon(options.icon)
 
-
-mixin buttonIcon(name, desc)
-  if (name)
-    span.visually-hidden= desc
-    i.button__icon.material-icons= name
+mixin icon(options={})
+  if options.name
+    span.visually-hidden= options.text
+    i.button__icon.material-icons= options.name
