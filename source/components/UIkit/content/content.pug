@@ -1,7 +1,7 @@
 mixin content(name)
   main
     section.content
-      .content__wrapper(class = name ? `content__wrapper--${name}` : "")
+      .content__wrapper(class=name ? `content__wrapper--${name}` : "")
         if (h1)
           h1.content__title= h1
         else
@@ -10,15 +10,15 @@ mixin content(name)
 
 mixin contentSection(options)
   if !options
-    - options = {}
+    - options = {};
 
-  - let classes = []
+  - let classes = [];
 
   if options.name
-    - classes.push(`content__section--${options.name}`)
+    - classes.push(`content__section--${options.name}`);
 
   if options.row
-    - classes.push("content__section--row")
+    - classes.push("content__section--row");
 
-  .content__section(class = classes)
+  .content__section(class=classes)
     block

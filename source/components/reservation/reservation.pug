@@ -5,7 +5,7 @@ include ../tooltip/tooltip
 
 mixin reservation(options)
   if !options
-    - options = {}
+    - options = {};
 
   section.reservation
     form#reservation-form.reservation__info
@@ -17,39 +17,16 @@ mixin reservation(options)
           span.reservation__price= options.price
           | в сутки
       .reservation__dates
-        +dateDropdown({
-          mode: "range",
-          from: {
-            label: "Прибытие",
-            attributes: {
-              name: "arrival",
-              required: true,
-              value: options.arrival,
-            },
-          },
-          to: {
-            label: "Выезд",
-            attributes: {
-              name: "departure",
-              required: true,
-              value: options.departure,
-            },
-          }
-        })
+        +dateDropdown({ mode: "range", from: { label: "Прибытие", attributes: { name: "arrival", required: true, value: options.arrival, }, }, to: { label: "Выезд", attributes: { name: "departure", required: true, value: options.departure, }, } })
       .reservation__guests
-        +dropdown({
-          label: "Гости",
-          labelVisually: true,
-          isGuestsDropdown: true,
-          guests: options.guests,
-          })
+        +dropdown({ label: "Гости", labelVisually: true, isGuestsDropdown: true, guests: options.guests, })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row
           .reservation__category
             p.reservation__text
               span.reservation__order-price= options.price
-              |&nbsp;х&nbsp;
+              | &nbsp;х&nbsp;
               span.reservation__duration 4 суток
           span.reservation__subtotal(data-subtotal="calculation") 39 960
         li.reservation__row
@@ -66,10 +43,4 @@ mixin reservation(options)
       .reservation__sum
         span.reservation__sum-text Итого
         span.reservation__total 38 081
-    +button({
-      type: "submit",
-      buttonMod: "with-arrow",
-      desc: "Забронировать",
-      mix: "reservation__button",
-      form: "reservation-form"
-      })
+    +button({ type: "submit", buttonMod: "with-arrow", desc: "Забронировать", mix: "reservation__button", form: "reservation-form" })

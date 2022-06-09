@@ -7,11 +7,11 @@ include ../button/button
 
 mixin roomDetails(options)
   if !options
-    - options = {}
+    - options = {};
 
   section.room-details
     header.room-details__header
-      for img in options.images
+      each img in options.images
         +roomImg(img)
 
     .room-details__wrapper
@@ -29,7 +29,7 @@ mixin roomDetails(options)
           .room-details__item-top
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-total 2 отзыва
-          for review in options.reviews
+          each review in options.reviews
             +review(review, "room-details__review")
 
         section.room-details__item.room-details__item--rules
@@ -44,7 +44,10 @@ mixin roomDetails(options)
       .room-details__reservation
         +reservation(options.info)
 
-
 mixin roomImg(img)
-  .room-details__pic(class=img.big?"room-details__pic--big":"")
-    img.room-details__img(src=require(`./img/${img.src}`), srcset=require(`./img/${img.srcset}`), alt="Фото номера")
+  .room-details__pic(class=img.big ? "room-details__pic--big" : "")
+    img.room-details__img(
+      src=require(`./img/${img.src}`),
+      srcset=require(`./img/${img.srcset}`),
+      alt="Фото номера"
+    )

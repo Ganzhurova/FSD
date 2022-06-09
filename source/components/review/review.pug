@@ -2,15 +2,20 @@ include ../like/like
 
 mixin review(options, mix)
   if !options
-    - options = {}
+    - options = {};
 
   if !options.like
-    - options.like = {}
+    - options.like = {};
 
-  article.review(class=mix?mix:"")
+  article.review(class=mix ? mix : "")
     .review__header
       .review__avatar
-        img.review__img(src=require(`./img/${options.img}`), width="48", height="48", alt= options.name)
+        img.review__img(
+          src=require(`./img/${options.img}`),
+          width="48",
+          height="48",
+          alt=options.name
+        )
       .review__info
         h3.review__author= options.name
         span.review__date= options.date

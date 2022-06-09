@@ -1,15 +1,19 @@
-mixin social()
+mixin social
   include ./social-data
-  - let social = locals.social
+  - let social = locals.social;
 
   .social
     ul.social__list
-      for item in social
+      each item in social
         +socialItem(item)
-
 
 mixin socialItem(item)
   li.social__item
-    a.social__link(href=item.href, title=item.text, target="_blank", rel="noopener noreferrer")
+    a.social__link(
+      href=item.href,
+      title=item.text,
+      target="_blank",
+      rel="noopener noreferrer"
+    )
       span.visually-hidden= item.text
       i.social__icon(class=item.iconClass)

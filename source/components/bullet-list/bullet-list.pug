@@ -1,7 +1,7 @@
 mixin bulletList(listName)
   include ./bullet-list-data
 
-  - let list
+  - let list;
 
   -
     if (!listName) {
@@ -12,7 +12,7 @@ mixin bulletList(listName)
     }
 
   ul.bullet-list
-    for item in list
+    each item in list
       +bulletListItem(item)
 
 mixin bulletListItem(item)

@@ -1,13 +1,13 @@
 mixin rating(ratingNum)
   - let starTotal = 5;
-  - let isVoting = false
+  - let isVoting = false;
 
   if !ratingNum
-    - isVoting = true
+    - isVoting = true;
 
-  .rating.js-rating(class = isVoting ? "rating--vote" : "")
-    .rating__active(data-rating = ratingNum)
-    .rating__list(aria-label = Рейтинг)
+  .rating.js-rating(class=isVoting ? "rating--vote" : "")
+    .rating__active(data-rating=ratingNum)
+    .rating__list(aria-label=Рейтинг)
       - for (let i = 1; i <= starTotal; i++)
         +ratingItem(i, isVoting)
 
@@ -15,8 +15,9 @@ mixin ratingItem(num, isVoting)
   if isVoting
     label.rating__item
       input.rating__input.visually-hidden(
-        type = "radio"
-        name = "rating"
-        value = num)
+        type="radio",
+        name="rating",
+        value=num
+      )
   else
     .rating__item

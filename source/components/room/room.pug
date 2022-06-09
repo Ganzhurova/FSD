@@ -2,10 +2,10 @@ include ../rating/rating
 
 mixin room(room)
   if !room
-    - room = {}
+    - room = {};
 
   if !room.images
-    - room.images = []
+    - room.images = [];
 
   section.room
     a.room__link(href=room.link)
@@ -20,12 +20,15 @@ mixin room(room)
         +rating(room.rating)
         p.room__review
           span.room__review-number= room.reviewTotal
-          |Отзывов
+          | Отзывов
     .room__slider.js-slider
-      for img in room.images
+      each img in room.images
         +roomImg(img)
-
 
 mixin roomImg(img)
   .room__img-wrapper
-    img.room__img(src=require(`../catalog-result/img/${img.src}`), srcset=require(`../catalog-result/img/${img.srcset}`), alt="Фото номера")
+    img.room__img(
+      src=require(`../catalog-result/img/${img.src}`),
+      srcset=require(`../catalog-result/img/${img.srcset}`),
+      alt="Фото номера"
+    )

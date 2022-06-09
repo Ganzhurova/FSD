@@ -3,55 +3,29 @@ include ../radio/radio
 include ../toggle/toggle
 include ../button/button
 
-mixin signup()
+mixin signup
   section.signup
     form.signup__form
       h2.signup__title Регистрация аккаунта
       fieldset.signup__fieldset
         legend.visually-hidden Ваши данные
         .signup__name
-          +textField({
-            label: "Имя",
-            attributes: {type: "text", name: "name", placeholder: "Имя", required: true,}
-          })
+          +textField({ label: "Имя", attributes: {type: "text", name: "name", placeholder: "Имя", required: true,} })
         .signup__surname
-          +textField({
-            label: "Фамилия",
-            attributes: {type: "text", name: "surname", placeholder: "Фамилия", required: true,}
-            })
+          +textField({ label: "Фамилия", attributes: {type: "text", name: "surname", placeholder: "Фамилия", required: true,} })
         .signup__gender
-          +radio({
-            text: "Мужчина",
-            attributes: {name: "gender", value: "man", checked: true,}
-            })
-          +radio({
-            text: "Женщина",
-            attributes: {name: "gender", value: "woman",}
-            })
+          +radio({ text: "Мужчина", attributes: {name: "gender", value: "man", checked: true,} })
+          +radio({ text: "Женщина", attributes: {name: "gender", value: "woman",} })
         .signup__dob
-          +textField({
-            label: "Дата рождения",
-            labelVisually: true,
-            isDateMask: true,
-            attributes: {name: "DOB", required: true,}
-            })
+          +textField({ label: "Дата рождения", labelVisually: true, isDateMask: true, attributes: {name: "DOB", required: true,} })
       fieldset.signup__fieldset
         legend.signup__legend Данные для входа в сервис
         .signup__email
-          +textField({
-            label: "Электронная почта",
-            attributes: {type: "email", name: "email", placeholder: "Email", required: true,}
-            })
+          +textField({ label: "Электронная почта", attributes: {type: "email", name: "email", placeholder: "Email", required: true,} })
         .signup__password
-          +textField({
-            label: "Пароль",
-            attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,}
-            })
+          +textField({ label: "Пароль", attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,} })
         .signup__toggle
-          +toggle({
-            text: "Получать спецпредложения",
-            attributes: {name: "offer",}
-            })
+          +toggle({ text: "Получать спецпредложения", attributes: {name: "offer",} })
     +button({link: "/mock-address/change-me", buttonMod: "with-arrow", desc: "Перейти к оплате", mix: "signup__payment-button"})
     .signup__footer
       span.signup__text Уже есть аккаунт на Toxin

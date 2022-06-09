@@ -6,5 +6,5 @@ mixin pagesNav(pagesNavTitle, list)
   .pages-nav
     h2.pages-nav__title= pagesNavTitle
     ul.pages-nav__list
-      for item in list
+      each item in list
         +pagesNavItem(item)

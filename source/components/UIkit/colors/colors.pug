@@ -8,5 +8,5 @@ mixin colorsItem(item)
 mixin colors(list)
   .colors
     ul.colors__list
-      for item in list
+      each item in list
         +colorsItem(item)

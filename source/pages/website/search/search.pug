@@ -2,9 +2,8 @@ extends ../../base/base.pug
 
 include ../../../components/pagination/pagination
 
-
 block variables
-  - let title = "Поиск номеров Toxin отель"
+  - let title = "Поиск номеров Toxin отель";
 
 block content
   section.search
@@ -15,4 +14,4 @@ block content
       .search__catalog
         include ../../../components/catalog-result/catalog-result
       .search__pagination
-        +pagination()
+        +pagination

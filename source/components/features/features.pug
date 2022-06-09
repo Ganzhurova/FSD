@@ -1,7 +1,7 @@
 mixin features(listName)
   include ./features-data
 
-  - let list
+  - let list;
 
   -
     if (!listName) {
@@ -12,7 +12,7 @@ mixin features(listName)
     }
 
   ul.features
-    for item in list
+    each item in list
       +feature(item)
 
 mixin feature(item)

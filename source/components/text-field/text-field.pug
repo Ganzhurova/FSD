@@ -2,15 +2,15 @@ include ../input/input
 
 mixin textField(options)
   if !options
-    - options = {}
+    - options = {};
 
   if !options.attributes
-    - options.attributes = {}
+    - options.attributes = {};
 
-  - options.attributes.class = "text-field__input"
-  - options.attributes.autocomplete = "off"
+  - options.attributes.class = "text-field__input";
+  - options.attributes.autocomplete = "off";
 
-  - let hiddenClass = options.labelVisually ? "" : "visually-hidden"
+  - let hiddenClass = options.labelVisually ? "" : "visually-hidden";
 
   label.text-field
     span.text-field__label(class=hiddenClass)= options.label

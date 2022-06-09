@@ -2,8 +2,13 @@ mixin uikitPage(uikitThemeClass)
   body.uikit-page(class=uikitThemeClass)
     block
 
-mixin uikitHeader()
+mixin uikitHeader
   header.uikit-page__header
     .uikit-page__header-wrapper
       a.uikit-page__logo(href="index.html")
-        img.uikit-page__logo-pic(src=require("./img/logo-uikit.png"), width="48", height="48", alt="Логотип")
+        img.uikit-page__logo-pic(
+          src=require("./img/logo-uikit.png"),
+          width="48",
+          height="48",
+          alt="Логотип"
+        )

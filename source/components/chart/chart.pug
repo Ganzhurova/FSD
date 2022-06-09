@@ -1,6 +1,6 @@
 mixin chart(data, mix)
   if !data
-    - data = {}
+    - data = {};
 
   -
     const segments = [
@@ -35,41 +35,47 @@ mixin chart(data, mix)
 
   figure.chart.js-chart(class=mix)
     .chart__body
-      svg.chart__svg(width="100%" height="100%" viewBox="0 0 120 120")
+      svg.chart__svg(width="100%", height="100%", viewBox="0 0 120 120")
         title Диаграмма
         desc Круговая диаграмма, показывает впечатления от номера
-        for item in reverseSegments
+        each item in reverseSegments
           +chartItem(item)
         g.chart__total
           title Всего
-          text.chart__total-number.js-total-number(x="50%" y="50%")
-          text.chart__total-text.js-total-text(x="50%" y="50%") голосов
+          text.chart__total-number.js-total-number(x="50%", y="50%")
+          text.chart__total-text.js-total-text(x="50%", y="50%") голосов
         defs
-          linearGradient(id="blackGradient")
-            stop(offset="0%" stop-color="#3d4975")
-            stop(offset="100%" stop-color="#919191")
-          linearGradient(id="primaryGradient")
-            stop(offset="0%" stop-color="#8ba4f9")
-            stop(offset="100%" stop-color="#bc9cff")
-          linearGradient(id="secondaryGradient")
-            stop(offset="0%" stop-color="#66d2ea")
-            stop(offset="100%" stop-color="#6fcf97")
-          linearGradient(id="orangeGradient")
-            stop(offset="0%" stop-color="#ffe39c")
-            stop(offset="100%" stop-color="#ffba9c")
+          linearGradient#blackGradient
+            stop(offset="0%", stop-color="#3d4975")
+            stop(offset="100%", stop-color="#919191")
+          linearGradient#primaryGradient
+            stop(offset="0%", stop-color="#8ba4f9")
+            stop(offset="100%", stop-color="#bc9cff")
+          linearGradient#secondaryGradient
+            stop(offset="0%", stop-color="#66d2ea")
+            stop(offset="100%", stop-color="#6fcf97")
+          linearGradient#orangeGradient
+            stop(offset="0%", stop-color="#ffe39c")
+            stop(offset="100%", stop-color="#ffba9c")
     figcaption.chart__legend
       ul.chart__list(aria-hidden="true")
-        for item in segments
+        each item in segments
           +legendItem(item)
-
 
 mixin chartItem(item)
   if item.total > 0
     g
       title= item.title
-      desc Проголосовало - #{item.total}
-      circle.chart__segment.js-segment(data-total=item.total fill="none" r="58" cx="50%" cy="50%" stroke-width="4" stroke=`url(#${item.idColor})`)
-
+      desc Проголосовало - #{ item.total }
+      circle.chart__segment.js-segment(
+        data-total=item.total,
+        fill="none",
+        r="58",
+        cx="50%",
+        cy="50%",
+        stroke-width="4",
+        stroke=`url(#${item.idColor})`
+      )
 
 mixin legendItem(item)
   li.chart__item(class=`chart__item--${item.classLegend}`)= item.title

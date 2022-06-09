@@ -2,38 +2,36 @@ include ../logo/logo
 include ../subscription/subscription
 include ../social/social
 
-mixin footer()
+mixin footer
   include ./footer-data
-  - let links = locals.links
+  - let links = locals.links;
 
   .footer
     .footer__wrapper
       .footer__top
         .footer__logo
           .footer__logo-pic
-            +logo()
+            +logo
           p.footer__desc Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         ul.footer__links
-          for column in links
+          each column in links
             +footerColumn(column)
         .footer__subscription
           h2.footer__title.footer__title--subscription Подписка
           p.footer__text Получайте специальные предложения и новости сервиса
           .footer__subscription-form
-            +subscription()
+            +subscription
       .footer__bottom
         p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
         .footer__social
-          +social()
-
+          +social
 
 mixin footerColumn(column)
   li.footer__column
     h2.footer__title= column.heading
     ul.footer__list
-      for link in column.list
+      each link in column.list
         +footerLink(link)
-
 
 mixin footerLink(link)
   li.footer__item
