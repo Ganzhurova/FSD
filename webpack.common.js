@@ -70,6 +70,9 @@ module.exports = {
       {
         test: /\.pug$/i,
         loader: '@webdiscus/pug-loader',
+        options: {
+          esModule: true,
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
