@@ -2,7 +2,7 @@
   "name": "fsd",
   "version": "1.0.0",
   "description": "FSD - пример сайта для бронирования номеров в отеле Toxin.",
-  "main": "index.js",
+  "main": "entry.js",
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
@@ -76,3 +76,4 @@
     "slick-slider": "^1.8.2"
   }
 }
+
