@@ -1,15 +1,14 @@
 .control {
   display: flex;
-  padding: 14px 0 7px;
-}
 
-.control__button {
-  &[data-action="apply"] {
-    margin-left: auto;
-  }
+  &__button {
+    &[data-action="apply"] {
+      margin-left: auto;
+    }
 
-  &:hover,
-  &:focus {
-    color: $green;
+    &:hover,
+    &:focus {
+      color: $green;
+    }
   }
 }
