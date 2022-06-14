@@ -1,0 +1,21 @@
+.total-list {
+  padding: 6px 7px 6px 15px;
+  list-style: none;
+  border: 1px solid $dark50;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__option {
+    @include label-cta-text;
+  }
+}
