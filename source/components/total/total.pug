@@ -1,0 +1,12 @@
+include ../input/input
+
+mixin total(options={})
+  include ./total-data
+
+  - const helpers = require("../../helpers/helpers.js");
+  - const input = helpers.merge(inputDefaultAttributes, options);
+
+  .total.js-total
+    button.total__button(type="button", data-action="decrease")
+    +input(input)
+    button.total__button(type="button", data-action="increase")

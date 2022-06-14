@@ -1,0 +1,55 @@
+.total {
+  display: flex;
+
+  &__button {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid $dark25;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      font-size: 18px;
+      line-height: 1;
+      color: $dark50;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      cursor: default;
+      border-color: $dark05;
+
+      &::before {
+        color: $dark05;
+      }
+    }
+
+    &[data-action="decrease"]::before {
+      content: "-";
+    }
+
+    &[data-action="increase"]::before {
+      content: "+";
+    }
+  }
+
+  &__input {
+    width: 32px;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    background-color: inherit;
+    border: 0;
+    @include label-cta-text;
+  }
+}
