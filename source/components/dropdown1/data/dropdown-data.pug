@@ -1,0 +1,41 @@
+-
+  const bodyDesc = require("./body-desc.js");
+
+  const inputDefaultAttributes = {
+    class: ["dropdown__input", "js-dropdown-input"],
+    type: "text",
+    readonly: true,
+  };
+
+  const dropdowns = {
+    guests: {
+      attributes: {
+        class: ["dropdown--joint"],
+      },
+      input: {
+        attributes: {
+          ...inputDefaultAttributes,
+          placeholder: "Сколько гостей",
+        },
+      },
+      body: bodyDesc.guests,
+    },
+    range: {
+      attributes: {
+        class: ["dropdown--separated"],
+      },
+      input: [
+        {
+          name: "From",
+          attributes: { ...inputDefaultAttributes, "data-action": "show" },
+          isDateMask: true,
+        },
+        {
+          name: "To",
+          attributes: { ...inputDefaultAttributes, "data-action": "show" },
+          isDateMask: true,
+        },
+      ],
+      body: bodyDesc.range,
+    },
+  };
