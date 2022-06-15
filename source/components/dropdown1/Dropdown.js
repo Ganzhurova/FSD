@@ -34,6 +34,10 @@ class Dropdown extends BaseDropdown {
     this.outputs = [...this.el.querySelectorAll(this.options.targetSelector)];
   }
 
+  getOutputsText() {
+    return this.outputs.map((output) => output.value);
+  }
+
   updateOutput(txt) {
     let txtArr = [];
 
@@ -46,21 +50,6 @@ class Dropdown extends BaseDropdown {
     this.outputs.forEach((output, i) => {
       output.value = txtArr[i] || '';
     });
-  }
-
-  handlerDataAction(evt) {
-    const { action } = evt.target.dataset;
-
-    if (action && this[action]) {
-      this[action]();
-    }
-  }
-
-  addEventListeners() {
-    super.addEventListeners();
-    this.handlerDataAction = this.handlerDataAction.bind(this);
-
-    this.el.addEventListener('click', this.handlerDataAction);
   }
 }
 
