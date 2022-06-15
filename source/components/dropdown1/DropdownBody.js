@@ -16,6 +16,10 @@ class DropdownBody {
     const controlEl = this.el.querySelector('.js-control');
     this.control = new Control(controlEl, this);
   }
+
+  sendText(txt) {
+    this.parent.updateOutput(txt);
+  }
 }
 
 export default DropdownBody;
