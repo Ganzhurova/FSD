@@ -13,7 +13,9 @@ class Dropdown extends BaseDropdown {
 
     this.mode = '';
     this.body = null;
+    this.outputs = [];
 
+    this.setOutputs();
     this.setMode();
     this.setBody();
   }
@@ -28,15 +30,23 @@ class Dropdown extends BaseDropdown {
     this.body = new BodyClass(this, body.data);
   }
 
-  updateOutput(txt) {
-    const output = this.el.querySelector(this.options.targetSelector);
-    output.value = txt;
+  setOutputs() {
+    this.outputs = [...this.el.querySelectorAll(this.options.targetSelector)];
   }
 
-  // handlerBodyClick(evt) {
-  //   const availableEl = this.body.getAvailableEl(evt);
-  //   super.handlerBodyClick({ target: availableEl });
-  // }
+  updateOutput(txt) {
+    let txtArr = [];
+
+    if (this.outputs.length > 1) {
+      txtArr = txt.split(',');
+    } else {
+      txtArr.push(txt);
+    }
+
+    this.outputs.forEach((output, i) => {
+      output.value = txtArr[i] || '';
+    });
+  }
 
   handlerDataAction(evt) {
     const { action } = evt.target.dataset;
