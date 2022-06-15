@@ -22,7 +22,6 @@ const baseConfig = {
       'дек',
     ],
   },
-  minDate: new Date(),
 };
 
 module.exports = baseConfig;
