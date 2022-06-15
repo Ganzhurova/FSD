@@ -4,7 +4,7 @@ const baseConfig = {
   },
   prevHtml: '<i class="material-icons">arrow_back</i>',
   nextHtml: '<i class="material-icons">arrow_forward</i>',
-  multipleDatesSeparator: ' - ',
+  multipleDatesSeparator: ',',
   range: true,
   language: {
     monthsShort: [
