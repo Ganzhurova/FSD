@@ -20,6 +20,10 @@ class DropdownBody {
   sendText(txt) {
     this.parent.updateOutput(txt);
   }
+
+  hideButtonClear(boolean) {
+    this.control?.hideButtonClear(boolean);
+  }
 }
 
 export default DropdownBody;
