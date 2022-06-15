@@ -23,11 +23,16 @@ class TotalList extends DropdownBody {
 
   updateItems(key, value) {
     this.items[key] = +value;
-    this.sendText(this.getText());
+    const text = this.getText();
+
+    this.hideButtonClear(text === '');
+    this.sendText(text);
   }
 
   getText() {
-    return this.options.commonTxt ? this.getCommonText() : '';
+    return this.options.commonTxt
+      ? this.getCommonText()
+      : this.getSeparateText();
   }
 
   getCommonText() {
@@ -38,6 +43,28 @@ class TotalList extends DropdownBody {
     const result = `${sum} ${text}`;
 
     return sum === 0 ? '' : result;
+  }
+
+  getSeparateText() {
+    return Object.entries(this.items)
+      .map(
+        ([key, value]) =>
+          `${value} ${TotalList.declension(
+            value,
+            this.options.list[key].txtArr
+          )}`
+      )
+      .join(', ');
+  }
+
+  handlerButtonClearClick() {
+    this.totals.forEach((total) => {
+      total.setValue(0);
+    });
+  }
+
+  handlerButtonApplyClick() {
+    this.parent.close();
   }
 
   static declension(n, txtArr) {
