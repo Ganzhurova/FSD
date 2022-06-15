@@ -7,7 +7,6 @@
 
   &__items {
     padding-left: 1px;
-    margin-bottom: 20px;
   }
 
   &__item {
@@ -22,5 +21,9 @@
 
   &__option {
     @include label-cta-text;
+  }
+
+  &__control {
+    padding-top: 20px;
   }
 }
