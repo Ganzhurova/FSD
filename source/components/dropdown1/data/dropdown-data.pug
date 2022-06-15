@@ -27,15 +27,26 @@
       input: [
         {
           name: "From",
-          attributes: { ...inputDefaultAttributes, "data-action": "show" },
+          attributes: { ...inputDefaultAttributes, },
           isDateMask: true,
         },
         {
           name: "To",
-          attributes: { ...inputDefaultAttributes, "data-action": "show" },
+          attributes: { ...inputDefaultAttributes, },
           isDateMask: true,
         },
       ],
       body: bodyDesc.range,
     },
+    comfort: {
+      attributes: {
+        class: ["dropdown--joint", "dropdown--small"],
+      },
+      input: {
+        attributes: {
+          ...inputDefaultAttributes,
+        },
+      },
+      body: bodyDesc.comfort,
+    }
   };
