@@ -1,3 +1,4 @@
+import handlerDataAction from '../../helpers/handlerDataAction';
 import './total.scss';
 
 class Total {
@@ -8,7 +9,13 @@ class Total {
     this.value = +this.inputEl.value;
 
     this.disableDecreaseButton();
-    this.addEventListeners();
+    this.addDataActionListener();
+    this.sendValue();
+  }
+
+  setValue(number) {
+    this.value = number;
+    this.setInputValue(this.value);
     this.sendValue();
   }
 
@@ -27,30 +34,14 @@ class Total {
   }
 
   decrease() {
-    this.value -= 1;
-    this.setInputValue(this.value);
-    this.sendValue();
+    this.setValue((this.value -= 1));
   }
 
   increase() {
-    this.value += 1;
-    this.setInputValue(this.value);
-    this.sendValue();
-  }
-
-  handlerDataAction(evt) {
-    const { action } = evt.target.dataset;
-
-    if (action && this[action]) {
-      this[action]();
-    }
-  }
-
-  addEventListeners() {
-    this.handlerDataAction = this.handlerDataAction.bind(this);
-
-    this.el.addEventListener('click', this.handlerDataAction);
+    this.setValue((this.value += 1));
   }
 }
+
+Object.assign(Total.prototype, handlerDataAction);
 
 export default Total;
