@@ -8,12 +8,28 @@ class Calendar extends DropdownBody {
 
     this.datepicker = null;
 
-    this.initDatepicker();
+    this.getDatepicker();
+    this.addHandlerCellSelect();
   }
 
-  initDatepicker() {
+  getDatepicker() {
     const calendarEl = this.el.querySelector('.js-datepicker');
     this.datepicker = getDatepicker(calendarEl);
+  }
+
+  updateDatepicer(config) {
+    this.datepicker.update(config);
+  }
+
+  addHandlerCellSelect() {
+    const sendText = this.sendText.bind(this);
+    const config = {
+      onSelect(formattedDate) {
+        const date = formattedDate;
+        sendText(date);
+      },
+    };
+    this.updateDatepicer(config);
   }
 }
 
