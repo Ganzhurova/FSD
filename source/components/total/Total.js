@@ -9,7 +9,7 @@ class Total {
 
     this.disableDecreaseButton();
     this.addEventListeners();
-    this.giveValue();
+    this.sendValue();
   }
 
   setInputValue(number) {
@@ -22,20 +22,20 @@ class Total {
     decreaseButton.disabled = this.value === 0;
   }
 
-  giveValue() {
+  sendValue() {
     this.parent.updateItems(this.inputEl.name, this.inputEl.value);
   }
 
   decrease() {
     this.value -= 1;
     this.setInputValue(this.value);
-    this.giveValue();
+    this.sendValue();
   }
 
   increase() {
     this.value += 1;
     this.setInputValue(this.value);
-    this.giveValue();
+    this.sendValue();
   }
 
   handlerDataAction(evt) {
