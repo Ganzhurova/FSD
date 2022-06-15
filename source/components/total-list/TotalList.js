@@ -19,17 +19,15 @@ class TotalList extends DropdownBody {
       const total = new Total(el, this);
       this.totals.push(total);
     });
-    // console.log(this.totals);
   }
 
   updateItems(key, value) {
     this.items[key] = +value;
-    this.createText();
+    this.sendText(this.getText());
   }
 
-  createText() {
-    const txt = this.options.commonTxt ? this.getCommonText() : '';
-    this.parent.updateOutput(txt);
+  getText() {
+    return this.options.commonTxt ? this.getCommonText() : '';
   }
 
   getCommonText() {
