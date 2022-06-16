@@ -1,7 +1,8 @@
 include ../control/control
 
-mixin calendar
-  .calendar.js-calendar
+mixin calendar(options={})
+  .calendar.js-calendar(data-from=options.from, data-to=options.to)
     .calendar__datepicker.js-datepicker
     .calendar__control 
-      +control
+      if options.control
+        +control
