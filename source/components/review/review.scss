@@ -36,6 +36,7 @@
 
 .review__author {
   display: block;
+  @include base-text;
   @include montserrat-bold;
 }
 
