@@ -1,8 +1,6 @@
 const guestsList = require('./guests-list');
 const comfortList = require('./comfort-list');
-// const baseConfig = require('../../calendar/config/base-config');
-
-// console.log(baseConfig);
+const filterConfig = require('../../calendar/config/filter-config');
 
 const bodyDesc = {
   guests: {
@@ -18,7 +16,6 @@ const bodyDesc = {
     name: 'calendar',
     data: {
       bodySelector: '.js-calendar',
-      // config: baseConfig,
       control: true,
     },
   },
@@ -27,6 +24,14 @@ const bodyDesc = {
     data: {
       bodySelector: '.js-total-list',
       list: comfortList,
+    },
+  },
+  filter: {
+    name: 'calendar',
+    data: {
+      bodySelector: '.js-calendar',
+      config: filterConfig,
+      control: true,
     },
   },
 };
