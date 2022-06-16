@@ -15,18 +15,18 @@
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("./img/offer-bg@2x.jpg");
   }
-}
 
-.offer__wrapper {
-  height: 100%;
-  padding: 70px 0;
-  @include container;
-}
+  &__wrapper {
+    height: 100%;
+    padding: 70px 0;
+    @include container;
+  }
 
-.offer__text {
-  position: absolute;
-  right: 9.3%;
-  bottom: 18px;
-  width: 297px;
-  text-align: right;
+  &__text {
+    position: absolute;
+    right: 9.3%;
+    bottom: 18px;
+    width: 297px;
+    text-align: right;
+  }
 }
