@@ -4,7 +4,7 @@ include ../../../components/UIkit/content/content
 include ../../../components/UIkit/form-element/form-element
 include ../../../components/text-field/text-field
 include ../../../components/dropdown/dropdown
-include ../../../components/date-dropdown/date-dropdown
+include ../../../components/button/button
 include ../../../components/subscription/subscription
 include ../../../components/like/like
 include ../../../components/rating/rating
@@ -19,118 +19,39 @@ include ../../../components/features/features
 include ../../../components/review/review
 
 block variables
-  - let pageTitle = "Form elements"
-  - let name = "form-elements"
+  - let pageTitle = "Form elements";
+  - let name = "form-elements";
 
 block content
   +content(name)
     +contentSection({...{}, name})
       +formElement({title: "Text Field", state: "Default", mb: 20,})
-        +textField({
-          label: "Email",
-          attributes: {
-            type: "email",
-            placeholder: "Email",
-          }
-          })
+        +textField({ label: "Email", attributes: { type: "email", placeholder: "Email", } })
       +formElement({title: "Text Field", state: "Hover / Focus", mb: 20,})
-        +textField({
-          label: "Text",
-          attributes: {
-            type: "text",
-            placeholder: "Text",
-            value: "This is pretty awesome",
-          }
-          })
+        +textField({ label: "Text", attributes: { type: "text", placeholder: "Text", value: "This is pretty awesome", } })
       +formElement({mb: 22.56,})
-        +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
-          isGuestsDropdown: true
-          })
+        +dropdown({ mode: "guests", input: {label: "Dropdown" }})
       +formElement({mb: 40,})
-        +textField({
-          label: "Masked text field",
-          labelVisually: true,
-          isDateMask: true
-          })
+        +textField({ label: "Masked text field", labelVisually: true, isDateMask: true })
       +formElement({mb: 41, mix: "date-dropdown"})
-        +dateDropdown({
-          mode: "range",
-          from: {label: "Date Dropdown",},
-          to: {
-            label: "Date Dropdown",
-            attributes: {
-              value: "19.08.2019"
-              }
-            },
-          })
+        //- +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown"}, inputTo: { label: "Date Dropdown", }, range: {from: "2019-08-15", to: "2019-08-19"} })
+        +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown"}, inputTo: { label: "Date Dropdown", } })
       +formElement({mb: 41, mix: "filter-date-dropdown"})
-        +dateDropdown({
-          mode: "filter",
-          filter: {
-            label: "Filter date dropdown",
-            attributes: {
-              value: "19 авг - 23 авг",
-            }
-            },
-          })
+        +dropdown({ mode: "filter", input: { label: "Filter date dropdown"}, filter: {from: "2019-08-19", to: "2019-08-23"} })
       +formElement({title: "Subscription text field", mb: 100,})
-        +subscription()
-
+        +subscription
 
     +contentSection({...{}, name})
       +formElement({title: "Checkbox buttons", categoryMb: 16.56, mb: 40.88, mix: "checkbox"})
-        +checkbox({
-          text: "Можно курить",
-          attributes: {
-            name: "smoke",
-          }
-        })
-        +checkbox({
-          text: "Можно с питомцами",
-          attributes: {
-            name: "pet",
-            checked: true,
-          }
-        })
-        +checkbox({
-          text: "Можно пригласить гостей <br>(до 10 человек)",
-          attributes: {
-            name: "guests",
-            checked: true,
-          }
-        })
+        +checkbox({ text: "Можно курить", attributes: { name: "smoke", } })
+        +checkbox({ text: "Можно с питомцами", attributes: { name: "pet", checked: true, } })
+        +checkbox({ text: "Можно пригласить гостей <br>(до 10 человек)", attributes: { name: "guests", checked: true, } })
       +formElement({title: "Radio Buttons", categoryMb: 16, mb: 40.56, mix: "radio"})
-        +radio({
-          text: "Мужчина",
-          attributes: {
-            name: "gender",
-            value: "man",
-            checked: true,
-          }
-          })
-        +radio({
-          text: "Женщина",
-          attributes: {
-            name: "gender",
-            value: "woman",
-          }
-          })
+        +radio({ text: "Мужчина", attributes: { name: "gender", value: "man", checked: true, } })
+        +radio({ text: "Женщина", attributes: { name: "gender", value: "woman", } })
       +formElement({title: "Toggle", categoryMb: 16, mb: 44.44, mix: "toggle"})
-        +toggle({
-          text: "Получать спецпредложения",
-          attributes: {
-            name: "offer",
-            checked: true,
-          }
-          })
-        +toggle({
-          text: "Получать спецпредложения",
-          attributes: {
-            name: "offer",
-          }
-          })
+        +toggle({ text: "Получать спецпредложения", attributes: { name: "offer", checked: true, } })
+        +toggle({ text: "Получать спецпредложения", attributes: { name: "offer", } })
       +formElement({title: "Like button", categoryMb: 16, mb: 40, mix: "like"})
         +like(2, false)
         +like(12, true)
@@ -142,60 +63,24 @@ block content
       +formElement({mb: 43.56})
         +range("Range slider")
       +formElement({title: "Buttons", categoryMb: 16, mb: 41, mix: "buttons"})
-        +button({
-          type: "button",
-          buttonMod: "colored",
-          desc: "Click me"
-          })
-        +button({
-          type: "button",
-          buttonMod: "bordered",
-          desc: "Click me"
-          })
-        +button({
-          type: "button",
-          buttonMod: "text",
-          desc: "Click me"
-          })
-        +button({
-          type: "button",
-          buttonMod: "with-arrow",
-          desc: "Перейти к оплате"
-          })
+        +button({ text: "Click me", mode: "colored", attributes: {type: "button"} })
+        +button({ text: "Click me", mode: "bordered", attributes: {type: "button"} })
+        +button({ text: "Click me", mode: "text", attributes: {type: "button"} })
+        +button({ text: "Перейти к оплате", mode: "with-arrow", attributes: {type: "button"} })
       +formElement({title: "Pagination", categoryMb: 16.44, mb: 40})
-        +pagination()
+        +pagination
 
     +contentSection({...{}, name})
       +formElement({title: "Dropdown", state: "Default", mb: 20,})
-        +dropdown({
-          isComfortDropdown: true,
-          })
+        +dropdown({mode: "comfort"})
       +formElement({title: "Dropdown", state: "Expanded", categoryMb: 4.56, mb: 158.44})
-        +dropdown({
-          isComfortDropdown: true,
-          dataShow: "true",
-          })
+        +dropdown({mode: "comfort", attributes: {"data-show": "true",}})
 
     +contentSection({...{row: true}, name})
-      +formElement()
-        +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
-          isGuestsDropdown: true,
-          dataShow: "true",
-          })
-      +formElement()
-        +dropdown({
-          label: "Dropdown",
-          labelVisually: true,
-          isGuestsDropdown: true,
-          guests: {
-            adults: 2,
-            children: 1,
-            baby: 0
-          },
-          dataShow: "true",
-          })
+      +formElement
+        +dropdown({ mode: "guests", attributes: {"data-show": "true",}, input: { label: "Dropdown" } })
+      +formElement
+        +dropdown({ mode: "guests", attributes: {"data-show": "true",}, input: {label: "Dropdown" }, guests: { list: {adults: {value: 2}, children: {value: 1}, }} })
 
     +contentSection({...{}, name})
       +formElement({mix: "check-list", mb: 97})
@@ -204,34 +89,13 @@ block content
 
     +contentSection({...{row: true}, name})
       +formElement({title: "Rich checkbox buttons", categoryMb: 16, mix: "rich-checkbox"})
-        +checkbox({
-          title: "Широкий коридор",
-          text: "Ширина коридоров в номере<br> не менее 91 см.",
-          attributes: {
-            name: "accessibility-corridor",
-          }
-          })
-        +checkbox({
-          title: "Помощник для инвалидов",
-          text: "На 1 этаже вас встретит специалист<br> и проводит до номера.",
-          attributes: {
-            name: "accessibility-helper",
-          }
-          })
+        +checkbox({ title: "Широкий коридор", text: "Ширина коридоров в номере<br> не менее 91 см.", attributes: { name: "accessibility-corridor", } })
+        +checkbox({ title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист<br> и проводит до номера.", attributes: { name: "accessibility-helper", } })
       +formElement({title: "Bullet list", categoryMb: 16,})
-        +bulletList()
+        +bulletList
 
     +contentSection({...{row: true}, name})
-      +formElement()
-        +features()
-      +formElement()
-        +review({
-          name: "Мурад Сарафанов",
-          img: "image1.jpg",
-          date: "5 дней назад",
-          like: {
-            count: 12,
-            isChecked: true,
-          },
-          text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-          })
+      +formElement
+        +features
+      +formElement
+        +review({ name: "Мурад Сарафанов", img: "image1.jpg", date: "5 дней назад", like: { count: 12, isChecked: true, }, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", })
