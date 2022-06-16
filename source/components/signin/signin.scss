@@ -1,34 +1,34 @@
 .signin {
   @include card;
-}
 
-.signin__title {
-  padding-top: 1px;
-  margin-bottom: 20px;
-}
+  &__title {
+    padding-top: 1px;
+    margin-bottom: 20px;
+  }
 
-.signin__fieldset {
-  padding: 0;
-  margin-bottom: 30px;
-  border: 0;
-}
+  &__fieldset {
+    padding: 0;
+    margin-bottom: 30px;
+    border: 0;
+  }
 
-.signin__email {
-  margin-bottom: 10px;
-}
+  &__email {
+    margin-bottom: 10px;
+  }
 
-.signin__password {
-  margin-bottom: 20px;
-}
+  &__password {
+    margin-bottom: 20px;
+  }
 
-.signin__footer {
-  display: grid;
-  grid-template: 1fr / 1fr 99px;
-  align-items: center;
-}
+  &__footer {
+    display: grid;
+    grid-template: 1fr / 1fr 99px;
+    align-items: center;
+  }
 
-.signin__text {
-  margin-right: 20px;
-  line-height: 18px;
-  color: $black;
+  &__text {
+    margin-right: 20px;
+    line-height: 18px;
+    color: $black;
+  }
 }
