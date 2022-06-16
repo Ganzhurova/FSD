@@ -34,10 +34,6 @@ class Dropdown extends BaseDropdown {
     this.outputs = [...this.el.querySelectorAll(this.options.targetSelector)];
   }
 
-  getOutputsText() {
-    return this.outputs.map((output) => output.value);
-  }
-
   updateOutput(txt) {
     let txtArr = [];
 
