@@ -9,33 +9,35 @@ class Calendar extends DropdownBody {
     this.datepicker = null;
 
     this.initDatepicker();
-    this.addHandlerCellSelect();
   }
 
   initDatepicker() {
     const calendarEl = this.el.querySelector('.js-datepicker');
     this.datepicker = getDatepicker(calendarEl);
-    this.receiveDates();
+    this.addHandlerCellSelect();
+    this.updateDatepicer(this.options?.config);
+    this.selectDate(this.getDates());
   }
 
-  receiveDates() {
-    const datesArr = this.parent.getOutputsText();
+  getDates() {
+    if (!this.el.dataset.from) return false;
 
-    if (!datesArr[0]) {
+    return [this.el.dataset.from, this.el.dataset.to];
+  }
+
+  selectDate(datesArr) {
+    if (!datesArr) {
       this.hideButtonClear(true);
       return;
     }
 
-    const convert = (dateString) => {
-      const [day, month, year] = [...dateString.split('.')];
-      return new Date(year, month - 1, day);
-    };
-
+    const convert = (dateString) => new Date(dateString);
     const dates = datesArr.map((date) => convert(date));
     this.datepicker.selectDate(dates);
   }
 
   updateDatepicer(config) {
+    if (!config) return;
     this.datepicker.update(config);
   }
 
@@ -45,9 +47,8 @@ class Calendar extends DropdownBody {
 
     const config = {
       onSelect(formattedDate) {
-        const date = formattedDate;
-        hideButtonClear(date === '');
-        sendText(date);
+        hideButtonClear(formattedDate === '');
+        sendText(formattedDate);
       },
     };
     this.updateDatepicer(config);
