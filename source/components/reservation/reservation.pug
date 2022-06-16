@@ -1,4 +1,3 @@
-include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 include ../tooltip/tooltip
@@ -7,7 +6,7 @@ mixin reservation(options)
   if !options
     - options = {};
 
-  section.reservation
+  section.reservation.js-reservation
     form#reservation-form.reservation__info
       .reservation__header
         h2.reservation__title
@@ -17,9 +16,9 @@ mixin reservation(options)
           span.reservation__price= options.price
           | в сутки
       .reservation__dates
-        +dateDropdown({ mode: "range", from: { label: "Прибытие", attributes: { name: "arrival", required: true, value: options.arrival, }, }, to: { label: "Выезд", attributes: { name: "departure", required: true, value: options.departure, }, } })
+        +dropdown({ mode: "range", inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true,} }, range: { from: options.arrival, to: options.departure}, })
       .reservation__guests
-        +dropdown({ label: "Гости", labelVisually: true, isGuestsDropdown: true, guests: options.guests, })
+        +dropdown({ mode: "guests", input: {label: "Гости"}, guests: options.guests })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row
@@ -43,4 +42,4 @@ mixin reservation(options)
       .reservation__sum
         span.reservation__sum-text Итого
         span.reservation__total 38 081
-    +button({ type: "submit", buttonMod: "with-arrow", desc: "Забронировать", mix: "reservation__button", form: "reservation-form" })
+    +button({text: "Забронировать", mode: "with-arrow", attributes: {class: "reservation__button", type: "submit", form: "reservation-form"} })
