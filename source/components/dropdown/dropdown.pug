@@ -1,78 +1,29 @@
 include ../input/input
-include ../button/button
+include ../total-list/total-list
+include ../calendar/calendar
 
-mixin dropdown(options)
-  include ./dropdown-data
+mixin dropdown(options={})
+  include ./data/dropdown-data
 
-  if !options
-    - options = {}
+  - const helpers = require("../../helpers/helpers.js");
 
+  each dropdown, mode in dropdowns
+    if options.mode === mode
+      .dropdown.js-dropdown&attributes(helpers.merge(dropdown.attributes, options.attributes))
+        .dropdown__header 
+          if Array.isArray(dropdown.input)
+            each inp in dropdown.input
+              - const key = `input${inp.name}`;
+              +dropdownInput(helpers.merge(inp, options[key]))
+          else
+            +dropdownInput(helpers.merge(dropdown.input, options.input))
+        .dropdown__body(data-mode=mode)
+          +#{dropdown.body.name}(helpers.merge(dropdown.body.data, options[mode]))
+
+mixin dropdownInput(options={})
   if !options.attributes
-    - options.attributes = {}
+    - options.attributes = {};
 
-  - let classes = []
-  - let labelHiddenClass = options.labelVisually ? "" : "visually-hidden"
-
-  - options.attributes.class = ["dropdown__input", "js-dropdown__input"]
-  - options.attributes.type = "text"
-  - options.attributes.readonly = true
-
-  if options.isGuestsDropdown
-    - options.attributes.placeholder = "Сколько гостей"
-    - options.list = locals.guestsList
-    - options.addButtons = true
-    - classes.push("dropdown--guests")
-
-  if options.isComfortDropdown
-    - options.list = locals.comfortList
-    - classes.push("dropdown--comfort")
-
-  .js-dropdown.dropdown.dropdown--hidden(class=classes, data-show = options.dataShow)
-    label.dropdown__body
-      span.dropdown__label(class=labelHiddenClass)= options.label
-      +input(options)
-    .dropdown__select
-      ul.dropdown__list
-        for item in options.list
-          +dropdownItem(item, options.guests)
-
-      if options.addButtons
-        .dropdown__buttons
-          +button({
-            mix: "dropdown__button",
-            buttonMod: "text",
-            type: "button",
-            desc: "Очистить",
-            dataAction: "clear",
-            })
-          +button({
-            mix: "dropdown__button",
-            buttonMod: "text",
-            type: "button",
-            desc: "Применить",
-            dataAction: "apply",
-            })
-
-mixin dropdownItem(item, guests)
-  - let value = ""
-
-  if guests
-    each val, key in guests
-      if key === item.name
-        - value = val
-  else
-    - guests = {}
-    - value = item.defaultVal
-
-  li.dropdown__item.js-dropdown__item(data-option=item.dataOption)
-    span.dropdown__option= item.option
-
-    .dropdown__number.js-dropdown__number
-      button.dropdown__number-button(type="button", data-action="minus")
-      input.dropdown__total.js-dropdown__total(
-        type = "number"
-        readonly = true
-        value = value
-        name = item.name
-        )
-      button.dropdown__number-button(type="button", data-action="plus")
+  label
+    span.dropdown__label= options.label
+    +input(options)
