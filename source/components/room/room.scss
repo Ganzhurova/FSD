@@ -6,114 +6,114 @@
   background-color: $white;
   border-radius: 4px;
   box-shadow: 0 10px 20px 0 $dark05;
-}
 
-.room__link {
-  display: block;
-  padding: 20px 17px 19px 20px;
-  color: $dark50;
-}
-
-.room__info {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-bottom: 10px;
-}
-
-.room__rating {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 0 0;
-  margin-right: 3px;
-  border-top: 1px solid rgba($dark, 0.1);
-}
-
-.room__title {
-  padding-top: 1px;
-  @include title-element;
-}
-
-.room__number {
-  margin-right: 8px;
-
-  &::before {
-    font-size: 14px;
-    line-height: 17px;
-    content: "№ ";
-  }
-}
-
-.room__class {
-  @include label-cta-text($color: $primary-color);
-}
-
-.room__cost {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.room__price {
-  font-size: 14px;
-  @include montserrat-bold;
-
-  &::after {
-    content: "₽ ";
-  }
-}
-
-.room__review {
-  line-height: 18px;
-}
-
-.room__review-number {
-  @include montserrat-bold;
-
-  &::after {
-    content: " ";
-  }
-}
-
-.room__slider {
-  position: relative;
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: 0;
+  &__link {
     display: block;
-    width: 42px;
-    height: 100%;
-    content: "";
-    background: linear-gradient(
-      90deg,
-      rgb(0 0 0 / 50%) 0%,
-      rgb(0 0 0 / 0%) 99.99%,
-      rgb(255 255 255 / 0%) 100%
-    );
+    padding: 20px 17px 19px 20px;
+    color: $dark50;
   }
 
-  &::before {
-    left: 0;
+  &__info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 10px;
   }
 
-  &::after {
-    right: 0;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0 0;
+    margin-right: 3px;
+    border-top: 1px solid rgba($dark, 0.1);
   }
-}
 
-.room__img-wrapper {
-  width: 270px;
-  height: 151px;
-  overflow: hidden;
-  vertical-align: top; // for slick-slider
-  background-color: $grey;
-}
+  &__title {
+    padding-top: 1px;
+    @include title-element;
+  }
 
-.room__img {
-  display: block;
+  &__number {
+    margin-right: 8px;
+
+    &::before {
+      font-size: 14px;
+      line-height: 17px;
+      content: "№ ";
+    }
+  }
+
+  &__class {
+    @include label-cta-text($color: $primary-color);
+  }
+
+  &__cost {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price {
+    font-size: 14px;
+    @include montserrat-bold;
+
+    &::after {
+      content: "₽ ";
+    }
+  }
+
+  &__review {
+    line-height: 18px;
+  }
+
+  &__review-number {
+    @include montserrat-bold;
+
+    &::after {
+      content: " ";
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 42px;
+      height: 100%;
+      content: "";
+      background: linear-gradient(
+        90deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(0 0 0 / 0%) 99.99%,
+        rgb(255 255 255 / 0%) 100%
+      );
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+  }
+
+  &__img-wrapper {
+    width: 270px;
+    height: 151px;
+    overflow: hidden;
+    vertical-align: top; // for slick-slider
+    background-color: $grey;
+  }
+
+  &__img {
+    display: block;
+  }
 }
 
 /* Стили для плагина slick-slider */
