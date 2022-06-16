@@ -1,59 +1,59 @@
 .signup {
   @include card;
-}
 
-.signup__title {
-  padding-top: 1px;
-  margin-bottom: 20px;
-}
-
-.signup__fieldset {
-  padding: 0;
-  margin-bottom: 20px;
-  border: 0;
-
-  &:last-child {
-    margin-bottom: 24px;
+  &__title {
+    padding-top: 1px;
+    margin-bottom: 20px;
   }
-}
 
-.signup__name,
-.signup__surname {
-  margin-bottom: 10px;
-}
+  &__fieldset {
+    padding: 0;
+    margin-bottom: 20px;
+    border: 0;
 
-.signup__gender {
-  display: flex;
-  margin-bottom: 23.56px;
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
 
-  & > :first-child {
+  &__name,
+  &__surname {
+    margin-bottom: 10px;
+  }
+
+  &__gender {
+    display: flex;
+    margin-bottom: 23.56px;
+
+    & > :first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__legend {
+    padding-top: 1px;
+    margin-bottom: 5px;
+    @include label-cta-text;
+  }
+
+  &__email,
+  &__password {
+    margin-bottom: 10px;
+  }
+
+  &__payment-button {
+    margin-bottom: 30px;
+  }
+
+  &__footer {
+    display: grid;
+    grid-template: 1fr / 1fr 99px;
+    align-items: center;
+  }
+
+  &__text {
     margin-right: 20px;
+    line-height: 18px;
+    color: $black;
   }
-}
-
-.signup__legend {
-  padding-top: 1px;
-  margin-bottom: 5px;
-  @include label-cta-text;
-}
-
-.signup__email,
-.signup__password {
-  margin-bottom: 10px;
-}
-
-.signup__payment-button {
-  margin-bottom: 30px;
-}
-
-.signup__footer {
-  display: grid;
-  grid-template: 1fr / 1fr 99px;
-  align-items: center;
-}
-
-.signup__text {
-  margin-right: 20px;
-  line-height: 18px;
-  color: $black;
 }
