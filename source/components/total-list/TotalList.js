@@ -1,4 +1,4 @@
-import DropdownBody from '../dropdown1/DropdownBody';
+import DropdownBody from '../dropdown/DropdownBody';
 import Total from '../total/Total';
 import './total-list.scss';
 

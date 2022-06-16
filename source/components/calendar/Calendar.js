@@ -1,4 +1,4 @@
-import DropdownBody from '../dropdown1/DropdownBody';
+import DropdownBody from '../dropdown/DropdownBody';
 import getDatepicker from './getDatepicker';
 import './calendar.scss';
 
