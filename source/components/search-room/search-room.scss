@@ -1,16 +1,16 @@
 .search-room {
   @include card;
-}
 
-.search-room__title {
-  padding-top: 1px;
-  margin-bottom: 21px;
-}
+  &__title {
+    padding-top: 1px;
+    margin-bottom: 21px;
+  }
 
-.search-room__dates {
-  margin-bottom: 21px;
-}
+  &__dates {
+    margin-bottom: 21px;
+  }
 
-.search-room__guests {
-  margin-bottom: 31px;
+  &__guests {
+    margin-bottom: 31px;
+  }
 }

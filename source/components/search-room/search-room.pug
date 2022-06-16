@@ -1,13 +1,34 @@
-include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
 mixin searchRoom
-  section.search-room
+  -
+    const rangeDropdown = {
+      mode: "range",
+      inputFrom: {
+        label: "Прибытие",
+        attributes: { name: "arrival", required: true, },
+      },
+      inputTo: {
+        label: "Выезд",
+        attributes: { name: "departure", required: true, },
+      },
+    }
+
+    const guestsDropdown = {
+      mode: "guests",
+      input: {
+        label: "Гости",
+        attributes: { required: true, }
+      }
+    }
+
+
+  section.search-room.js-search-room
     form.search-room__form
       h2.search-room__title Найдём номера под ваши пожелания
       .search-room__dates
-        +dateDropdown({ mode: "range", from: { label: "Прибытие", attributes: { name: "arrival", required: true, } }, to: { label: "Выезд", attributes: { name: "departure", required: true, } }, })
+        +dropdown(rangeDropdown)
       .search-room__guests
-        +dropdown({ label: "Гости", labelVisually: true, isGuestsDropdown: true, attributes: { required: true, } })
-      +button({ type: "submit", buttonMod: "with-arrow", desc: "Подобрать номер" })
+        +dropdown(guestsDropdown)
+      +button({text: "Подобрать номер", mode: "with-arrow", attributes: {type: "submit"},})
