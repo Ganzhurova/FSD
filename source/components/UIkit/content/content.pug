@@ -20,5 +20,8 @@ mixin contentSection(options)
   if options.row
     - classes.push("content__section--row");
 
+  if options.mix
+    - classes.push(`content__section--${options.mix}`);
+
   .content__section(class=classes)
     block
