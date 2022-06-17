@@ -13,9 +13,13 @@ mixin button(options={})
   if (options.link)
     a.button(class=classes, href=options.link)&attributes(options.attributes)= options.text
       +icon(options.icon)
+      if (options.inner)
+        +#{options.inner}
   else
     button.button(class=classes)&attributes(options.attributes)= options.text
       +icon(options.icon)
+      if (options.inner)
+        +#{options.inner}
 
 mixin icon(options={})
   if options.name
