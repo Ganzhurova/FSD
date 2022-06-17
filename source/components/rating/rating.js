@@ -1,5 +1,3 @@
-import './rating.scss';
-
 class Rating {
   constructor() {
     this.value = 0;
@@ -42,7 +40,7 @@ class Rating {
     const labels = this.rating.querySelectorAll('.rating__item');
     let inputChecked;
 
-    labels.forEach(label => {
+    labels.forEach((label) => {
       const input = label.control;
 
       label.addEventListener('mouseenter', () => {
@@ -61,20 +59,4 @@ class Rating {
   }
 }
 
-function initRatings() {
-  const ratings = document.querySelectorAll('.js-rating');
-
-  if (ratings.length > 0) {
-    for (let i = 0; i < ratings.length; i += 1) {
-      const ratingEl = ratings[i];
-      const rating = new Rating();
-      rating.init(ratingEl);
-    }
-  }
-}
-
-export default initRatings;
-
-window.addEventListener('DOMContentLoaded', () => {
-  initRatings();
-});
+export default Rating;
