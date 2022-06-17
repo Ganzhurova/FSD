@@ -1,5 +1,4 @@
 import handlerDataAction from '../../helpers/handlerDataAction';
-import './control.scss';
 
 class Control {
   constructor(el, parentInstance) {

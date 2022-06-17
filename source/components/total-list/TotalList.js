@@ -1,6 +1,5 @@
 import DropdownBody from '../dropdown/DropdownBody';
 import Total from '../total/Total';
-import './total-list.scss';
 
 class TotalList extends DropdownBody {
   constructor(dropdownInstance, options = {}) {

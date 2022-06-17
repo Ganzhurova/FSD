@@ -1,5 +1,4 @@
 import handlerDataAction from '../../helpers/handlerDataAction';
-import './total.scss';
 
 class Total {
   constructor(el, parentInstance) {

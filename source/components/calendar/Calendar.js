@@ -1,6 +1,5 @@
 import DropdownBody from '../dropdown/DropdownBody';
 import getDatepicker from './getDatepicker';
-import './calendar.scss';
 
 class Calendar extends DropdownBody {
   constructor(dropdownInstance, options = {}) {
