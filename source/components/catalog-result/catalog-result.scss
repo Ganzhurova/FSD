@@ -1,17 +1,17 @@
 .catalog-result {
   background-color: $white;
-}
 
-.catalog-result__title {
-  padding-top: 1px;
-  margin-bottom: 20.5px;
-}
+  &__title {
+    padding-top: 1px;
+    margin-bottom: 20.5px;
+  }
 
-.catalog-result__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  row-gap: 21px;
-  column-gap: 12px;
-  justify-content: space-between;
-  justify-items: center;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    row-gap: 21px;
+    column-gap: 12px;
+    justify-content: space-between;
+    justify-items: center;
+  }
 }
