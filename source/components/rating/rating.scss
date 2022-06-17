@@ -2,47 +2,47 @@
   position: relative;
   width: 120px;
   background-color: $white;
-}
 
-.rating__active {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background: $primary-gradient;
-  transition: all 0.2s;
-}
-
-.rating__list {
-  display: flex;
-}
-
-.rating__item {
-  position: relative;
-
-  @include material-icons($display: block);
-
-  &::before {
-    content: "star_border";
-    background: $primary-gradient;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &::after {
+  &__active {
     position: absolute;
     top: 0;
     left: 0;
-    color: $black;
-    content: "star";
-    background-color: $white;
-    mix-blend-mode: screen;
+    width: 0%;
+    height: 100%;
+    background: $primary-gradient;
+    transition: all 0.2s;
   }
-}
 
-.rating--vote {
-  & .rating__item {
-    cursor: pointer;
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+
+    @include material-icons($display: block);
+
+    &::before {
+      content: "star_border";
+      background: $primary-gradient;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $black;
+      content: "star";
+      background-color: $white;
+      mix-blend-mode: screen;
+    }
+  }
+
+  &--vote {
+    & .rating__item {
+      cursor: pointer;
+    }
   }
 }
