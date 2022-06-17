@@ -1,10 +1,13 @@
-include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
+include ../button/button
 include ../range/range
 include ../checkbox/checkbox
 include ../check-list/check-list
 
-section.filter.filter--closed.js-switchable(data-name="filter")
+mixin number
+  span.filter__total-number 1234
+
+section.filter.js-filter(data-name="filter")
   .filter__overlay
   .filter__body
     .filter__wrapper
@@ -20,9 +23,9 @@ section.filter.filter--closed.js-switchable(data-name="filter")
         h2.visually-hidden Фильтр
         .filter__list
           .filter__item.filter__item--dates
-            +dateDropdown({ mode: "filter", filter: { label: "Даты пребывания в отеле", attributes: { name: "dates", value: "19 авг - 23 авг", } }, })
+            +dropdown({mode: "filter", input: {label: "Даты пребывания в отеле", attributes: { name: "dates",} }, filter: { from: "2019-08-19", to: "2019-08-23", } })
           .filter__item
-            +dropdown({ isGuestsDropdown: true, labelVisually: true, label: "Гости", })
+            +dropdown({mode: "guests", input: {label: "Гости"}})
           .filter__item
             +range
             p.filter__range-desc Стоимость за сутки пребывания в номере
@@ -43,8 +46,7 @@ section.filter.filter--closed.js-switchable(data-name="filter")
               p.filter__availability-item
                 +checkbox({ title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист<br> и проводит до номера.", attributes: { name: "accessibility-helper", } })
           .filter__item
-            +dropdown({ isComfortDropdown: true, label: "Удобства номера", labelVisually: true, })
+            +dropdown({mode: "comfort", input: {label: "Удобства номера"}})
           .filter__item.filter__item--amenities
             +checkList("Дополнительные удобства", "additionalAmenities")
-        button.filter__show-btn.button.button--colored(type="button") Показать
-          span.filter__total-number 1234
+        +button({text: "Показать", mode: "colored", attributes: { class: "filter__show-btn" }, inner: "number"})
