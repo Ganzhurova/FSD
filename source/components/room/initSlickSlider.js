@@ -2,8 +2,8 @@
 
 import 'slick-slider';
 
-function initSlickSlider(selector) {
-  $(selector).slick({
+function initSlickSlider(el) {
+  $(el).slick({
     dots: true,
   });
 }
