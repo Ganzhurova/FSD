@@ -7,7 +7,7 @@ mixin room(room)
   if !room.images
     - room.images = [];
 
-  section.room
+  section.room.js-room
     a.room__link(href=room.link)
       .room__info
         h2.room__title
