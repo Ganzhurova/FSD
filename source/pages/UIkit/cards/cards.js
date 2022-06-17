@@ -2,8 +2,8 @@
 
 import 'air-datepicker';
 import baseConfig from '../../../components/calendar/config/baseConfig';
-import initSlickSlider from '../../../components/room/initSlickSlider';
+import initRooms from '../../../components/room/initRooms';
 
 $('.content__section--datepicker .js-datepicker').datepicker(baseConfig);
 
-initSlickSlider('.content__section--cards .js-slider');
+initRooms('.content__section--cards .js-room');
