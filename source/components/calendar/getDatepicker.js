@@ -1,7 +1,7 @@
 /* global $ */
 
 import 'air-datepicker';
-import baseConfig from './config/base-config';
+import baseConfig from './config/baseConfig';
 
 function getDatepicker(calendarEl) {
   return $(calendarEl).datepicker(baseConfig).data('datepicker');

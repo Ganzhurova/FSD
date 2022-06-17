@@ -1,6 +1,6 @@
-const guestsList = require('./guests-list');
-const comfortList = require('./comfort-list');
-const filterConfig = require('../../calendar/config/filter-config');
+const guestsList = require('./guestsList');
+const comfortList = require('./comfortList');
+const filterConfig = require('../../calendar/config/filterConfig');
 
 const bodyDesc = {
   guests: {

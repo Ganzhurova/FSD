@@ -1,6 +1,6 @@
 import BaseDropdown from '../js/dropdown/BaseDropdown';
-import bodyDesc from './data/body-desc';
-import bodyMap from './data/body-map';
+import bodyDesc from './data/bodyDesc';
+import bodyMap from './data/bodyMap';
 
 class Dropdown extends BaseDropdown {
   constructor(el) {
