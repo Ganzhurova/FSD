@@ -1,5 +1,4 @@
 import 'paginationjs';
-import paginationConfig from './paginationConfig';
 import getPaginationjsContainer from './getPaginationjsContainer';
 
 class Pagination {
@@ -8,28 +7,28 @@ class Pagination {
     this.options = options;
 
     this.initPagination();
-    console.log(this);
   }
 
   initPagination() {
     const dataContainer = document.querySelector(
       this.options.containerSelector
     );
-    const template = this.template.bind(this);
+    const { config } = this.options;
+    const getTemplate = this.getTemplate.bind(this);
     const { event, eventCallback } = this.options;
 
     this.$el.pagination({
-      ...paginationConfig,
+      ...config,
       dataSource: this.options.data,
       callback(data) {
-        const html = template(data);
+        const html = getTemplate(data);
         dataContainer.innerHTML = html;
       },
       [event]: eventCallback,
     });
   }
 
-  template(data) {
+  getTemplate(data) {
     let html = '';
 
     data.forEach((options) => {
