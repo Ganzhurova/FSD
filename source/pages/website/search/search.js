@@ -1,4 +1,5 @@
-import initPaginations from '../../../components/pagination/initPagination';
+import initRoomPaginations from '../../../components/pagination/initRoomPaginations';
+import paginationConfig from '../../../components/pagination/paginationConfig';
 import roomTmpl from '../../../components/room/template.pug';
 import initRooms from '../../../components/room/initRooms';
 import roomsData from './rooms-data.json';
@@ -6,6 +7,7 @@ import roomsData from './rooms-data.json';
 import './search.scss';
 
 const paginationOptions = {
+  config: paginationConfig,
   data: roomsData.rooms,
   template: roomTmpl,
   containerSelector: '.js-data-container',
@@ -15,4 +17,4 @@ const paginationOptions = {
   },
 };
 
-initPaginations('.search__pagination .js-pagination', paginationOptions);
+initRoomPaginations('.search__pagination .js-pagination', paginationOptions);
