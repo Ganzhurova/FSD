@@ -1,3 +1,4 @@
+import helpers from '../../helpers/helpers';
 import DropdownBody from '../dropdown/DropdownBody';
 import Total from '../total/Total';
 
@@ -38,7 +39,7 @@ class TotalList extends DropdownBody {
     const sum = Object.values(this.items).reduce(
       (total, amount) => total + amount
     );
-    const text = TotalList.declension(sum, this.options.list.common);
+    const text = helpers.declension(sum, this.options.list.common);
     const result = `${sum} ${text}`;
 
     return sum === 0 ? '' : result;
@@ -48,10 +49,7 @@ class TotalList extends DropdownBody {
     return Object.entries(this.items)
       .map(
         ([key, value]) =>
-          `${value} ${TotalList.declension(
-            value,
-            this.options.list[key].txtArr
-          )}`
+          `${value} ${helpers.declension(value, this.options.list[key].txtArr)}`
       )
       .join(', ');
   }
@@ -64,17 +62,6 @@ class TotalList extends DropdownBody {
 
   handlerButtonApplyClick() {
     this.parent.close();
-  }
-
-  static declension(n, txtArr) {
-    const num = Number(n);
-    if (num === 1) {
-      return txtArr[1];
-    }
-    if (num > 1 && num < 5) {
-      return txtArr[2];
-    }
-    return txtArr[0];
   }
 }
 

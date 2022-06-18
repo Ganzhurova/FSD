@@ -30,6 +30,17 @@ const helpers = {
 
     return this.merge(target, ...sources);
   },
+
+  declension(n, txtArr) {
+    const num = Number(n);
+    if (num === 1) {
+      return txtArr[1];
+    }
+    if (num > 1 && num < 5) {
+      return txtArr[2];
+    }
+    return txtArr[0];
+  },
 };
 
 module.exports = helpers;
