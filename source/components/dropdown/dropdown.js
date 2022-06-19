@@ -27,11 +27,20 @@ class Dropdown extends BaseDropdown {
   setBody() {
     const body = bodyDesc[this.mode];
     const BodyClass = bodyMap[body.name]();
-    this.body = new BodyClass(this, body.data);
+    const dataAttr = this.getDataAttr();
+    this.body = new BodyClass(this, { ...body.data, ...dataAttr });
   }
 
   setOutputs() {
     this.outputs = [...this.el.querySelectorAll(this.options.targetSelector)];
+  }
+
+  getDataAttr() {
+    let data = {};
+    this.outputs.forEach((output) => {
+      data = { ...data, ...output.dataset };
+    });
+    return data;
   }
 
   updateOutput(txt) {
