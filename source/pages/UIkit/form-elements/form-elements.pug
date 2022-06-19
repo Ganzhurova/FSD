@@ -34,10 +34,10 @@ block content
       +formElement({mb: 40,})
         +textField({ label: "Masked text field", labelVisually: true, isDateMask: true })
       +formElement({mb: 41, mix: "date-dropdown"})
-        //- +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown"}, inputTo: { label: "Date Dropdown", }, range: {from: "2019-08-15", to: "2019-08-19"} })
+        //- +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown", attributes: {"data-from": "2019-08-15"}}, inputTo: { label: "Date Dropdown", attributes:{"data-to": "2019-08-19"} } })
         +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown"}, inputTo: { label: "Date Dropdown", } })
       +formElement({mb: 41, mix: "filter-date-dropdown"})
-        +dropdown({ mode: "filter", input: { label: "Filter date dropdown"}, filter: {from: "2019-08-19", to: "2019-08-23"} })
+        +dropdown({ mode: "filter", input: { label: "Filter date dropdown", attributes: {"data-from": "2019-08-15", "data-to": "2019-08-23"}} })
       +formElement({title: "Subscription text field", mb: 100,})
         +subscription
 
@@ -80,7 +80,7 @@ block content
       +formElement
         +dropdown({ mode: "guests", attributes: {"data-show": "true",}, input: { label: "Dropdown" } })
       +formElement
-        +dropdown({ mode: "guests", attributes: {"data-show": "true",}, input: {label: "Dropdown" }, guests: { list: {adults: {value: 2}, children: {value: 1}, }} })
+        +dropdown({ mode: "guests", attributes: {"data-show": "true",}, input: {label: "Dropdown" }, body: { list: {adults: {value: 2}, children: {value: 1}, }} })
 
     +contentSection({...{}, name})
       +formElement({mix: "check-list", mb: 97})
