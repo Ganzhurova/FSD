@@ -19,9 +19,9 @@ class Calendar extends DropdownBody {
   }
 
   getDates() {
-    if (!this.el.dataset.from) return false;
+    if (!this.options.from) return false;
 
-    return [this.el.dataset.from, this.el.dataset.to];
+    return [this.options.from, this.options.to];
   }
 
   selectDate(datesArr) {
