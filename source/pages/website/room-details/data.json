@@ -3,12 +3,13 @@
     "number": 888,
     "category": "Люкс",
     "price": 9990,
-    "arrival": "19.08.2019",
-    "departure": "23.08.2019",
+    "arrival": "2019-08-19",
+    "departure": "2019-08-23",
     "guests": {
-      "adults": 2,
-      "children": 1,
-      "baby": 0
+      "list": {
+        "adults": { "value": 2 },
+        "children": { "value": 1 }
+      }
     }
   },
   "images": [

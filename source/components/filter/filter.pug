@@ -23,7 +23,7 @@ section.filter.js-filter(data-name="filter")
         h2.visually-hidden Фильтр
         .filter__list
           .filter__item.filter__item--dates
-            +dropdown({mode: "filter", input: {label: "Даты пребывания в отеле", attributes: { name: "dates",} }, filter: { from: "2019-08-19", to: "2019-08-23", } })
+            +dropdown({mode: "filter", input: {label: "Даты пребывания в отеле", attributes: { name: "dates", "data-from": "2019-08-19", "data-to": "2019-08-23"} }, })
           .filter__item
             +dropdown({mode: "guests", input: {label: "Гости"}})
           .filter__item

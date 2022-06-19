@@ -16,9 +16,9 @@ mixin reservation(options)
           span.reservation__price= options.price
           | в сутки
       .reservation__dates
-        +dropdown({ mode: "range", inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true,} }, range: { from: options.arrival, to: options.departure}, })
+        +dropdown({ mode: "range", inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, "data-from": options.arrival } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true, "data-to": options.departure } }})
       .reservation__guests
-        +dropdown({ mode: "guests", input: {label: "Гости"}, guests: options.guests })
+        +dropdown({ mode: "guests", input: {label: "Гости"}, body: options.guests })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row

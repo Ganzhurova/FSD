@@ -6,7 +6,6 @@ import data from './data.json';
 class RoomDetails {
   constructor(containerEl) {
     this.containerEl = containerEl;
-    console.log(this);
 
     this.init();
   }
