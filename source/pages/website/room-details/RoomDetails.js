@@ -1,5 +1,5 @@
 import initCharts from '../../../components/chart/chart';
-import initDropdowns from '../../../components/dropdown/initDropdowns';
+import initReservation from '../../../components/reservation/initReservation';
 import roomDetailsTmpl from '../../../components/room-details/template.pug';
 import data from './data.json';
 
@@ -13,7 +13,7 @@ class RoomDetails {
   init() {
     this.insertTemplate();
     initCharts();
-    initDropdowns('.js-dropdown');
+    initReservation('.js-reservation');
   }
 
   insertTemplate() {
