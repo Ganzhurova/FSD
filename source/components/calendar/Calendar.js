@@ -41,13 +41,13 @@ class Calendar extends DropdownBody {
   }
 
   addHandlerCellSelect() {
-    const sendText = this.sendText.bind(this);
+    const sendData = this.sendData.bind(this);
     const hideButtonClear = this.hideButtonClear.bind(this);
 
     const config = {
-      onSelect(formattedDate) {
+      onSelect(formattedDate, dates) {
         hideButtonClear(formattedDate === '');
-        sendText(formattedDate);
+        sendData(formattedDate, dates);
       },
     };
     this.updateDatepicer(config);
