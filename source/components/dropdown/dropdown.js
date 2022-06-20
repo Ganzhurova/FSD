@@ -3,7 +3,7 @@ import bodyDesc from './data/bodyDesc';
 import bodyMap from './data/bodyMap';
 
 class Dropdown extends BaseDropdown {
-  constructor(el) {
+  constructor(el, parent, key) {
     const options = {
       targetSelector: '.js-dropdown-input',
       closeClass: 'dropdown--hidden',
@@ -11,9 +11,12 @@ class Dropdown extends BaseDropdown {
     };
     super(el, options);
 
+    this.parent = parent || null;
+    this.parentDataKey = key || null;
     this.mode = '';
     this.body = null;
     this.outputs = [];
+    this.data = null;
 
     this.setOutputs();
     this.setMode();
@@ -33,6 +36,11 @@ class Dropdown extends BaseDropdown {
 
   setOutputs() {
     this.outputs = [...this.el.querySelectorAll(this.options.targetSelector)];
+  }
+
+  setData(data) {
+    this.data = data;
+    this.parent?.updateData(this.parentDataKey, this.data);
   }
 
   getDataAttr() {
