@@ -17,8 +17,9 @@ class DropdownBody {
     this.control = new Control(controlEl, this);
   }
 
-  sendText(txt) {
+  sendData(txt, data) {
     this.parent.updateOutput(txt);
+    this.parent.setData(data);
   }
 
   hideButtonClear(boolean) {
