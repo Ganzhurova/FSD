@@ -22,11 +22,16 @@ class TotalList extends DropdownBody {
   }
 
   updateItems(key, value) {
-    this.items[key] = +value;
+    if (+value === 0) {
+      delete this.items[key];
+    } else {
+      this.items[key] = +value;
+    }
+
     const text = this.getText();
 
     this.hideButtonClear(text === '');
-    this.sendText(text);
+    this.sendData(text, this.items);
   }
 
   getText() {
@@ -37,7 +42,8 @@ class TotalList extends DropdownBody {
 
   getCommonText() {
     const sum = Object.values(this.items).reduce(
-      (total, amount) => total + amount
+      (total, amount) => total + amount,
+      0
     );
     const text = helpers.declension(sum, this.options.list.common);
     const result = `${sum} ${text}`;
