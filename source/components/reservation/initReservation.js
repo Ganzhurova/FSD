@@ -1,9 +1,9 @@
 import Reservation from './Reservation';
 
-function initReservation(selector) {
+function initReservation(selector, data) {
   const el = document.querySelector(selector);
   if (!el) return;
-  (() => new Reservation(el))();
+  (() => new Reservation(el, data))();
 }
 
 export default initReservation;
