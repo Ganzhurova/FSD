@@ -13,7 +13,7 @@ class RoomDetails {
   init() {
     this.insertTemplate();
     initCharts();
-    initReservation('.js-reservation');
+    initReservation('.js-reservation', data.info);
   }
 
   insertTemplate() {
