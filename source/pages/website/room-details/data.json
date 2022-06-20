@@ -3,6 +3,11 @@
     "number": 888,
     "category": "Люкс",
     "price": 9990,
+    "charge": {
+      "services": 0,
+      "discount": 2179,
+      "addservices": 300
+    },
     "arrival": "2019-08-19",
     "departure": "2019-08-23",
     "guests": {
