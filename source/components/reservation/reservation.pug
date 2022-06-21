@@ -2,12 +2,7 @@ include ../dropdown/dropdown
 include ../button/button
 include ../tooltip/tooltip
 
-mixin reservation(options)
-  if !options
-    - options = {};
-  if !options.charge
-    - options.charge = {};
-
+mixin reservation(options={})
   section.reservation.js-reservation
     form#reservation-form.reservation__info
       .reservation__header
@@ -18,9 +13,9 @@ mixin reservation(options)
           span.reservation__price= options.price
           | в сутки
       .reservation__dates
-        +dropdown({ mode: "range", attributes: {class: "js-range-dropdown"}, inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, "data-from": options.arrival } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true, "data-to": options.departure } }})
+        +dropdown({ mode: "range", attributes: {class: ["js-range-dropdown"]}, inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, "data-from": options.arrival } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true, "data-to": options.departure } }})
       .reservation__guests
-        +dropdown({ mode: "guests", attributes: {class: "js-guests-dropdown"}, input: {label: "Гости"}, body: options.guests })
+        +dropdown({ mode: "guests", attributes: {class: ["js-guests-dropdown"]}, input: {label: "Гости"}, body: options.guests })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row
@@ -33,15 +28,15 @@ mixin reservation(options)
         li.reservation__row
           .reservation__category
             p.reservation__text Сбор за услуги: скидка&nbsp;
-              span.reservation__discount= options.charge.discount
+              span.reservation__discount(data-discount)
             +tooltip("Lorem ipsum")
-          span.reservation__subtotal(data-subtotal="services")= options.charge.services
+          span.reservation__subtotal(data-subtotal="services")
         li.reservation__row
           .reservation__category
             p.reservation__text Сбор за дополнительные услуги
             +tooltip("Lorem ipsum dolor sit amet")
-          span.reservation__subtotal(data-subtotal="add-services")= options.charge.addservices
+          span.reservation__subtotal(data-subtotal="add-services")
       .reservation__sum
         span.reservation__sum-text Итого
         span.reservation__total(data-total)
-    +button({text: "Забронировать", mode: "with-arrow", attributes: {class: "reservation__button", type: "submit", form: "reservation-form"} })
+    +button({text: "Забронировать", mode: "with-arrow", attributes: {class: ["reservation__button", "js-button"], type: "submit", form: "reservation-form"} })

@@ -13,6 +13,7 @@ class Reservation {
       addservices: data.charge.addservices,
     };
     this.outputs = {};
+    this.reservationButton = this.el.querySelector('.js-button');
 
     this.setOutputs();
     this.init();
@@ -34,7 +35,10 @@ class Reservation {
   setOutputs() {
     this.outputs = {
       days: this.el.querySelector('[data-days]'),
-      subtotal: this.el.querySelector('[data-subtotal=calculation]'),
+      calculation: this.el.querySelector('[data-subtotal=calculation]'),
+      services: this.el.querySelector('[data-subtotal=services]'),
+      addservices: this.el.querySelector('[data-subtotal=add-services]'),
+      discount: this.el.querySelector('[data-discount]'),
       total: this.el.querySelector('[data-total]'),
     };
   }
@@ -61,22 +65,43 @@ class Reservation {
       isEmpty(this.data.dates) ||
       isEmpty(this.data.guests) ||
       this.data.dates.length === 1
-    )
+    ) {
+      this.resetСalculation();
+      this.disableReservationButton(true);
       return;
+    }
 
     const days = getDiffDays(...this.data.dates);
-    const subtotal = days * this.data.price;
+    const calculation = days * this.data.price;
     const total =
-      subtotal -
+      calculation -
       (this.data.discount - this.data.services - this.data.addservices);
 
+    this.disableReservationButton(false);
+    this.displayValues();
     this.showText(getDaysText(days), 'days');
-    this.showText(subtotal, 'subtotal');
+    this.showText(calculation, 'calculation');
     this.showText(total, 'total');
   }
 
   showText(text, key) {
     this.outputs[key].textContent = text;
+  }
+
+  displayValues() {
+    this.showText(this.data.services, 'services');
+    this.showText(this.data.addservices, 'addservices');
+    this.showText(this.data.discount, 'discount');
+  }
+
+  resetСalculation() {
+    Object.keys(this.outputs).forEach((key) => {
+      this.showText('0', key);
+    });
+  }
+
+  disableReservationButton(boolean) {
+    this.reservationButton.disabled = boolean;
   }
 
   updateData(key, data) {
