@@ -18,11 +18,6 @@ body {
   @include base-text;
 }
 
-fieldset {
-  padding: 0;
-  border: 0;
-}
-
 /* Убирает стрелки из поля input type number */
 
 input[type="number"]::-webkit-outer-spin-button,

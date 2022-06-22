@@ -123,6 +123,12 @@
     @include label-cta-text;
   }
 
+  &__rules,
+  &__availability {
+    padding: 0;
+    border: 0;
+  }
+
   &__rule {
     &:not(:last-child) {
       margin-bottom: 11px;
