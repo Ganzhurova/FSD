@@ -151,6 +151,8 @@
   }
 
   &__link {
+    text-decoration: none;
+
     @media (min-width: $sm) {
       display: block;
       color: $dark50;

@@ -95,6 +95,7 @@
     display: block;
     line-height: 17px;
     color: $dark50;
+    text-decoration: none;
     cursor: pointer;
 
     @media (max-width: $lg) {
@@ -189,6 +190,7 @@
     padding: 6.5px 0 6.5px 20px;
     line-height: 17px;
     color: $dark50;
+    text-decoration: none;
     cursor: pointer;
     border-left: 1px solid rgba($dark, 0.1);
 
