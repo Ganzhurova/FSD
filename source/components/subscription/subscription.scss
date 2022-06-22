@@ -1,10 +1,12 @@
-.subscription__field {
-  display: flex;
-  min-width: 260px;
-  max-width: 267px;
-  @include input-bordered;
-}
+.subscription {
+  &__field {
+    display: flex;
+    min-width: 260px;
+    max-width: 267px;
+    @include input-bordered;
+  }
 
-.subscription__input {
-  @include input;
+  &__input {
+    @include input;
+  }
 }

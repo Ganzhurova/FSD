@@ -1,80 +1,81 @@
+$orange-gradient: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+
 .chart {
   display: flex;
   flex-wrap: wrap;
   column-gap: 30px;
   justify-content: center;
-}
 
-.chart__body {
-  width: 120px;
-  height: 120px;
-}
-
-/* Total */
-
-.chart__total {
-  fill: $purple;
-  @include montserrat-bold;
-}
-
-.chart__total-number {
-  font-size: 24px;
-  text-anchor: middle;
-}
-
-.chart__total-text {
-  font-size: 12px;
-  text-transform: uppercase;
-  text-anchor: middle;
-  transform: translateY(1.5em);
-}
-
-/* Legend */
-$orange-gradient: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-$black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
-
-.chart__legend {
-  padding-top: 30px;
-}
-
-.chart__list {
-  list-style: none;
-}
-
-.chart__item {
-  display: flex;
-  align-items: center;
-
-  &::before {
-    display: block;
-    width: 10px;
-    height: 10px;
-    margin-right: 5px;
-    content: "";
-    border-radius: 50%;
+  &__body {
+    width: 120px;
+    height: 120px;
   }
-}
 
-.chart__item--sumptuously {
-  &::before {
-    background: $orange-gradient;
+  /* Total */
+
+  &__total {
+    fill: $purple;
+    @include montserrat-bold;
   }
-}
 
-.chart__item--good {
-  &::before {
-    background: $secondary-gradient;
+  &__total-number {
+    font-size: 24px;
+    text-anchor: middle;
   }
-}
 
-.chart__item--fine {
-  &::before {
-    background: $primary-gradient;
+  &__total-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-anchor: middle;
+    transform: translateY(1.5em);
   }
-}
 
-.chart__item--badly {
-  &::before {
-    background: $black-gradient;
+  /* Legend */
+
+  &__legend {
+    padding-top: 30px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      content: "";
+      border-radius: 50%;
+    }
+  }
+
+  &__item--sumptuously {
+    &::before {
+      background: $orange-gradient;
+    }
+  }
+
+  &__item--good {
+    &::before {
+      background: $secondary-gradient;
+    }
+  }
+
+  &__item--fine {
+    &::before {
+      background: $primary-gradient;
+    }
+  }
+
+  &__item--badly {
+    &::before {
+      background: $black-gradient;
+    }
   }
 }

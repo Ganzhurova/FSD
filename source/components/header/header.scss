@@ -2,17 +2,17 @@
   min-width: 320px;
   background-color: $white;
   box-shadow: 0 10px 20px 0 $dark05;
-}
 
-.header__wrapper {
-  display: grid;
-  grid-template: 1fr / 106px 1fr;
-  grid-column-gap: 60px;
-  align-items: center;
-  min-height: 70px;
-  @include container;
+  &__wrapper {
+    display: grid;
+    grid-template: 1fr / 106px 1fr;
+    grid-column-gap: 60px;
+    align-items: center;
+    min-height: 70px;
+    @include container;
 
-  @media (max-width: $lg) {
-    position: relative;
+    @media (max-width: $lg) {
+      position: relative;
+    }
   }
 }

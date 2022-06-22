@@ -9,32 +9,32 @@
   border: 1px solid $dark25;
   border-radius: 10px;
   outline: none;
-}
 
-.like__value {
-  display: flex;
-  font-size: 10px;
-  line-height: 12px;
+  &__value {
+    display: flex;
+    font-size: 10px;
+    line-height: 12px;
 
-  &::before {
-    margin-right: 7px;
-    content: "favorite_border";
+    &::before {
+      margin-right: 7px;
+      content: "favorite_border";
 
-    @include material-icons(
-      $display: block,
-      $font-size: 10px,
-      $line-height: 12px
-    );
+      @include material-icons(
+        $display: block,
+        $font-size: 10px,
+        $line-height: 12px
+      );
+    }
   }
-}
 
-.like--actual {
-  color: $primary-color;
-  background-image: linear-gradient($white, $white), $primary-gradient;
-  background-clip: padding-box, border-box;
-  border: 1px solid transparent;
+  &--actual {
+    color: $primary-color;
+    background-image: linear-gradient($white, $white), $primary-gradient;
+    background-clip: padding-box, border-box;
+    border: 1px solid transparent;
+  }
 
-  .like__value::before {
+  &--actual &__value::before {
     margin-right: 5px;
     content: "favorite";
   }

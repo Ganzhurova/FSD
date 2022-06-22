@@ -9,42 +9,40 @@ details > summary {
 .check-list {
   min-width: 266px;
   background-color: $white;
-}
 
-.check-list__title {
-  position: relative;
-  padding: 15px 50px 15px 0;
-  cursor: pointer;
-  outline: none;
-  @include label-cta-text;
+  &__title {
+    position: relative;
+    padding: 15px 50px 15px 0;
+    cursor: pointer;
+    outline: none;
+    @include label-cta-text;
 
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    color: $dark50;
-    content: "expand_more";
-    transition: all 0.2s;
-    transform: translateY(-50%);
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      color: $dark50;
+      content: "expand_more";
+      transition: all 0.2s;
+      transform: translateY(-50%);
 
-    @include material-icons;
+      @include material-icons;
+    }
   }
-}
 
-.check-list__items {
-  padding: 3px 3px 3px 0;
-  list-style: none;
-  background-color: $white;
-}
-
-.check-list__item {
-  &:not(:last-child) {
-    margin-bottom: 10px;
+  &__items {
+    padding: 3px 3px 3px 0;
+    list-style: none;
+    background-color: $white;
   }
-}
 
-.check-list[open] {
-  .check-list__title::after {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &[open] &__title::after {
     transform: translateY(-50%) rotate(180deg);
   }
 }

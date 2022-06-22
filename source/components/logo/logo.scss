@@ -3,15 +3,15 @@
   align-items: center;
   width: 106px;
   height: 40px;
-}
 
-.logo__pic {
-  width: 40px;
-  height: 40px;
-  margin-right: 12.5px;
-}
+  &__pic {
+    width: 40px;
+    height: 40px;
+    margin-right: 12.5px;
+  }
 
-.logo__toxin {
-  width: 54px;
-  height: 14px;
+  &__toxin {
+    width: 54px;
+    height: 14px;
+  }
 }

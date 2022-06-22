@@ -7,15 +7,15 @@
   border: 0;
 
   @include label-cta-text;
-}
 
-.button--icon {
-  position: relative;
-  flex-shrink: 0;
-  width: 44px;
-  height: 42px;
+  &--icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 44px;
+    height: 42px;
+  }
 
-  .button__icon {
+  &--icon &__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,81 +25,81 @@
     transform: translate(-50%, -50%);
     -webkit-text-fill-color: transparent;
   }
-}
 
-.button--colored {
-  padding: 15px 20px;
-  color: $white;
-  background-image: $primary-gradient;
-  border-radius: 22px;
+  &--colored {
+    padding: 15px 20px;
+    color: $white;
+    background-image: $primary-gradient;
+    border-radius: 22px;
 
-  &:hover,
-  &:focus {
-    background-image: $primary-translucent-gradient;
-    outline: none;
+    &:hover,
+    &:focus {
+      background-image: $primary-translucent-gradient;
+      outline: none;
+    }
   }
 
-  &.button--thin {
+  &--colored#{&}--thin {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-}
 
-.button--bordered {
-  padding: 13px 18px;
-  color: $primary-color;
-  background-image: linear-gradient($white, $white), $primary-gradient;
-  background-repeat: no-repeat, no-repeat;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  border: 2px solid transparent;
-  border-radius: 22px;
+  &--bordered {
+    padding: 13px 18px;
+    color: $primary-color;
+    background-image: linear-gradient($white, $white), $primary-gradient;
+    background-repeat: no-repeat, no-repeat;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border: 2px solid transparent;
+    border-radius: 22px;
 
-  &:hover,
-  &:focus {
-    background-image: linear-gradient($white, $white),
-      $primary-translucent-gradient;
-    outline: none;
+    &:hover,
+    &:focus {
+      background-image: linear-gradient($white, $white),
+        $primary-translucent-gradient;
+      outline: none;
+    }
   }
 
-  &.button--thin {
+  &--bordered#{&}--thin {
     padding-top: 8px;
     padding-bottom: 8px;
   }
-}
 
-.button--text {
-  color: $primary-color;
+  &--text {
+    color: $primary-color;
 
-  &:hover,
-  &:focus {
-    color: $dark50;
-    outline: none;
-  }
-}
-
-.button--with-arrow {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  padding: 15px 20px;
-  color: $white;
-  background: $primary-gradient;
-  border-radius: 22px;
-
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    content: "arrow_forward";
-    transform: translateY(-50%);
-
-    @include material-icons;
+    &:hover,
+    &:focus {
+      color: $dark50;
+      outline: none;
+    }
   }
 
-  &:hover,
-  &:focus {
-    background: $primary-translucent-gradient;
-    outline: none;
+  &--with-arrow {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 20px;
+    color: $white;
+    background: $primary-gradient;
+    border-radius: 22px;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      content: "arrow_forward";
+      transform: translateY(-50%);
+
+      @include material-icons;
+    }
+
+    &:hover,
+    &:focus {
+      background: $primary-translucent-gradient;
+      outline: none;
+    }
   }
 }

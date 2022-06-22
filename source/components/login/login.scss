@@ -9,11 +9,11 @@
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("./img/login-bg@2x.jpg");
   }
-}
 
-.login__wrapper {
-  display: flex;
-  justify-content: center;
-  padding: calc-in-percent(173px, 1440px) 0;
-  @include container;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    padding: calc-in-percent(173px, 1440px) 0;
+    @include container;
+  }
 }

@@ -1,23 +1,23 @@
 .bullet-list {
   min-width: 292px;
   list-style: none;
-}
 
-.bullet-list__item {
-  display: flex;
-  align-items: baseline;
+  &__item {
+    display: flex;
+    align-items: baseline;
 
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
 
-  &::before {
-    display: block;
-    width: 10px;
-    height: 10px;
-    margin-right: 10.43px;
-    content: "";
-    background-color: $dark25;
-    border-radius: 50%;
+    &::before {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10.43px;
+      content: "";
+      background-color: $dark25;
+      border-radius: 50%;
+    }
   }
 }

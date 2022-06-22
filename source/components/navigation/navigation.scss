@@ -206,37 +206,31 @@
       transition: all 0.2s;
     }
   }
-}
 
-.nav--closed {
   @media (max-width: $lg) {
-    .nav__toggle--close {
+    &--closed &__toggle--close {
       display: none;
     }
 
-    .nav__toggle--menu {
+    &--closed &__toggle--menu {
       display: block;
     }
 
-    .nav__wrapper {
+    &--closed &__wrapper {
       visibility: hidden;
       opacity: 0;
       transition: all 0.3s;
     }
-  }
-}
 
-.nav--opened {
-  @media (max-width: $lg) {
-    .nav__toggle--close {
+    &--opened &__toggle--close {
       display: block;
     }
 
-    .nav__toggle--menu {
+    &--opened &__toggle--menu {
       display: none;
     }
 
-    .nav__wrapper {
+    &--opened &__wrapper {
       visibility: visible;
       opacity: 1;
       transition: all 0.3s;

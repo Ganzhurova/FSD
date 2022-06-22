@@ -4,42 +4,42 @@
   line-height: 18px;
   cursor: pointer;
   user-select: none;
-}
 
-.toggle__icon {
-  position: relative;
-  display: block;
-  flex-shrink: 0;
-  align-self: flex-start;
-  width: 40px;
-  height: 20px;
-  margin-right: 10px;
-  border: 1px solid $dark25;
-  border-radius: 10px;
-
-  &::before {
-    position: absolute;
-    top: 3px;
-    left: 3px;
+  &__icon {
+    position: relative;
     display: block;
-    width: 12px;
-    height: 12px;
-    content: "";
-    background-color: $dark25;
-    border-radius: 50%;
-    transition: 0.1s;
-    transform: translateX(0);
+    flex-shrink: 0;
+    align-self: flex-start;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid $dark25;
+    border-radius: 10px;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      content: "";
+      background-color: $dark25;
+      border-radius: 50%;
+      transition: 0.1s;
+      transform: translateX(0);
+    }
   }
-}
 
-/* Checked */
+  /* Checked */
 
-.toggle__input:checked + .toggle__icon {
-  border-color: $purple;
+  &__input:checked + &__icon {
+    border-color: $purple;
 
-  &::before {
-    background: $primary-gradient;
-    transition: 0.1s;
-    transform: translateX(20px);
+    &::before {
+      background: $primary-gradient;
+      transition: 0.1s;
+      transform: translateX(20px);
+    }
   }
 }

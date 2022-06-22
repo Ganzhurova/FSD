@@ -9,12 +9,12 @@
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("./img/registration-bg@2x.jpg");
   }
-}
 
-.registration__wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  padding: 19px 0;
-  @include container;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 19px 0;
+    @include container;
+  }
 }

@@ -1,93 +1,93 @@
 .range {
   width: 266px;
   background-color: $white;
-}
 
-.range__caption {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 23px;
-}
+  &__caption {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+  }
 
-.range__title {
-  padding-top: 1px;
-  margin-right: 30px;
-  @include label-cta-text;
-}
+  &__title {
+    padding-top: 1px;
+    margin-right: 30px;
+    @include label-cta-text;
+  }
 
-.range__price-output {
-  display: block;
-  padding-top: 1px;
-  font-size: 12px;
-  line-height: 14px;
-  color: $dark50;
-}
-
-.irs-hidden-input {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  z-index: -9999 !important;
-  display: block !important;
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  background: none !important;
-  border-color: transparent !important;
-  border-style: solid !important;
-  outline: none !important;
+  &__price-output {
+    display: block;
+    padding-top: 1px;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark50;
+  }
 }
 
 .irs {
   position: relative;
   display: block;
   height: 6px;
-}
 
-.irs-line {
-  position: relative;
-  display: block;
-  width: 266px;
-  height: 6px;
-  pointer-events: none;
-  background-color: $white;
-  border-radius: 3px;
-  outline: none;
-  box-shadow: inset 0 0 0 1px $dark25;
-}
+  &-hidden-input {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -9999 !important;
+    display: block !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    background: none !important;
+    border-color: transparent !important;
+    border-style: solid !important;
+    outline: none !important;
+  }
 
-.irs-min,
-.irs-max,
-.irs-single,
-.irs-from,
-.irs-to {
-  display: none;
-}
+  &-line {
+    position: relative;
+    display: block;
+    width: 266px;
+    height: 6px;
+    pointer-events: none;
+    background-color: $white;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0 0 0 1px $dark25;
+  }
 
-.irs-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 0;
-  height: 6px;
-  pointer-events: none;
-  background: $secondary-gradient;
-  border-radius: 3px;
-}
+  &-min,
+  &-max,
+  &-single,
+  &-from,
+  &-to {
+    display: none;
+  }
 
-.irs-handle {
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  background: $secondary-gradient;
-  border: 2px solid $white;
-  border-radius: 50%;
+  &-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 6px;
+    pointer-events: none;
+    background: $secondary-gradient;
+    border-radius: 3px;
+  }
+
+  &-handle {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: $secondary-gradient;
+    border: 2px solid $white;
+    border-radius: 50%;
+  }
 }
