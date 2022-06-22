@@ -18,20 +18,6 @@ body {
   @include base-text;
 }
 
-/* Удаление красной обводки при валидации форм */
-
-:invalid {
-  box-shadow: none;
-}
-
-:-moz-submit-invalid {
-  box-shadow: none;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
 /* Класс для доступного скрытия элемента */
 
 .visually-hidden:not(:focus):not(:active),
