@@ -51,5 +51,19 @@
     background-color: inherit;
     border: 0;
     @include label-cta-text;
+
+    /* Убирает стрелки из поля input type number */
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+
+    &,
+    &:hover,
+    &:focus {
+      appearance: textfield;
+    }
   }
 }
