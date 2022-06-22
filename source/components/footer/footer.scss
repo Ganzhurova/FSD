@@ -123,6 +123,8 @@
   }
 
   &__title {
+    @include title-section;
+
     @media (min-width: $sm) {
       padding-top: 1px;
       margin-bottom: 5px;

@@ -58,6 +58,8 @@
   }
 
   &__title {
+    @include title-section;
+
     padding-top: 7px;
     line-height: 27.36px;
   }

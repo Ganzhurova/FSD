@@ -11,6 +11,8 @@
   }
 
   &__title {
+    @include title-section;
+
     flex-shrink: 0;
     margin-right: 20px;
   }

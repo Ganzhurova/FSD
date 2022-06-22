@@ -18,10 +18,6 @@ body {
   @include base-text;
 }
 
-h2 {
-  @include title-section;
-}
-
 fieldset {
   padding: 0;
   border: 0;

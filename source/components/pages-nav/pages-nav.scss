@@ -12,6 +12,8 @@
   }
 
   &__title {
+    @include title-section;
+
     padding-left: 20px;
     margin-bottom: 20px;
     text-align: center;

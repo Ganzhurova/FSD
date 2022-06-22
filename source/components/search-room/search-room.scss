@@ -2,6 +2,8 @@
   @include card;
 
   &__title {
+    @include title-section;
+
     padding-top: 1px;
     margin-bottom: 21px;
   }
