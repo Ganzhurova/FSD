@@ -5,35 +5,31 @@
 
 .form-element {
   margin-bottom: var(--margin-bottom);
-}
 
-.form-element__category {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1px;
-  margin-bottom: var(--category-margin-bottom);
-  text-transform: uppercase;
-}
+  &__category {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1px;
+    margin-bottom: var(--category-margin-bottom);
+    text-transform: uppercase;
+  }
 
-.form-element__title {
-  @include label-cta-text;
-}
+  &__title {
+    @include label-cta-text;
+  }
 
-.form-element__state {
-  display: block;
-  font-size: 12px;
-  line-height: 14px;
-  color: $dark50;
-}
+  &__state {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark50;
+  }
 
-.form-element--filter-date-dropdown {
-  .form-element__content {
+  &--filter-date-dropdown &__content {
     width: 266px;
   }
-}
 
-.form-element--buttons {
-  .form-element__content button {
+  &--buttons &__content button {
     &:not(:last-child) {
       margin-bottom: 30px;
     }
@@ -42,65 +38,51 @@
       margin-bottom: 31px;
     }
   }
-}
 
-.form-element--checkbox {
-  .form-element__content .checkbox {
+  &--rich-checkbox &__content .checkbox {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--checkbox &__content .checkbox {
     &:not(:last-child) {
       margin-bottom: 11px;
     }
   }
-}
 
-.form-element--radio {
-  .form-element__content {
+  &--radio &__content {
     display: flex;
 
     & .radio:first-child {
       margin-right: 20px;
     }
   }
-}
 
-.form-element--toggle {
-  .form-element__content .toggle {
+  &--toggle &__content .toggle {
     &:not(:last-child) {
       margin-bottom: 14px;
     }
   }
-}
 
-.form-element--rich-checkbox {
-  /* stylelint-disable-next-line no-descending-specificity */
-  .form-element__content .checkbox {
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
-}
-
-.form-element--like {
-  .form-element__content {
+  &--like &__content {
     display: flex;
 
     & .like:first-child {
       margin-right: 10px;
     }
   }
-}
 
-.form-element--rate {
-  .form-element__content {
+  &--rate &__content {
     display: flex;
 
     & .rating:first-child {
       margin-right: 20px;
     }
   }
-}
 
-.form-element--check-list {
-  .form-element__content .check-list {
+  &--check-list &__content .check-list {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
