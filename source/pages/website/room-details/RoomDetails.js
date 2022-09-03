@@ -1,4 +1,4 @@
-import initCharts from '../../../components/chart/chart';
+import initCharts from '../../../components/chart/Chart';
 import initReservation from '../../../components/reservation/initReservation';
 import roomDetailsTmpl from '../../../components/room-details/template.pug';
 import data from './data.json';
