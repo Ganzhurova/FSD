@@ -29,7 +29,7 @@ class Chart {
   }
 
   getData() {
-    this.segments.forEach(segment => {
+    this.segments.forEach((segment) => {
       const value = Number(segment.dataset.total);
       this.data.push(value);
     });
@@ -48,7 +48,7 @@ class Chart {
   }
 
   getPercentage() {
-    this.percentage = this.data.map(item => item / this.total);
+    this.percentage = this.data.map((item) => item / this.total);
   }
 
   getOffset(percent) {
