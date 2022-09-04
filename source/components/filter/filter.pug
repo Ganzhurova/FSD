@@ -4,9 +4,6 @@ include ../range/range
 include ../checkbox/checkbox
 include ../check-list/check-list
 
-mixin number
-  span.filter__total-number 1234
-
 section.filter.js-filter(data-name="filter")
   .filter__overlay
   .filter__body
@@ -49,4 +46,4 @@ section.filter.js-filter(data-name="filter")
             +dropdown({mode: "comfort", input: {label: "Удобства номера"}})
           .filter__item.filter__item_amenities
             +checkList("Дополнительные удобства", "additionalAmenities")
-        +button({text: "Показать", mode: "colored", attributes: { class: "filter__show-btn" }, inner: "number"})
+        +button({text: "Показать", mode: "colored", attributes: { class: "filter__show-btn" }})
