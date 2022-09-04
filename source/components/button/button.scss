@@ -47,7 +47,6 @@
 
   &_bordered {
     padding: 13px 18px;
-    color: $primary-color;
     background-image: linear-gradient($white, $white), $primary-gradient;
     background-repeat: no-repeat, no-repeat;
     background-clip: padding-box, border-box;
@@ -78,14 +77,13 @@
     }
   }
 
-  &_with-arrow {
-    position: relative;
+  &_wide {
     width: 100%;
     max-width: 320px;
-    padding: 15px 20px;
-    color: $white;
-    background: $primary-gradient;
-    border-radius: 22px;
+  }
+
+  &_with-arrow {
+    position: relative;
 
     &::after {
       position: absolute;
@@ -95,12 +93,6 @@
       transform: translateY(-50%);
 
       @include material-icons;
-    }
-
-    &:hover,
-    &:focus {
-      background: $primary-translucent-gradient;
-      outline: none;
     }
   }
 }

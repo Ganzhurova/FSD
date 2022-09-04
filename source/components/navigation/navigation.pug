@@ -18,7 +18,7 @@ mixin navigation(userName)
             a.nav__user(href="/mock-address/change-me")= userName
         else
           li.nav__item
-            +button({link: "login.html", mode: ["bordered", "thin"], text: "Войти", })
+            +button({link: "login.html", mode: ["text", "bordered", "thin"], text: "Войти", })
           li.nav__item
             +button({link: "registration.html", mode: ["colored", "thin"], text: "Зарегистрироваться", })
 

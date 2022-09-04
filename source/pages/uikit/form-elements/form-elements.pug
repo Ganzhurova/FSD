@@ -34,7 +34,6 @@ block content
       +formElement({mb: 40,})
         +textField({ label: "Masked text field", labelVisually: true, isDateMask: true })
       +formElement({mb: 41, mix: "date-dropdown"})
-        //- +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown", attributes: {"data-from": "2019-08-15"}}, inputTo: { label: "Date Dropdown", attributes:{"data-to": "2019-08-19"} } })
         +dropdown({ mode: "range", inputFrom: {label: "Date Dropdown"}, inputTo: { label: "Date Dropdown", } })
       +formElement({mb: 41, mix: "filter-date-dropdown"})
         +dropdown({ mode: "filter", input: { label: "Filter date dropdown", attributes: {"data-from": "2019-08-15", "data-to": "2019-08-23"}} })
@@ -64,9 +63,9 @@ block content
         +range("Range slider")
       +formElement({title: "Buttons", categoryMb: 16, mb: 41, mix: "buttons"})
         +button({ text: "Click me", mode: "colored", attributes: {type: "button"} })
-        +button({ text: "Click me", mode: "bordered", attributes: {type: "button"} })
+        +button({ text: "Click me", mode: ["text", "bordered"], attributes: {type: "button"} })
         +button({ text: "Click me", mode: "text", attributes: {type: "button"} })
-        +button({ text: "Перейти к оплате", mode: "with-arrow", attributes: {type: "button"} })
+        +button({ text: "Перейти к оплате", mode: ["colored", "wide", "with-arrow"], attributes: {type: "button"} })
       +formElement({title: "Pagination", categoryMb: 16.44, mb: 40})
         +pagination
 
