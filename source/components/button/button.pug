@@ -3,12 +3,12 @@ mixin button(options={})
     let classes = []
     if (options.mode)
       if(Array.isArray(options.mode))
-        classes = options.mode.map(mode => `button--${mode}`)
+        classes = options.mode.map(mode => `button_${mode}`)
       else
-        classes.push(`button--${options.mode}`);
+        classes.push(`button_${options.mode}`);
 
     if (options.icon)
-      classes.push("button--icon")
+      classes.push("button_icon")
 
   if (options.link)
     a.button(class=classes, href=options.link)&attributes(options.attributes)= options.text

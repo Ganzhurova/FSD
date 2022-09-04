@@ -9,14 +9,14 @@
 
   @include label-cta-text;
 
-  &--icon {
+  &_icon {
     position: relative;
     flex-shrink: 0;
     width: 44px;
     height: 42px;
   }
 
-  &--icon &__icon {
+  &_icon &__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,7 +27,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &--colored {
+  &_colored {
     padding: 15px 20px;
     color: $white;
     background-image: $primary-gradient;
@@ -40,12 +40,12 @@
     }
   }
 
-  &--colored#{&}--thin {
+  &_colored#{&}_thin {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  &--bordered {
+  &_bordered {
     padding: 13px 18px;
     color: $primary-color;
     background-image: linear-gradient($white, $white), $primary-gradient;
@@ -63,12 +63,12 @@
     }
   }
 
-  &--bordered#{&}--thin {
+  &_bordered#{&}_thin {
     padding-top: 8px;
     padding-bottom: 8px;
   }
 
-  &--text {
+  &_text {
     color: $primary-color;
 
     &:hover,
@@ -78,7 +78,7 @@
     }
   }
 
-  &--with-arrow {
+  &_with-arrow {
     position: relative;
     width: 100%;
     max-width: 320px;
