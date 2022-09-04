@@ -1,0 +1,27 @@
+mixin content(name)
+  main
+    section.content
+      .content__wrapper(class=name ? `content__wrapper--${name}` : "")
+        if (h1)
+          h1.content__title= h1
+        else
+          h1.visually-hidden= pageTitle
+        block
+
+mixin contentSection(options)
+  if !options
+    - options = {};
+
+  - let classes = [];
+
+  if options.name
+    - classes.push(`content__section--${options.name}`);
+
+  if options.row
+    - classes.push("content__section--row");
+
+  if options.mix
+    - classes.push(`content__section--${options.mix}`);
+
+  .content__section(class=classes)
+    block

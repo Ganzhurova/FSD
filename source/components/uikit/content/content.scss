@@ -1,0 +1,131 @@
+.content {
+  min-width: 320px;
+  background-color: inherit;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 140px;
+
+    @include container;
+
+    &--cards {
+      padding-top: 10px;
+    }
+
+    &--form-elements {
+      padding-top: 3px;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    color: $title-color;
+    text-align: center;
+
+    @include montserrat-bold;
+
+    @media (max-width: $md) {
+      text-align: center;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &--row {
+      flex-direction: row;
+    }
+  }
+
+  &__section--form-elements {
+    &:nth-child(2) {
+      width: 320px;
+    }
+
+    &:nth-child(3) {
+      width: 320px;
+      padding-left: 27px;
+    }
+
+    &:nth-child(4) {
+      width: 320px;
+    }
+
+    &:nth-child(5) {
+      align-items: flex-start;
+    }
+
+    &:nth-child(6) {
+      & .form-element {
+        width: 320px;
+      }
+    }
+
+    &:nth-child(8) {
+      padding-top: 14px;
+
+      & .form-element {
+        width: 320px;
+      }
+
+      & .form-element:nth-child(1) {
+        margin-right: 72px;
+      }
+    }
+
+    &:nth-child(6),
+    &:nth-child(8) {
+      & .form-element:nth-child(1) {
+        margin-right: 72px;
+      }
+    }
+
+    &:nth-child(9) {
+      & .form-element:nth-child(1) {
+        margin-right: 156px;
+      }
+
+      & .form-element:nth-child(2) {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  &__section--cards {
+    &:nth-child(2) > :nth-child(1n) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(3) {
+      padding-top: 1px;
+
+      & > :nth-child(1n) {
+        margin-bottom: 39px;
+      }
+    }
+
+    &:nth-child(4) {
+      & .calendar {
+        margin-bottom: 42px;
+      }
+
+      & .room {
+        margin-bottom: 39.5px;
+      }
+    }
+  }
+
+  &-header {
+    margin-bottom: 40px;
+  }
+
+  &-footer {
+    margin-bottom: 140px;
+  }
+}

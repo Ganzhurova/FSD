@@ -1,0 +1,90 @@
+:root {
+  --margin-bottom: 0;
+  --category-margin-bottom: 5px;
+}
+
+.form-element {
+  margin-bottom: var(--margin-bottom);
+
+  &__category {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1px;
+    margin-bottom: var(--category-margin-bottom);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include label-cta-text;
+  }
+
+  &__state {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark50;
+  }
+
+  &--filter-date-dropdown &__content {
+    width: 266px;
+  }
+
+  &--buttons &__content button {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &--rich-checkbox &__content .checkbox {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--checkbox &__content .checkbox {
+    &:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+
+  &--radio &__content {
+    display: flex;
+
+    & .radio:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &--toggle &__content .toggle {
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &--like &__content {
+    display: flex;
+
+    & .like:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &--rate &__content {
+    display: flex;
+
+    & .rating:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &--check-list &__content .check-list {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
