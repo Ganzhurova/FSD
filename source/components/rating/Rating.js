@@ -2,7 +2,7 @@ class Rating {
   constructor() {
     this.value = 0;
     this.starWidthPercent = 20;
-    this.voteClassName = 'rating--vote';
+    this.voteClassName = 'rating_vote';
   }
 
   init(el) {

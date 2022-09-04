@@ -25,11 +25,11 @@
     color: $dark50;
   }
 
-  &--filter-date-dropdown &__content {
+  &_filter-date-dropdown &__content {
     width: 266px;
   }
 
-  &--buttons &__content button {
+  &_buttons &__content button {
     &:not(:last-child) {
       margin-bottom: 30px;
     }
@@ -39,20 +39,20 @@
     }
   }
 
-  &--rich-checkbox &__content .checkbox {
+  &_rich-checkbox &__content .checkbox {
     &:not(:last-child) {
       margin-bottom: 10px;
     }
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  &--checkbox &__content .checkbox {
+  &_checkbox &__content .checkbox {
     &:not(:last-child) {
       margin-bottom: 11px;
     }
   }
 
-  &--radio &__content {
+  &_radio &__content {
     display: flex;
 
     & .radio:first-child {
@@ -60,13 +60,13 @@
     }
   }
 
-  &--toggle &__content .toggle {
+  &_toggle &__content .toggle {
     &:not(:last-child) {
       margin-bottom: 14px;
     }
   }
 
-  &--like &__content {
+  &_like &__content {
     display: flex;
 
     & .like:first-child {
@@ -74,7 +74,7 @@
     }
   }
 
-  &--rate &__content {
+  &_rate &__content {
     display: flex;
 
     & .rating:first-child {
@@ -82,7 +82,7 @@
     }
   }
 
-  &--check-list &__content .check-list {
+  &_check-list &__content .check-list {
     &:not(:last-child) {
       margin-bottom: 20px;
     }

@@ -47,30 +47,30 @@
     background-color: $white;
   }
 
-  &--small {
+  &_small {
     width: 266px;
   }
 
-  &--small &__input {
+  &_small &__input {
     padding-right: 90px;
   }
 
-  &--hidden &__body {
+  &_hidden &__body {
     visibility: hidden;
     opacity: 0;
     transition: all 0.2s ease;
     transform: translateY(-10px);
   }
 
-  &--show {
+  &_show {
     box-shadow: 0 10px 20px 0 $dark05;
   }
 
-  &--show &__input {
+  &_show &__input {
     border-color: $dark50;
   }
 
-  &--show &__body {
+  &_show &__body {
     visibility: visible;
     box-shadow: 0 10px 20px 0 $dark05;
     opacity: 1;
@@ -78,11 +78,11 @@
     transform: translateY(0);
   }
 
-  &--joint#{&}--show &__input {
+  &_joint#{&}_show &__input {
     border-radius: 4px 4px 0 0;
   }
 
-  &--separated#{&}--show &__body {
+  &_separated#{&}_show &__body {
     top: calc(100% + 5.56px);
   }
 }

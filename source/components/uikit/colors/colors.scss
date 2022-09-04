@@ -24,31 +24,31 @@
     margin-right: 40px;
     border-radius: 6px;
 
-    &--dark {
+    &_dark {
       background-color: $dark;
     }
 
-    &--dark75 {
+    &_dark75 {
       background-color: $dark75;
     }
 
-    &--dark50 {
+    &_dark50 {
       background-color: $dark50;
     }
 
-    &--dark25 {
+    &_dark25 {
       background-color: $dark25;
     }
 
-    &--dark05 {
+    &_dark05 {
       background-color: $dark05;
     }
 
-    &--purple {
+    &_purple {
       background-color: $purple;
     }
 
-    &--green {
+    &_green {
       background-color: $green;
     }
   }

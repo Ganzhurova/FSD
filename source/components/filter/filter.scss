@@ -24,7 +24,7 @@
     }
   }
 
-  &__toggle--filter {
+  &__toggle_filter {
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -43,7 +43,7 @@
     color: $dark50;
   }
 
-  &__toggle--close {
+  &__toggle_close {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -97,7 +97,7 @@
     }
   }
 
-  &__item--dates {
+  &__item_dates {
     margin-bottom: 20px;
 
     @media (max-width: $lg) {
@@ -105,7 +105,7 @@
     }
   }
 
-  &__item--amenities {
+  &__item_amenities {
     margin-top: -15px;
   }
 
@@ -161,39 +161,39 @@
   }
 
   @media (max-width: $lg) {
-    &--closed {
+    &_closed {
       position: relative;
     }
 
-    &--closed &__body {
+    &_closed &__body {
       position: absolute;
       box-shadow: none;
       transition: transform 0.1s linear 0s;
       transform: translateY(-150%);
     }
 
-    &--closed &__toggle {
+    &_closed &__toggle {
       position: absolute;
       top: 150%;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    &--closed &__toggle--close {
+    &_closed &__toggle_close {
       display: none;
     }
 
-    &--closed &__toggle--filter {
+    &_closed &__toggle_filter {
       display: flex;
     }
 
-    &--closed &__overlay {
+    &_closed &__overlay {
       display: none;
       opacity: 0;
       transition: all 0.3s;
     }
 
-    &--opened &__body {
+    &_opened &__body {
       position: fixed;
       top: 0;
       left: 0;
@@ -204,19 +204,19 @@
       transform: translateY(0);
     }
 
-    &--opened &__toggle {
+    &_opened &__toggle {
       margin-left: auto;
     }
 
-    &--opened &__toggle--close {
+    &_opened &__toggle_close {
       display: block;
     }
 
-    &--opened &__toggle--filter {
+    &_opened &__toggle_filter {
       display: none;
     }
 
-    &--opened &__overlay {
+    &_opened &__overlay {
       display: block;
       opacity: 1;
       transition: all 0.3s;

@@ -6,8 +6,8 @@ class Dropdown extends BaseDropdown {
   constructor(el, parent, key) {
     const options = {
       targetSelector: '.js-dropdown-input',
-      closeClass: 'dropdown--hidden',
-      openClass: 'dropdown--show',
+      closeClass: 'dropdown_hidden',
+      openClass: 'dropdown_show',
     };
     super(el, options);
 

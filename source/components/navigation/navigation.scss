@@ -41,8 +41,8 @@
     }
   }
 
-  &__toggle--menu,
-  &__toggle--close {
+  &__toggle_menu,
+  &__toggle_close {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -66,7 +66,7 @@
     }
   }
 
-  &__list--site {
+  &__list_site {
     flex-wrap: wrap;
 
     @media (max-width: $lg) {
@@ -157,7 +157,7 @@
     }
   }
 
-  &__item--sub {
+  &__item_sub {
     position: relative;
 
     .nav__link {
@@ -210,29 +210,29 @@
   }
 
   @media (max-width: $lg) {
-    &--closed &__toggle--close {
+    &_closed &__toggle_close {
       display: none;
     }
 
-    &--closed &__toggle--menu {
+    &_closed &__toggle_menu {
       display: block;
     }
 
-    &--closed &__wrapper {
+    &_closed &__wrapper {
       visibility: hidden;
       opacity: 0;
       transition: all 0.3s;
     }
 
-    &--opened &__toggle--close {
+    &_opened &__toggle_close {
       display: block;
     }
 
-    &--opened &__toggle--menu {
+    &_opened &__toggle_menu {
       display: none;
     }
 
-    &--opened &__wrapper {
+    &_opened &__wrapper {
       visibility: visible;
       opacity: 1;
       transition: all 0.3s;

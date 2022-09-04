@@ -4,8 +4,8 @@ import initDropdowns from '../dropdown/initDropdowns';
 
 initBaseDropdowns('.js-filter', {
   targetSelector: '.js-toggle',
-  closeClass: 'filter--closed',
-  openClass: 'filter--opened',
+  closeClass: 'filter_closed',
+  openClass: 'filter_opened',
 });
 
 initDropdowns('.filter .js-dropdown');

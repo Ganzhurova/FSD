@@ -15,14 +15,14 @@ section.filter.js-filter(data-name="filter")
         type="button",
         aria-label="Открыть фильтр"
       )
-        span.filter__toggle--filter
+        span.filter__toggle_filter
           i.filter__toggle-icon.material-icons filter_list
           span.filter__toggle-text Фильтр
-        i.filter__toggle--close.material-icons close
+        i.filter__toggle_close.material-icons close
       form.filter__form
         h2.visually-hidden Фильтр
         .filter__list
-          .filter__item.filter__item--dates
+          .filter__item.filter__item_dates
             +dropdown({mode: "filter", input: {label: "Даты пребывания в отеле", attributes: { name: "dates", "data-from": "2019-08-19", "data-to": "2019-08-23"} }, })
           .filter__item
             +dropdown({mode: "guests", input: {label: "Гости"}})
@@ -47,6 +47,6 @@ section.filter.js-filter(data-name="filter")
                 +checkbox({ title: "Помощник для инвалидов", text: "На 1 этаже вас встретит специалист<br> и проводит до номера.", attributes: { name: "accessibility-helper", } })
           .filter__item
             +dropdown({mode: "comfort", input: {label: "Удобства номера"}})
-          .filter__item.filter__item--amenities
+          .filter__item.filter__item_amenities
             +checkList("Дополнительные удобства", "additionalAmenities")
         +button({text: "Показать", mode: "colored", attributes: { class: "filter__show-btn" }, inner: "number"})

@@ -4,15 +4,15 @@ mixin navigation(userName)
   include ./navigation-data
   - let menu = locals.navMenu;
 
-  .nav.nav--closed.js-nav(data-name="nav")
+  .nav.nav_closed.js-nav(data-name="nav")
     button.nav__toggle.js-toggle(type="button", aria-label="Открыть меню")
-      i.nav__toggle--menu.material-icons menu
-      i.nav__toggle--close.material-icons close
+      i.nav__toggle_menu.material-icons menu
+      i.nav__toggle_close.material-icons close
     .nav__wrapper
-      ul.nav__list.nav__list--site
+      ul.nav__list.nav__list_site
         each item in menu
           +navigationItem(item)
-      ul.nav__list.nav__list--user
+      ul.nav__list.nav__list_user
         if userName
           li.nav__item
             a.nav__user(href="/mock-address/change-me")= userName
@@ -27,7 +27,7 @@ mixin navigationItem(item)
     li.nav__item
       a.nav__link(href=item.href)= item.title
   else
-    li.nav__item.nav__item--sub
+    li.nav__item.nav__item_sub
       a.nav__link(tabindex="0")= item.title
       ul.nav__sub
         each subItem in item.sub

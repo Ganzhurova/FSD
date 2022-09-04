@@ -55,25 +55,25 @@ $black-gradient: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     }
   }
 
-  &__item--sumptuously {
+  &__item_sumptuously {
     &::before {
       background: $orange-gradient;
     }
   }
 
-  &__item--good {
+  &__item_good {
     &::before {
       background: $secondary-gradient;
     }
   }
 
-  &__item--fine {
+  &__item_fine {
     &::before {
       background: $primary-gradient;
     }
   }
 
-  &__item--badly {
+  &__item_badly {
     &::before {
       background: $black-gradient;
     }

@@ -5,7 +5,7 @@ mixin rating(ratingNum)
   if !ratingNum
     - isVoting = true;
 
-  .rating.js-rating(class=isVoting ? "rating--vote" : "")
+  .rating.js-rating(class=isVoting ? "rating_vote" : "")
     .rating__active(data-rating=ratingNum)
     .rating__list(aria-label=Рейтинг)
       - for (let i = 1; i <= starTotal; i++)

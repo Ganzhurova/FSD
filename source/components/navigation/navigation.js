@@ -3,6 +3,6 @@ import initBaseDropdowns from '../js/dropdown/initBaseDropdowns';
 
 initBaseDropdowns('.js-nav', {
   targetSelector: '.js-toggle',
-  closeClass: 'nav--closed',
-  openClass: 'nav--opened',
+  closeClass: 'nav_closed',
+  openClass: 'nav_opened',
 });

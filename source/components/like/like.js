@@ -2,7 +2,7 @@ import './like.scss';
 
 class Like {
   constructor() {
-    this.activeClass = 'like--actual';
+    this.activeClass = 'like_actual';
   }
 
   init(el) {
@@ -30,7 +30,7 @@ class Like {
 
 function initLikes() {
   const likes = document.querySelectorAll('.js-like-button');
-  likes.forEach(el => {
+  likes.forEach((el) => {
     const like = new Like();
     like.init(el);
   });

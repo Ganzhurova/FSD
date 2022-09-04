@@ -27,14 +27,14 @@
     }
   }
 
-  &--actual {
+  &_actual {
     color: $primary-color;
     background-image: linear-gradient($white, $white), $primary-gradient;
     background-clip: padding-box, border-box;
     border: 1px solid transparent;
   }
 
-  &--actual &__value::before {
+  &_actual &__value::before {
     margin-right: 5px;
     content: "favorite";
   }

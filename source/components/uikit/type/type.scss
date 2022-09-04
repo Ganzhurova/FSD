@@ -17,19 +17,19 @@
     }
   }
 
-  &__item--h1 {
+  &__item_h1 {
     @include title-section;
   }
 
-  &__item--h2 {
+  &__item_h2 {
     @include title-element;
   }
 
-  &__item--h3 {
+  &__item_h3 {
     @include label-cta-text;
   }
 
-  &__item--body {
+  &__item_body {
     @include base-text;
   }
 
