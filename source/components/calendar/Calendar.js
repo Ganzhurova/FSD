@@ -1,5 +1,5 @@
 import DropdownBody from '../dropdown/DropdownBody';
-import getDatepicker from './getDatepicker';
+import getDatepicker from '../../libs/datepicker/getDatepicker';
 
 class Calendar extends DropdownBody {
   constructor(dropdownInstance, options = {}) {
@@ -14,7 +14,7 @@ class Calendar extends DropdownBody {
     const calendarEl = this.el.querySelector('.js-datepicker');
     this.datepicker = getDatepicker(calendarEl);
     this.addHandlerCellSelect();
-    this.updateDatepicer(this.options?.config);
+    this.updateDatepicker(this.options?.config);
     this.selectDate(this.getDates());
   }
 
@@ -35,7 +35,7 @@ class Calendar extends DropdownBody {
     this.datepicker.selectDate(dates);
   }
 
-  updateDatepicer(config) {
+  updateDatepicker(config) {
     if (!config) return;
     this.datepicker.update(config);
   }
@@ -50,7 +50,7 @@ class Calendar extends DropdownBody {
         sendData(formattedDate, dates);
       },
     };
-    this.updateDatepicer(config);
+    this.updateDatepicker(config);
   }
 
   handlerButtonClearClick() {
