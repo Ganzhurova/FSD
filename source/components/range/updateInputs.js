@@ -1,9 +1,5 @@
 /* global $ */
 
-import 'ion-rangeslider';
-import './range.scss';
-
-const $range = $('.js-range-slider');
 const $inputFrom = $('[name="min-price"]');
 const $inputTo = $('[name="max-price"]');
 const $output = $('.js-price-output');
@@ -32,14 +28,4 @@ function updateInputs(data) {
   $output.html(text);
 }
 
-$range.ionRangeSlider({
-  type: 'double',
-  min: 0,
-  max: 15000,
-  from: 5000,
-  to: 10000,
-  step: 100,
-  onStart: updateInputs,
-  onChange: updateInputs,
-  onFinish: updateInputs,
-});
+export default updateInputs;
