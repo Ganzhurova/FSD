@@ -1,0 +1,79 @@
+.paginationjs {
+  a {
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark50;
+    text-decoration: none;
+  }
+
+  &-pages {
+    margin-bottom: 10px;
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      flex-shrink: 0;
+      min-width: 40px;
+
+      @media (max-width: $xs) {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 16.67%;
+        min-width: 30px;
+      }
+
+      &::before {
+        display: block;
+        padding-top: 100%;
+        content: "";
+      }
+    }
+  }
+
+  &-prev a,
+  &-next a,
+  &-page a,
+  &-ellipsis a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+  }
+
+  &-prev a,
+  &-next a {
+    padding: 0;
+    background: $secondary-gradient;
+    border-radius: 50%;
+
+    &::before {
+      color: $white;
+      content: "";
+
+      @include material-icons($display: block);
+    }
+  }
+
+  &-prev a::before {
+    content: "arrow_back";
+  }
+
+  &-next a::before {
+    content: "arrow_forward";
+  }
+
+  &-page.active {
+    background: $primary-gradient;
+    border-radius: 50%;
+
+    & a {
+      color: $white;
+    }
+  }
+}

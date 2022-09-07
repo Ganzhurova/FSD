@@ -11,19 +11,21 @@ class RoomPagination extends Pagination {
   initFooter() {
     this.setFooterText(this.getFooterText());
 
-    this.$el.addHook('afterPaging', () => {
+    this.paginationEl.addHook('afterPaging', () => {
       this.setFooterText(this.getFooterText());
     });
   }
 
   setFooterText(txt) {
-    const footerEl = this.$el[0].querySelector(this.footerSelector);
+    const footerEl = this.paginationEl[0].querySelector(this.footerSelector);
     footerEl.textContent = txt;
   }
 
   getFooterText() {
-    const pageNum = this.$el.pagination('getSelectedPageNum');
-    const dataPageTotal = this.$el.pagination('getSelectedPageData').length;
+    const pageNum = this.paginationEl.pagination('getSelectedPageNum');
+    const dataPageTotal = this.paginationEl.pagination(
+      'getSelectedPageData'
+    ).length;
     const { pageSize } = this.options.config;
     const dataTotal = this.options.data.length;
 

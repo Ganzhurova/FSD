@@ -1,15 +1,13 @@
-import 'paginationjs';
-import getPaginationjsContainer from './getPaginationjsContainer';
+import getPaginationjs from '../../libs/paginationjs/getPaginationjs';
 
 class Pagination {
   constructor(el, options) {
-    this.$el = getPaginationjsContainer(el);
     this.options = options;
 
-    this.initPagination();
+    this.initPagination(el);
   }
 
-  initPagination() {
+  initPagination(el) {
     const dataContainer = document.querySelector(
       this.options.containerSelector
     );
@@ -17,7 +15,7 @@ class Pagination {
     const getTemplate = this.getTemplate.bind(this);
     const { event, eventCallback } = this.options;
 
-    this.$el.pagination({
+    this.paginationEl = getPaginationjs(el, {
       ...config,
       dataSource: this.options.data,
       callback(data) {
