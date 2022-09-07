@@ -1,5 +1,5 @@
 import Rating from '../rating/Rating';
-import initSlickSlider from './initSlickSlider';
+import initSlickSlider from '../../libs/slick-slider/initSlickSlider';
 
 class Room {
   constructor(el) {
