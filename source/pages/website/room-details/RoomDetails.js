@@ -1,4 +1,4 @@
-import initializeCharts from '../../../components/chart/Chart';
+import initializeCharts from '../../../components/chart/initializeCharts';
 import initializeReservation from '../../../components/reservation/initializeReservation';
 import roomDetailsTmpl from '../../../components/room-details/template.pug';
 import data from './data.json';
