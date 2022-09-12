@@ -10,11 +10,11 @@ class Control {
   }
 
   clear() {
-    this.parent.handlerButtonClearClick();
+    this.parent.handleButtonClearClick();
   }
 
   apply() {
-    this.parent.handlerButtonApplyClick();
+    this.parent.handleButtonApplyClick();
   }
 
   hideButtonClear(boolean) {

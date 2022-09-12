@@ -1,6 +1,6 @@
 import RoomDetails from './RoomDetails';
 
-function initRoomDetails(selector) {
+function initializeRoomDetails(selector) {
   const container = document.querySelector(selector);
 
   if (container) {
@@ -8,4 +8,4 @@ function initRoomDetails(selector) {
   }
 }
 
-export default initRoomDetails;
+export default initializeRoomDetails;

@@ -1,11 +1,9 @@
-import './like.scss';
-
 class Like {
   constructor() {
     this.activeClass = 'like_actual';
   }
 
-  init(el) {
+  initialize(el) {
     this.like = el;
     this.likeValue = el.querySelector('.js-like__value');
     this.value = Number(this.likeValue.innerHTML);
@@ -28,16 +26,16 @@ class Like {
   }
 }
 
-function initLikes() {
+function initializeLikes() {
   const likes = document.querySelectorAll('.js-like-button');
   likes.forEach((el) => {
     const like = new Like();
-    like.init(el);
+    like.initialize(el);
   });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  initLikes();
+  initializeLikes();
 });
 
-export default initLikes;
+export default initializeLikes;

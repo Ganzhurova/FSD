@@ -16,10 +16,10 @@ class Reservation {
     this.reservationButton = this.el.querySelector('.js-button');
 
     this.setOutputs();
-    this.init();
+    this.initialize();
   }
 
-  init() {
+  initialize() {
     this.rangeDropdown = new Dropdown(
       this.el.querySelector('.js-range-dropdown'),
       this,

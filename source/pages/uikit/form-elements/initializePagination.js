@@ -4,7 +4,7 @@ import paginationConfig from '../../../components/pagination/paginationConfig';
 
 import roomsData from '../../website/search/rooms-data.json';
 
-function initPagination(selector) {
+function initializePagination(selector) {
   const paginationEl = document.querySelector(selector);
   if (paginationEl) {
     $(paginationEl).pagination({
@@ -14,4 +14,4 @@ function initPagination(selector) {
   }
 }
 
-export default initPagination;
+export default initializePagination;

@@ -1,7 +1,7 @@
-import initRoomPaginations from '../../../components/pagination/initRoomPaginations';
+import initializeRoomPaginations from '../../../components/pagination/initializeRoomPaginations';
 import paginationConfig from '../../../components/pagination/paginationConfig';
+import initializeRooms from '../../../components/room/initializeRooms';
 import roomTmpl from '../../../components/room/template.pug';
-import initRooms from '../../../components/room/initRooms';
 import roomsData from './rooms-data.json';
 
 import './search.scss';
@@ -13,8 +13,11 @@ const paginationOptions = {
   containerSelector: '.js-data-container',
   event: 'afterPaging',
   eventCallback: () => {
-    initRooms('.js-data-container .js-room');
+    initializeRooms('.js-data-container .js-room');
   },
 };
 
-initRoomPaginations('.search__pagination .js-pagination', paginationOptions);
+initializeRoomPaginations(
+  '.search__pagination .js-pagination',
+  paginationOptions
+);

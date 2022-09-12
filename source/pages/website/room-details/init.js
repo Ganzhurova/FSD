@@ -1,3 +1,3 @@
-import initRoomDetails from './initRoomDetails';
+import initializeRoomDetails from './initializeRoomDetails';
 
-initRoomDetails('.js-room-details');
+initializeRoomDetails('.js-room-details');

@@ -4,10 +4,10 @@ class Pagination {
   constructor(el, options) {
     this.options = options;
 
-    this.initPagination(el);
+    this.initializePagination(el);
   }
 
-  initPagination(el) {
+  initializePagination(el) {
     const dataContainer = document.querySelector(
       this.options.containerSelector
     );

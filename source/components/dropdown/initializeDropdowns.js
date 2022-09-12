@@ -1,10 +1,10 @@
 import Dropdown from './Dropdown';
 
-function initDropdowns(selector) {
+function initializeDropdowns(selector) {
   const dropdowns = [...document.querySelectorAll(selector)];
   dropdowns.forEach((dropdown) => {
     (() => new Dropdown(dropdown))();
   });
 }
 
-export default initDropdowns;
+export default initializeDropdowns;
