@@ -1,7 +1,7 @@
 import './navigation.scss';
-import initBaseDropdowns from '../js/dropdown/initBaseDropdowns';
+import initializeBaseDropdowns from '../js/dropdown/initializeBaseDropdowns';
 
-initBaseDropdowns('.js-nav', {
+initializeBaseDropdowns('.js-nav', {
   targetSelector: '.js-toggle',
   closeClass: 'nav_closed',
   openClass: 'nav_opened',

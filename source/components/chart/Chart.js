@@ -1,5 +1,5 @@
-import './chart.scss';
 import declensionNouns from '../helper/declensionNouns';
+import './chart.scss';
 
 class Chart {
   constructor() {
@@ -14,7 +14,7 @@ class Chart {
     this.textForms = ['голос', 'голоса', 'голосов'];
   }
 
-  init(el) {
+  initialize(el) {
     this.chart = el;
     this.segments = this.chart.querySelectorAll('.js-segment');
     this.totalEl = el.querySelector('.js-total-number');
@@ -80,13 +80,13 @@ class Chart {
   }
 }
 
-function initCharts() {
+function initializeCharts() {
   const charts = document.querySelectorAll('.js-chart');
 
   for (let i = 0; i < charts.length; i += 1) {
     const chart = new Chart();
-    chart.init(charts[i]);
+    chart.initialize(charts[i]);
   }
 }
 
-export default initCharts;
+export default initializeCharts;

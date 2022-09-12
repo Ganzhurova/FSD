@@ -7,10 +7,10 @@ class DropdownBody {
     this.el = this.parent.el.querySelector(this.options.bodySelector);
     this.control = null;
 
-    this.initControl();
+    this.initializeControl();
   }
 
-  initControl() {
+  initializeControl() {
     if (!this.options.control) return;
 
     const controlEl = this.el.querySelector('.js-control');

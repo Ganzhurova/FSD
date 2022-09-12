@@ -10,10 +10,10 @@ class BaseDropdown {
     this.options = options;
     this.currentTarget = null;
 
-    this.init();
+    this.initialize();
   }
 
-  init() {
+  initialize() {
     this.close();
     this.addEventListeners();
     this.addDataHandlers();
@@ -24,7 +24,7 @@ class BaseDropdown {
     this.el.classList.add(this.options.openClass);
     this.isOpen = true;
 
-    document.body.addEventListener('click', this.handlerBodyClick);
+    document.body.addEventListener('click', this.handleBodyClick);
   }
 
   close() {
@@ -32,10 +32,10 @@ class BaseDropdown {
     this.el.classList.add(this.options.closeClass);
     this.isOpen = false;
 
-    document.body.removeEventListener('click', this.handlerBodyClick);
+    document.body.removeEventListener('click', this.handleBodyClick);
   }
 
-  handlerTargetToggle(evt) {
+  handleTargetToggle(evt) {
     if (
       !this.el.contains(evt.target) ||
       !evt.target.closest(this.options.targetSelector)
@@ -48,11 +48,11 @@ class BaseDropdown {
     }
   }
 
-  handlerDropdownClick(evt) {
+  handleDropdownClick(evt) {
     this.currentTarget = evt.currentTarget;
   }
 
-  handlerBodyClick() {
+  handleBodyClick() {
     if (this.currentTarget === this.el) {
       this.currentTarget = null;
       return;
@@ -62,12 +62,12 @@ class BaseDropdown {
   }
 
   addEventListeners() {
-    this.handlerTargetToggle = this.handlerTargetToggle.bind(this);
-    this.handlerBodyClick = this.handlerBodyClick.bind(this);
-    this.handlerDropdownClick = this.handlerDropdownClick.bind(this);
+    this.handleTargetToggle = this.handleTargetToggle.bind(this);
+    this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.handleDropdownClick = this.handleDropdownClick.bind(this);
 
-    this.el.addEventListener('click', this.handlerTargetToggle);
-    this.el.addEventListener('click', this.handlerDropdownClick);
+    this.el.addEventListener('click', this.handleTargetToggle);
+    this.el.addEventListener('click', this.handleDropdownClick);
   }
 
   addDataHandlers() {

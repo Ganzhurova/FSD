@@ -1,7 +1,7 @@
-import initDropdowns from '../../../components/dropdown/initDropdowns';
-import initRatings from '../../../components/rating/initRatings';
-import initPagination from './initPagination';
+import initializeDropdowns from '../../../components/dropdown/initializeDropdowns';
+import initializeRatings from '../../../components/rating/initializeRatings';
+import initializePagination from './initializePagination';
 
-initDropdowns('.uikit-page .form-element .js-dropdown');
-initRatings('.uikit-page .form-element .js-rating');
-initPagination('.uikit-page .form-element .js-pagination');
+initializeDropdowns('.uikit-page .form-element .js-dropdown');
+initializeRatings('.uikit-page .form-element .js-rating');
+initializePagination('.uikit-page .form-element .js-pagination');

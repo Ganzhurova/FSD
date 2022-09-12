@@ -1,5 +1,5 @@
-import helpers from '../../helpers/helpers';
 import DropdownBody from '../dropdown/DropdownBody';
+import helpers from '../../helpers/helpers';
 import Total from '../total/Total';
 
 class TotalList extends DropdownBody {
@@ -8,10 +8,10 @@ class TotalList extends DropdownBody {
     this.totals = [];
     this.items = {};
 
-    this.initTotals();
+    this.initializeTotals();
   }
 
-  initTotals() {
+  initializeTotals() {
     const totalClass = '.js-total';
     const totalsEl = this.el.querySelectorAll(totalClass);
 
@@ -60,13 +60,13 @@ class TotalList extends DropdownBody {
       .join(', ');
   }
 
-  handlerButtonClearClick() {
+  handleButtonClearClick() {
     this.totals.forEach((total) => {
       total.setValue(0);
     });
   }
 
-  handlerButtonApplyClick() {
+  handleButtonApplyClick() {
     this.parent.close();
   }
 }

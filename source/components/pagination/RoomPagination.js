@@ -5,10 +5,10 @@ class RoomPagination extends Pagination {
     super(el, options);
     this.footerSelector = '.js-footer';
 
-    this.initFooter();
+    this.initializeFooter();
   }
 
-  initFooter() {
+  initializeFooter() {
     this.setFooterText(this.getFooterText());
 
     this.paginationEl.addHook('afterPaging', () => {

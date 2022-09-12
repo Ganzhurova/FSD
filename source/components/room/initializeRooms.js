@@ -1,10 +1,10 @@
 import Room from './Room';
 
-function initRooms(selector) {
+function initializeRooms(selector) {
   const rooms = [...document.querySelectorAll(selector)];
   rooms.forEach((room) => {
     (() => new Room(room))();
   });
 }
 
-export default initRooms;
+export default initializeRooms;

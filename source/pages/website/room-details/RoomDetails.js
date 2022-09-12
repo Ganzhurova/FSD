@@ -1,5 +1,5 @@
-import initCharts from '../../../components/chart/Chart';
-import initReservation from '../../../components/reservation/initReservation';
+import initializeCharts from '../../../components/chart/Chart';
+import initializeReservation from '../../../components/reservation/initializeReservation';
 import roomDetailsTmpl from '../../../components/room-details/template.pug';
 import data from './data.json';
 
@@ -7,13 +7,13 @@ class RoomDetails {
   constructor(containerEl) {
     this.containerEl = containerEl;
 
-    this.init();
+    this.initialize();
   }
 
-  init() {
+  initialize() {
     this.insertTemplate();
-    initCharts();
-    initReservation('.js-reservation', data.info);
+    initializeCharts();
+    initializeReservation('.js-reservation', data.info);
   }
 
   insertTemplate() {

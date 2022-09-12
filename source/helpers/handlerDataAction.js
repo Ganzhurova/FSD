@@ -1,5 +1,5 @@
 const handlerDataAction = {
-  handlerDataAction(evt) {
+  handleDataAction(evt) {
     const { action } = evt.target.dataset;
 
     if (action && this[action]) {
@@ -8,9 +8,9 @@ const handlerDataAction = {
   },
 
   addDataActionListener() {
-    this.handlerDataAction = this.handlerDataAction.bind(this);
+    this.handleDataAction = this.handleDataAction.bind(this);
 
-    this.el.addEventListener('click', this.handlerDataAction);
+    this.el.addEventListener('click', this.handleDataAction);
   },
 };
 
