@@ -2,26 +2,26 @@ include ../dropdown/dropdown
 include ../button/button
 include ../tooltip/tooltip
 
-mixin reservation(options={})
+mixin reservation({number, category, price, arrival, departure, guests})
   section.reservation.js-reservation
     form#reservation-form.reservation__info
       .reservation__header
         h2.reservation__title
-          span.reservation__number= options.number
-          span.reservation__class= options.category
+          span.reservation__number= number
+          span.reservation__class= category
         span.reservation__cost
-          span.reservation__price= options.price
+          span.reservation__price= price
           | в сутки
       .reservation__dates
-        +dropdown({ mode: "range", attributes: {class: ["js-range-dropdown"]}, inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, "data-from": options.arrival } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true, "data-to": options.departure } }})
+        +dropdown({ mode: "range", attributes: {class: ["js-range-dropdown"]}, inputFrom: { label: "Прибытие", attributes: { name: "arrival", required: true, "data-from": arrival } }, inputTo: {label: "Выезд", attributes: {name: "departure", required: true, "data-to": departure } }})
       .reservation__guests
-        +dropdown({ mode: "guests", attributes: {class: ["js-guests-dropdown"]}, input: {label: "Гости"}, body: options.guests })
+        +dropdown({ mode: "guests", attributes: {class: ["js-guests-dropdown"]}, input: {label: "Гости"}, body: guests })
     .reservation__order
       ul.reservation__calculation
         li.reservation__row
           .reservation__category
             p.reservation__text
-              span.reservation__order-price= options.price
+              span.reservation__order-price= price
               | &nbsp;х&nbsp;
               span.reservation__duration(data-days)
           span.reservation__subtotal(data-subtotal="calculation")
@@ -39,4 +39,4 @@ mixin reservation(options={})
       .reservation__sum
         span.reservation__sum-text Итого
         span.reservation__total(data-total)
-    +button({text: "Забронировать", mode: ["colored", "wide", "with-arrow"], attributes: {class: ["js-button"], type: "submit", form: "reservation-form"} })
+    +button({text: "Забронировать", mode: ["colored", "size_wide", "with-arrow"], attributes: {class: ["js-button"], type: "submit", form: "reservation-form"} })

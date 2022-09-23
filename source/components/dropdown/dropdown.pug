@@ -21,9 +21,8 @@ mixin dropdown(options={})
           +#{dropdown.body.name}(helpers.merge(dropdown.body.data, options.body))
 
 mixin dropdownInput(options={})
-  if !options.attributes
-    - options.attributes = {};
+  - const { label, ...rest } = options;
 
   label
-    span.dropdown__label= options.label
-    +input(options)
+    span.dropdown__label= label
+    +input(rest)

@@ -1,16 +1,10 @@
-mixin checkbox(options)
-  if !options
-    - options = {};
-
-  if !options.attributes
-    - options.attributes = {};
-
+mixin checkbox({title, text, attributes: checkboxAttributes})
   label.checkbox
-    input.checkbox__input.visually-hidden(type="checkbox")&attributes(options.attributes)
+    input.checkbox__input.visually-hidden(type="checkbox")&attributes(checkboxAttributes)
     span.checkbox__icon
-    if options.title
+    if title
       span.checkbox__desc
-        span.checkbox__title!= options.title
-        span.checkbox__text!= options.text
+        span.checkbox__title!= title
+        span.checkbox__text!= text
     else
-      != options.text
+      != text

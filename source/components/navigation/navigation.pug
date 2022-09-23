@@ -11,28 +11,22 @@ mixin navigation(userName)
     .nav__wrapper
       ul.nav__list.nav__list_site
         each item in menu
-          +navigationItem(item)
+          if !item.sub
+            li.nav__item
+              a.nav__link(href=item.href)= item.title
+          else
+            li.nav__item.nav__item_sub
+              a.nav__link(tabindex="0")= item.title
+              ul.nav__sub
+                each subItem in item.sub
+                  li.nav__sub-item
+                    a.nav__sub-link(href=subItem.href)= subItem.title
       ul.nav__list.nav__list_user
         if userName
           li.nav__item
             a.nav__user(href="/mock-address/change-me")= userName
         else
           li.nav__item
-            +button({link: "login.html", mode: ["text", "bordered", "thin"], text: "Войти", })
+            +button({link: "login.html", mode: ["text", "bordered", "size_thin"], text: "Войти", })
           li.nav__item
-            +button({link: "registration.html", mode: ["colored", "thin"], text: "Зарегистрироваться", })
-
-mixin navigationItem(item)
-  if !item.sub
-    li.nav__item
-      a.nav__link(href=item.href)= item.title
-  else
-    li.nav__item.nav__item_sub
-      a.nav__link(tabindex="0")= item.title
-      ul.nav__sub
-        each subItem in item.sub
-          +navigationSub(subItem)
-
-mixin navigationSub(subItem)
-  li.nav__sub-item
-    a.nav__sub-link(href=subItem.href)= subItem.title
+            +button({link: "registration.html", mode: ["colored", "size_thin"], text: "Зарегистрироваться", })

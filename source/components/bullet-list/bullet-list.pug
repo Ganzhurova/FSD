@@ -1,19 +1,8 @@
 mixin bulletList(listName)
   include ./bullet-list-data
 
-  - let list;
-
-  -
-    if (!listName) {
-      list = locals.rules
-    }
-    else {
-      list = listName
-    }
+  - const list = listName ? listName : locals.rules;
 
   ul.bullet-list
     each item in list
-      +bulletListItem(item)
-
-mixin bulletListItem(item)
-  li.bullet-list__item!= item.text
+      li.bullet-list__item!= item.text

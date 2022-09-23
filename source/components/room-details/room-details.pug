@@ -5,36 +5,38 @@ include ../bullet-list/bullet-list
 include ../chart/chart
 include ../button/button
 
-mixin roomDetails(options)
-  if !options
-    - options = {};
-
+mixin roomDetails({images, features, impression, reviews, rules, info})
   section.room-details
     header.room-details__header
-      each img in options.images
-        +roomImg(img)
+      each img in images
+        .room-details__pic(class=img.big ? "room-details__pic_big" : "")
+          img.room-details__img(
+            src=require(`./img/${img.src}`),
+            srcset=require(`./img/${img.srcset}`),
+            alt="Фото номера"
+          )
 
     .room-details__wrapper
       h1.visually-hidden Информация о номере
       .room-details__list
         section.room-details__item.room-details__item_features
           h2.room-details__title Сведения о номере
-          +features(options.features)
+          +features(features)
 
         section.room-details__item.room-details__item_impression
           h2.room-details__title Впечатления от номера
-          +chart(options.impression, "room-details__chart")
+          +chart(impression, "room-details__chart")
 
         section.room-details__item.room-details__item_reviews
           .room-details__item-top
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-total 2 отзыва
-          each review in options.reviews
+          each review in reviews
             +review(review, "room-details__review")
 
         section.room-details__item.room-details__item_rules
           h2.room-details__title.room-details__title_indent Правила
-          +bulletList(options.rules)
+          +bulletList(rules)
 
         section.room-details__item.room-details__item_cancellation
           h2.room-details__title Отмена
@@ -42,12 +44,4 @@ mixin roomDetails(options)
             Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
       .room-details__reservation
-        +reservation(options.info)
-
-mixin roomImg(img)
-  .room-details__pic(class=img.big ? "room-details__pic_big" : "")
-    img.room-details__img(
-      src=require(`./img/${img.src}`),
-      srcset=require(`./img/${img.srcset}`),
-      alt="Фото номера"
-    )
+        +reservation(info)

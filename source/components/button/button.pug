@@ -1,24 +1,15 @@
-mixin button(options={})
+mixin button({mode, link, icon, attributes: buttonAttributes = {}, text})
   -
-    let classes = []
-    if (options.mode)
-      if(Array.isArray(options.mode))
-        classes = options.mode.map(mode => `button_${mode}`)
-      else
-        classes.push(`button_${options.mode}`);
+    let classes = [];
+    const tag = link ? "a": "button";
 
-    if (options.icon)
-      classes.push("button_icon")
+    if (mode)
+      classes = mode.map(item => `button_${item}`)
 
-  if (options.link)
-    a.button(class=classes, href=options.link)&attributes(options.attributes)= options.text
-      +icon(options.icon)
+    if (icon)
+      classes.push("button_with-icon")
 
-  else
-    button.button(class=classes)&attributes(options.attributes)= options.text
-      +icon(options.icon)
-
-mixin icon(options={})
-  if options.name
-    span.visually-hidden= options.text
-    i.button__icon.material-icons= options.name
+  #{tag}.button(class=classes, href=link)&attributes(buttonAttributes)= text
+    if icon
+      span.visually-hidden= icon.text
+      i.button__icon.material-icons= icon.name

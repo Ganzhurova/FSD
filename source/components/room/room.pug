@@ -1,34 +1,25 @@
 include ../rating/rating
 
-mixin room(room)
-  if !room
-    - room = {};
-
-  if !room.images
-    - room.images = [];
-
+mixin room({link, number, category, price, rating, reviewTotal, images = []})
   section.room.js-room
-    a.room__link(href=room.link)
+    a.room__link(href=link)
       .room__info
         h2.room__title
-          span.room__number= room.number
-          span.room__class= room.category
+          span.room__number= number
+          span.room__class= category
         span.room__cost
-          span.room__price= room.price
+          span.room__price= price
           | в сутки
       .room__rating
-        +rating(room.rating)
+        +rating(rating)
         p.room__review
-          span.room__review-number= room.reviewTotal
+          span.room__review-number= reviewTotal
           | Отзывов
     .room__slider.js-slider
-      each img in room.images
-        +roomImg(img)
-
-mixin roomImg(img)
-  .room__img-wrapper
-    img.room__img(
-      src=require(`../catalog-result/img/${img.src}`),
-      srcset=require(`../catalog-result/img/${img.srcset}`),
-      alt="Фото номера"
-    )
+      each img in images
+        .room__img-wrapper
+          img.room__img(
+            src=require(`../catalog-result/img/${img.src}`),
+            srcset=require(`../catalog-result/img/${img.srcset}`),
+            alt="Фото номера"
+          )

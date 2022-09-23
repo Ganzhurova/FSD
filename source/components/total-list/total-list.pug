@@ -1,24 +1,21 @@
 include ../control/control
 include ../total/total
 
-mixin totalList(options={})
+mixin totalList({list, control})
   .total-list.js-total-list
     ul.total-list__items
-      each item, key in options.list 
+      each item, key in list 
         if key !== "common"
-          +totalListItem(item, key)
-    if options.control
+          -
+            const total = {attributes: {
+              name: key,
+              value: item.value | 0
+            }}
+
+          li.total-list__item.js-item
+            span.total-list__option= item.text
+            .total-list__number 
+              +total(total)
+    if control
       .total-list__control 
         +control
-
-mixin totalListItem(item, key)
-  -
-    const total = {attributes: {
-      name: key,
-      value: item.value | 0
-    }}
-
-  li.total-list__item.js-item
-    span.total-list__option= item.text
-    .total-list__number 
-      +total(total)

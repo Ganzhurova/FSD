@@ -9,8 +9,5 @@ mixin checkList(title, listName, opened)
     summary.check-list__title= title
     ul.check-list__items
       each item in list
-        +checkListItem(item)
-
-mixin checkListItem(item)
-  li.check-list__item
-    +checkbox(item)
+        li.check-list__item
+          +checkbox(item)

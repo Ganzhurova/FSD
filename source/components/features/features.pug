@@ -1,24 +1,13 @@
 mixin features(listName)
   include ./features-data
 
-  - let list;
-
-  -
-    if (!listName) {
-      list = locals.featuresUikit
-    }
-    else {
-      list = listName
-    }
+  - const list = listName ? listName : locals.featuresUikit;
 
   ul.features
     each item in list
-      +feature(item)
-
-mixin feature(item)
-  li.features__item
-    .features__img
-      i.features__icon.material-icons= item.icon
-    .features__desc
-      h3.features__title= item.title
-      p.features__text= item.text
+      li.features__item
+        .features__img
+          i.features__icon.material-icons= item.icon
+        .features__desc
+          h3.features__title= item.title
+          p.features__text= item.text

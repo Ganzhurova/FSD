@@ -1,23 +1,17 @@
 mixin rating(ratingNum)
   - let starTotal = 5;
-  - let isVoting = false;
-
-  if !ratingNum
-    - isVoting = true;
+  - let isVoting = !ratingNum;
 
   .rating.js-rating(class=isVoting ? "rating_vote" : "")
     .rating__active(data-rating=ratingNum)
     .rating__list(aria-label=Рейтинг)
       - for (let i = 1; i <= starTotal; i++)
-        +ratingItem(i, isVoting)
-
-mixin ratingItem(num, isVoting)
-  if isVoting
-    label.rating__item
-      input.rating__input.visually-hidden(
-        type="radio",
-        name="rating",
-        value=num
-      )
-  else
-    .rating__item
+        if isVoting
+          label.rating__item
+            input.rating__input.visually-hidden(
+              type="radio",
+              name="rating",
+              value=i
+            )
+        else
+          .rating__item

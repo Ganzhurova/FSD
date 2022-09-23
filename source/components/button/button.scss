@@ -9,14 +9,14 @@
 
   @include label-cta-text;
 
-  &_icon {
+  &_with-icon {
     position: relative;
     flex-shrink: 0;
     width: 44px;
     height: 42px;
   }
 
-  &_icon &__icon {
+  &_with-icon &__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,7 +40,7 @@
     }
   }
 
-  &_colored#{&}_thin {
+  &_colored#{&}_size_thin {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -62,7 +62,7 @@
     }
   }
 
-  &_bordered#{&}_thin {
+  &_bordered#{&}_size_thin {
     padding-top: 8px;
     padding-bottom: 8px;
   }
@@ -77,7 +77,7 @@
     }
   }
 
-  &_wide {
+  &_size_wide {
     width: 100%;
     max-width: 320px;
   }

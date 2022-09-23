@@ -1,17 +1,11 @@
 include ../input/input
 
-mixin textField(options)
-  if !options
-    - options = {};
+mixin textField({label, labelVisually, attributes: fieldAttributes = {}})
+  - fieldAttributes.class = "text-field__input";
+  - fieldAttributes.autocomplete = "off";
 
-  if !options.attributes
-    - options.attributes = {};
-
-  - options.attributes.class = "text-field__input";
-  - options.attributes.autocomplete = "off";
-
-  - let hiddenClass = options.labelVisually ? "" : "visually-hidden";
+  - let hiddenClass = labelVisually ? "" : "visually-hidden";
 
   label.text-field
-    span.text-field__label(class=hiddenClass)= options.label
-    +input(options)
+    span.text-field__label(class=hiddenClass)= label
+    +input({attributes: fieldAttributes})

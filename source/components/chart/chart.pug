@@ -1,7 +1,4 @@
-mixin chart(data, mix)
-  if !data
-    - data = {};
-
+mixin chart(data={}, mix)
   -
     const segments = [
       {
@@ -39,7 +36,19 @@ mixin chart(data, mix)
         title Диаграмма
         desc Круговая диаграмма, показывает впечатления от номера
         each item in reverseSegments
-          +chartItem(item)
+          if item.total > 0
+            g
+              title= item.title
+              desc Проголосовало - #{ item.total }
+              circle.chart__segment.js-segment(
+                data-total=item.total,
+                fill="none",
+                r="58",
+                cx="50%",
+                cy="50%",
+                stroke-width="4",
+                stroke=`url(#${item.idColor})`
+              )
         g.chart__total
           title Всего
           text.chart__total-number.js-total-number(x="50%", y="50%")
@@ -60,22 +69,4 @@ mixin chart(data, mix)
     figcaption.chart__legend
       ul.chart__list(aria-hidden="true")
         each item in segments
-          +legendItem(item)
-
-mixin chartItem(item)
-  if item.total > 0
-    g
-      title= item.title
-      desc Проголосовало - #{ item.total }
-      circle.chart__segment.js-segment(
-        data-total=item.total,
-        fill="none",
-        r="58",
-        cx="50%",
-        cy="50%",
-        stroke-width="4",
-        stroke=`url(#${item.idColor})`
-      )
-
-mixin legendItem(item)
-  li.chart__item(class=`chart__item_${item.classLegend}`)= item.title
+          li.chart__item(class=`chart__item_${item.classLegend}`)= item.title

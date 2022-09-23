@@ -8,20 +8,17 @@ mixin content(name)
           h1.visually-hidden= pageTitle
         block
 
-mixin contentSection(options)
-  if !options
-    - options = {};
-
+mixin contentSection({name, row, mix})
   - let classes = [];
 
-  if options.name
-    - classes.push(`content__section_${options.name}`);
+  if name
+    - classes.push(`content__section_${name}`);
 
-  if options.row
+  if row
     - classes.push("content__section_row");
 
-  if options.mix
-    - classes.push(`content__section_${options.mix}`);
+  if mix
+    - classes.push(`content__section_${mix}`);
 
   .content__section(class=classes)
     block

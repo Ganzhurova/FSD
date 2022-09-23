@@ -1,20 +1,13 @@
-mixin formElement(options)
-  if !options
-    - options = {};
-
-  -
-    let classes = ""
-    classes += options.mix ? " form-element_" + options.mix : ""
-
+mixin formElement({mix, mb, title, categoryMb, state}={})
   .form-element(
-    class=classes,
-    style=options.mb ? `--margin-bottom: ${options.mb}px` : false
+    class=mix ? ` form-element_${mix}` : "",
+    style=mb ? `--margin-bottom: ${mb}px` : false
   )
-    if (options.title)
+    if (title)
       .form-element__category(
-        style=options.categoryMb ? `--category-margin-bottom: ${options.categoryMb}px` : false
+        style=categoryMb ? `--category-margin-bottom: ${categoryMb}px` : false
       )
-        h2.form-element__title= options.title
-        span.form-element__state= options.state
+        h2.form-element__title= title
+        span.form-element__state= state
     .form-element__content
       block

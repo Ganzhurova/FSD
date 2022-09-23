@@ -1,25 +1,19 @@
 include ../like/like
 
-mixin review(options, mix)
-  if !options
-    - options = {};
-
-  if !options.like
-    - options.like = {};
-
+mixin review({name, date, img, text, like: {count, isChecked}}, mix)
   article.review(class=mix ? mix : "")
     .review__header
       .review__avatar
         img.review__img(
-          src=require(`./img/${options.img}`),
+          src=require(`./img/${img}`),
           width="48",
           height="48",
-          alt=options.name
+          alt=name
         )
       .review__info
-        h3.review__author= options.name
-        span.review__date= options.date
+        h3.review__author= name
+        span.review__date= date
     .review__body
       .review__like
-        +like(options.like.count, options.like.isChecked)
-      p.review__text= options.text
+        +like(count, isChecked)
+      p.review__text= text
