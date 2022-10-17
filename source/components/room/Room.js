@@ -18,7 +18,7 @@ class Room {
   }
 
   initializeSlider() {
-    const sliderEl = this.el.querySelector('.js-slider');
+    const sliderEl = this.el.querySelector('.js-room__slider');
     initSlickSlider(sliderEl);
   }
 }

@@ -16,10 +16,10 @@ class Chart {
 
   initialize(el) {
     this.chart = el;
-    this.segments = this.chart.querySelectorAll('.js-segment');
-    this.totalEl = el.querySelector('.js-total-number');
-    this.totalTextEl = el.querySelector('.js-total-text');
-    this.radius = el.querySelector('.js-segment').getAttribute('r');
+    this.segments = this.chart.querySelectorAll('.js-chart__segment');
+    this.totalEl = el.querySelector('.js-chart__total-number');
+    this.totalTextEl = el.querySelector('.js-chart__total-text');
+    this.radius = el.querySelector('.js-chart__segment').getAttribute('r');
 
     this.getData();
     this.getTotal();

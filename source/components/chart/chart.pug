@@ -40,7 +40,7 @@ mixin chart(data={}, mix)
             g
               title= item.title
               desc Проголосовало - #{ item.total }
-              circle.chart__segment.js-segment(
+              circle.chart__segment.js-chart__segment(
                 data-total=item.total,
                 fill="none",
                 r="58",
@@ -51,8 +51,8 @@ mixin chart(data={}, mix)
               )
         g.chart__total
           title Всего
-          text.chart__total-number.js-total-number(x="50%", y="50%")
-          text.chart__total-text.js-total-text(x="50%", y="50%") голосов
+          text.chart__total-number.js-chart__total-number(x="50%", y="50%")
+          text.chart__total-text.js-chart__total-text(x="50%", y="50%") голосов
         defs
           linearGradient#blackGradient
             stop(offset="0%", stop-color="#3d4975")

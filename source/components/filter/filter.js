@@ -3,7 +3,7 @@ import initializeBaseDropdowns from '../js/dropdown/initializeBaseDropdowns';
 import './filter.scss';
 
 initializeBaseDropdowns('.js-filter', {
-  targetSelector: '.js-toggle',
+  targetSelector: '.js-filter__toggle',
   closeClass: 'filter_closed',
   openClass: 'filter_opened',
 });

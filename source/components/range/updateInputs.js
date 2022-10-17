@@ -2,7 +2,7 @@
 
 const $inputFrom = $('[name="min-price"]');
 const $inputTo = $('[name="max-price"]');
-const $output = $('.js-price-output');
+const $output = $('.js-range__price-output');
 
 let from = 0;
 let to = 0;

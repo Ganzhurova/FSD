@@ -3,7 +3,7 @@ import Pagination from './Pagination';
 class RoomPagination extends Pagination {
   constructor(el, options) {
     super(el, options);
-    this.footerSelector = '.js-footer';
+    this.footerSelector = '.js-pagination__footer';
 
     this.initializeFooter();
   }

@@ -5,7 +5,7 @@ const paginationConfig = {
   pageRange: 1,
   prevText: '<span class="visually-hidden">Назад</span>',
   nextText: '<span class="visually-hidden">Вперед</span>',
-  footer: '<p class="pagination__footer js-footer">',
+  footer: '<p class="pagination__footer js-pagination__footer">',
 };
 
 export default paginationConfig;

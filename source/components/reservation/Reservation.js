@@ -21,12 +21,12 @@ class Reservation {
 
   initialize() {
     this.rangeDropdown = new Dropdown(
-      this.el.querySelector('.js-range-dropdown'),
+      this.el.querySelector('.js-reservation__dates .js-dropdown'),
       this,
       'dates'
     );
     this.guestsDropdown = new Dropdown(
-      this.el.querySelector('.js-guests-dropdown'),
+      this.el.querySelector('.js-reservation__guests .js-dropdown'),
       this,
       'guests'
     );

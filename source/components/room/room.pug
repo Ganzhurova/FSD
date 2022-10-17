@@ -15,7 +15,7 @@ mixin room({link, number, category, price, rating, reviewTotal, images = []})
         p.room__review
           span.room__review-number= reviewTotal
           | Отзывов
-    .room__slider.js-slider
+    .room__slider.js-room__slider
       each img in images
         .room__img-wrapper
           img.room__img(

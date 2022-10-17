@@ -10,10 +10,10 @@ const paginationOptions = {
   config: paginationConfig,
   data: roomsData.rooms,
   template: roomTmpl,
-  containerSelector: '.js-data-container',
+  containerSelector: '.js-catalog-result__list',
   event: 'afterPaging',
   eventCallback: () => {
-    initializeRooms('.js-data-container .js-room');
+    initializeRooms('.js-catalog-result__list .js-room');
   },
 };
 

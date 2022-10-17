@@ -5,7 +5,7 @@ import bodyMap from './data/bodyMap';
 class Dropdown extends BaseDropdown {
   constructor(el, parent, key) {
     const options = {
-      targetSelector: '.js-dropdown-input',
+      targetSelector: '.js-dropdown__input',
       closeClass: 'dropdown_hidden',
       openClass: 'dropdown_show',
     };

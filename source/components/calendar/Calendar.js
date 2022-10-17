@@ -11,7 +11,7 @@ class Calendar extends DropdownBody {
   }
 
   initializeDatepicker() {
-    const calendarEl = this.el.querySelector('.js-datepicker');
+    const calendarEl = this.el.querySelector('.js-calendar__datepicker');
     this.datepicker = getDatepicker(calendarEl);
     this.addHandlerCellSelect();
     this.updateDatepicker(this.options?.config);
