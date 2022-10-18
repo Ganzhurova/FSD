@@ -3,9 +3,9 @@ class Like {
     this.activeClass = 'like_actual';
   }
 
-  initialize(el) {
-    this.like = el;
-    this.likeValue = el.querySelector('.js-like__value');
+  initialize(element) {
+    this.like = element;
+    this.likeValue = element.querySelector('.js-like__value');
     this.value = Number(this.likeValue.innerHTML);
 
     this.getLikeState();

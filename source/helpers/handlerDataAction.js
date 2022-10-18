@@ -10,7 +10,7 @@ const handlerDataAction = {
   addDataActionListener() {
     this.handleDataAction = this.handleDataAction.bind(this);
 
-    this.el.addEventListener('click', this.handleDataAction);
+    this.element.addEventListener('click', this.handleDataAction);
   },
 };
 

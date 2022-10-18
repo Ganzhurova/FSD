@@ -1,8 +1,8 @@
 import Pagination from './Pagination';
 
 class RoomPagination extends Pagination {
-  constructor(el, options) {
-    super(el, options);
+  constructor(element, options) {
+    super(element, options);
     this.footerSelector = '.js-pagination__footer';
 
     this.initializeFooter();
@@ -11,19 +11,21 @@ class RoomPagination extends Pagination {
   initializeFooter() {
     this.setFooterText(this.getFooterText());
 
-    this.paginationEl.addHook('afterPaging', () => {
+    this.paginationElement.addHook('afterPaging', () => {
       this.setFooterText(this.getFooterText());
     });
   }
 
   setFooterText(txt) {
-    const footerEl = this.paginationEl[0].querySelector(this.footerSelector);
-    footerEl.textContent = txt;
+    const footerElement = this.paginationElement[0].querySelector(
+      this.footerSelector
+    );
+    footerElement.textContent = txt;
   }
 
   getFooterText() {
-    const pageNum = this.paginationEl.pagination('getSelectedPageNum');
-    const dataPageTotal = this.paginationEl.pagination(
+    const pageNum = this.paginationElement.pagination('getSelectedPageNum');
+    const dataPageTotal = this.paginationElement.pagination(
       'getSelectedPageData'
     ).length;
     const { pageSize } = this.options.config;

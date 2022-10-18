@@ -2,8 +2,8 @@ import initSlickSlider from '../../libs/slick-slider/initSlickSlider';
 import Rating from '../rating/Rating';
 
 class Room {
-  constructor(el) {
-    this.el = el;
+  constructor(element) {
+    this.element = element;
     this.rating = null;
     this.slider = null;
 
@@ -12,14 +12,14 @@ class Room {
   }
 
   initializeRating() {
-    const ratingEl = this.el.querySelector('.js-rating');
+    const ratingElement = this.element.querySelector('.js-rating');
     this.rating = new Rating();
-    this.rating.initialize(ratingEl);
+    this.rating.initialize(ratingElement);
   }
 
   initializeSlider() {
-    const sliderEl = this.el.querySelector('.js-room__slider');
-    initSlickSlider(sliderEl);
+    const sliderElement = this.element.querySelector('.js-room__slider');
+    initSlickSlider(sliderElement);
   }
 }
 

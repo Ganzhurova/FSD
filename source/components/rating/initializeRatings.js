@@ -2,9 +2,9 @@ import Rating from './Rating';
 
 function initializeRatings(selector) {
   const ratings = [...document.querySelectorAll(selector)];
-  ratings.forEach((el) => {
+  ratings.forEach((element) => {
     const rating = new Rating();
-    rating.initialize(el);
+    rating.initialize(element);
   });
 }
 

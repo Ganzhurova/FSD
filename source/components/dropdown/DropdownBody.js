@@ -4,7 +4,7 @@ class DropdownBody {
   constructor(dropdownInstance, options = {}) {
     this.parent = dropdownInstance;
     this.options = options;
-    this.el = this.parent.el.querySelector(this.options.bodySelector);
+    this.element = this.parent.element.querySelector(this.options.bodySelector);
     this.control = null;
 
     this.initializeControl();
@@ -13,8 +13,8 @@ class DropdownBody {
   initializeControl() {
     if (!this.options.control) return;
 
-    const controlEl = this.el.querySelector('.js-control');
-    this.control = new Control(controlEl, this);
+    const controlElement = this.element.querySelector('.js-control');
+    this.control = new Control(controlElement, this);
   }
 
   sendData(txt, data) {

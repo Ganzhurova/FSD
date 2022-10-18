@@ -1,12 +1,12 @@
 class BaseDropdown {
-  el;
+  element;
 
   options;
 
   isOpen;
 
-  constructor(el, options) {
-    this.el = el;
+  constructor(element, options) {
+    this.element = element;
     this.options = options;
     this.currentTarget = null;
 
@@ -20,16 +20,16 @@ class BaseDropdown {
   }
 
   show() {
-    this.el.classList.remove(this.options.closeClass);
-    this.el.classList.add(this.options.openClass);
+    this.element.classList.remove(this.options.closeClass);
+    this.element.classList.add(this.options.openClass);
     this.isOpen = true;
 
     document.body.addEventListener('click', this.handleBodyClick);
   }
 
   close() {
-    this.el.classList.remove(this.options.openClass);
-    this.el.classList.add(this.options.closeClass);
+    this.element.classList.remove(this.options.openClass);
+    this.element.classList.add(this.options.closeClass);
     this.isOpen = false;
 
     document.body.removeEventListener('click', this.handleBodyClick);
@@ -37,7 +37,7 @@ class BaseDropdown {
 
   handleTargetToggle(evt) {
     if (
-      !this.el.contains(evt.target) ||
+      !this.element.contains(evt.target) ||
       !evt.target.closest(this.options.targetSelector)
     )
       return;
@@ -53,7 +53,7 @@ class BaseDropdown {
   }
 
   handleBodyClick() {
-    if (this.currentTarget === this.el) {
+    if (this.currentTarget === this.element) {
       this.currentTarget = null;
       return;
     }
@@ -66,12 +66,12 @@ class BaseDropdown {
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.handleDropdownClick = this.handleDropdownClick.bind(this);
 
-    this.el.addEventListener('click', this.handleTargetToggle);
-    this.el.addEventListener('click', this.handleDropdownClick);
+    this.element.addEventListener('click', this.handleTargetToggle);
+    this.element.addEventListener('click', this.handleDropdownClick);
   }
 
   addDataHandlers() {
-    if (this.el.dataset.show) {
+    if (this.element.dataset.show) {
       this.show();
     }
   }

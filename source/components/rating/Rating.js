@@ -5,9 +5,9 @@ class Rating {
     this.voteClassName = 'rating_vote';
   }
 
-  initialize(el) {
-    this.rating = el;
-    this.active = el.querySelector('.rating__active');
+  initialize(element) {
+    this.rating = element;
+    this.active = element.querySelector('.rating__active');
 
     this.getValue();
 

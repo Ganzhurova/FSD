@@ -1,10 +1,10 @@
 import handlerDataAction from '../../helpers/handlerDataAction';
 
 class Control {
-  constructor(el, parentInstance) {
-    this.el = el;
+  constructor(element, parentInstance) {
+    this.element = element;
     this.parent = parentInstance;
-    this.buttonClear = this.el.querySelector('[data-action = clear]');
+    this.buttonClear = this.element.querySelector('[data-action = clear]');
 
     this.addDataActionListener();
   }

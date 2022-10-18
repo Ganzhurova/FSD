@@ -4,8 +4,8 @@ import roomDetailsTmpl from '../../../components/room-details/template.pug';
 import data from './data.json';
 
 class RoomDetails {
-  constructor(containerEl) {
-    this.containerEl = containerEl;
+  constructor(containerElement) {
+    this.containerElement = containerElement;
 
     this.initialize();
   }
@@ -21,7 +21,7 @@ class RoomDetails {
       roomDetails: data,
     };
     const html = roomDetailsTmpl(locals);
-    this.containerEl.innerHTML = html;
+    this.containerElement.innerHTML = html;
   }
 }
 

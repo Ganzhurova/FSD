@@ -5,9 +5,9 @@ import paginationConfig from '../../../components/pagination/paginationConfig';
 import roomsData from '../../website/search/rooms-data.json';
 
 function initializePagination(selector) {
-  const paginationEl = document.querySelector(selector);
-  if (paginationEl) {
-    $(paginationEl).pagination({
+  const paginationElement = document.querySelector(selector);
+  if (paginationElement) {
+    $(paginationElement).pagination({
       ...paginationConfig,
       dataSource: roomsData.rooms,
     });

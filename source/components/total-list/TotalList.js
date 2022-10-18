@@ -13,10 +13,10 @@ class TotalList extends DropdownBody {
 
   initializeTotals() {
     const totalClass = '.js-total';
-    const totalsEl = this.el.querySelectorAll(totalClass);
+    const totalsElements = this.element.querySelectorAll(totalClass);
 
-    totalsEl.forEach((el) => {
-      const total = new Total(el, this);
+    totalsElements.forEach((element) => {
+      const total = new Total(element, this);
       this.totals.push(total);
     });
   }

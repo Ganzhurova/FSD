@@ -14,12 +14,12 @@ class Chart {
     this.textForms = ['голос', 'голоса', 'голосов'];
   }
 
-  initialize(el) {
-    this.chart = el;
+  initialize(element) {
+    this.chart = element;
     this.segments = this.chart.querySelectorAll('.js-chart__segment');
-    this.totalEl = el.querySelector('.js-chart__total-number');
-    this.totalTextEl = el.querySelector('.js-chart__total-text');
-    this.radius = el.querySelector('.js-chart__segment').getAttribute('r');
+    this.totalElement = element.querySelector('.js-chart__total-number');
+    this.totalTextElement = element.querySelector('.js-chart__total-text');
+    this.radius = element.querySelector('.js-chart__segment').getAttribute('r');
 
     this.getData();
     this.getTotal();
@@ -75,8 +75,11 @@ class Chart {
   }
 
   renderTotal() {
-    this.totalEl.textContent = this.total;
-    this.totalTextEl.textContent = declensionNouns(this.total, this.textForms);
+    this.totalElement.textContent = this.total;
+    this.totalTextElement.textContent = declensionNouns(
+      this.total,
+      this.textForms
+    );
   }
 }
 

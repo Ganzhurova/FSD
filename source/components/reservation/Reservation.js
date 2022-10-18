@@ -2,8 +2,8 @@ import helpers from '../../helpers/helpers';
 import Dropdown from '../dropdown/Dropdown';
 
 class Reservation {
-  constructor(el, data) {
-    this.el = el;
+  constructor(element, data) {
+    this.element = element;
     this.data = {
       dates: [],
       guests: {},
@@ -13,7 +13,7 @@ class Reservation {
       addservices: data.charge.addservices,
     };
     this.outputs = {};
-    this.reservationButton = this.el.querySelector('.js-button');
+    this.reservationButton = this.element.querySelector('.js-button');
 
     this.setOutputs();
     this.initialize();
@@ -21,12 +21,12 @@ class Reservation {
 
   initialize() {
     this.rangeDropdown = new Dropdown(
-      this.el.querySelector('.js-reservation__dates .js-dropdown'),
+      this.element.querySelector('.js-reservation__dates .js-dropdown'),
       this,
       'dates'
     );
     this.guestsDropdown = new Dropdown(
-      this.el.querySelector('.js-reservation__guests .js-dropdown'),
+      this.element.querySelector('.js-reservation__guests .js-dropdown'),
       this,
       'guests'
     );
@@ -34,12 +34,12 @@ class Reservation {
 
   setOutputs() {
     this.outputs = {
-      days: this.el.querySelector('[data-days]'),
-      calculation: this.el.querySelector('[data-subtotal=calculation]'),
-      services: this.el.querySelector('[data-subtotal=services]'),
-      addservices: this.el.querySelector('[data-subtotal=add-services]'),
-      discount: this.el.querySelector('[data-discount]'),
-      total: this.el.querySelector('[data-total]'),
+      days: this.element.querySelector('[data-days]'),
+      calculation: this.element.querySelector('[data-subtotal=calculation]'),
+      services: this.element.querySelector('[data-subtotal=services]'),
+      addservices: this.element.querySelector('[data-subtotal=add-services]'),
+      discount: this.element.querySelector('[data-discount]'),
+      total: this.element.querySelector('[data-total]'),
     };
   }
 

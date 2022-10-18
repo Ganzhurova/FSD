@@ -1,11 +1,11 @@
 import handlerDataAction from '../../helpers/handlerDataAction';
 
 class Total {
-  constructor(el, parentInstance) {
+  constructor(element, parentInstance) {
     this.parent = parentInstance;
-    this.el = el;
-    this.inputEl = this.el.querySelector('input');
-    this.value = +this.inputEl.value;
+    this.element = element;
+    this.inputElement = this.element.querySelector('input');
+    this.value = +this.inputElement.value;
 
     this.disableDecreaseButton();
     this.addDataActionListener();
@@ -19,17 +19,19 @@ class Total {
   }
 
   setInputValue(number) {
-    this.inputEl.value = number;
+    this.inputElement.value = number;
     this.disableDecreaseButton();
   }
 
   disableDecreaseButton() {
-    const decreaseButton = this.el.querySelector('[data-action = decrease]');
+    const decreaseButton = this.element.querySelector(
+      '[data-action = decrease]'
+    );
     decreaseButton.disabled = this.value === 0;
   }
 
   sendValue() {
-    this.parent.updateItems(this.inputEl.name, this.inputEl.value);
+    this.parent.updateItems(this.inputElement.name, this.inputElement.value);
   }
 
   decrease() {
