@@ -62,10 +62,10 @@ block content
       +formElement({mb: 43.56})
         +range("Range slider")
       +formElement({title: "Buttons", categoryMb: 16, mb: 41, mix: "buttons"})
-        +button({ text: "Click me", mode: ["colored"], attributes: {type: "button"} })
-        +button({ text: "Click me", mode: ["text", "bordered"], attributes: {type: "button"} })
-        +button({ text: "Click me", mode: ["text"], attributes: {type: "button"} })
-        +button({ text: "Перейти к оплате", mode: ["colored", "size_wide", "with-arrow"], attributes: {type: "button"} })
+        +button({ text: "Click me", modifiers: {decor: ["color"]}, attributes: {type: "button"} })
+        +button({ text: "Click me", modifiers: {decor: ["text", "border"]}, attributes: {type: "button"} })
+        +button({ text: "Click me", modifiers: {decor: ["text"]}, attributes: {type: "button"} })
+        +button({ text: "Перейти к оплате", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]}, attributes: {type: "button"} })
       +formElement({title: "Pagination", categoryMb: 16.44, mb: 40})
         +pagination
 

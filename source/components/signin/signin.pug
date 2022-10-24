@@ -11,7 +11,7 @@ mixin signin
           +textField({ label: "Электронная почта", attributes: {type: "email", name: "email", placeholder: "Email", required: true,} })
         .signin__password
           +textField({ label: "Пароль", attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,} })
-        +button({text: "Войти", mode: ["colored", "size_wide", "with-arrow"], attributes: { type: "submit" }})
+        +button({text: "Войти", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]}, attributes: { type: "submit" }})
     .signin__footer
       span.signin__text Нет аккаунта на Toxin?
-      +button({link: "registration.html", mode: ["text", "bordered"], text: "Создать"})
+      +button({link: "registration.html", modifiers: {decor:["text", "border"]}, text: "Создать"})

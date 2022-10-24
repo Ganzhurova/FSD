@@ -39,4 +39,4 @@ mixin reservation({number, category, price, arrival, departure, guests})
       .reservation__sum
         span.reservation__sum-text Итого
         span.reservation__total(data-total)
-    +button({text: "Забронировать", mode: ["colored", "size_wide", "with-arrow"], attributes: {class: ["js-button"], type: "submit", form: "reservation-form"} })
+    +button({text: "Забронировать", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]}, attributes: {class: ["js-button"], type: "submit", form: "reservation-form"} })

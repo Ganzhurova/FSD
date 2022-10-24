@@ -9,14 +9,14 @@
 
   @include label-cta-text;
 
-  &_with-icon {
+  &_decor_icon {
     position: relative;
     flex-shrink: 0;
     width: 44px;
     height: 42px;
   }
 
-  &_with-icon &__icon {
+  &_decor_icon &__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,9 +25,10 @@
     background-clip: text;
     transform: translate(-50%, -50%);
     -webkit-text-fill-color: transparent;
+    @include material-icons;
   }
 
-  &_colored {
+  &_decor_color {
     padding: 15px 20px;
     color: $white;
     background-image: $primary-gradient;
@@ -40,12 +41,12 @@
     }
   }
 
-  &_colored#{&}_size_thin {
+  &__decor_color#{&}_size_thin {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  &_bordered {
+  &_decor_border {
     padding: 13px 18px;
     background-image: linear-gradient($white, $white), $primary-gradient;
     background-repeat: no-repeat, no-repeat;
@@ -62,12 +63,12 @@
     }
   }
 
-  &_bordered#{&}_size_thin {
+  &_decor_border#{&}_size_thin {
     padding-top: 8px;
     padding-bottom: 8px;
   }
 
-  &_text {
+  &_decor_text {
     color: $primary-color;
 
     &:hover,
@@ -82,7 +83,7 @@
     max-width: 320px;
   }
 
-  &_with-arrow {
+  &_decor_with-arrow {
     position: relative;
 
     &::after {
@@ -94,5 +95,9 @@
 
       @include material-icons;
     }
+  }
+
+  &__visually-hidden-text {
+    @include visually-hidden;
   }
 }

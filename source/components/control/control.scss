@@ -2,13 +2,15 @@
   display: flex;
 
   &__button {
-    &[data-action="apply"] {
-      margin-left: auto;
+    &:first-child {
+      margin-right: auto;
     }
 
-    &:hover,
-    &:focus {
-      color: $green;
+    button {
+      &:hover,
+      &:focus {
+        color: $green;
+      }
     }
   }
 }

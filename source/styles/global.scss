@@ -18,8 +18,6 @@ body {
   @include base-text;
 }
 
-/* Класс для доступного скрытия элемента */
-
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {

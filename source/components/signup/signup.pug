@@ -26,7 +26,7 @@ mixin signup
           +textField({ label: "Пароль", attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,} })
         .signup__toggle
           +toggle({ text: "Получать спецпредложения", attributes: {name: "offer",} })
-    +button({text: "Перейти к оплате", link: "/mock-address/change-me", mode: ["colored", "size_wide", "with-arrow"], attributes: {class: "signup__payment-button"} })
+    +button({text: "Перейти к оплате", link: "/mock-address/change-me", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]}, attributes: {class: "signup__payment-button"} })
     .signup__footer
       span.signup__text Уже есть аккаунт на Toxin
-      +button({text: "Войти", link: "login.html", mode: ["text", "bordered"] })
+      +button({text: "Войти", link: "login.html", modifiers: {decor: ["text", "border"]} })

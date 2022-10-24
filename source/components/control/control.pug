@@ -2,5 +2,7 @@ include ../button/button
 
 mixin control
   .control.js-control
-    +button({mode: ["text"], text: "Очистить", attributes: { type: "button", class: "control__button", "data-action": "clear" }})
-    +button({mode: ["text"], text: "Применить", attributes: { type: "button", class: "control__button", "data-action": "apply" }})
+    .control__button
+      +button({modifiers: {decor: ["text"]}, text: "Очистить", attributes: { type: "button", "data-action": "clear" }})
+    .control__button
+      +button({modifiers: {decor: ["text"]}, text: "Применить", attributes: { type: "button", "data-action": "apply" }})
