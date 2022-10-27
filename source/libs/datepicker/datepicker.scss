@@ -17,6 +17,8 @@
     cursor: pointer;
 
     & i {
+      @include material-icons;
+
       display: block;
       color: $primary-color;
     }

@@ -38,11 +38,26 @@
       cursor: pointer;
       background-color: transparent;
       border: 0;
+
+      &::before {
+        @include material-icons;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        background: $primary-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
   &__toggle_menu,
   &__toggle_close {
+    @include material-icons;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -210,12 +225,10 @@
   }
 
   @media (max-width: $lg) {
-    &_closed &__toggle_close {
-      display: none;
-    }
-
-    &_closed &__toggle_menu {
-      display: block;
+    &_closed &__toggle {
+      &::before {
+        content: "menu";
+      }
     }
 
     &_closed &__wrapper {
@@ -224,12 +237,10 @@
       transition: all 0.3s;
     }
 
-    &_opened &__toggle_close {
-      display: block;
-    }
-
-    &_opened &__toggle_menu {
-      display: none;
+    &_opened &__toggle {
+      &::before {
+        content: "close";
+      }
     }
 
     &_opened &__wrapper {

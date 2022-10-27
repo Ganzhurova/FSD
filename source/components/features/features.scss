@@ -17,18 +17,17 @@
     }
   }
 
-  &__img {
+  &__icon {
+    @include material-icons;
+
     flex-shrink: 0;
     width: 48px;
     height: 48px;
     margin-right: 10px;
+    font-size: 48px;
     background: $primary-gradient;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  &__icon {
-    font-size: 48px;
   }
 
   &__desc {

@@ -2,8 +2,8 @@ const baseConfig = {
   navTitles: {
     days: 'MM yyyy',
   },
-  prevHtml: '<i class="material-icons">arrow_back</i>',
-  nextHtml: '<i class="material-icons">arrow_forward</i>',
+  prevHtml: '<i>arrow_back</i>',
+  nextHtml: '<i>arrow_forward</i>',
   multipleDatesSeparator: ',',
   range: true,
   language: {

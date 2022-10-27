@@ -6,8 +6,7 @@ mixin features(listName)
   ul.features
     each item in list
       li.features__item
-        .features__img
-          i.features__icon.material-icons= item.icon
+        .features__icon= item.icon
         .features__desc
           h3.features__title= item.title
           p.features__text= item.text
