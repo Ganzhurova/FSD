@@ -1,8 +1,7 @@
 include ../input/input
-include ../button/button
 
 mixin subscription
   form.subscription
     .subscription__field
       +input({ attributes: { class: "subscription__input", type: "email", placeholder: "Email", required: true, } })
-      +button({ modifiers: {decor: ["icon"]}, icon: { name: "arrow_forward", text: "Подписаться" }, attributes: {type: "submit"} })
+      button.subscription__button(type="submit", aria-label="Подписаться") 

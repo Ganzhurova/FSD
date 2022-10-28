@@ -1,4 +1,4 @@
-mixin button({modifiers = {}, link, icon, attributes: buttonAttributes = {}, text})
+mixin button({modifiers = {}, link, attributes: buttonAttributes = {}, text})
   -
     let classes = [];
     const tag = link ? "a": "button";
@@ -9,6 +9,3 @@ mixin button({modifiers = {}, link, icon, attributes: buttonAttributes = {}, tex
         - classes.push(`button_${modifier}_${item}`);
 
   #{tag}.button(class=classes, href=link)&attributes(buttonAttributes)= text
-    if icon
-      span.button__visually-hidden-text= icon.text
-      i.button__icon= icon.name
