@@ -7,10 +7,10 @@ mixin social
       each item in social
         li.social__item
           a.social__link(
+            class=`social__link_icon_${item.icon}`,
             href=item.href,
             title=item.text,
+            aria-label=item.text,
             target="_blank",
             rel="noopener noreferrer"
           )
-            span.visually-hidden= item.text
-            i.social__icon(class=item.iconClass)

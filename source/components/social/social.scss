@@ -15,16 +15,27 @@
     }
   }
 
-  &__icon {
+  &__link {
     position: absolute;
     top: 50%;
     left: 50%;
-    display: block;
     font-size: 24px;
     line-height: 23px;
     background: $primary-gradient;
     background-clip: text;
     transform: translate(-50%, -50%);
     -webkit-text-fill-color: transparent;
+
+    &_icon_twitter {
+      @include fa-icon-brands($fa-var-twitter);
+    }
+
+    &_icon_facebook {
+      @include fa-icon-brands($fa-var-facebook-square);
+    }
+
+    &_icon_instagram {
+      @include fa-icon-brands($fa-var-instagram);
+    }
   }
 }

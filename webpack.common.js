@@ -62,6 +62,7 @@ module.exports = {
               resources: [
                 './source/theme/variables.scss',
                 './source/styles/mixins.scss',
+                './source/theme/resources.scss',
               ],
             },
           },
