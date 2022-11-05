@@ -3,6 +3,6 @@ mixin range(title="Диапазон цены")
     .range__caption
       h2.range__title= title
       span.range__price-output.js-range__price-output
-      input.visually-hidden(type="text", name="min-price", value="0")
-      input.visually-hidden(type="text", name="max-price", value="0")
+      input.range__input(type="text", name="min-price", value="0")
+      input.range__input(type="text", name="max-price", value="0")
     input.js-range-slider(type="text", name="range-price", value="")

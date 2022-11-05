@@ -6,6 +6,10 @@
   cursor: pointer;
   user-select: none;
 
+  &__input {
+    @include visually-hidden;
+  }
+
   &__icon {
     display: block;
     flex-shrink: 0;

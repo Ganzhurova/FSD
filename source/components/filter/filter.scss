@@ -52,6 +52,10 @@
     }
   }
 
+  &__caption {
+    @include visually-hidden;
+  }
+
   &__list {
     @media (max-width: $lg) {
       display: flex;

@@ -9,6 +9,10 @@
     margin-bottom: 5px;
 
     @include label-cta-text;
+
+    &_visually-hidden {
+      @include visually-hidden;
+    }
   }
 
   &__input {

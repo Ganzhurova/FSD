@@ -22,6 +22,10 @@
     @include container;
   }
 
+  &__title {
+    @include visually-hidden;
+  }
+
   &__text {
     position: absolute;
     right: 9.3%;

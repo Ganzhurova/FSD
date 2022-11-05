@@ -3,6 +3,10 @@
   background-color: $white;
   border-bottom: 1px solid $dark25;
 
+  &__title {
+    @include visually-hidden;
+  }
+
   &__wrapper {
     display: grid;
     grid-template: 1fr auto / 266px 1fr;

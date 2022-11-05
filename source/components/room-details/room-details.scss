@@ -40,6 +40,10 @@
     }
   }
 
+  &__caption {
+    @include visually-hidden;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;

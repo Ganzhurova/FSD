@@ -6,7 +6,7 @@ mixin signin
     form.signin__form
       h2.signin__title Войти
       fieldset.signin__fieldset
-        legend.visually-hidden Данные для входа в сервис
+        legend.signin__legend Данные для входа в сервис
         .signin__email
           +textField({ label: "Электронная почта", attributes: {type: "email", name: "email", placeholder: "Email", required: true,} })
         .signin__password

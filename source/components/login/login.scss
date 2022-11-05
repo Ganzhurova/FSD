@@ -16,4 +16,8 @@
     padding: calc-in-percent(173px, 1440px) 0;
     @include container;
   }
+
+  &__title {
+    @include visually-hidden;
+  }
 }

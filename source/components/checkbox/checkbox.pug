@@ -1,6 +1,6 @@
 mixin checkbox({title, text, attributes: checkboxAttributes})
   label.checkbox
-    input.checkbox__input.visually-hidden(type="checkbox")&attributes(checkboxAttributes)
+    input.checkbox__input(type="checkbox")&attributes(checkboxAttributes)
     span.checkbox__icon
     if title
       span.checkbox__desc

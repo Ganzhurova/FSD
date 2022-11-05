@@ -13,7 +13,7 @@ section.filter.js-filter(data-name="filter")
         aria-label="Открыть фильтр"
       )
       form.filter__form
-        h2.visually-hidden Фильтр
+        h2.filter__caption Фильтр
         .filter__list
           .filter__item.filter__item_dates
             +dropdown({mode: "filter", input: {label: "Даты пребывания в отеле", attributes: { name: "dates", "data-from": "2019-08-19", "data-to": "2019-08-23"} }, })

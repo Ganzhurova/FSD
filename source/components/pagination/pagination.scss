@@ -1,4 +1,8 @@
 .pagination {
+  &__direction {
+    @include visually-hidden;
+  }
+
   &__footer {
     padding-left: 4px;
   }

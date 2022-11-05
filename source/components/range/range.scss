@@ -21,4 +21,8 @@
     line-height: 14px;
     color: $dark50;
   }
+
+  &__input {
+    @include visually-hidden;
+  }
 }

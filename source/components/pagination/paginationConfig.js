@@ -3,8 +3,8 @@ const paginationConfig = {
   autoHideNext: true,
   pageSize: 12,
   pageRange: 1,
-  prevText: '<span class="visually-hidden">Назад</span>',
-  nextText: '<span class="visually-hidden">Вперед</span>',
+  prevText: '<span class="pagination__direction">Назад</span>',
+  nextText: '<span class="pagination__direction">Вперед</span>',
   footer: '<p class="pagination__footer js-pagination__footer">',
 };
 

@@ -8,7 +8,7 @@ mixin signup
     form.signup__form
       h2.signup__title Регистрация аккаунта
       fieldset.signup__fieldset
-        legend.visually-hidden Ваши данные
+        legend.signup__legend.signup__legend_visually-hidden Ваши данные
         .signup__name
           +textField({ label: "Имя", attributes: {type: "text", name: "name", placeholder: "Имя", required: true,} })
         .signup__surname
@@ -26,7 +26,8 @@ mixin signup
           +textField({ label: "Пароль", attributes: {type: "password", name: "password", placeholder: "Пароль", required: true,} })
         .signup__toggle
           +toggle({ text: "Получать спецпредложения", attributes: {name: "offer",} })
-    +button({text: "Перейти к оплате", link: "/mock-address/change-me", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]}, attributes: {class: "signup__payment-button"} })
+    .signup__payment-button
+      +button({text: "Перейти к оплате", link: "/mock-address/change-me", modifiers: {decor: ["color", "with-arrow"], size: ["wide"]} })
     .signup__footer
       span.signup__text Уже есть аккаунт на Toxin
       +button({text: "Войти", link: "login.html", modifiers: {decor: ["text", "border"]} })

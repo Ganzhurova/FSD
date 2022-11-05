@@ -1,5 +1,5 @@
 mixin toggle({text, attributes: toggleAttributes})
   label.toggle
-    input.toggle__input.visually-hidden(type="checkbox")&attributes(toggleAttributes)
+    input.toggle__input(type="checkbox")&attributes(toggleAttributes)
     span.toggle__icon
     != text

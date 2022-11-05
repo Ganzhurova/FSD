@@ -5,6 +5,10 @@
   cursor: pointer;
   user-select: none;
 
+  &__input {
+    @include visually-hidden;
+  }
+
   &__icon {
     position: relative;
     display: block;

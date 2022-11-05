@@ -17,4 +17,8 @@
     padding: 19px 0;
     @include container;
   }
+
+  &__title {
+    @include visually-hidden;
+  }
 }
