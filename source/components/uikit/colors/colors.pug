@@ -3,7 +3,7 @@ mixin colors(list)
     ul.colors__list
       each item in list
         li.colors__item
-          .colors__pic(class=item.colorClass)
+          .colors__pic(class=`colors__pic_dye_${item.color}`)
           .colors__desc
             h2.colors__title= item.title
             span.colors__code= item.code
