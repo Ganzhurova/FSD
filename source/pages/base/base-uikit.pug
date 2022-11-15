@@ -1,4 +1,4 @@
-include ../../components/UIkit/uikit-page/uikit-page
+include ../../components/uikit/uikit-page/uikit-page
 
 block variables
 
@@ -12,5 +12,13 @@ html(lang="ru")
   block body
     +uikitPage(uikitClass)
       block header
-        +uikitHeader
+        header.uikit-page__header
+          .uikit-page__header-wrapper
+            a.uikit-page__logo(href="index.html")
+              img.uikit-page__logo-pic(
+                src=require("./img/logo-uikit.png"),
+                width="48",
+                height="48",
+                alt="Логотип"
+              )
       block content
