@@ -1,1 +1,0 @@
-import './uikit-page.scss';

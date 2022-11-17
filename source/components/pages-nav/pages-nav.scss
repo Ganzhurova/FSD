@@ -1,13 +1,42 @@
 .pages-nav {
-  width: 50%;
+  min-width: 320px;
   background-color: inherit;
 
-  @media (max-width: $md) {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 140px;
+
+    @include container;
+  }
+
+  &__caption {
     width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    color: $title-color;
     text-align: center;
 
-    &:not(:last-child) {
-      margin-bottom: 40px;
+    @include montserrat-bold;
+
+    @media (max-width: $md) {
+      text-align: center;
+    }
+  }
+
+  &__column {
+    width: 50%;
+    background-color: inherit;
+
+    @media (max-width: $md) {
+      width: 100%;
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
     }
   }
 

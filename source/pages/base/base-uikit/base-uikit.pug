@@ -1,5 +1,3 @@
-include ../../components/uikit/uikit-page/uikit-page
-
 block variables
 
 doctype html
@@ -10,7 +8,7 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title= pageTitle
   block body
-    +uikitPage(uikitClass)
+    body.uikit-page(class=uikitTheme ? `uikit-page_theme_${uikitTheme}` : "")
       block header
         header.uikit-page__header
           .uikit-page__header-wrapper

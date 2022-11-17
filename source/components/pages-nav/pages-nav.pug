@@ -1,7 +1,11 @@
-mixin pagesNav(pagesNavTitle, list)
-  .pages-nav
-    h2.pages-nav__title= pagesNavTitle
-    ul.pages-nav__list
-      each item in list
-        li.pages-nav__item
-          a.pages-nav__link(href=item.href)= item.title
+mixin pagesNav(lists)
+  section.pages-nav
+    .pages-nav__wrapper
+      h1.pages-nav__caption Обучающее задание на фронтенд разработчика
+      each list in lists
+        .pages-nav__column
+          h2.pages-nav__title= list.caption
+          ul.pages-nav__list
+            each item in list.links
+              li.pages-nav__item
+                a.pages-nav__link(href=item.href)= item.title

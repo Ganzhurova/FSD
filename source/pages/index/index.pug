@@ -1,56 +1,58 @@
-extends ../base/base-uikit.pug
+extends ../base/base-uikit/base-uikit.pug
 
-include ../../components/uikit/content/content
 include ../../components/pages-nav/pages-nav
 
 block variables
   -
     const pageTitle = "FSD";
-    const title = "Обучающее задание на фронтенд разработчика";
-    const uikitTitle = "UIkit pages";
-    const webTitle = "Web pages";
-    const uikitList = [
-        {
+    const pagesNavLists = [
+      {
+        caption: "UIkit pages",
+        links: [
+          {
           title: "Colors & Type",
           href: "colors-and-type.html",
-        },
-        {
-          title: "Form elements",
-          href: "form-elements.html",
-        },
-        {
-          title: "Cards",
-          href: "cards.html",
-        },
-        {
-          title: "Headers & Footers",
-          href: "headers-and-footers.html",
-        },
-      ]
-    const webList = [
-      {
-        title: "Landing page",
-        href: "landing-page.html",
+          },
+          {
+            title: "Form elements",
+            href: "form-elements.html",
+          },
+          {
+            title: "Cards",
+            href: "cards.html",
+          },
+          {
+            title: "Headers & Footers",
+            href: "headers-and-footers.html",
+          },
+        ]
       },
       {
-        title: "Registration",
-        href: "registration.html",
-      },
-      {
-        title: "Sign in",
-        href: "login.html",
-      },
-      {
-        title: "Search",
-        href: "search.html",
-      },
-      {
-        title: "Room details",
-        href: "room-details.html",
-      },
-    ]
+        caption: "Web pages",
+        links: [
+          {
+            title: "Landing page",
+            href: "landing-page.html",
+          },
+          {
+            title: "Registration",
+            href: "registration.html",
+          },
+          {
+            title: "Sign in",
+            href: "login.html",
+          },
+          {
+            title: "Search",
+            href: "search.html",
+          },
+          {
+            title: "Room details",
+            href: "room-details.html",
+          },
+        ]
+      }
+    ];
 
 block content
-  +content({title, titleHidden: false})
-    +pagesNav(uikitTitle, uikitList)
-    +pagesNav(webTitle, webList)
+  +pagesNav(pagesNavLists)
