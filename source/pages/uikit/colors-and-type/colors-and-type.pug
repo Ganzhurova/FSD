@@ -1,8 +1,7 @@
-extends ../../base/base-uikit.pug
+extends ../../base/base-uikit/base-uikit.pug
 
-include ../../../components/UIkit/content/content
-include ../../../components/UIkit/colors/colors
-include ../../../components/UIkit/type/type
+include ../../../components/uikit/colors/colors
+include ../../../components/uikit/type/type
 
 block variables
   -
@@ -46,6 +45,9 @@ block variables
       ];
 
 block content
-  +content({title: pageTitle})
-    +colors(colorsList)
-    +type
+  main 
+    section.colors-and-type 
+      .colors-and-type__wrapper 
+        h1.colors-and-type__title= pageTitle
+        +colors(colorsList)
+        +type

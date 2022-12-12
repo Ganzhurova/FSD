@@ -1,0 +1,16 @@
+.colors-and-type {
+  min-width: 320px;
+  background-color: inherit;
+
+  &__wrapper {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 140px;
+  }
+
+  &__title {
+    @include visually-hidden;
+  }
+}
