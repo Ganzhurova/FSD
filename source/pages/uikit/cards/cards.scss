@@ -1,0 +1,33 @@
+.cards {
+  min-width: 320px;
+  background-color: inherit;
+
+  &__wrapper {
+    @include container;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0 140px;
+  }
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__search-room {
+    padding-bottom: 40px;
+  }
+
+  &__reservation {
+    padding: 1px 0 39px;
+  }
+
+  &__calendar {
+    padding-bottom: 42px;
+  }
+
+  &__room {
+    padding-bottom: 39.5px;
+  }
+}
