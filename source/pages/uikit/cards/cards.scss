@@ -7,6 +7,7 @@
 
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     padding: 10px 0 140px;
   }
@@ -15,7 +16,13 @@
     @include visually-hidden;
   }
 
-  &__search-room {
+  &__column {
+    margin: 0 auto;
+  }
+
+  &__search-room,
+  &__signup,
+  &__signin {
     padding-bottom: 40px;
   }
 
