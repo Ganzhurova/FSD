@@ -1,18 +1,20 @@
-extends ../../base/base-uikit.pug
+extends ../../base/base-uikit/base-uikit.pug
 
 include ../../../components/header/header
 include ../../../components/footer/footer
 
 block variables
-  - let pageTitle = "Headers & Footers";
-  - let uikitClass = "uikit-page_theme-light";
+  -
+    const pageTitle = "Headers & Footers";
+    const uikitTheme = "light";
 
 block content
   main
-    h1.visually-hidden Headers & Footers
-    .content-header
-      +header
-    .content-header
-      +header("Юлий Цезарь")
-    .content-footer
-      +footer
+    section.headers-and-footers 
+      h1.headers-and-footers__title Headers & Footers
+      .headers-and-footers__header 
+        +header
+      .headers-and-footers__header 
+        +header("Юлий Цезарь")
+      .headers-and-footers__footer 
+        +footer

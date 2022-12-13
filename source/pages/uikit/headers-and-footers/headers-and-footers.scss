@@ -1,0 +1,16 @@
+.headers-and-footers {
+  min-width: 320px;
+  background-color: inherit;
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__footer {
+    padding-bottom: 140px;
+  }
+}
