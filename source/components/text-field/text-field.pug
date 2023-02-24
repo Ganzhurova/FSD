@@ -1,6 +1,6 @@
 include ../input/input
 
-mixin textField({label, labelVisually, attributes: fieldAttributes = {}})
+mixin textField({label, labelVisually, isDateMask, attributes: fieldAttributes = {}})
   - fieldAttributes.class = "text-field__input";
   - fieldAttributes.autocomplete = "off";
 
@@ -8,4 +8,4 @@ mixin textField({label, labelVisually, attributes: fieldAttributes = {}})
 
   label.text-field
     span.text-field__label(class=hiddenClass)= label
-    +input({attributes: fieldAttributes})
+    +input({isDateMask, attributes: fieldAttributes})
